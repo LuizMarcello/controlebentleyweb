@@ -27,14 +27,42 @@
         @include('layouts.menu-lateral');
 
         <div class="content-wrapper">
+
+            <div class="col-sm-12">
+                @yield('navbar')
+            </div>
+
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+
+                            @yield('title')
+                        </div>
+
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item">
+                                    <a href="{{ route('home') }}">Dashboard</a>
+                                </li>
+
+                                @yield('breadcrumb')
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             @yield('content')
         </div>
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Bentley Brasil - Sistema Administrativo</b> 1.0-rc
+                <b>Satellite Broadband Networks</b> 1.0-rc
             </div>
-            <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Satellite Broadband Networks</a>.</strong> Todos os direitos reservados
+            <strong>Copyright &copy; 2021 <a href="https://adminlte.io"> Bentley Brasil - Sistema
+                    Administrativo</a>.</strong> Todos
+            os direitos reservados
         </footer>
 
     </div>

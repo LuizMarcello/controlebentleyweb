@@ -1,4 +1,5 @@
 <!doctype html>
+{{-- Esse é o template de todo o  login --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -24,7 +25,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div id="app" class="wrapper">
 
-        <div class="content-wrapper">
+        <div>
             @yield('content')
         </div>
 
