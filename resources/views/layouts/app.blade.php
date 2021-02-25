@@ -49,6 +49,7 @@
                                 @yield('breadcrumb')
                             </ol>
                         </div>
+                        
                     </div>
                 </div>
             </section>

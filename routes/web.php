@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Auth\LoginController@showLoginForm');
+Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+/* Declarando um único método de rota que vai criar todas as rotas que precisamos: */
+/* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler(no singular): */
+Route::resource('empresas', 'EmpresaController');
