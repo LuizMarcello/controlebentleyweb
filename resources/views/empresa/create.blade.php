@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Listagem de {{ $tipo }}</h1>
+    <h1>Novo {{ $tipo }}</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
         <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}">Novo {{ $tipo }}</a>
     </li>
 @endsection
 
@@ -164,45 +168,19 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listagem de {{ $tipo }}</h3>
+                        <h3 class="card-title">Entre com os dados</h3>
                         <div class="card-tools">
-                            <a href="{{ route('empresas.create')}}?tipo={{ $tipo }}" class="btn btn-success">Novo {{ $tipo }}</a>
+                            {{-- <a href="" class="btn btn-success">Novo {{ $tipo }}</a> --}}
                         </div>
                     </div>
 
-
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <table class="table">
-
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach ($empresas as $empresa)
-                                    <tr>
-                                        <td>{{ $empresa->id }}</td>
-                                        <td>{{ $empresa->nome }}</td>
-                                        <td>{{ $empresa->nome_contato }}</td>
-                                        <td>{{ $empresa->celular }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <form action="{{ route('empresas.store')}}" method="POST">
+                            @include('empresa._form')
+                        </form>
                     </div>
-                    {{-- Paginação ainda com problemas de estilo --}}
-                    <div class="card-footer clearfix">
-                        {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
-                        {{ $empresas->appends(['tipo' => request('tipo')])->links() }}
-                    </div>
+
                 </div>
             </div>
         </div>
