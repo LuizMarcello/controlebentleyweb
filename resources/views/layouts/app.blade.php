@@ -54,9 +54,19 @@
                 </div>
             </section>
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             @yield('content')
         </div>
-        
+
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
                 <b>Satellite Broadband Networks</b> 1.0-rc
@@ -70,9 +80,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
