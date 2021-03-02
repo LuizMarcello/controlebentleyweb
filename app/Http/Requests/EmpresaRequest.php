@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 /**
-* Importando para usar nas regras de validação.
-*/
+              * Importando para usar nas regras de validação.
+              */
 
 use Illuminate\Validation\Rule;
 
@@ -31,7 +31,7 @@ class EmpresaRequest extends FormRequest
     {
         return [
             /**
-             * Regra define quais unicas palavras aceitas no campo tipo.
+             * Esta regra define quais unicas palavras aceitas no campo tipo.
              */
             'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
             'nome' => ['required', 'max:255'],

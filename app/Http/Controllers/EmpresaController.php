@@ -17,8 +17,7 @@ class EmpresaController extends Controller
     {
         $tipo = $request->tipo;
 
-        if($tipo !== 'cliente' && $tipo !== 'fornecedor')
-        {
+        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
             return \abort(404);
         }
 
@@ -36,8 +35,7 @@ class EmpresaController extends Controller
     {
         $tipo = $request->tipo;
 
-        if($tipo !== 'cliente' && $tipo !== 'fornecedor')
-        {
+        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
             return \abort(404);
         }
 
@@ -52,9 +50,9 @@ class EmpresaController extends Controller
      */
     public function store(EmpresaRequest $request)
     {
-       $empresa = Empresa::create($request->all());
+        $empresa = Empresa::create($request->all());
 
-       return \redirect()->route('empresas.show', $empresa->id);
+        return \redirect()->route('empresas.show', $empresa->id);
     }
 
     /**

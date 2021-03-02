@@ -166,7 +166,8 @@
                     <div class="card-header">
                         <h3 class="card-title">Listagem de {{ $tipo }}</h3>
                         <div class="card-tools">
-                            <a href="{{ route('empresas.create')}}?tipo={{ $tipo }}" class="btn btn-success">Novo {{ $tipo }}</a>
+                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-success">Novo
+                                {{ $tipo }}</a>
                         </div>
                     </div>
 
@@ -208,8 +209,3 @@
         </div>
     </div>
 @endsection
-
-
-
-
-
