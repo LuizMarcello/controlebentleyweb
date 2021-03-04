@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo(a) {{ $tipo }}</h1>
+    <h1>Novo {{ $tipo }}</h1>
 @endsection
 
 @section('breadcrumb')
@@ -10,7 +10,7 @@
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}">Novo(a) {{ $tipo }}</a>
+        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}">Novo {{ $tipo }}</a>
     </li>
 @endsection
 
@@ -29,7 +29,7 @@
                     {{-- O corpo --}}
                     <div class="card-body">
                         <form action="{{ route('empresas.store') }}" method="POST">
-                            @include('empresa._form')
+                            @include('empresa._formModem')
                         </form>
                     </div>
 

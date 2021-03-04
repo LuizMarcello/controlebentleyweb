@@ -44,6 +44,7 @@
   </div> --}}
 
     <!-- Sidebar Menu -->
+
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
@@ -60,8 +61,8 @@
                 </a>
             </li>
 
-            {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
 
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-circle-down"></i>
@@ -87,8 +88,8 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
@@ -114,8 +115,8 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
@@ -140,9 +141,205 @@
                 </ul>
             </li>
 
+            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+                <a href="" class="nav-link">
+                    <i class="nav-icon  fas fa-arrow-circle-down"></i>
+                    <p>
+                        Estoque
+
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+                <a href="" class="nav-link">
+                    <i class="nav-icon  fas fa-arrow-circle-down"></i>
+                    <p>
+                        Equipamentos
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Modem
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('equipamentos.create') }}?tipo=modem" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Modem</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('equipamentos.index') }}?tipo=modem" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Modens</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Antena
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('equipamentos.create') }}?tipo=antena" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Nova Antena</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('equipamentos.index') }}?tipo=antena" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Antenas</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Cabo
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('empresas.create') }}?tipo=cabo" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Cabo</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Cabos</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Fonte
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('empresas.create') }}?tipo=fonte" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Nova Fonte</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Fontes</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Fonte
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('empresas.create') }}?tipo=groove" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Nova Groove</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Grooves</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Lnb
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('empresas.create') }}?tipo=groove" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Lnb</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Lnbs</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+            {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
+            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Ferramentas
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="../../index.html" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Lançamento</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../index2.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Relatório Financeiro</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
     </div>
+
     <!-- /.sidebar -->
 </aside>

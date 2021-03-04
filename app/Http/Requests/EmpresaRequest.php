@@ -33,7 +33,7 @@ class EmpresaRequest extends FormRequest
             /**
              * Esta regra define quais unicas palavras aceitas no campo tipo.
              */
-            'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
+            'tipo' => ['required', Rule::in(['cliente', 'fornecedor', 'modem', 'antena'])],
             'nome' => ['required', 'max:255'],
             'razao_social' => ['max:255'],
             'documento' => ['required'],
