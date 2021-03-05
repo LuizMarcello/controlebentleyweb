@@ -25,4 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler(no singular): */
 Route::resource('empresas', 'EmpresaController');
 Route::resource('modens', 'ModemController');
+Route::resource('antenas', 'AntenaController');
+Route::resource('cabos', 'CaboController');
+Route::resource('fontes', 'FonteController');
+Route::resource('grooves', 'GrooveController');
+Route::resource('tecnicos', 'TecnicoController');
 

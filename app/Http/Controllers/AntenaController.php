@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 
-use App\Models\Modem;
+use App\Models\Antena;
 
-class ModemController extends Controller
+class AntenaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class ModemController extends Controller
      */
     public function index()
     {
-        $registros = Modem::paginate(1);
-        return view('modem.indexModem', \compact('registros'));
+        $registros = Antena::paginate(1);
+        return view('antena.indexAntena', \compact('registros'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ModemController extends Controller
      */
     public function create(Request $request)
     {
-        return view('modem.createModem');
+        return view('antena.createAntena');
     }
 
     /**

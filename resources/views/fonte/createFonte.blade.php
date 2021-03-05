@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo {{ $tipo }}</h1>
+    <h1>Nova Fonte</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
+        <a href="{{ route('antenas.index') }}">Listagem de Fontes</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}">Novo {{ $tipo }}</a>
+        <a href="{{ route('antenas.create') }}">Nova Fonte</a>
     </li>
 @endsection
 
@@ -28,8 +28,8 @@
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('empresas.store') }}" method="POST">
-                            @include('empresa._formModem')
+                        <form action="{{ route('fontes.store') }}" method="POST">
+                            @include('fonte._formFonte')
                         </form>
                     </div>
 

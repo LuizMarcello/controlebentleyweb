@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <style></style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -28,7 +29,7 @@
 
         <div class="content-wrapper">
 
-            <div class="col-sm-12">
+            <div  class="col-sm-12">
                 @yield('navbar')
             </div>
 

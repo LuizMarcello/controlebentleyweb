@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Listagem de {{ $tipo }}</h1>
+    <h1>Listagem de Grooves</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
+        <a href="{{ route('antenas.index') }}">Listagem de Grooves</a>
     </li>
 @endsection
 
@@ -164,10 +164,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listagem de {{ $tipo }}</h3>
+                        <h3 class="card-title">Listagem de Grooves</h3>
                         <div class="card-tools">
-                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-success">Novo(a)
-                                {{ $tipo }}</a>
+                            <a href="{{ route('antenas.create') }}" class="btn btn-success">Nova
+                                Groove</a>
                         </div>
                     </div>
 
@@ -187,12 +187,12 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($empresas as $empresa)
+                                @foreach ($registros as $registro)
                                     <tr>
-                                        <td>{{ $empresa->id }}</td>
-                                        <td>{{ $empresa->nome }}</td>
-                                        <td>{{ $empresa->nome_contato }}</td>
-                                        <td>{{ $empresa->celular }}</td>
+                                        <td>{{ $registro->id }}</td>
+                                        <td>{{ $registro->nome }}</td>
+                                        <td>{{ $registro->nome_contato }}</td>
+                                        <td>{{ $registro->celular }}</td>
                                         <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
                                     </tr>
                                 @endforeach
@@ -202,7 +202,7 @@
                     </div>
                     <div class="card-footer clearfix">
                         {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
-                        {{ $empresas->appends(['tipo' => request('tipo')])->links() }}
+                        {{ $registros->links() }}
                     </div>
                 </div>
             </div>
