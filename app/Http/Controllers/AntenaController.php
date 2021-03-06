@@ -40,7 +40,9 @@ class AntenaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = Antena::create($request->all());
+
+        return \redirect()->route('antenas.show', $registro->id);
     }
 
     /**

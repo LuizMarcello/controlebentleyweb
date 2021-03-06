@@ -40,7 +40,10 @@ class ModemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = Modem::create($request->all());
+
+        return \redirect()->route('modens.show', $registro->id);
+    }
     }
 
     /**

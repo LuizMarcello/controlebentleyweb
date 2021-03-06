@@ -40,7 +40,10 @@ class FonteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = Fonte::create($request->all());
+
+        return \redirect()->route('fontes.show', $registro->id);
+    }
     }
 
     /**

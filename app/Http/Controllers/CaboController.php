@@ -41,7 +41,9 @@ class CaboController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = Cabo::create($request->all());
+
+        return \redirect()->route('cabos.show', $registro->id);
     }
 
     /**

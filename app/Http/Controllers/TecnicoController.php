@@ -38,9 +38,11 @@ class TecnicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmpresaRequest $request)
     {
-        //
+        $registro = Tecnico::create($request->all());
+
+        return \redirect()->route('tecnicos.show', $registro->id);
     }
 
     /**
@@ -51,7 +53,7 @@ class TecnicoController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Estou no show';
     }
 
     /**

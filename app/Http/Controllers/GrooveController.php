@@ -40,7 +40,9 @@ class GrooveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro = Groove::create($request->all());
+
+        return \redirect()->route('grooves.show', $registro->id);
     }
 
     /**
