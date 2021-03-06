@@ -56,14 +56,13 @@
             {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
             <li class=" nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
                 <a href="{{ route('home') }}" class="nav-link">
-                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Dashboard
 
                     </p>
                 </a>
             </li>
-
 
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
@@ -172,22 +171,84 @@
             </li>
 
             <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
-                <a href="" class="nav-link">
-                    <i class="nav-icon  fas fa-arrow-circle-down"></i>
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-satellite-dish"></i>
+                    <p>
+                        Logistica
+                        {{-- <i class="right fas fa-angle-left"></i> --}}
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Planos
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('planos.create') }}" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Plano</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('planos.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Planos</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Distribuidores
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('modens.create') }}" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Distribuidor</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('modens.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista Distribuidores</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Estoque
-
+                       {{--  <i class="right fas fa-angle-left"></i> --}}
                     </p>
                 </a>
             </li>
             <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
-                <a href="" class="nav-link">
-                    <i class="nav-icon  fas fa-arrow-circle-down"></i>
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Equipamentos
+                        {{-- <i class="right fas fa-angle-left"></i> --}}
                     </p>
                 </a>
             </li>
+
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
@@ -318,6 +379,33 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
+                        Roteador
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('roteadors.create') }}" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Roteador</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('roteadors.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Roteadores</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
                         Lnb
                         <i class="right fas fa-angle-left"></i>
                     </p>
@@ -342,12 +430,14 @@
             {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
             <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Ferramentas
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
+
+                {{-- <i class="fas fa-satellite-dish"></i> --}}
 
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
@@ -369,4 +459,3 @@
     <!-- /.sidebar-menu -->
     <!-- /.sidebar -->
 </aside>
-

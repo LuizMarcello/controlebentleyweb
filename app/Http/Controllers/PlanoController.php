@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 
-use App\Models\Fonte;
+use App\Models\Plano;
 
-class FonteController extends Controller
+class PlanoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class FonteController extends Controller
      */
     public function index()
     {
-        $registros = Fonte::paginate(1);
-        return view('fonte.indexFonte', \compact('registros'));
+        $registros = Plano::paginate(1);
+        return view('Plano.indexPlano', \compact('registros'));
     }
 
     /**
@@ -27,9 +27,9 @@ class FonteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        return view('fonte.createFonte');
+        return view('Plano.createPlano');
     }
 
     /**
@@ -40,11 +40,10 @@ class FonteController extends Controller
      */
     public function store(Request $request)
     {
-        $registro = Fonte::create($request->all());
+        $registro = Plano::create($request->all());
 
-        return \redirect()->route('fontes.show', $registro->id);
+        return \redirect()->route('Planos.show', $registro->id);
     }
-    
 
     /**
      * Display the specified resource.

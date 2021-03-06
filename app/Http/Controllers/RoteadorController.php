@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 
-use App\Models\Fonte;
+use App\Models\Roteador;
 
-class FonteController extends Controller
+class RoteadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,9 @@ class FonteController extends Controller
      */
     public function index()
     {
-        $registros = Fonte::paginate(1);
-        return view('fonte.indexFonte', \compact('registros'));
+
+        $registros = Roteador::paginate(1);
+        return view('roteador.indexRoteador', \compact('registros'));
     }
 
     /**
@@ -29,7 +30,7 @@ class FonteController extends Controller
      */
     public function create(Request $request)
     {
-        return view('fonte.createFonte');
+        return view('roteador.createRoteador');
     }
 
     /**
@@ -40,11 +41,10 @@ class FonteController extends Controller
      */
     public function store(Request $request)
     {
-        $registro = Fonte::create($request->all());
+        $registro = Roteador::create($request->all());
 
-        return \redirect()->route('fontes.show', $registro->id);
+        return \redirect()->route('roteadors.show', $registro->id);
     }
-    
 
     /**
      * Display the specified resource.

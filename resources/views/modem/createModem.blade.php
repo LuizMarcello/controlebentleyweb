@@ -22,13 +22,13 @@
                     <div class="card-header">
                         <h3 class="card-title">Entre com os dados</h3>
                         <div class="card-tools">
-                            {{-- <a href="" class="btn btn-success">Novo {{ $tipo }}</a> --}}
+                            <a href="{{ route('modens.index') }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('empresas.store') }}" method="POST">
+                        <form action="{{ route('modens.store') }}" method="POST">
                             @include('modem._formModem')
                         </form>
                     </div>

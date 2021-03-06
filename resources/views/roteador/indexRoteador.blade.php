@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Listagem de Modens</h1>
+    <h1>Listagem de Roteadores</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('modens.index') }}">Listagem de Modens</a>
+        <a href="{{ route('roteadors.index') }}">Listagem de Roteadores</a>
     </li>
 @endsection
 
@@ -164,10 +164,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listagem de Modens</h3>
+                        <h3 class="card-title">Listagem de Roteadores</h3>
                         <div class="card-tools">
-                            <a href="{{ route('modens.create') }}" class="btn btn-success">Novo
-                                Modem</a>
+                            <a href="{{ route('roteadors.create') }}" class="btn btn-success">Novo
+                                Roteador</a>
                         </div>
                     </div>
 

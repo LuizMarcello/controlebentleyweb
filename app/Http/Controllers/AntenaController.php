@@ -53,7 +53,7 @@ class AntenaController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Estou no show';
     }
 
     /**

@@ -44,7 +44,7 @@ class ModemController extends Controller
 
         return \redirect()->route('modens.show', $registro->id);
     }
-    }
+    
 
     /**
      * Display the specified resource.
@@ -54,7 +54,7 @@ class ModemController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Estou no show';
     }
 
     /**

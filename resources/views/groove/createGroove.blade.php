@@ -22,7 +22,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Entre com os dados</h3>
                         <div class="card-tools">
-                            {{-- <a href="" class="btn btn-success">Novo {{ $tipo }}</a> --}}
+                            <a href="{{ route('grooves.index') }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 

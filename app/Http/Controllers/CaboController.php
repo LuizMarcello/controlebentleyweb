@@ -54,7 +54,7 @@ class CaboController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Estou no show';
     }
 
     /**

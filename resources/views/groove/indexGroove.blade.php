@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('antenas.index') }}">Listagem de Grooves</a>
+        <a href="{{ route('grooves.index') }}">Listagem de Grooves</a>
     </li>
 @endsection
 
@@ -166,7 +166,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Listagem de Grooves</h3>
                         <div class="card-tools">
-                            <a href="{{ route('antenas.create') }}" class="btn btn-success">Nova
+                            <a href="{{ route('grooves.create') }}" class="btn btn-success">Nova
                                 Groove</a>
                         </div>
                     </div>

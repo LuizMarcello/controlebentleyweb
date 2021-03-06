@@ -30,4 +30,6 @@ Route::resource('cabos', 'CaboController');
 Route::resource('fontes', 'FonteController');
 Route::resource('grooves', 'GrooveController');
 Route::resource('tecnicos', 'TecnicoController');
+Route::resource('roteadors', 'RoteadorController');
+Route::resource('planos', 'PlanoController');
 
