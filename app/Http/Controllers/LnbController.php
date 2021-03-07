@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 
-use App\Models\Plano;
+use App\Models\Lnb;
 
-class PlanoController extends Controller
+class LnbController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class PlanoController extends Controller
      */
     public function index()
     {
-        $registros = Plano::paginate(1);
-        return view('plano.indexPlano', \compact('registros'));
+        $registros = Lnb::paginate(1);
+        return view('lnb.indexLnb', \compact('registros'));
     }
 
     /**
@@ -29,7 +29,7 @@ class PlanoController extends Controller
      */
     public function create()
     {
-        return view('plano.createPlano');
+        return view('lnb.createlnb');
     }
 
     /**
@@ -40,9 +40,9 @@ class PlanoController extends Controller
      */
     public function store(Request $request)
     {
-        $registro = Plano::create($request->all());
+        $registro = Lnb::create($request->all());
 
-        return \redirect()->route('planos.show', $registro->id);
+        return \redirect()->route('lnbs.show', $registro->id);
     }
 
     /**

@@ -216,13 +216,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('modens.create') }}" class="nav-link">
+                        <a href="{{ route('distribuidors.create') }}" class="nav-link">
                             <i class="fas fa-dollar-sign nav-icon"></i>
                             <p>Novo Distribuidor</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('modens.index') }}" class="nav-link">
+                        <a href="{{ route('distribuidors.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
                             <p>Lista Distribuidores</p>
                         </a>
@@ -235,7 +235,7 @@
                     <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Estoque
-                       {{--  <i class="right fas fa-angle-left"></i> --}}
+                        {{-- <i class="right fas fa-angle-left"></i> --}}
                     </p>
                 </a>
             </li>
@@ -412,13 +412,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('empresas.create') }}?tipo=groove" class="nav-link">
+                        <a href="{{ route('lnbs.create') }}?tipo=groove" class="nav-link">
                             <i class="fas fa-dollar-sign nav-icon"></i>
                             <p>Novo Lnb</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../index2.html" class="nav-link">
+                        <a href="{{ route('lnbs.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
                             <p>Lista de Lnbs</p>
                         </a>

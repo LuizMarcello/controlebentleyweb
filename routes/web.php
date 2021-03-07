@@ -32,4 +32,6 @@ Route::resource('grooves', 'GrooveController');
 Route::resource('tecnicos', 'TecnicoController');
 Route::resource('roteadors', 'RoteadorController');
 Route::resource('planos', 'PlanoController');
+Route::resource('distribuidors', 'DistribuidorController');
+Route::resource('lnbs', 'LnbController');
 
