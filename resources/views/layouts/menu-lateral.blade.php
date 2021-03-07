@@ -426,6 +426,55 @@
                 </ul>
             </li>
 
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Ilnb
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('ilnbs.create') }}?tipo=groove" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Novo Ilnb</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('ilnbs.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Ilnbs</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    <p>
+                        Trias
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('trias.create') }}?tipo=groove" class="nav-link">
+                            <i class="fas fa-dollar-sign nav-icon"></i>
+                            <p>Nova Tria</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('trias.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Trias</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
             {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
             <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}

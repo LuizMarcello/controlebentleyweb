@@ -34,4 +34,7 @@ Route::resource('roteadors', 'RoteadorController');
 Route::resource('planos', 'PlanoController');
 Route::resource('distribuidors', 'DistribuidorController');
 Route::resource('lnbs', 'LnbController');
+Route::resource('ilnbs', 'IlnbController');
+Route::resource('trias', 'TriaController');
+Route::resource('designacao', 'DesignacaoController');
 
