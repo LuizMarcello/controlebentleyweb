@@ -15,6 +15,19 @@ class CreateDesignacaosTable extends Migration
     {
         Schema::create('designacaos', function (Blueprint $table) {
             $table->id();
+            $table->char('bandaModem');
+            $table->string('marcaModem');
+            $table->string('modeloModem');
+            $table->string('serialModem');
+
+            $table->string('modeloAntena');
+            $table->string('diametroAntena');
+
+            $table->char('bandaLnb');
+            $table->string('marcaLnb');
+            $table->string('modeloLnb');
+            $table->string('serialLnb');
+
             $table->timestamps();
         });
     }
@@ -29,3 +42,6 @@ class CreateDesignacaosTable extends Migration
         Schema::dropIfExists('designacaos');
     }
 }
+
+
+

@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Nova Designação</h1>
+    <h1>Nova Migração</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('designacao.index') }}">Listagem de Designações</a>
+        <a href="{{ route('migracao.index') }}">Listagem de Migrações</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('designacao.create') }}">Nova Designação</a>
+        <a href="{{ route('migracao.create') }}">Nova Migração</a>
     </li>
 @endsection
 
@@ -22,14 +22,14 @@
                     <div class="card-header">
                         <h3 class="card-title">Entre com os dados</h3>
                         <div class="card-tools">
-                            <a href="{{ route('designacao.index') }}" class="btn btn-success">Voltar</a>
+                            <a href="{{ route('migracao.index') }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('designacao.store') }}" method="POST">
-                            @include('designacao._formDesignacao')
+                        <form action="{{ route('migracao.store') }}" method="POST">
+                            @include('migracao._formMigracao')
                         </form>
                     </div>
 

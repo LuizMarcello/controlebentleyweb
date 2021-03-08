@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\ModemRequest;
+use App\Http\Requests\EmpresaRequest;
 
-use App\Models\Modem;
+use App\Models\Migracao;
 
-class ModemController extends Controller
+class MigracaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class ModemController extends Controller
      */
     public function index()
     {
-        $registros = Modem::paginate(1);
-        return view('modem.indexModem', \compact('registros'));
+        $registros = Migracao::paginate(1);
+        return view('migracao.indexMigracao', \compact('registros'));
     }
 
     /**
@@ -27,9 +27,9 @@ class ModemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        return view('modem.createModem');
+        return view('migracao.createMigracao');
     }
 
     /**
@@ -38,13 +38,12 @@ class ModemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ModemRequest $request)
+    public function store(Request $request)
     {
-        $registro = Modem::create($request->all());
+        $registro = Migracao::create($request->all());
 
-        return \redirect()->route('modens.show', $registro->id);
+        return \redirect()->route('migracao.show', $registro->id);
     }
-
 
     /**
      * Display the specified resource.

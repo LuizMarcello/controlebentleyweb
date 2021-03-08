@@ -37,4 +37,5 @@ Route::resource('lnbs', 'LnbController');
 Route::resource('ilnbs', 'IlnbController');
 Route::resource('trias', 'TriaController');
 Route::resource('designacao', 'DesignacaoController');
+Route::resource('migracao', 'MigracaoController');
 

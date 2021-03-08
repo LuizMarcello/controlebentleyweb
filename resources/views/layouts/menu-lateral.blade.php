@@ -91,6 +91,16 @@
                 </ul>
             </li>
 
+            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-satellite-dish"></i>
+                    <p>
+                        Clientes
+                        {{-- <i class="right fas fa-angle-left"></i> --}}
+                    </p>
+                </a>
+            </li>
+
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
@@ -112,6 +122,60 @@
                         <a href="{{ route('empresas.index') }}?tipo=cliente" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
                             <p>Lista de Clientes</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
+                    <p>
+                        Designação
+                        <i class="right fas fa-angle-left"></i>
+
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('designacao.create') }}" class="nav-link">
+                            <i class="fas fa-file nav-icon"></i>
+                            <p>Nova Designação</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('designacao.index') }}?" class="nav-link">
+                            <i class="fas fa-list-alt nav-icon"></i>
+                            <p>Lista de Designações</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
+                    <p>
+                        Migração
+                        <i class="right fas fa-angle-left"></i>
+
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('migracao.create') }}" class="nav-link">
+                            <i class="fas fa-file nav-icon"></i>
+                            <p>Nova Migração</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('migracao.index') }}?" class="nav-link">
+                            <i class="fas fa-list-alt nav-icon"></i>
+                            <p>Lista de Migrações</p>
                         </a>
                     </li>
 

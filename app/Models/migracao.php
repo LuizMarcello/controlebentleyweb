@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\AbstractPaginator;
 
-class Modem extends Model
+class Migracao extends Model
 {
      /* Por questão de segurança, o "fillable" é para dizer quais são
        os únicos campos que serão aceitos pelo model. O usuário poderia
@@ -17,7 +17,8 @@ class Modem extends Model
      * @var array
      */
     protected $fillable = [
-        'banda', 'datanota', 'macaddress', 'marca', 'modelo', 'notafiscal',
-        'serial', 'situacao'
+        'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
+        'email', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado',
+        'observacao', 'tipo', 'situacao'
     ];
 }
