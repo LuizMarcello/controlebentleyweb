@@ -9,8 +9,9 @@ $('.cpf_cnpj').mask('999.999.999-99');
 //.datanota
 $('.datanota').mask('99/99/9999');
 //.macaddress
-/* $('.macaddress').mask('99 99 99 99 99 99'); */
-
+$('.macaddress').mask('99:99:99:99:99:99');
+//.diametro
+$('.diametro').mask('999 cm');
 
 /**
  * função devido a classe ser "cpf" ou "cnpj", ficando assim automático.
@@ -41,3 +42,4 @@ banda
     $(this).val('');
     $(this).val(currentValue);
 });
+

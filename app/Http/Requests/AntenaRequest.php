@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ModemRequest extends FormRequest
+class AntenaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,11 @@ class ModemRequest extends FormRequest
     public function rules()
     {
         return [
-            'serial' => ['required', 'max:20', 'min:3'],
             'modelo' => ['required', 'alpha_num', 'max:20', 'min:3'],
+            'diametro' => ['required', 'max:6', 'min:2'],
             'notafiscal' => ['required', 'integer'],
             'banda' => ['required', 'alpha', 'max:2', 'min:2'],
             'datanota' => ['required', 'date_format:d/m/Y'],
-            'macaddress' => ['required', 'max:20', 'min:12'],
             'marca' => ['required', 'alpha_num', 'max:50', 'min:2']
         ];
     }

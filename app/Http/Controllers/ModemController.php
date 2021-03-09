@@ -18,7 +18,7 @@ class ModemController extends Controller
      */
     public function index()
     {
-        $registros = Modem::paginate(1);
+        $registros = Modem::paginate(3);
         return view('modem.indexModem', \compact('registros'));
     }
 

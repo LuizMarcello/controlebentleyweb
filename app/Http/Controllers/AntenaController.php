@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\AntenaRequest;
 
 use App\Models\Antena;
 
@@ -38,7 +38,7 @@ class AntenaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AntenaRequest $request)
     {
         $registro = Antena::create($request->all());
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\CaboRequest;
 
 use App\Models\Cabo;
 
@@ -39,7 +39,7 @@ class CaboController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CaboRequest $request)
     {
         $registro = Cabo::create($request->all());
 
