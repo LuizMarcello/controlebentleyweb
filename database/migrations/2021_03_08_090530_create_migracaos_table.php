@@ -16,6 +16,7 @@ class CreateMigracaosTable extends Migration
         Schema::create('migracaos', function (Blueprint $table) {
             $table->id();
             $table->string('migration');
+            
             $table->timestamps();
         });
     }

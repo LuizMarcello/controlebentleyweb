@@ -63,10 +63,10 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="marca">Mac Address*</label>
+    <label class="col-form-label col-sm-2 required" for="macaddress">Mac Address*</label>
     <div class="col-sm-10">
-        <input type="text" id="marca" name="marca" {{-- required="required" --}} maxlength="18" class="macaddress form-control @error('marca') is-invalid @enderror">
-        @error('marca')
+        <input type="text" id="macaddress" name="macaddress" {{-- required="required" --}} maxlength="18" class="macaddress form-control @error('marca') is-invalid @enderror">
+        @error('macaddress')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
