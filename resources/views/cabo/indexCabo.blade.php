@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('modens.index') }}">Listagem de Cabos }}</a>
+        <a href="{{ route('cabos.index') }}">Listagem de Cabos</a>
     </li>
 @endsection
 
@@ -171,7 +171,6 @@
                         </div>
                     </div>
 
-
                     {{-- O corpo --}}
                     <div class="card-body">
                         <table class="table">
@@ -179,9 +178,9 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
+                                    <th>Id</th>
+                                    <th>Tipo de Cabo</th>
+                                    <th>Marca</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -189,10 +188,10 @@
                             <tbody>
                                 @foreach ($registros as $registro)
                                     <tr>
+                                        <td></td>
                                         <td>{{ $registro->id }}</td>
-                                        <td>{{ $registro->nome }}</td>
-                                        <td>{{ $registro->nome_contato }}</td>
-                                        <td>{{ $registro->celular }}</td>
+                                        <td>{{ $registro->tipodecabo }}</td>
+                                        <td>{{ $registro->marca }}</td>
                                         <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
                                     </tr>
                                 @endforeach

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CaboRequest extends FormRequest
+class TriaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CaboRequest extends FormRequest
      */
     public function authorize()
     {
-         return true;
+        return true;
     }
 
     /**
@@ -24,17 +24,12 @@ class CaboRequest extends FormRequest
     public function rules()
     {
         return [
-             'notafiscal' => ['required', 'integer'],
+            'serial' => ['required', 'max:20', 'min:3'],
+            'modelo' => ['required', 'alpha_num', 'max:20', 'min:3'],
+            'notafiscal' => ['required', 'integer'],
+            'banda' => ['required', 'alpha', 'max:2', 'min:2'],
             'datanota' => ['required', 'date_format:d/m/Y'],
-            'marca' => ['required', 'alpha_num', 'max:50', 'min:2'],
-            'observacao' => ['required', 'max:300', 'min:1'],
-            'tipodecabo' => ['required', 'max:10', 'min:2'],
-            'metros' => ['required', 'integer','max:1000', 'min:1']
+            'marca' => ['required', 'alpha_num', 'max:50', 'min:2']
         ];
     }
 }
-
-
-
-
-

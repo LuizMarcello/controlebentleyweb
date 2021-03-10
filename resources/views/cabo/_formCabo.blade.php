@@ -25,11 +25,11 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="banda">Banda*</label>
+    <label class="col-form-label col-sm-2 required" for="tipodecabo">Tipo de Cabo</label>
     <div class="col-sm-10">
-        <input type="text" id="banda" name="banda" {{-- required="required" --}} maxlength="18"
-            class="banda form-control @error('banda') is-invalid @enderror">
-        @error('banda')
+        <input type="text" id="tipodecabo" name="tipodecabo" required="required" maxlength="18"
+            class="tipodecabo form-control @error('tipodecabo') is-invalid @enderror">
+        @error('tipodecabo')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
@@ -47,11 +47,11 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="modelo">Modelo*</label>
+    <label class="col-form-label col-sm-2 required" for="metros">Metros</label>
     <div class="col-sm-10">
-        <input type="text" id="modelo" name="modelo" {{-- required="required" --}} maxlength="18"
-            class="modelo form-control @error('modelo') is-invalid @enderror">
-        @error('modelo')
+        <input type="text" id="metros" name="metros" {{-- required="required" --}} maxlength="18"
+            class="metros form-control @error('metros') is-invalid @enderror">
+        @error('metros')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>

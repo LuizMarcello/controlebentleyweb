@@ -4,19 +4,21 @@ $('.celular').mask('(99) 99999-9999');
 $('.phone').mask('(99) 9999-9999');
 //.cep
 $('.cep').mask('99.999-999');
-//.cpf_cnpj
-$('.cpf_cnpj').mask('999.999.999-99');
+//.documento
+$('.documento').mask('999.999.999-99');
 //.datanota
 $('.datanota').mask('99/99/9999');
 //.macaddress
-$('.macaddress').mask('99:99:99:99:99:99');
+$('.macaddress').mask('AA:AA:AA:AA:AA:AA');
 //.diametro
 $('.diametro').mask('999 cm');
+//.voltagem
+$('.voltagem').mask('999volts');
 
 /**
  * função devido a classe ser "cpf" ou "cnpj", ficando assim automático.
  */
-var field = '.cpf_cnpj';
+var field = '.documento';
 
 $(field).keydown(function(){
     try {

@@ -24,7 +24,7 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="documento">Documento*</label>
     <div class="col-sm-10">
-        <input type="text" id="documento" name="documento" required="required" maxlength="18" class="cpf_cnpj form-control @error('documento') is-invalid @enderror">
+        <input type="text" id="documento" name="documento" required="required" maxlength="18" class="documento form-control @error('documento') is-invalid @enderror">
         @error('documento')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -86,10 +86,19 @@
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="logradouro">Logradouro*</label>
+    <label class="col-form-label col-sm-2" for="rua">Logradouro*</label>
     <div class="col-sm-10">
-        <input type="text" id="logradouro" name="logradouro" maxlength="150" class="form-control @error('logradouro') is-invalid @enderror">
-        @error('logradouro')
+        <input type="text" id="rua" name="rua" maxlength="150" class="form-control @error('rua') is-invalid @enderror">
+        @error('rua')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="numero">Numero</label>
+    <div class="col-sm-10">
+        <input type="text" id="numero" name="numero" maxlength="150" class="form-control @error('numero') is-invalid @enderror">
+        @error('numero')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
@@ -130,6 +139,16 @@
         @enderror
     </div>
 </div>
-
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="situacao">Situação</label>
+    <div class="col-sm-3">
+        <select class="form-control" name="situacao" id="situacao">
+            <option>Ativo</option>
+            <option>Em espera</option>
+            <option>Suspenso</option>
+            <option>Inativo</option>
+        </select>
+    </div>
+</div>
 
 <button class="btn btn-primary" name="submit" value="" type="submit">Salvar</button>

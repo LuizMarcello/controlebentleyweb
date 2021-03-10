@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\RoteadorRequest;
 
 use App\Models\Roteador;
 
@@ -19,7 +19,7 @@ class RoteadorController extends Controller
     public function index()
     {
 
-        $registros = Roteador::paginate(1);
+        $registros = Roteador::paginate(2);
         return view('roteador.indexRoteador', \compact('registros'));
     }
 
@@ -39,7 +39,7 @@ class RoteadorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoteadorRequest $request)
     {
         $registro = Roteador::create($request->all());
 

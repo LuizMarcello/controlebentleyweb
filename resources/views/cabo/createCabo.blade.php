@@ -6,11 +6,11 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('modens.index') }}">Listagem de Cabos</a>
+        <a href="{{ route('cabos.index') }}">Listagem de Cabos</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('modens.create') }}">Novo Cabo</a>
+        <a href="{{ route('cabos.create') }}">Novo Cabo</a>
     </li>
 @endsection
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\TriaRequest;
 
 use App\Models\Tria;
 
@@ -18,7 +18,7 @@ class TriaController extends Controller
      */
     public function index()
     {
-        $registros = Tria::paginate(1);
+        $registros = Tria::paginate(2);
         return view('tria.indexTria', \compact('registros'));
     }
 
@@ -38,7 +38,7 @@ class TriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TriaRequest $request)
     {
         $registro = Tria::create($request->all());
 

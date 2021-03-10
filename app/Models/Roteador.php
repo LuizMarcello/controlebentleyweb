@@ -17,8 +17,7 @@ class Roteador extends Model
      * @var array
      */
     protected $fillable = [
-        'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
-        'email', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado',
-        'observacao', 'tipo', 'situacao'
+        'banda', 'datanota', 'macaddress', 'marca', 'modelo', 'notafiscal',
+        'serial', 'situacao', 'observacao'
     ];
 }

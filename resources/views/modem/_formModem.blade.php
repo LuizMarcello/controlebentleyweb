@@ -6,7 +6,7 @@
     <label class="col-form-label col-sm-2 required" for="notafiscal">Nota fiscal*</label>
     <div class="col-sm-10">
         <input type="text" id="notafiscal" name="notafiscal" required="required" maxlength="18"
-            class="notafiscal form-control @error('banda') is-invalid @enderror">
+            class="notafiscal form-control @error('notafiscal') is-invalid @enderror">
         @error('notafiscal')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -17,7 +17,7 @@
     <label class="col-form-label col-sm-2 required" for="datanota">Data da Nota*</label>
     <div class="col-sm-10">
         <input type="text" id="datanota" name="datanota" required="required" maxlength="18"
-            class="datanota form-control @error('banda') is-invalid @enderror">
+            class="datanota form-control @error('datanota') is-invalid @enderror">
         @error('datanota')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -72,7 +72,7 @@
     <label class="col-form-label col-sm-2 required" for="macaddress">Mac Address*</label>
     <div class="col-sm-10">
         <input type="text" id="macaddress" name="macaddress" required="required" maxlength="18"
-            class="{{-- macaddress --}} form-control @error('marca') is-invalid @enderror">
+            class="macaddress form-control @error('marca') is-invalid @enderror">
         @error('macaddress')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

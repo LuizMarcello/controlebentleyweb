@@ -17,7 +17,7 @@ class Cabo extends Model
      * @var array
      */
     protected $fillable = [
-       'banda', 'datanota', 'marca', 'notafiscal',
+       'datanota', 'marca', 'notafiscal',
        'situacao','metros','tipodecabo','observacao'
     ];
 }

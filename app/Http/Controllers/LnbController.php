@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\LnbRequest;
 
 use App\Models\Lnb;
 
@@ -18,7 +18,7 @@ class LnbController extends Controller
      */
     public function index()
     {
-        $registros = Lnb::paginate(1);
+        $registros = Lnb::paginate(2);
         return view('lnb.indexLnb', \compact('registros'));
     }
 
@@ -38,7 +38,7 @@ class LnbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LnbRequest $request)
     {
         $registro = Lnb::create($request->all());
 

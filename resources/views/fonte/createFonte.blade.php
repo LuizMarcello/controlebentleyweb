@@ -6,11 +6,11 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('antenas.index') }}">Listagem de Fontes</a>
+        <a href="{{ route('fontes.index') }}">Listagem de Fontes</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('antenas.create') }}">Nova Fonte</a>
+        <a href="{{ route('fontes.create') }}">Nova Fonte</a>
     </li>
 @endsection
 

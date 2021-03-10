@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\IlnbRequest;
 
 use App\Models\Ilnb;
 
@@ -18,7 +18,7 @@ class IlnbController extends Controller
      */
     public function index()
     {
-        $registros = Ilnb::paginate(1);
+        $registros = Ilnb::paginate(2);
         return view('ilnb.indexIlnb', \compact('registros'));
     }
 
@@ -38,7 +38,7 @@ class IlnbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IlnbRequest $request)
     {
         $registro = Ilnb::create($request->all());
 

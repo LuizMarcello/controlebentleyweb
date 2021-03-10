@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\FonteRequest;
 
 use App\Models\Fonte;
 
@@ -38,13 +38,13 @@ class FonteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FonteRequest $request)
     {
         $registro = Fonte::create($request->all());
 
         return \redirect()->route('fontes.show', $registro->id);
     }
-    
+
 
     /**
      * Display the specified resource.

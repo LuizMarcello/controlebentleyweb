@@ -179,9 +179,9 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Banda</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -189,10 +189,11 @@
                             <tbody>
                                 @foreach ($registros as $registro)
                                     <tr>
+                                        <td></td>
                                         <td>{{ $registro->id }}</td>
-                                        <td>{{ $registro->nome }}</td>
-                                        <td>{{ $registro->nome_contato }}</td>
-                                        <td>{{ $registro->celular }}</td>
+                                        <td>{{ $registro->marca }}</td>
+                                        <td>{{ $registro->modelo }}</td>
+                                        <td>{{ $registro->banda }}</td>
                                         <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
                                     </tr>
                                 @endforeach

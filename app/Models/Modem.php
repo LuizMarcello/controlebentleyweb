@@ -17,7 +17,7 @@ class Modem extends Model
      * @var array
      */
     protected $fillable = [
-        'banda', 'datanota', 'macaddress', 'marca', 'modelo', 'notafiscal',
-        'serial', 'situacao', 'observacao'
+        'banda', 'datanota', 'macaddress', 'marca', 'modelo',
+        'serial', 'situacao', 'observacao', 'notafiscal'
     ];
 }

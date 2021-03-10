@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterCabosTable extends Migration
+class AlterRoteadorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AlterCabosTable extends Migration
      */
     public function up()
     {
-        Schema::table('cabos', function (Blueprint $table) {
+        Schema::table('roteadors', function (Blueprint $table) {
             $table->string('observacao', 200);
         });
     }
@@ -25,7 +25,7 @@ class AlterCabosTable extends Migration
      */
     public function down()
     {
-        Schema::table('cabos', function (Blueprint $table) {
+        Schema::table('roteadors', function (Blueprint $table) {
             $table->dropColumn('observacao');
         });
     }
