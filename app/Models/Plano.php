@@ -17,8 +17,7 @@ class Plano extends Model
      * @var array
      */
     protected $fillable = [
-        'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
-        'email', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado',
-        'observacao', 'tipo', 'situacao'
+       'banda', 'cir', 'equipamento', 'nome', 'situacao', 'valor', 'valordecusto',
+       'valormensal', 'velocmaxdown', 'velocmaxup', 'velocmindown', 'velocminup'
     ];
 }

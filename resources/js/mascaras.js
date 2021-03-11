@@ -6,7 +6,9 @@ $('.phone').mask('(99) 9999-9999');
 $('.cep').mask('99.999-999');
 //.documento
 $('.documento').mask('999.999.999-99');
-//.datanota
+//.cpf_cnpj
+$('.cpf_cnpj').mask('999.999.999-99');
+//.datanota */
 $('.datanota').mask('99/99/9999');
 //.macaddress
 $('.macaddress').mask('AA:AA:AA:AA:AA:AA');
@@ -14,6 +16,23 @@ $('.macaddress').mask('AA:AA:AA:AA:AA:AA');
 $('.diametro').mask('999 cm');
 //.voltagem
 $('.voltagem').mask('999volts');
+//.valordecusto
+$('.valordecusto').mask('R$ 9.999,99');
+//.valormensal
+$('.valormensal').mask('R$ 9.999,99');
+//.velocmaxdown
+$('.velocmaxdown').mask('99 Mbps');
+//.velocmaxup
+/* $('.velocmaxup').mask('999 Abps'); */
+//.velocmindown
+$('.velocmindown').mask('999,9 Kbps');
+//.velocminup
+$('.velocminup').mask('999 Kbps');
+//.cir
+$('.cir').mask('99:9');
+//.banda
+$('.banda').mask('AA-Band');
+
 
 /**
  * função devido a classe ser "cpf" ou "cnpj", ficando assim automático.
@@ -44,4 +63,7 @@ banda
     $(this).val('');
     $(this).val(currentValue);
 });
+
+
+
 

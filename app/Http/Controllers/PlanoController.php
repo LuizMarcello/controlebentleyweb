@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\PlanoRequest;
 
 use App\Models\Plano;
 
@@ -18,7 +18,7 @@ class PlanoController extends Controller
      */
     public function index()
     {
-        $registros = Plano::paginate(1);
+        $registros = Plano::paginate(4);
         return view('plano.indexPlano', \compact('registros'));
     }
 
@@ -38,7 +38,7 @@ class PlanoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlanoRequest $request)
     {
         $registro = Plano::create($request->all());
 

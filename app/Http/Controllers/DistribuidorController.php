@@ -18,7 +18,7 @@ class DistribuidorController extends Controller
      */
     public function index()
     {
-        $registros = Distribuidor::paginate(1);
+        $registros = Distribuidor::paginate(4);
         return view('distribuidor.indexDistribuidor', \compact('registros'));
     }
 

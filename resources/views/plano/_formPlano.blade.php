@@ -3,133 +3,136 @@
 {{-- <input type="hidden" name="tipo" value="{{ $tipo }}"> --}}
 
 <div class="form-group row">
-    <label for="nome" class="col-form-label col-sm-2 required">Nome*</label>
+    <label class="col-form-label col-sm-2 required" for="nome">Nome</label>
     <div class="col-sm-10">
-        <input type="text" name="nome" maxlength="255" class="form-control @error('nome') is-invalid @enderror">
-
+        <input type="text" id="nome" name="nome" required="required" maxlength="18"
+            class="nome form-control @error('nome') is-invalid @enderror">
         @error('nome')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="razao_social">Razão Social</label>
+    <label class="col-form-label col-sm-2 required" for="cir">Cir</label>
     <div class="col-sm-10">
-        <input type="text" id="razao_social" name="razao_social" maxlength="255" class="form-control @error('razao_social') is-invalid @enderror">
-        @error('razao_social')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="documento">Documento*</label>
-    <div class="col-sm-10">
-        <input type="text" id="documento" name="documento" required="required" maxlength="18" class="cpf_cnpj form-control @error('documento') is-invalid @enderror">
-        @error('documento')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="ie_rg">IE/RG</label>
-    <div class="col-sm-10">
-        <input type="text" id="ie_rg" name="ie_rg" maxlength="12" class="ie_rg form-control @error('ie_rg') is-invalid @enderror">
-        @error('ie_rg')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div id="cliente"><div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="nome_contato">Nome Contato*</label>
-    <div class="col-sm-10">
-        <input type="text" id="nome_contato" name="nome_contato" required="required" maxlength="255" class="form-control @error('nome_contato') is-invalid @enderror">
-        @error('nome_contato')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="celular">Celular*</label>
-    <div class="col-sm-10">
-        <input type="text" id="celular" name="celular" required="required" maxlength="15" class="celular form-control @error('celular') is-invalid @enderror">
-        @error('celular')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="email">Email*</label>
-    <div class="col-sm-10">
-        <input type="text" id="email" name="email" maxlength="100" class="form-control @error('email') is-invalid @enderror">
-        @error('email')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="telefone">Telefone</label>
-    <div class="col-sm-10">
-        <input type="text" id="telefone" name="telefone" maxlength="15" class="phone form-control @error('telefone') is-invalid @enderror">
-        @error('telefone')
+        <input type="text" id="cir" name="cir" required="required" maxlength="18"
+            class="cir form-control @error('cir') is-invalid @enderror">
+        @error('cir')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="cep">Cep*</label>
+    <label class="col-form-label col-sm-2 required" for="banda">Banda</label>
     <div class="col-sm-10">
-        <input type="text" id="cep" name="cep" maxlength="9" class="cep form-control @error('cep') is-invalid @enderror">
-        @error('cep')
+        <input type="text" id="banda" name="banda" {{-- required="required" --}} maxlength="18"
+            class="banda form-control @error('banda') is-invalid @enderror">
+        @error('banda')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="logradouro">Logradouro*</label>
+    <label class="col-form-label col-sm-2 required" for="velocmaxdown">Veloc Máxima Down</label>
     <div class="col-sm-10">
-        <input type="text" id="logradouro" name="logradouro" maxlength="150" class="form-control @error('logradouro') is-invalid @enderror">
-        @error('logradouro')
+        <input type="text" id="velocmaxdown" name="velocmaxdown" required="required" maxlength="18"
+            class="velocmaxdown form-control @error('velocmaxdown') is-invalid @enderror">
+        @error('velocmaxdown')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="bairro">Bairro*</label>
+    <label class="col-form-label col-sm-2 required" for="velocmaxup">Veloc Máxina Up</label>
     <div class="col-sm-10">
-        <input type="text" id="bairro" name="bairro" maxlength="100" class="form-control @error('bairro') is-invalid @enderror">
-        @error('bairro')
+        <input type="text" id="velocmaxup" name="velocmaxup" required="required" maxlength="18"
+            class="velocmaxup form-control @error('velocmaxup') is-invalid @enderror">
+        @error('velocmaxup')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="cidade">Cidade*</label>
+    <label class="col-form-label col-sm-2 required" for="velocmindown">Veloc Mínima Down</label>
     <div class="col-sm-10">
-        <input type="text" id="cidade" name="cidade" maxlength="100" class="form-control @error('cidade') is-invalid @enderror">
-        @error('cidade')
+        <input type="text" id="velocmindown" name="velocmindown" required="required" maxlength="18"
+            class="velocmindown form-control @error('velocmindown') is-invalid @enderror">
+        @error('velocmindown')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
+
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="estado">Estado*</label>
+    <label class="col-form-label col-sm-2 required" for="velocminup">Veloc Mínima Up</label>
     <div class="col-sm-10">
-        <input type="text" id="estado" name="estado" maxlength="2" class="form-control @error('estado') is-invalid @enderror">
-        @error('estado')
+        <input type="text" id="velocminup" name="velocminup" required="required" maxlength="18"
+            class="velocminup form-control @error('velocminup') is-invalid @enderror">
+        @error('velocminup')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
-    <div class="form-group row">
+
+<div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="equipamento">Equipamento</label>
+    <div class="col-sm-10">
+        <input type="text" id="equipamento" name="equipamento" required="required" maxlength="18"
+            class="equipamento form-control @error('equipamento') is-invalid @enderror">
+        @error('equipamento')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="valordecusto">Valor de Custo</label>
+    <div class="col-sm-10">
+        <input type="text" id="valordecusto" name="valordecusto" {{-- required="required" --}} maxlength="18"
+            class="valordecusto form-control @error('valordecusto') is-invalid @enderror">
+        @error('valordecusto')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="valormensal">Valor Mensal</label>
+    <div class="col-sm-10">
+        <input type="text" id="valormensal" name="valormensal" required="required" maxlength="18"
+            class="valormensal form-control @error('valormensal') is-invalid @enderror">
+        @error('valormensal')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
     <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
     <div class="col-sm-10">
-        <input type="text" id="observacao" name="observacao" maxlength="500" class="form-control @error('observacao') is-invalid @enderror">
+        <input type="text" id="observacao" name="observacao" maxlength="500"
+            class="form-control @error('observacao') is-invalid @enderror">
         @error('observacao')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="situacao">Situação</label>
+    <div class="col-sm-3">
+        <select class="form-control" name="situacao" id="situacao">
+            <option>Ativo</option>
+            <option>Ativo</option>
+            <option>Ativo</option>
+            <option>Ativo</option>
+        </select>
+    </div>
+</div>
 
 <button class="btn btn-primary" name="submit" value="" type="submit">Salvar</button>
