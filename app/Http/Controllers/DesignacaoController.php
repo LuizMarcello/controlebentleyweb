@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\DesignacaoRequest;
 
 use App\Models\Designacao;
 
@@ -38,7 +38,7 @@ class DesignacaoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DesignacaoRequest $request)
     {
         $registro = Designacao::create($request->all());
 

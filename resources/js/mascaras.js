@@ -7,7 +7,7 @@ $('.cep').mask('99.999-999');
 //.documento
 $('.documento').mask('999.999.999-99');
 //.cpf_cnpj
-$('.cpf_cnpj').mask('999.999.999-99');
+/* $('.cpf_cnpj').mask('999.999.999-99'); */
 //.datanota */
 $('.datanota').mask('99/99/9999');
 //.macaddress
@@ -45,7 +45,7 @@ $(field).keydown(function(){
     } catch (e) {}
 
     var tamanho = $(field).val().length;
-banda
+
     if(tamanho < 11){
         $(field).mask("999.999.999-99");
     } else {

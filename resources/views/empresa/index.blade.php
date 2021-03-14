@@ -166,7 +166,8 @@
                     <div class="card-header">
                         <h3 class="card-title">Listagem de {{ $tipo }}</h3>
                         <div class="card-tools">
-                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-success">Novo(a)
+                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}"
+                                class="btn btn-success">Novo(a)
                                 {{ $tipo }}</a>
                         </div>
                     </div>
@@ -193,7 +194,11 @@
                                         <td>{{ $empresa->nome }}</td>
                                         <td>{{ $empresa->nome_contato }}</td>
                                         <td>{{ $empresa->celular }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('empresas.show', $empresa) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('empresas.edit', $empresa) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

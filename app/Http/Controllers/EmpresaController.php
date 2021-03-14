@@ -71,10 +71,17 @@ class EmpresaController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Aplicando o "Route Model Binding" do laravel,
+     * que está injetando uma instância do Model como
+     * parâmetro.
+     * Isto já vai tornar meu Model "empresa" filtrado
+     * e dísponivel dentro da view retornada.
      */
-    public function edit($id)
+    public function edit(Empresa $empresa)
     {
-        //
+       /*  dd($empresa); */
+       return view('empresa.edit', \compact('empresa'));
     }
 
     /**

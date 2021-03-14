@@ -23,7 +23,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="documento">Documento</label>
     <div class="col-sm-10">
-        <input value="{{ old('documento') }}" type="text" id="documento" name="documento" required="required" maxlength="18" class="cpf_cnpj form-control @error('documento') is-invalid @enderror">
+        <input value="{{ old('documento') }}" type="text" id="documento" name="documento" required="required" maxlength="18"
+         class="documento form-control @error('documento') is-invalid @enderror">
         @error('documento')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

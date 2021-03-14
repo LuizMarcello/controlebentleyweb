@@ -29,6 +29,8 @@
                     {{-- O corpo --}}
                     <div class="card-body">
                         <form action="{{ route('empresas.store') }}" method="POST">
+                            <input type="hidden" name="tipo" value="{{ $tipo }}">
+                            
                             @include('empresa._form')
                         </form>
                     </div>
