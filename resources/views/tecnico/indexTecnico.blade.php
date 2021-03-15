@@ -193,7 +193,11 @@
                                         <td>{{ $registro->nome }}</td>
                                         <td>{{ $registro->nome_contato }}</td>
                                         <td>{{ $registro->celular }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('tecnicos.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('tecnicos.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

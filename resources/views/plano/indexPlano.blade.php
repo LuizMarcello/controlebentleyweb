@@ -193,7 +193,11 @@
                                         <td>{{ $registro->nome }}</td>
                                         <td>{{ $registro->banda }}</td>
                                         <td>{{ $registro->equipamento }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('planos.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('planos.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -209,4 +213,3 @@
         </div>
     </div>
 @endsection
-

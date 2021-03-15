@@ -19,6 +19,6 @@ class Tecnico extends Model
     protected $fillable = [
         'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
         'email', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado',
-        'observacao', 'tipo', 'situacao'
+        'observacao', 'situacao', 'numero'
     ];
 }

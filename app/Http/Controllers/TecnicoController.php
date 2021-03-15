@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\EmpresaRequest;
+use App\Http\Requests\TecnicoRequest;
 
 use App\Models\Tecnico;
 
@@ -38,7 +38,7 @@ class TecnicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EmpresaRequest $request)
+    public function store(TecnicoRequest $request)
     {
         $registro = Tecnico::create($request->all());
 
@@ -61,10 +61,15 @@ class TecnicoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * Aplicando o "Route Model Binding" do laravel,
+     * que está injetando uma instância do Model como
+     * parâmetro.
+     * Isto já vai tornar meu Model "empresa" filtrado
+     * e dísponivel dentro da view retornada.
      */
-    public function edit($id)
+    public function edit(Tecnico $tecnico)
     {
-        //
+        return view('tecnico.editTecnico', \compact('tecnico'));
     }
 
     /**

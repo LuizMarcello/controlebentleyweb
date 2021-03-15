@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editar {{ $empresa->nome }}</h1>
+    <h1>Editando o distribuidor: {{ $distribuidor->nome }}</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.edit', $empresa) }}">Editar</a>
+        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem de Distribuidores</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ route('distribuidors.edit', $distribuidor) }}">Editar</a>
     </li>
 @endsection
 
@@ -17,16 +21,15 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Altere os dados necessários</h3>
-                        {{-- <div class="card-tools">
-                            <a href="{{ route('empresas.index', $empresa) }}?tipo={{ $tipo }}"
-                                class="btn btn-success">Voltar</a>
-                        </div> --}}
+                        <div class="card-tools">
+                            <a href="{{ route('distribuidors.index', $distribuidor) }}" class="btn btn-success">Voltar</a>
+                        </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('empresas.update', $empresa) }}" method="POST">
-                            @include('empresa._form')
+                        <form action="{{ route('distribuidors.update', $distribuidor) }}" method="POST">
+                            @include('distribuidor._formDistribuidor')
                         </form>
                     </div>
 
@@ -35,6 +38,3 @@
         </div>
     </div>
 @endsection
-
-
-
