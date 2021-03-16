@@ -1,12 +1,19 @@
 @csrf
 
+{{-- Essa linha foi colocada dentro do "form" do create: --}}
 {{-- <input type="hidden" name="tipo" value="{{ $tipo }}"> --}}
 
+{{-- Este helper "old()" recebe um segundo argumento para valor padrão, caso ele não tenha
+     um êrro de validação, ou seja, quando não tem um dado de validação antigo, exiba então
+     o valor que vem do banco de dados. Daí então usamos para edição.
+     O @(arroba) esconde êrros no php, no caso, a variável $empresa é injetada somente no
+     edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
+     não injeta esta variável. --}}
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="notafiscal">Nota fiscal*</label>
     <div class="col-sm-10">
-        <input value="{{ old('notafiscal') }}" type="text" id="notafiscal" name="notafiscal" required="required" maxlength="18"
-            class="notafiscal form-control @error('notafiscal') is-invalid @enderror">
+        <input value="{{ old('notafiscal') }}" type="text" id="notafiscal" name="notafiscal" required="required"
+            maxlength="18" class="notafiscal form-control @error('notafiscal') is-invalid @enderror">
         @error('notafiscal')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -16,8 +23,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="datanota">Data da Nota*</label>
     <div class="col-sm-10">
-        <input value="{{ old('datanota') }}" type="text" id="datanota" name="datanota" required="required" maxlength="18"
-            class="datanota form-control @error('datanota') is-invalid @enderror">
+        <input value="{{ old('datanota') }}" type="text" id="datanota" name="datanota" required="required"
+            maxlength="18" class="datanota form-control @error('datanota') is-invalid @enderror">
         @error('datanota')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -71,8 +78,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="macaddress">Mac Address*</label>
     <div class="col-sm-10">
-        <input value="{{ old('macaddress') }}" type="text" id="macaddress" name="macaddress" required="required" maxlength="18"
-            class="macaddress form-control @error('marca') is-invalid @enderror">
+        <input value="{{ old('macaddress') }}" type="text" id="macaddress" name="macaddress" required="required"
+            maxlength="18" class="macaddress form-control @error('marca') is-invalid @enderror">
         @error('macaddress')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

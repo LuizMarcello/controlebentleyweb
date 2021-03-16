@@ -192,7 +192,11 @@
                                         <td>{{ $registro->id }}</td>
                                         <td>{{ $registro->tipodecabo }}</td>
                                         <td>{{ $registro->marca }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('cabos.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('cabos.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

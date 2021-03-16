@@ -1,5 +1,6 @@
 @csrf
 
+{{-- Essa linha foi colocada dentro do "form" do create: --}}
 {{-- <input type="hidden" name="tipo" value="{{ $tipo }}"> --}}
 
 {{-- Este helper "old()" recebe um segundo argumento para valor padrão, caso ele não tenha

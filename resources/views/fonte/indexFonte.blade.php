@@ -193,7 +193,11 @@
                                         <td>{{ $registro->id }}</td>
                                         <td>{{ $registro->marca }}</td>
                                         <td>{{ $registro->modelo }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('fontes.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('fontes.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -209,4 +213,3 @@
         </div>
     </div>
 @endsection
-
