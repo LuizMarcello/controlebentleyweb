@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando o distribuidor: {{ $distribuidor->nome }}</h1>
+    <h3>Editando o distribuidor: {{ $distribuidor->nome }}</h3>
 @endsection
 
 @section('breadcrumb')

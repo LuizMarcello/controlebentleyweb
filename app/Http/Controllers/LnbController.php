@@ -27,7 +27,7 @@ class LnbController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+        public function create()
     {
         return view('lnb.createlnb');
     }
@@ -61,10 +61,16 @@ class LnbController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * Aplicando o "Route Model Binding" do laravel,
+     * que está injetando uma instância do Model como
+     * parâmetro.
+     * Isto já vai tornar meu Model "Lnb" filtrado
+     * e dísponivel dentro da view retornada.
+     *
      */
-    public function edit($id)
+      public function edit(Lnb $lnb)
     {
-        //
+return view('lnb.editLnb', \compact('lnb'));
     }
 
     /**

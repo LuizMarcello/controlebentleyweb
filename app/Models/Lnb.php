@@ -16,7 +16,7 @@ class Lnb extends Model
      *
      * @var array
      */
-    protected $fillable = [
+          protected $fillable = [
         'banda', 'datanota', 'marca', 'modelo', 'notafiscal',
         'serial', 'situacao', 'observacao'
     ];

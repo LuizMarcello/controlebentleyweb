@@ -40,7 +40,7 @@ class EmpresaRequest extends FormRequest
             'razao_social' => ['max:255'],
             'documento' => $this->tipoValidacaoDocumento(),
             'nome_contato' => ['required', 'max:255'],
-            'celular' => ['required', 'size:11'],
+            'celular' => ['required', 'max:20'],
             'email' => ['required', 'email'],
             'telefone' => ['size:10'],
             'cep' => ['required', 'size:8'],

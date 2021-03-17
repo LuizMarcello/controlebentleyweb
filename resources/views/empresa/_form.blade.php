@@ -66,7 +66,7 @@
         <label class="col-form-label col-sm-2 required" for="celular">Celular*</label>
         <div class="col-sm-10">
             <input value="{{ old('celular', @$empresa->celular) }}" type="text" id="celular" name="celular"
-                required="required" maxlength="15" class="celular form-control @error('celular') is-invalid @enderror">
+                required="required" maxlength="20" class="celular form-control @error('celular') is-invalid @enderror">
             @error('celular')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

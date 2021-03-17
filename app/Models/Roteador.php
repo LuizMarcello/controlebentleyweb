@@ -14,9 +14,9 @@ class Roteador extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+       * @var array
      */
-    protected $fillable = [
+      protected $fillable = [
         'banda', 'datanota', 'macaddress', 'marca', 'modelo', 'notafiscal',
         'serial', 'situacao', 'observacao'
     ];

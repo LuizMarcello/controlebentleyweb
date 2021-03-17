@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando antena modelo: {{ $antena->modelo }}</h1>
+    <h3>Editando antena modelo: {{ $antena->modelo }}</h3>
 @endsection
 
 @section('breadcrumb')

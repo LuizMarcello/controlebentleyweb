@@ -14,7 +14,7 @@ class AlterEmpresasTable extends Migration
     public function up()
     {
         Schema::table('empresas', function (Blueprint $table) {
-            $table->string('situacao', 20);
+            $table->string('bairro', 20);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterEmpresasTable extends Migration
     public function down()
     {
         Schema::table('empresas', function (Blueprint $table) {
-            $table->dropColumn('situacao');
+            $table->dropColumn('bairro');
         });
     }
 }

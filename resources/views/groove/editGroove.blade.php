@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando groove modelo {{ $groove->modelo}} marca {{ $groove->marca}}</h1>
+    <h3>Editando groove modelo {{ $groove->modelo}} marca {{ $groove->marca}}</h3>
 @endsection
 
 @section('breadcrumb')

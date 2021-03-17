@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando o cabo {{ $cabo->tipodecabo }} marca {{ $cabo->marca }}</h1>
+    <h3>Editando o cabo {{ $cabo->tipodecabo }} marca {{ $cabo->marca }}</h3>
 @endsection
 
 @section('breadcrumb')

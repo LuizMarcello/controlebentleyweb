@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editar {{ $empresa->nome }}</h1>
+    <h3>Editando {{ $empresa->nome }}</h3>
 @endsection
 
 @section('breadcrumb')
@@ -17,10 +17,10 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Altere os dados necessários</h3>
-                        {{-- <div class="card-tools">
-                            <a href="{{ route('empresas.index', $empresa) }}?tipo={{ $tipo }}"
+                        <div class="card-tools">
+                            <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}"
                                 class="btn btn-success">Voltar</a>
-                        </div> --}}
+                        </div>
                     </div>
 
                     {{-- O corpo --}}

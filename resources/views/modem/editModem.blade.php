@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando modem modelo: {{ $modem->modelo }}</h1>
+    <h3>Editando modem modelo: {{ $modem->modelo }} marca {{ $modem->marca }}</h3>
 @endsection
 
 @section('breadcrumb')

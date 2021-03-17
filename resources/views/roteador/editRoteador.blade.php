@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando o roteador modelo {{ $roteador->modelo }} marca {{ $roteador->marca }}</h1>
+    <h3>Editando o roteador modelo {{ $roteador->modelo }} marca {{ $roteador->marca }}</h3>
 @endsection
 
 @section('breadcrumb')

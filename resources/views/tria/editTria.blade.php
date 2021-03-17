@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h3>Editando a fonte modelo {{ $fonte->modelo }} </h3>
+    <h3>Editando tria modelo {{ $tria->modelo }} marca {{ $tria->marca }}</h3>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de Fontes</a>
+        <a href="{{ route('trias.index', $tria) }}">Listagem de trias</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.edit', $fonte) }}">Editar</a>
+        <a href="{{ route('trias.edit', $tria) }}">Editar</a>
     </li>
 @endsection
 
@@ -22,14 +22,14 @@
                     <div class="card-header">
                         <h3 class="card-title">Altere os dados necessários</h3>
                         <div class="card-tools">
-                            <a href="{{ route('fontes.index', $fonte) }}" class="btn btn-success">Voltar</a>
+                            <a href="{{ route('trias.index', $tria) }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('fontes.update', $fonte) }}" method="POST">
-                            @include('fonte._formFonte')
+                        <form action="{{ route('trias.update', $tria) }}" method="POST">
+                            @include('tria._formTria')
                         </form>
                     </div>
 

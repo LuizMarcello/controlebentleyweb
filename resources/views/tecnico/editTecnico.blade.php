@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando o técnico: {{ $tecnico->nome }}</h1>
+    <h3>Editando o técnico: {{ $tecnico->nome }}</h3>
 @endsection
 
 @section('breadcrumb')

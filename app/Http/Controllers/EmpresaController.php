@@ -80,8 +80,13 @@ class EmpresaController extends Controller
      */
     public function edit(Empresa $empresa)
     {
-       /*  dd($empresa); */
-       return view('empresa.edit', \compact('empresa'));
+
+        $tipo = $empresa->tipo;
+
+        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+            return \abort(404);
+        }
+       return view('empresa.edit', \compact('empresa', 'tipo'));
     }
 
     /**
