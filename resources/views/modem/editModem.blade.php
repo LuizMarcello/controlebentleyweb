@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h3>Editando modem modelo: {{ $modem->modelo }} marca {{ $modem->marca }}</h3>
+    <h3>Editando o modem marca {{ $modem->marca }} modelo {{ $modem->modelo }}</h3>
 @endsection
 
 @section('breadcrumb')
@@ -31,8 +31,9 @@
                         <form action="{{ route('modens.update', $modem) }}" method="POST">
                             @include('modem._formModem')
                         </form>
-                    </div>
 
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('planos.index') }}">Listagem de Planos</a>
+        <a href="{{ route('planos.index', $plano) }}">Listagem de Planos</a>
     </li>
 
     <li class="breadcrumb-item">
@@ -36,6 +36,5 @@
 
             </div>
         </div>
-    </div>
     </div>
 @endsection

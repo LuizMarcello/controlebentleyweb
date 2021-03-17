@@ -27,7 +27,7 @@ class ModemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         return view('modem.createModem');
     }
@@ -45,7 +45,6 @@ class ModemController extends Controller
         return \redirect()->route('modens.show', $registro->id);
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -62,17 +61,18 @@ class ModemController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
      * Isto já vai tornar meu Model "Modem" filtrado
      * e dísponivel dentro da view retornada.
+     *
      */
     public function edit(Modem $modem)
     {
-         /*  dd($modem); */
-       return view('modem.editModem', \compact('modem'));
+
+        return view('modem.editModem', \compact('modem'));
+        dd($modem);
     }
 
     /**

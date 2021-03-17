@@ -23,11 +23,12 @@ class ModemRequest extends FormRequest
      */
     public function rules()
     {
+        dd($this->all());
         return [
             'serial' => ['required', 'max:20', 'min:3'],
             'modelo' => ['required', 'alpha_num', 'max:20', 'min:3'],
             'notafiscal' => ['required', 'integer'],
-            'banda' => ['required', 'alpha', 'max:2', 'min:2'],
+            'banda' => ['required', 'max:7', 'min:7'],
             'datanota' => ['required', 'date_format:d/m/Y'],
             'macaddress' => ['required', 'max:20', 'min:12'],
             'marca' => ['required', 'alpha_num', 'max:50', 'min:2']

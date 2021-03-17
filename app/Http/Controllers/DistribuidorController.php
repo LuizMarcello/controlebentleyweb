@@ -40,7 +40,7 @@ class DistribuidorController extends Controller
      */
     public function store(DistribuidorRequest $request)
     {
-        $registro = distribuidor::create($request->all());
+        $registro = Distribuidor::create($request->all());
 
         return \redirect()->route('distribuidors.show', $registro->id);
     }

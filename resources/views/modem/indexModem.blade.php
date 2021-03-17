@@ -157,6 +157,7 @@
     </nav>
     <!-- /.navbar -->
 @endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -169,16 +170,18 @@
                                 Modem</a>
                         </div>
                     </div>
+
+
                     {{-- O corpo --}}
                     <div class="card-body">
                         <table class="table">
+
                             <thead>
                                 <tr>
                                     <th style="width: 10px"></th>
-                                    <th>Id</th>
+                                    <th>Banda</th>
                                     <th>Marca</th>
                                     <th>Modelo</th>
-                                    <th>Banda</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -186,11 +189,10 @@
                             <tbody>
                                 @foreach ($registros as $registro)
                                     <tr>
-                                        <td></td>
                                         <td>{{ $registro->id }}</td>
+                                        <td>{{ $registro->banda }}</td>
                                         <td>{{ $registro->marca }}</td>
                                         <td>{{ $registro->modelo }}</td>
-                                        <td>{{ $registro->banda }}</td>
                                         <td><a href="{{ route('modens.show', $registro) }}"
                                                 class="btn btn-primary btn-sm">Detalhes</a>
                                             <a href="{{ route('modens.edit', $registro) }}"
@@ -199,6 +201,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+
                         </table>
                     </div>
                     <div class="card-footer clearfix">
