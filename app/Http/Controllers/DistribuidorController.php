@@ -65,7 +65,7 @@ class DistribuidorController extends Controller
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
-     * Isto já vai tornar meu Model "empresa" filtrado
+     * Isto já vai tornar meu Model "Distribuidor" filtrado
      * e dísponivel dentro da view retornada.
      */
     public function edit(Distribuidor $distribuidor)

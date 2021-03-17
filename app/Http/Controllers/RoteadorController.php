@@ -62,10 +62,17 @@ class RoteadorController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Aplicando o "Route Model Binding" do laravel,
+     * que está injetando uma instância do Model como
+     * parâmetro.
+     * Isto já vai tornar meu Model "Roteador" filtrado
+     * e dísponivel dentro da view retornada.
+     *
      */
-    public function edit($id)
+    public function edit(Roteador $roteador)
     {
-        //
+        return view('roteador.editRoteador', \compact('roteador'));
     }
 
     /**

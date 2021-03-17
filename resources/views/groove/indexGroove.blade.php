@@ -195,7 +195,11 @@
                                         <td>{{ $registro->marca }}</td>
                                         <td>{{ $registro->modelo }}</td>
                                         <td>{{ $registro->banda }}</td>
-                                        <td><a href="" class="btn btn-primary btn-sm">Detalhes</a></td>
+                                        <td><a href="{{ route('grooves.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('grooves.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

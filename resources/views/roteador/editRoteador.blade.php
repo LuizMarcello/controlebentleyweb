@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Editando a fonte modelo {{ $fonte->modelo }} </h1>
+    <h1>Editando o roteador modelo {{ $roteador->modelo }} marca {{ $roteador->marca }}</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de Fontes</a>
+        <a href="{{ route('roteadors.index', $roteador) }}">Listagem de Roteadores</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.edit', $fonte) }}">Editar</a>
+        <a href="{{ route('roteadors.edit', $roteador) }}">Editar</a>
     </li>
 @endsection
 
@@ -22,14 +22,14 @@
                     <div class="card-header">
                         <h3 class="card-title">Altere os dados necessários</h3>
                         <div class="card-tools">
-                            <a href="{{ route('fontes.index', $fonte) }}" class="btn btn-success">Voltar</a>
+                            <a href="{{ route('roteadors.index', $roteador) }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('fontes.update', $fonte) }}" method="POST">
-                            @include('fonte._formFonte')
+                        <form action="{{ route('roteadors.update', $roteador) }}" method="POST">
+                            @include('roteador._formRoteador')
                         </form>
                     </div>
 
