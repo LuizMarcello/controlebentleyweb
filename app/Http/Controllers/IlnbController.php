@@ -77,13 +77,18 @@ class IlnbController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param IlnbRequest $request
+     * @param Ilnb $ilnb
+     * @return void
+     *
+     * Usando a classe "IlnbRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(IlnbRequest $request, Ilnb $ilnb)
     {
-        //
+        $ilnb->update($request->all());
+
+        return \redirect()->route('ilnbs.show', $ilnb);
     }
 
     /**

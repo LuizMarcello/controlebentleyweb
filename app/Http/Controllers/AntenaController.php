@@ -48,12 +48,13 @@ class AntenaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Antena $antena
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Antena $antena)
     {
-        return 'Estou no show';
+        return view('antena.showAntena', \compact('antena'));
     }
 
     /**
@@ -75,13 +76,18 @@ class AntenaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param AntenaRequest $request
+     * @param Antena $antena
+     * @return void
+     *
+     * Usando a classe "AntenaRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(AntenaRequest $request, Antena $antena)
     {
-        //
+        $antena->update($request->all());
+
+        return \redirect()->route('antenas.show', $antena);
     }
 
     /**

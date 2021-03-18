@@ -76,13 +76,18 @@ class TriaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param TriaRequest $request
+     * @param Tria $tria
+     * @return void
+     *
+     * Usando a classe "TriaRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(TriaRequest $request, Tria $tria)
     {
-        //
+        $tria->update($request->all());
+
+        return \redirect()->route('trias.show', $tria);
     }
 
     /**

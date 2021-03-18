@@ -49,12 +49,13 @@ class FonteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Fonte $fonte
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Fonte $fonte)
     {
-        return 'Estou no show';
+        return view('fonte.showFonte', \compact('fonte'));
     }
 
     /**
@@ -77,13 +78,18 @@ class FonteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param FonteRequest $request
+     * @param Fonte $fonte
+     * @return void
+     *
+     * Usando a classe "FonteRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(FonteRequest $request, Fonte $fonte)
     {
-        //
+        $fonte->update($request->all());
+
+        return \redirect()->route('fontes.show', $fonte);
     }
 
     /**

@@ -76,13 +76,18 @@ class GrooveController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Groove $request
+     * @param Groove $groove
+     * @return void
+     *
+     * Usando a classe "GrooveRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(GrooveRequest $request, Groove $groove)
     {
-        //
+        $groove->update($request->all());
+
+        return \redirect()->route('grooves.show', $groove);
     }
 
     /**

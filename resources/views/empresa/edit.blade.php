@@ -26,6 +26,10 @@
                     {{-- O corpo --}}
                     <div class="card-body">
                         <form action="{{ route('empresas.update', $empresa) }}" method="POST">
+                            {{-- {{ csrf_field() }} --}}
+                            @method('PUT')
+                            {{-- ou assim --}}
+                            {{-- <input type="hidden" name="_method" value="put"> --}}
                             @include('empresa._form')
                         </form>
                     </div>
@@ -35,6 +39,3 @@
         </div>
     </div>
 @endsection
-
-
-

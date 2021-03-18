@@ -29,6 +29,10 @@
                     {{-- O corpo --}}
                     <div class="card-body">
                         <form action="{{ route('fontes.update', $fonte) }}" method="POST">
+                            {{-- {{ csrf_field() }} --}}
+                            @method('PUT')
+                            {{-- ou assim --}}
+                            {{-- <input type="hidden" name="_method" value="put"> --}}
                             @include('fonte._formFonte')
                         </form>
                     </div>

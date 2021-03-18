@@ -33,9 +33,13 @@ class EmpresaRequest extends FormRequest
 
         return [
             /**
-             * Esta regra define quais unicas palavras aceitas no campo tipo.
-             */
-            'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
+             * Esta regra define quais unicas palavras aceitas no campo tipo,
+             * quando for no "edit".
+             * 'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
+             *
+             * Criando um método para essa regra funcionar no "edit" e no "upgrade"
+             **/
+            'tipo' => $this->validarTipo(),
             'nome' => ['required', 'max:255'],
             'razao_social' => ['max:255'],
             'documento' => $this->tipoValidacaoDocumento(),
@@ -47,7 +51,8 @@ class EmpresaRequest extends FormRequest
             'rua' => ['required'],
             'bairro' => ['required', 'max:50'],
             'cidade' => ['required', 'max:50'],
-            'estado' => ['required', 'max:2']
+            'estado' => ['required', 'max:2'],
+            'numero' => ['required', 'max:5']
        ];
    }
 
@@ -83,7 +88,20 @@ class EmpresaRequest extends FormRequest
        }
        return ['required', 'cnpj'];
    }
+
+   /**
+    * Verifica a o tipo do método para saber se valida o campo "tipo"
+    *
+    * @return void
+    */
+   private function validarTipo()
+   {
+       /* dd($this->method()); */
+        if ($this->method() === 'POST'){
+            return ['required', Rule::in(['cliente', 'fornecedor'])];
+        }
+        return [];
 }
 
-
+}
 

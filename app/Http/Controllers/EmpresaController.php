@@ -58,19 +58,20 @@ class EmpresaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Empresa $empresa
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Empresa $empresa)
     {
-        return 'Estou no show';
+        return view('empresa.show', \compact('empresa'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Empresa $empresa
+     * @return void
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
@@ -92,13 +93,18 @@ class EmpresaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param EmpresaRequest $request
+     * @param Empresa $empresa
+     * @return void
+     *
+     * Usando a classe "EmpresaRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(EmpresaRequest $request, Empresa $empresa)
     {
-        //
+        $empresa->update($request->all());
+
+        return \redirect()->route('empresas.show', $empresa);
     }
 
     /**

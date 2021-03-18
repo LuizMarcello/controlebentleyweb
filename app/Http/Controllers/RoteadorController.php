@@ -75,16 +75,21 @@ class RoteadorController extends Controller
         return view('roteador.editRoteador', \compact('roteador'));
     }
 
-    /**
+     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Roteador Request $request
+     * @param Roteador $Roteador
+     * @return void
+     *
+     * Usando a classe "RoteadorRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(RoteadorRequest $request, Roteador $roteador)
     {
-        //
+        $roteador->update($request->all());
+
+        return \redirect()->route('roteadors.show', $roteador);
     }
 
     /**

@@ -75,13 +75,18 @@ class TecnicoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param TecnicoRequest $request
+     * @param Tecnico $tecnico
+     * @return void
+     *
+     * Usando a classe "TecnicoRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(TecnicoRequest $request, Tecnico $tecnico)
     {
-        //
+        $tecnico->update($request->all());
+
+        return \redirect()->route('tecnicos.show', $tecnico);
     }
 
     /**

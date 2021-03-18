@@ -76,13 +76,18 @@ return view('lnb.editLnb', \compact('lnb'));
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param LnbRequest $request
+     * @param Lnb $lnb
+     * @return void
+     *
+     * Usando a classe "LnbRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(LnbRequest $request, Lnb $lnb)
     {
-        //
+        $lnb->update($request->all());
+
+        return \redirect()->route('lnbs.show', $lnb);
     }
 
     /**

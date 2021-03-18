@@ -74,16 +74,21 @@ class DistribuidorController extends Controller
        return view('distribuidor.editDistribuidor', \compact('distribuidor'));
     }
 
-    /**
+     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param DistribuidorRequest $request
+     * @param Distribuidor $distribuidor
+     * @return void
+     *
+     * Usando a classe "DistribuidorRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(DistribuidorRequest $request, Distribuidor $distribuidor)
     {
-        //
+        $distribuidor->update($request->all());
+
+        return \redirect()->route('distribuidors.show', $distribuidor);
     }
 
     /**

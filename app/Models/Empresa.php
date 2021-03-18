@@ -19,7 +19,7 @@ class Empresa extends Model
     protected $fillable = [
         'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
         'email', 'telefone', 'cep', 'bairro', 'cidade', 'estado',
-        'observacao', 'tipo', 'situacao','rua'
+        'observacao', 'tipo', 'situacao', 'rua', 'numero'
     ];
 
     /**

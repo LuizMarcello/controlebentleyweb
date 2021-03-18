@@ -46,15 +46,16 @@ class CaboController extends Controller
         return \redirect()->route('cabos.show', $registro->id);
     }
 
-    /**
+   /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Cabo $cabo
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Cabo $cabo)
     {
-        return 'Estou no show';
+        return view('cabo.showCabo', \compact('cabo'));
     }
 
     /**
@@ -66,7 +67,7 @@ class CaboController extends Controller
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
-     * Isto já vai tornar meu Model "empresa" filtrado
+     * Isto já vai tornar meu Model "Cabo" filtrado
      * e dísponivel dentro da view retornada.
      */
     public function edit(Cabo $cabo)
@@ -74,17 +75,24 @@ class CaboController extends Controller
         return view('cabo.editCabo', \compact('cabo'));
     }
 
-    /**
+
+   /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CaboRequest $request
+     * @param Cabo $cabo
+     * @return void
+     *
+     * Usando a classe "CaboRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(CaboRequest $request, Cabo $cabo)
     {
-        //
+        $cabo->update($request->all());
+
+        return \redirect()->route('cabos.show', $cabo);
     }
+
 
     /**
      * Remove the specified resource from storage.
