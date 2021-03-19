@@ -43,6 +43,16 @@
         @enderror
     </div>
 </div>
+<div class="form-group row">
+    <label class="col-form-label col-sm-2" for="dataNascimento">Data de nascimento</label>
+    <div class="col-sm-10">
+        <input value="{{ old('dataNascimento', @$tecnico->dataNascimento) }}" type="text" id="dataNascimento" name="dataNascimento" maxlength="15"
+            class="dataNascimento form-control @error('dataNascimento') is-invalid @enderror">
+        @error('dataNascimento')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
 <div id="cliente">
     <div class="form-group row">
         <label class="col-form-label col-sm-2 required" for="nome_contato">Nome Contato*</label>
@@ -50,6 +60,16 @@
             <input value="{{ old('nome_contato', @$tecnico->nome_contato) }}" type="text" id="nome_contato" name="nome_contato"
                 required="required" maxlength="255" class="form-control @error('nome_contato') is-invalid @enderror">
             @error('nome_contato')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2" for="telefone">Telefone</label>
+        <div class="col-sm-10">
+            <input value="{{ old('telefone', @$tecnico->telefone) }}" type="text" id="telefone" name="telefone" maxlength="15"
+                class="phone form-control @error('telefone') is-invalid @enderror">
+            @error('telefone')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -74,16 +94,7 @@
             @enderror
         </div>
     </div>
-    <div class="form-group row">
-        <label class="col-form-label col-sm-2" for="telefone">Telefone</label>
-        <div class="col-sm-10">
-            <input value="{{ old('telefone', @$tecnico->telefone) }}" type="text" id="telefone" name="telefone" maxlength="15"
-                class="phone form-control @error('telefone') is-invalid @enderror">
-            @error('telefone')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-        </div>
-    </div>
+
 
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="cep">Cep*</label>

@@ -9,7 +9,8 @@
      O @(arroba) esconde êrros no php, no caso, a variável $empresa é injetada somente no
      edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
      não injeta esta variável. --}}
-<div class="form-group row">
+
+     <div class="form-group row">
     <label for="nome" class="col-form-label col-sm-2 required">Nome*</label>
     <div class="col-sm-10">
         <input value="{{ old('nome', @$empresa->nome) }}" type="text" name="nome" maxlength="255"
@@ -153,6 +154,7 @@
             @enderror
         </div>
     </div>
+    
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
         <div class="col-sm-10">

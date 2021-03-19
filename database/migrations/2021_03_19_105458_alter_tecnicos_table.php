@@ -14,7 +14,7 @@ class AlterTecnicosTable extends Migration
     public function up()
     {
         Schema::table('tecnicos', function (Blueprint $table) {
-            $table->string('rua', 50);
+            $table->string('dataNascimento', 10);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterTecnicosTable extends Migration
     public function down()
     {
         Schema::table('tecnicos', function (Blueprint $table) {
-            $table->dropColumn('rua');
+            $table->dropColumn('dataNascimento');
         });
     }
 }

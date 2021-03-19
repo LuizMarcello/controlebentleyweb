@@ -34,6 +34,8 @@ $('.cir').mask('99:9');
 $('.banda').mask('AA-Band');
 //.ie_rg
 $('.ie_rg').mask('9.999.999-9');
+//.dataNascimento */
+$('.dataNascimento').mask('99/99/9999');
 
 /**
  * função devido a classe ser "cpf" ou "cnpj", assim

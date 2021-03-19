@@ -185,11 +185,11 @@
                                 <strong>Razão Social</strong>: {{ $empresa->razao_social }} <br>
                                 <strong>CNPJ/CPF</strong>: {{ $empresa->documento }} <br>
                                 <strong>IE/RG</strong>: {{ $empresa->ie_rg }} <br>
-                                <strong>Data do cadastro</strong>: {{ $empresa->datacadastro }} <br>
+                                <strong>Data do cadastro</strong>: {{ $empresa->created_at }} <br>
+                                <strong>Data da última alteração</strong>: {{ $empresa->updated_at }} <br>
                                 <strong>UF/IE</strong>: {{ $empresa->uf_ie }} <br>
                                 <strong>Equipamento</strong>: {{ $empresa->equipamento }} <br>
                                 <strong>Observações</strong>: {{ $empresa->observacao }} <br>
-                                <strong>Situação</strong>: {{ $empresa->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
                                 <address>
@@ -200,13 +200,15 @@
                                     <strong>Celular:</strong> {{ $empresa->celular }} <br>
                                     <strong>Telefone:</strong> {{ $empresa->telefone }} <br>
                                     <strong>Email:</strong> {{ $empresa->email }}
+                                    <strong>Situação</strong>: {{ $empresa->situacao }} <br>
                                 </address>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+

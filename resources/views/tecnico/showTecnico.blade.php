@@ -183,9 +183,8 @@
                                 <strong>Nome</strong>: {{ $tecnico->nome }} <br>
                                 <strong>CNPJ/CPF</strong>: {{ $tecnico->documento }} <br>
                                 <strong>IE/RG</strong>: {{ $tecnico->ie_rg }} <br>
-                                <strong>Ultima alteração</strong>: {{ $tecnico->updated_at }} <br>
-                                {{-- <strong>UF/IE</strong>: {{ $tecnico->uf_ie }} <br> --}}
-                               {{--  <strong>Equipamento</strong>: {{ $tecnico->equipamento }} <br> --}}
+                                <strong>Data do cadastro</strong>: {{ $tecnico->created_at }} <br>
+                                <strong>Data da última alteração</strong>: {{ $tecnico->updated_at }} <br>
                                 <strong>Observações</strong>: {{ $tecnico->observacao }} <br>
                                 <strong>Situação</strong>: {{ $tecnico->situacao }} <br>
                             </div>
@@ -208,6 +207,7 @@
         </div>
     </div>
 @endsection
+
 
 
 
