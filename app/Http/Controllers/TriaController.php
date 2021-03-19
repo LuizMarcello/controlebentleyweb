@@ -45,15 +45,16 @@ class TriaController extends Controller
         return \redirect()->route('trias.show', $registro->id);
     }
 
-    /**
+   /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Tria $tria
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Tria $tria)
     {
-        return 'Estou no show';
+        return view('tria.showTria', \compact('tria'));
     }
 
     /**

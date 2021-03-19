@@ -96,11 +96,11 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-form-label col-sm-2" for="logradouro">Logradouro*</label>
+        <label class="col-form-label col-sm-2" for="rua">Rua</label>
         <div class="col-sm-10">
-            <input value="{{ old('logradouro', @$tecnico->logradouro) }}" type="text" id="logradouro" name="logradouro" maxlength="150"
-                class="form-control @error('logradouro') is-invalid @enderror">
-            @error('logradouro')
+            <input value="{{ old('rua', @$tecnico->rua) }}" type="text" id="rua" name="rua" maxlength="150"
+                class="form-control @error('rua') is-invalid @enderror">
+            @error('rua')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

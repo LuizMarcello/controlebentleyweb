@@ -46,15 +46,16 @@ class RoteadorController extends Controller
         return \redirect()->route('roteadors.show', $registro->id);
     }
 
-    /**
+     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Roteador $roteador
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Roteador $roteador)
     {
-        return 'Estou no show';
+        return view('roteador.showroteador', \compact('roteador'));
     }
 
     /**

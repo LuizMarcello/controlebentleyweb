@@ -76,8 +76,9 @@ class EmpresaRequest extends FormRequest
    }
 
     /**
-    * Retorna o tipo de validação (cpf-cnpj) baseado
+    * Retorna o "tipo de validação" (cpf-cnpj) baseado
     * no tamanho do campo do doc
+    * Se é o cpf ou o cnpj que terá que ser validado
     * Por estar dentro do método, não precisa do "else"
     * @return void
     */

@@ -35,7 +35,7 @@ class TecnicoRequest extends FormRequest
             'email' => ['required', 'email'],
             'telefone' => ['size:10'],
             'cep' => ['required', 'size:8'],
-            'logradouro' => ['required'],
+            'rua' => ['required'],
             'bairro' => ['required', 'max:50'],
             'cidade' => ['required', 'max:50'],
             'estado' => ['required', 'max:2'],

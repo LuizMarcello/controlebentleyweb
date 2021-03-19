@@ -48,12 +48,13 @@ class IlnbController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Ilnb $ilnb
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Ilnb $ilnb)
     {
-        return 'Estou no show';
+        return view('ilnb.showilnb', \compact('ilnb'));
     }
 
     /**
@@ -69,19 +70,19 @@ class IlnbController extends Controller
      *
      */
 
-    public function edit(Ilnb $ilnb)
+    public function edit(Ilnb $iilnb)
     {
-        return view('ilnb.editIlnb', \compact('ilnb'));
+        return view('ilnb.editIilnb', \compact('ilnb'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param IlnbRequest $request
-     * @param Ilnb $ilnb
+     * @param IilnbRequest $request
+     * @param Iilnb $iilnb
      * @return void
      *
-     * Usando a classe "IlnbRequest" para validar.
+     * Usando a classe "IilnbRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
     public function update(IlnbRequest $request, Ilnb $ilnb)

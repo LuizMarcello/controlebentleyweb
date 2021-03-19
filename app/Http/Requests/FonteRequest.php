@@ -28,10 +28,10 @@ class FonteRequest extends FormRequest
             'serial' => ['required', 'alpha_num', 'max:30', 'min:3'],
             'voltagem' => ['required', 'alpha_num', 'max:8', 'min:8'],
             'notafiscal' => ['required', 'integer'],
-            'banda' => ['required', 'alpha', 'max:2', 'min:2'],
             'datanota' => ['required', 'date_format:d/m/Y'],
             'marca' => ['required', 'alpha_num', 'max:50', 'min:2']
         ];
     }
 }
+
 

@@ -32,10 +32,12 @@ $('.velocminup').mask('999 Kbps');
 $('.cir').mask('99:9');
 //.banda
 $('.banda').mask('AA-Band');
-
+//.ie_rg
+$('.ie_rg').mask('9.999.999-9');
 
 /**
- * função devido a classe ser "cpf" ou "cnpj", ficando assim automático.
+ * função devido a classe ser "cpf" ou "cnpj", assim
+ * aplicando a máscara automaticamente.
  */
 var field = '.documento';
 

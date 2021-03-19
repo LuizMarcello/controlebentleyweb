@@ -48,12 +48,13 @@ class LnbController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Lnb $lnb
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Lnb $lnb)
     {
-        return 'Estou no show';
+        return view('lnb.showlnb', \compact('lnb'));
     }
 
     /**

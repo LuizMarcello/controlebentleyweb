@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da fonte modelo {{ $fonte->modelo }} marca {{ $fonte->marca }}</h4>
+    <h4>Detalhes da groove modelo {{ $groove->modelo }} marca {{ $groove->marca }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de fontes</a>
+        <a href="{{ route('grooves.index', $groove) }}">Listagem de grooves</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.show', $fonte) }}">Detalhes do fonte</a>
+        <a href="{{ route('grooves.show', $groove) }}">Detalhes da groove</a>
     </li>
 @endsection
 
@@ -173,23 +173,23 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Modelo {{ $fonte->modelo }}
+                                    <i class="fas fa-globe"></i> Modelo {{ $groove->modelo }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nota Fiscal</strong>: {{ $fonte->notafiscal }} <br>
-                                <strong>Data da nota</strong>: {{ $fonte->datanota }} <br>
-                                <strong>Marca</strong>: {{ $fonte->marca }} <br>
-                                <strong>Modelo</strong>: {{ $fonte->modelo }} <br>
+                                <strong>Nota Fiscal</strong>: {{ $groove->notafiscal }} <br>
+                                <strong>Data da nota</strong>: {{ $groove->datanota }} <br>
+                                <strong>Marca</strong>: {{ $groove->marca }} <br>
+                                <strong>Modelo</strong>: {{ $groove->modelo }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <strong>Serial</strong>: {{ $fonte->serial }} <br>
-                                <strong>Voltagem</strong>: {{ $fonte->voltagem }} <br>
-                                <strong>Observações</strong>: {{ $fonte->observacao }} <br>
-                                <strong>Situação</strong>: {{ $fonte->situacao }} <br>
+                                <strong>Banda</strong>: {{ $groove->banda }} <br>
+                                <strong>Serial</strong>: {{ $groove->serial }} <br>
+                                <strong>Observações</strong>: {{ $groove->observacao }} <br>
+                                <strong>Situação</strong>: {{ $groove->situacao }} <br>
                             </div>
                         </div>
                     </div>
@@ -198,3 +198,5 @@
         </div>
     </div>
 @endsection
+
+

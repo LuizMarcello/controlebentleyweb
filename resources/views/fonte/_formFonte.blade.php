@@ -32,17 +32,6 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="banda">Banda*</label>
-    <div class="col-sm-10">
-        <input value="{{ old('banda', @$fonte->banda) }}" type="text" id="banda" name="banda" {{-- required="required" --}} maxlength="18"
-            class="banda form-control @error('banda') is-invalid @enderror">
-        @error('banda')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="marca">Marca*</label>
     <div class="col-sm-10">
         <input value="{{ old('marca', @$fonte->marca) }}" type="text" id="marca" name="marca" {{-- required="required" --}} maxlength="18"

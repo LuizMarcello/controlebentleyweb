@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da fonte modelo {{ $fonte->modelo }} marca {{ $fonte->marca }}</h4>
+    <h4>Detalhes do técnico {{ $tecnico->nome }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de fontes</a>
+        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem dos tecnicos</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.show', $fonte) }}">Detalhes do fonte</a>
+        <a href="{{ route('tecnicos.show', $tecnico) }}">Detalhes do tecnico</a>
     </li>
 @endsection
 
@@ -173,28 +173,43 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Modelo {{ $fonte->modelo }}
+                                    <i class="fas fa-globe"></i> {{ $tecnico->nome }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nota Fiscal</strong>: {{ $fonte->notafiscal }} <br>
-                                <strong>Data da nota</strong>: {{ $fonte->datanota }} <br>
-                                <strong>Marca</strong>: {{ $fonte->marca }} <br>
-                                <strong>Modelo</strong>: {{ $fonte->modelo }} <br>
+                                <strong>Nome</strong>: {{ $tecnico->nome }} <br>
+                                <strong>CNPJ/CPF</strong>: {{ $tecnico->documento }} <br>
+                                <strong>IE/RG</strong>: {{ $tecnico->ie_rg }} <br>
+                                <strong>Ultima alteração</strong>: {{ $tecnico->updated_at }} <br>
+                                {{-- <strong>UF/IE</strong>: {{ $tecnico->uf_ie }} <br> --}}
+                               {{--  <strong>Equipamento</strong>: {{ $tecnico->equipamento }} <br> --}}
+                                <strong>Observações</strong>: {{ $tecnico->observacao }} <br>
+                                <strong>Situação</strong>: {{ $tecnico->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <strong>Serial</strong>: {{ $fonte->serial }} <br>
-                                <strong>Voltagem</strong>: {{ $fonte->voltagem }} <br>
-                                <strong>Observações</strong>: {{ $fonte->observacao }} <br>
-                                <strong>Situação</strong>: {{ $fonte->situacao }} <br>
+                                <address>
+                                    {{ $tecnico->rua }}, {{ $tecnico->numero }} <br>
+                                    {{ $tecnico->bairro }}, {{ $tecnico->cidade }} - {{ $tecnico->estado }}<br>
+                                    {{ $tecnico->cep }} <br>
+                                    <strong>Nome de Contato:</strong> {{ $tecnico->nome_contato }} <br>
+                                    <strong>Celular:</strong> {{ $tecnico->celular }} <br>
+                                    <strong>Telefone:</strong> {{ $tecnico->telefone }} <br>
+                                    <strong>Email:</strong> {{ $tecnico->email }}
+                                </address>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+
+
+
+

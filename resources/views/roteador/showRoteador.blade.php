@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da fonte modelo {{ $fonte->modelo }} marca {{ $fonte->marca }}</h4>
+    <h4>Detalhes do roteador modelo {{ $roteador->modelo }} marca {{ $roteador->marca }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de fontes</a>
+        <a href="{{ route('roteadors.index', $roteador) }}">Listagem dos roteadores</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.show', $fonte) }}">Detalhes do fonte</a>
+        <a href="{{ route('roteadors.show', $roteador) }}">Detalhes do roteador</a>
     </li>
 @endsection
 
@@ -173,23 +173,24 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Modelo {{ $fonte->modelo }}
+                                    <i class="fas fa-globe"></i> Modelo {{ $roteador->modelo }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nota Fiscal</strong>: {{ $fonte->notafiscal }} <br>
-                                <strong>Data da nota</strong>: {{ $fonte->datanota }} <br>
-                                <strong>Marca</strong>: {{ $fonte->marca }} <br>
-                                <strong>Modelo</strong>: {{ $fonte->modelo }} <br>
+                                <strong>Nota Fiscal</strong>: {{ $roteador->notafiscal }} <br>
+                                <strong>Data da nota</strong>: {{ $roteador->datanota }} <br>
+                                <strong>Marca</strong>: {{ $roteador->marca }} <br>
+                                <strong>Modelo</strong>: {{ $roteador->modelo }} <br>
+                                <strong>Banda</strong>: {{ $roteador->banda }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <strong>Serial</strong>: {{ $fonte->serial }} <br>
-                                <strong>Voltagem</strong>: {{ $fonte->voltagem }} <br>
-                                <strong>Observações</strong>: {{ $fonte->observacao }} <br>
-                                <strong>Situação</strong>: {{ $fonte->situacao }} <br>
+                                <strong>Serial</strong>: {{ $roteador->serial }} <br>
+                                <strong>Mac Address</strong>: {{ $roteador->macaddress }} <br>
+                                <strong>Observações</strong>: {{ $roteador->observacao }} <br>
+                                <strong>Situação</strong>: {{ $roteador->situacao }} <br>
                             </div>
                         </div>
                     </div>
@@ -198,3 +199,6 @@
         </div>
     </div>
 @endsection
+
+
+

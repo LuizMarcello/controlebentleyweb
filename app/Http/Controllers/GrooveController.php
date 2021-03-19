@@ -48,12 +48,13 @@ class GrooveController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Groove $groove
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Groove $groove)
     {
-        return 'Estou no show';
+        return view('groove.showGroove', \compact('groove'));
     }
 
     /**

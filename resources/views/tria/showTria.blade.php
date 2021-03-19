@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da fonte modelo {{ $fonte->modelo }} marca {{ $fonte->marca }}</h4>
+    <h4>Detalhes do tria modelo {{ $tria->modelo }} marca {{ $tria->marca }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.index', $fonte) }}">Listagem de fontes</a>
+        <a href="{{ route('trias.index', $tria) }}">Listagem das trias</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('fontes.show', $fonte) }}">Detalhes do fonte</a>
+        <a href="{{ route('trias.show', $tria) }}">Detalhes da tria</a>
     </li>
 @endsection
 
@@ -173,23 +173,23 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Modelo {{ $fonte->modelo }}
+                                    <i class="fas fa-globe"></i> Modelo {{ $tria->modelo }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nota Fiscal</strong>: {{ $fonte->notafiscal }} <br>
-                                <strong>Data da nota</strong>: {{ $fonte->datanota }} <br>
-                                <strong>Marca</strong>: {{ $fonte->marca }} <br>
-                                <strong>Modelo</strong>: {{ $fonte->modelo }} <br>
+                                <strong>Nota Fiscal</strong>: {{ $tria->notafiscal }} <br>
+                                <strong>Data da nota</strong>: {{ $tria->datanota }} <br>
+                                <strong>Marca</strong>: {{ $tria->marca }} <br>
+                                <strong>Modelo</strong>: {{ $tria->modelo }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <strong>Serial</strong>: {{ $fonte->serial }} <br>
-                                <strong>Voltagem</strong>: {{ $fonte->voltagem }} <br>
-                                <strong>Observações</strong>: {{ $fonte->observacao }} <br>
-                                <strong>Situação</strong>: {{ $fonte->situacao }} <br>
+                                <strong>Banda</strong>: {{ $tria->banda }} <br>
+                                <strong>Serial</strong>: {{ $tria->serial }} <br>
+                                <strong>Observações</strong>: {{ $tria->observacao }} <br>
+                                <strong>Situação</strong>: {{ $tria->situacao }} <br>
                             </div>
                         </div>
                     </div>
@@ -198,3 +198,8 @@
         </div>
     </div>
 @endsection
+
+
+
+
+

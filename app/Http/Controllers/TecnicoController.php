@@ -48,12 +48,13 @@ class TecnicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Tecnico $tecnico
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Tecnico $tecnico)
     {
-        return 'Estou no show';
+        return view('tecnico.showTecnico', \compact('tecnico'));
     }
 
     /**
