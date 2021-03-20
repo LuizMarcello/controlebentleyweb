@@ -48,12 +48,13 @@ class DistribuidorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Distribuidor $distribuidor
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Distribuidor $distribuidor)
     {
-        return 'Estou no show';
+        return view('distribuidor.showDistribuidor', \compact('distribuidor'));
     }
 
     /**

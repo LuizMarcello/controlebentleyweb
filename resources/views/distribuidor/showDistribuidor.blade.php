@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do técnico {{ $tecnico->nome }}</h4>
+    <h4>Detalhes do distribuidor {{ $distribuidor->nome }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem dos tecnicos</a>
+        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem dos distribuidores</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.show', $tecnico) }}">Detalhes do tecnico</a>
+        <a href="{{ route('distribuidors.show', $distribuidor) }}">Detalhes do distribuidor</a>
     </li>
 @endsection
 
@@ -173,32 +173,34 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> {{ $tecnico->nome }}
+                                    <i class="fas fa-globe"></i> {{ $distribuidor->nome }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nome</strong>: {{ $tecnico->nome }} <br>
-                                <strong>CNPJ/CPF</strong>: {{ $tecnico->documento }} <br>
-                                <strong>IE/RG</strong>: {{ $tecnico->ie_rg }} <br>
-                                <strong>Data do cadastro</strong>: {{ $tecnico->created_at }} <br>
-                                <strong>Data da última alteração</strong>: {{ $tecnico->updated_at }} <br>
-                                <strong>Observações</strong>: {{ $tecnico->observacao }} <br>
-                                <strong>Nome de Contato:</strong> {{ $tecnico->nome_contato }} <br>
-                                <strong>Situação</strong>: {{ $tecnico->situacao }} <br>
+                                <strong>Nome</strong>: {{ $distribuidor->nome }} <br>
+                                <strong>Razão Social</strong>: {{ $distribuidor->razao_social }} <br>
+                                <strong>CNPJ/CPF</strong>: {{ $distribuidor->documento }} <br>
+                                <strong>IE/RG</strong>: {{ $distribuidor->ie_rg }} <br>
+                                <strong>Data do cadastro</strong>: {{ $distribuidor->created_at }} <br>
+                                <strong>Data da última alteração</strong>: {{ $distribuidor->updated_at }} <br>
+
+                                <strong>Nome de Contato:</strong> {{ $distribuidor->nome_contato }} <br>
+                                <strong>Situação</strong>: {{ $distribuidor->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
                                 <address>
-                                    {{ $tecnico->rua }}, {{ $tecnico->numero }} <br>
-                                    {{ $tecnico->bairro }}, {{ $tecnico->cidade }} - {{ $tecnico->estado }}<br>
-                                    {{ $tecnico->cep }} <br>
+                                    {{ $distribuidor->rua }}, {{ $distribuidor->numero }} <br>
+                                    {{ $distribuidor->bairro }}, {{ $distribuidor->cidade }} - {{ $distribuidor->estado }}<br>
+                                    {{ $distribuidor->cep }} <br>
                                 </address>
-                                <strong>Data de nascimento</strong>: {{ $tecnico->dataNascimento }} <br>
-                                <strong>Celular:</strong> {{ $tecnico->celular }} <br>
-                                <strong>Telefone:</strong> {{ $tecnico->telefone }} <br>
-                                <strong>Email:</strong> {{ $tecnico->email }}
+                               {{--  <strong>Data de nascimento</strong>: {{ $distribuidor->dataNascimento }} <br> --}}
+                                <strong>Celular:</strong> {{ $distribuidor->celular }} <br>
+                                <strong>Telefone:</strong> {{ $distribuidor->telefone }} <br>
+                                <strong>Email:</strong> {{ $distribuidor->email }} <br>
+                                <strong>Observações</strong>: {{ $distribuidor->observacao }} <br>
                             </div>
                         </div>
                     </div>

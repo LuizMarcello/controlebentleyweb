@@ -32,7 +32,6 @@ class DistribuidorRequest extends FormRequest
             'email' => ['required', 'email'],
             'telefone' => ['size:10'],
             'cep' => ['required', 'size:8'],
-            'logradouro' => ['required', 'max:255'],
             'bairro' => ['required', 'max:50'],
             'cidade' => ['required', 'max:50'],
             'estado' => ['required', 'max:2']

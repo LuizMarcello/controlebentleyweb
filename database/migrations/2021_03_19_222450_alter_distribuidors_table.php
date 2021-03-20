@@ -14,7 +14,7 @@ class AlterDistribuidorsTable extends Migration
     public function up()
     {
         Schema::table('distribuidors', function (Blueprint $table) {
-            $table->string('numero', 6);
+            $table->string('rua', 30);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterDistribuidorsTable extends Migration
     public function down()
     {
         Schema::table('distribuidors', function (Blueprint $table) {
-            $table->dropColumn('numero');
+            $table->dropColumn('rua');
         });
     }
 }

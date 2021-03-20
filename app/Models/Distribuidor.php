@@ -8,7 +8,7 @@ use Illuminate\Pagination\AbstractPaginator;
 
 class Distribuidor extends Model
 {
-     /* Por questão de segurança, o "fillable" é para dizer quais são
+    /* Por questão de segurança, o "fillable" é para dizer quais são
        os únicos campos que serão aceitos pelo model. O usuário poderia
        tentar inspecionar e injetar algum campo a mais, lá no front. */
     /**
@@ -18,7 +18,7 @@ class Distribuidor extends Model
      */
     protected $fillable = [
         'nome', 'razao_social', 'documento', 'ie_rg', 'nome_contato', 'celular',
-        'email', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade', 'estado',
-        'observacao', 'tipo', 'situacao','numero'
+        'email', 'telefone', 'cep', 'bairro', 'cidade', 'estado',
+        'observacao', 'tipo', 'situacao', 'numero', 'rua'
     ];
 }

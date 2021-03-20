@@ -66,9 +66,10 @@ class EmpresaRequest extends FormRequest
        $campos = $this->all();
 
        $campos['documento'] = \str_replace(['.', '-', '/'], '', $campos['documento']);
-       $campos['celular'] = \str_replace([' ', '(', ')', '-',], '', $campos['celular']);
-       $campos['telefone'] = \str_replace([' ', '(', ')', '-',], '', $campos['telefone']);
-       $campos['cep'] = \str_replace(['.', '-',], '', $campos['cep']);
+       $campos['celular'] = \str_replace([' ', '(', ')', '-'], '', $campos['celular']);
+       $campos['telefone'] = \str_replace([' ', '(', ')', '-'], '', $campos['telefone']);
+       $campos['cep'] = \str_replace(['.', '-'], '', $campos['cep']);
+       $campos['ie_rg'] = \str_replace(['.', '-'], '', $campos['ie_rg']);
 
        $this->replace($campos);
 
