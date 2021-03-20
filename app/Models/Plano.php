@@ -8,7 +8,7 @@ use Illuminate\Pagination\AbstractPaginator;
 
 class Plano extends Model
 {
-     /* Por questão de segurança, o "fillable" é para dizer quais são
+    /* Por questão de segurança, o "fillable" é para dizer quais são
        os únicos campos que serão aceitos pelo model. O usuário poderia
        tentar inspecionar e injetar algum campo a mais, lá no front. */
     /**
@@ -17,7 +17,7 @@ class Plano extends Model
      * @var array
      */
     protected $fillable = [
-       'banda', 'cir', 'equipamento', 'nome', 'situacao', 'valor', 'valordecusto',
-       'valormensal', 'velocmaxdown', 'velocmaxup', 'velocmindown', 'velocminup'
+        'banda', 'cir', 'equipamento', 'nome', 'situacao', 'valor', 'valordecusto',
+        'valormensal', 'velocmaxdown', 'velocmaxup', 'velocmindown', 'velocminup', 'observacao'
     ];
 }

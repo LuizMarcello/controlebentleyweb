@@ -28,15 +28,15 @@ class PlanoRequest extends FormRequest
             'equipamento' => ['required', 'max:12', 'min:10'],
             'nome' => ['required'],
             'banda' => ['required', 'max:8', 'min:2'],
-           /*  'valor' => ['required', 'numeric'], */
             'valordecusto' => ['required'],
             'valormensal' => ['required'],
             'velocminup' => ['required'],
             'velocmindown' => ['required'],
             'velocmaxup' => ['required'],
             'velocmaxdown' => ['required']
-
-
         ];
     }
 }
+
+
+

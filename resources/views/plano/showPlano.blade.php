@@ -1,18 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Detalhes do {{ $empresa->tipo }} - {{ $empresa->nome }}</h1>
+    <h4>Detalhes do plano {{ $plano->nome }} {{ $plano->banda}}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        {{-- No método "index" do controller, é injetado também o "tipo", então fica assim: --}}
-        <a href="{{ route('empresas.index') }}?tipo={{ $empresa->tipo }}">Listagem de {{ $empresa->tipo }}</a>
+        <a href="{{ route('planos.index', $plano) }}">Listagem dos planoes</a>
     </li>
 
-    {{-- No método "show" do controller não é injetado o "tipo", então usa o "Route Model Binding" injetado: --}}
     <li class="breadcrumb-item">
-        <a href="{{ route('empresas.show', $empresa) }}">Detalhes do {{ $empresa->tipo }}</a>
+        <a href="{{ route('planos.show', $plano) }}">Detalhes do plano</a>
     </li>
 @endsection
 
@@ -175,60 +173,38 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> {{ $empresa->nome }}
+                                    <i class="fas fa-globe"></i> Plano {{ $plano->nome }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Razão Social</strong>: {{ $empresa->razao_social }} <br>
-                                <strong>CNPJ/CPF</strong>: {{ $empresa->documento }} <br>
-                                <strong>IE/RG</strong>: {{ $empresa->ie_rg }} <br>
-                                <strong>Data do cadastro</strong>: {{ $empresa->created_at }} <br>
-                                <strong>Data da última alteração</strong>: {{ $empresa->updated_at }} <br>
-                                <strong>UF/IE</strong>: {{ $empresa->uf_ie }} <br>
-                                <strong>Equipamento</strong>: {{ $empresa->equipamento }} <br>
-                                <strong>Observações</strong>: {{ $empresa->observacao }} <br>
+                                <strong>Nome</strong>: {{ $plano->nome }} <br>
+                                <strong>Banda</strong>: {{ $plano->banda }} <br>
+                                <strong>Cir</strong>: {{ $plano->cir }} <br>
+                                <strong>Equipamento</strong>: {{ $plano->equipamento }} <br>
+                                <strong>Observações</strong>: {{ $plano->observacao }} <br>
+                                <strong>Situação</strong>: {{ $plano->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <address>
-                                    {{ $empresa->rua }}, {{ $empresa->numero }} <br>
-                                    {{ $empresa->bairro }}, {{ $empresa->cidade }} - {{ $empresa->estado }}<br>
-                                    {{ $empresa->cep }} <br>
-                                    <strong>Nome Contato:</strong> {{ $empresa->nome_contato }} <br>
-                                    <strong>Celular:</strong> {{ $empresa->celular }} <br>
-                                    <strong>Telefone:</strong> {{ $empresa->telefone }} <br>
-                                    <strong>Email:</strong> {{ $empresa->email }}
-                                    <strong>Situação</strong>: {{ $empresa->situacao }} <br>
-                                </address>
+                                <strong>Valor de custo</strong>: {{ $plano->valordecusto }} <br>
+                                <strong>Valor mensal</strong>: {{ $plano->valormensal }} <br>
+                                <strong>Veloc máxima de down</strong>: {{ $plano->velocmaxdown }} <br>
+                                <strong>Veloc mínima de down</strong>: {{ $plano->velocmindown }} <br>
+                                <strong>Veloc máxima de up</strong>: {{ $plano->velocmaxup }} <br>
+                                <strong>Veloc mínima de up</strong>: {{ $plano->velocminup }} <br>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12">
-                <form action="{{ route('empresas.destroy', $empresa) }}" method="POST">
-                    @method('DELETE')
-                    {{-- ou assim --}}
-                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
-                    @csrf
-                    {{-- ou assim --}}
-                    {{-- {{ csrf_field() }} --}}
-
-                    <button type="submit" class="btn btn-danger"
-                    onclick="return confirm('Tem certeza que deseja apagar?')">
-                    Apagar
-                </button>
-                </form>
-            </div>
-        </div>
-
     </div>
 @endsection
+
+
+
 
 

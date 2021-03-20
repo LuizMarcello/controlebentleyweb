@@ -48,12 +48,13 @@ class PlanoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Plano $plano
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Plano $plano)
     {
-        return 'Estou no show';
+        return view('plano.showPlano', \compact('plano'));
     }
 
     /**
@@ -61,7 +62,7 @@ class PlanoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     * 
+     *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
@@ -77,13 +78,18 @@ class PlanoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param PlanoRequest $request
+     * @param Plano $plano
+     * @return void
+     *
+     * Usando a classe "PlanoRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(PlanoRequest $request, Plano $plano)
     {
-        //
+        $plano->update($request->all());
+
+        return \redirect()->route('planos.show', $plano);
     }
 
     /**

@@ -112,9 +112,14 @@ class EmpresaController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Empresa $empresa)
     {
-        //
+        $empresa->delete();
+
+        return \redirect()->route('home');
     }
 }
+
