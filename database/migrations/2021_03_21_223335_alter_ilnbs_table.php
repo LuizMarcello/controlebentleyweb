@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTriasTable extends Migration
+class AlterIlnbsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AlterTriasTable extends Migration
      */
     public function up()
     {
-        Schema::table('trias', function (Blueprint $table) {
-            $table->string('observacao', 200);
+        Schema::table('ilnbs', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterTriasTable extends Migration
      */
     public function down()
     {
-        Schema::table('trias', function (Blueprint $table) {
-            $table->dropColumn('observacao');
-        });
+        //
     }
 }

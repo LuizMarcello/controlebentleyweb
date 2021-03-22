@@ -95,9 +95,15 @@ class AntenaController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Antena $antena)
     {
-        //
+        $antena->delete();
+
+        return \redirect()->route('antenas.index');
     }
 }
+
+

@@ -91,14 +91,18 @@ class GrooveController extends Controller
         return \redirect()->route('grooves.show', $groove);
     }
 
-    /**
+     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Groove $groove)
     {
-        //
+        $groove->delete();
+
+        return \redirect()->route('grooves.index');
     }
 }

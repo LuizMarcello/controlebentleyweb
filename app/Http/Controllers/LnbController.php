@@ -96,9 +96,13 @@ return view('lnb.editLnb', \compact('lnb'));
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Lnb $lnb)
     {
-        //
+        $lnb->delete();
+
+        return \redirect()->route('lnbs.index');
     }
 }

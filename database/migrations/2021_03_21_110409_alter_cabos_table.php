@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterIlnbsTable extends Migration
+class AlterCabosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AlterIlnbsTable extends Migration
      */
     public function up()
     {
-        Schema::table('ilnbs', function (Blueprint $table) {
-            $table->string('observacao', 200);
+        Schema::table('cabos', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterIlnbsTable extends Migration
      */
     public function down()
     {
-        Schema::table('ilnbs', function (Blueprint $table) {
-            $table->dropColumn('observacao');
-        });
+        //
     }
 }

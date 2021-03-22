@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da antena modelo {{ $antena->modelo  }} marca {{ $antena->marca }}</h4>
+    <h4>Detalhes da antena modelo {{ $antena->modelo  }} - ID {{ $antena->id }}</h4>
 @endsection
 
 @section('breadcrumb')
@@ -198,6 +198,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('antenas.destroy', $antena) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">
+                        Excluir esta antena
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection
+
+
 

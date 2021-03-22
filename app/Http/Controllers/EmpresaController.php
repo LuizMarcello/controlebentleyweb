@@ -115,11 +115,17 @@ class EmpresaController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(Empresa $empresa, Request $request)
     {
+        $tipo = $request->tipo;
+
+        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+            return \abort(404);
+        }
+
         $empresa->delete();
 
-        return \redirect()->route('home');
+        return \redirect()->route('empresas.index', ['tipo'=>$tipo]);
     }
 }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterRoteadorsTable extends Migration
+class AlterFontesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AlterRoteadorsTable extends Migration
      */
     public function up()
     {
-        Schema::table('roteadors', function (Blueprint $table) {
-            $table->string('observacao', 200);
+        Schema::table('fontes', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterRoteadorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('roteadors', function (Blueprint $table) {
-            $table->dropColumn('observacao');
-        });
+        //
     }
 }

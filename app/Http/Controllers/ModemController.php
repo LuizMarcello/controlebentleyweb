@@ -48,12 +48,13 @@ class ModemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Modem $modem
      * @return \Illuminate\Http\Response
+     * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show($id)
+    public function show(Modem $modem)
     {
-        return 'Estou no show';
+        return view('modem.showModem', \compact('modem'));
     }
 
     /**

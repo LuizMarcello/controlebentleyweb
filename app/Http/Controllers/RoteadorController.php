@@ -98,9 +98,13 @@ class RoteadorController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Roteador $roteador)
     {
-        //
+        $roteador->delete();
+
+        return \redirect()->route('roteadors.index');
     }
 }

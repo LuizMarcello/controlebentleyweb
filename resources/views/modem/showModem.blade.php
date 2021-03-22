@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do roteador modelo {{ $roteador->modelo }} - ID {{ $roteador->id }}</h4>
+    <h4>Detalhes do modem modelo {{ $modem->modelo }} marca {{ $modem->marca }}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('roteadors.index', $roteador) }}">Listagem dos roteadores</a>
+        <a href="{{ route('modens.index', $modem) }}">Listagem dos modens</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('roteadors.show', $roteador) }}">Detalhes do roteador</a>
+        <a href="{{ route('modens.show', $modem) }}">Detalhes do modem</a>
     </li>
 @endsection
 
@@ -173,49 +173,34 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> Modelo {{ $roteador->modelo }}
+                                    <i class="fas fa-globe"></i> Modelo {{ $modem->modelo }}
                                 </h4>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Nota Fiscal</strong>: {{ $roteador->notafiscal }} <br>
-                                <strong>Data da nota</strong>: {{ $roteador->datanota }} <br>
-                                <strong>Marca</strong>: {{ $roteador->marca }} <br>
-                                <strong>Modelo</strong>: {{ $roteador->modelo }} <br>
-                                <strong>Banda</strong>: {{ $roteador->banda }} <br>
+                                <strong>Nota Fiscal</strong>: {{ $modem->notafiscal }} <br>
+                                <strong>Data da nota</strong>: {{ $modem->datanota }} <br>
+                                <strong>Marca</strong>: {{ $modem->marca }} <br>
+                                <strong>Modelo</strong>: {{ $modem->modelo }} <br>
+                                <strong>Endereço MAC</strong>: {{ $modem->macaddress }} <br>
                             </div>
                             <div class="col-sm-6">
-                                <strong>Serial</strong>: {{ $roteador->serial }} <br>
-                                <strong>Mac Address</strong>: {{ $roteador->macaddress }} <br>
-                                <strong>Observações</strong>: {{ $roteador->observacao }} <br>
-                                <strong>Situação</strong>: {{ $roteador->situacao }} <br>
+                                <strong>Banda</strong>: {{ $modem->banda }} <br>
+                                <strong>Serial</strong>: {{ $modem->serial }} <br>
+                                <strong>Observações</strong>: {{ $modem->observacao }} <br>
+                                <strong>Situação</strong>: {{ $modem->situacao }} <br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12">
-                <form action="{{ route('roteadors.destroy', $roteador) }}" method="POST">
-                    @method('DELETE')
-                    {{-- ou assim --}}
-                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
-                    @csrf
-                    {{-- ou assim --}}
-                    {{-- {{ csrf_field() }} --}}
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">
-                        Excluir este roteador
-                    </button>
-                </form>
-            </div>
-        </div>
-
     </div>
 @endsection
+
+
 
 
 

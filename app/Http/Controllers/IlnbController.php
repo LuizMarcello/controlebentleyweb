@@ -70,9 +70,9 @@ class IlnbController extends Controller
      *
      */
 
-    public function edit(Ilnb $iilnb)
+    public function edit(Ilnb $ilnb)
     {
-        return view('ilnb.editIilnb', \compact('ilnb'));
+        return view('ilnb.editIlnb', \compact('ilnb'));
     }
 
     /**
@@ -97,9 +97,13 @@ class IlnbController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Ilnb $ilnb)
     {
-        //
+        $ilnb->delete();
+
+        return \redirect()->route('ilnbs.index');
     }
 }

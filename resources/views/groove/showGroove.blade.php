@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes da groove modelo {{ $groove->modelo }} marca {{ $groove->marca }}</h4>
+    <h4>Detalhes da groove modelo {{ $groove->modelo }} - ID {{ $groove->id }}</h4>
 @endsection
 
 @section('breadcrumb')
@@ -196,6 +196,23 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('grooves.destroy', $groove) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">
+                        Excluir esta groove
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection
 

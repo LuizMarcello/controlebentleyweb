@@ -14,7 +14,7 @@ class AlterGroovesTable extends Migration
     public function up()
     {
         Schema::table('grooves', function (Blueprint $table) {
-            $table->string('observacao', 200);
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterGroovesTable extends Migration
      */
     public function down()
     {
-        Schema::table('grooves', function (Blueprint $table) {
-            $table->dropColumn('observacao');
-        });
+        //
     }
 }

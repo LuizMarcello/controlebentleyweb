@@ -93,15 +93,18 @@ class CaboController extends Controller
         return \redirect()->route('cabos.show', $cabo);
     }
 
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Cabo $cabo)
     {
-        //
+        $cabo->delete();
+
+        return \redirect()->route('cabos.index');
     }
 }

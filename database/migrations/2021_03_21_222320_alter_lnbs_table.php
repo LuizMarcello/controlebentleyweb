@@ -14,7 +14,7 @@ class AlterLnbsTable extends Migration
     public function up()
     {
         Schema::table('lnbs', function (Blueprint $table) {
-            $table->string('observacao', 200);
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterLnbsTable extends Migration
      */
     public function down()
     {
-        Schema::table('lnbs', function (Blueprint $table) {
-            $table->dropColumn('observacao');
-        });
+        //
     }
 }

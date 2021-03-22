@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do cabo tipo {{ $cabo->modelo }} marca {{ $cabo->marca }}</h4>
+    <h4>Detalhes do cabo tipo {{ $cabo->tipodecabo }} - ID {{ $cabo->id }}</h4>
 @endsection
 
 @section('breadcrumb')
@@ -185,17 +185,35 @@
                                 <strong>Nota Fiscal</strong>: {{ $cabo->notafiscal }} <br>
                                 <strong>Data da nota</strong>: {{ $cabo->datanota }} <br>
                                 <strong>Marca</strong>: {{ $cabo->marca }} <br>
+                                <strong>Situação</strong>: {{ $cabo->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
                                 <strong>Tipo de cabo</strong>: {{ $cabo->tipodecabo }} <br>
                                 <strong>Quantidade</strong>: {{ $cabo->metros }} Metros <br>
                                 <strong>Observações</strong>: {{ $cabo->observacao }} <br>
-                                <strong>Situação</strong>: {{ $cabo->situacao }} <br>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('cabos.destroy', $cabo) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">
+                        Excluir este cabo
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection

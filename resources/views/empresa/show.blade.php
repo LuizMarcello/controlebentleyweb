@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Detalhes do {{ $empresa->tipo }} - {{ $empresa->nome }}</h1>
+    <h1>Detalhes do {{ $empresa->tipo }} {{ $empresa->nome }} - ID {{ $empresa->id }}</h1>
 @endsection
 
 @section('breadcrumb')
@@ -204,7 +204,6 @@
                                 </address>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -212,7 +211,7 @@
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('empresas.destroy', $empresa) }}" method="POST">
+                <form action="{{ route('empresas.destroy', $empresa) }}?tipo={{ $empresa->tipo }}" method="POST">
                     @method('DELETE')
                     {{-- ou assim --}}
                     {{-- <input type="hidden" name="_method" value="DELETE"> --}}
@@ -220,15 +219,11 @@
                     {{-- ou assim --}}
                     {{-- {{ csrf_field() }} --}}
 
-                    <button type="submit" class="btn btn-danger"
-                    onclick="return confirm('Tem certeza que deseja apagar?')">
-                    Apagar
-                </button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">
+                        Apagar este {{ $empresa->tipo }}
+                    </button>
                 </form>
             </div>
         </div>
-
     </div>
 @endsection
-
-
