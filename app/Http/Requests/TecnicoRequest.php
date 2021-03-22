@@ -39,7 +39,7 @@ class TecnicoRequest extends FormRequest
             'bairro' => ['required', 'max:50'],
             'cidade' => ['required', 'max:50'],
             'estado' => ['required', 'max:2'],
-            'observacao' => ['required', 'max:200']
+           
         ];
     }
 

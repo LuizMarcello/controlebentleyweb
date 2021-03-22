@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do plano {{ $plano->nome }} {{ $plano->banda}}</h4>
+    <h4>Detalhes do plano {{ $plano->nome }} {{ $plano->banda}} - ID {{ $plano->id }}</h4>
 @endsection
 
 @section('breadcrumb')
@@ -201,6 +201,23 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('planos.destroy', $plano) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">
+                        Excluir este plano
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection
 

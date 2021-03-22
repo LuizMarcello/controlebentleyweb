@@ -21,9 +21,9 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="notafiscal">Data da Nota*</label>
+    <label class="col-form-label col-sm-2 required" for="datanota">Data da Nota*</label>
     <div class="col-sm-10">
-        <input value="{{ old('datanota', @$groove->notafiscal) }}" type="text" id="datanota" name="datanota" required="required" maxlength="18"
+        <input value="{{ old('datanota', @$groove->datanota) }}" type="text" id="datanota" name="datanota" required="required" maxlength="18"
             class="datanota form-control @error('datanota') is-invalid @enderror">
         @error('datanota')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -87,13 +87,15 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="situacao">Situação</label>
+    <label class="col-form-label col-sm-2" for="situacao">Situação atual</label>
     <div class="col-sm-3">
+        <input value="{{ old('situacao', @$groove->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
         <select class="form-control" name="situacao" id="situacao">
-            <option>Estoque</option>
-            <option>Cliente</option>
-            <option>Defeito</option>
-            <option>Devolvido</option>
+            <option value="">Alterar situação</option>
+            <option>Ativo</option>
+            <option>Em espera</option>
+            <option>Suspenso</option>
+            <option>Inativo</option>
         </select>
     </div>
 </div>

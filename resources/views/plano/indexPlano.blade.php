@@ -179,6 +179,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px"></th>
+                                    <th>Id</th>
                                     <th>Nome</th>
                                     <th>Banda</th>
                                     <th>Equipamento</th>
@@ -190,6 +191,7 @@
                                 @foreach ($registros as $registro)
                                     <tr>
                                         <td></td>
+                                        <td>{{ $registro->id }}</td>
                                         <td>{{ $registro->nome }}</td>
                                         <td>{{ $registro->banda }}</td>
                                         <td>{{ $registro->equipamento }}</td>

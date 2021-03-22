@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterDistribuidorsTable extends Migration
+class AlterPlanosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AlterDistribuidorsTable extends Migration
      */
     public function up()
     {
-        Schema::table('distribuidors', function (Blueprint $table) {
-            $table->string('rua', 30);
+        Schema::table('planos', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +25,6 @@ class AlterDistribuidorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('distribuidors', function (Blueprint $table) {
-            $table->dropColumn('rua');
-        });
+        //
     }
 }

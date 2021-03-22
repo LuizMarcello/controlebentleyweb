@@ -1,7 +1,14 @@
 @csrf
 
+{{-- Essa linha foi colocada dentro do "form" do create: --}}
 {{-- <input type="hidden" name="tipo" value="{{ $tipo }}"> --}}
 
+{{-- Este helper "old()" recebe um segundo argumento para valor padrão, caso ele não tenha
+     um êrro de validação, ou seja, quando não tem um dado de validação antigo, exiba então
+     o valor que vem do banco de dados. Daí então usamos para edição.
+     O @(arroba) esconde êrros no php, no caso, a variável $empresa é injetada somente no
+     edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
+     não injeta esta variável. --}}
 <div class="form-group row">
     <label for="nome" class="col-form-label col-sm-2 required">Nome*</label>
     <div class="col-sm-10">
@@ -16,8 +23,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2" for="razao_social">Razão Social</label>
     <div class="col-sm-10">
-        <input value="{{ old('razao_social', @$tecnico->razao_social) }}" type="text" id="razao_social" name="razao_social" maxlength="255"
-            class="form-control @error('razao_social') is-invalid @enderror">
+        <input value="{{ old('razao_social', @$tecnico->razao_social) }}" type="text" id="razao_social"
+            name="razao_social" maxlength="255" class="form-control @error('razao_social') is-invalid @enderror">
         @error('razao_social')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -26,8 +33,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="documento">Documento*</label>
     <div class="col-sm-10">
-        <input value="{{ old('documento', @$tecnico->documento) }}" type="text" id="documento" name="documento" required="required"
-            maxlength="18" class="documento form-control @error('documento') is-invalid @enderror">
+        <input value="{{ old('documento', @$tecnico->documento) }}" type="text" id="documento" name="documento"
+            required="required" maxlength="18" class="documento form-control @error('documento') is-invalid @enderror">
         @error('documento')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -46,7 +53,8 @@
 <div class="form-group row">
     <label class="col-form-label col-sm-2" for="dataNascimento">Data de nascimento</label>
     <div class="col-sm-10">
-        <input value="{{ old('dataNascimento', @$tecnico->dataNascimento) }}" type="text" id="dataNascimento" name="dataNascimento" maxlength="15"
+        <input value="{{ old('dataNascimento', @$tecnico->dataNascimento) }}" type="text" id="dataNascimento"
+            name="dataNascimento" maxlength="15"
             class="dataNascimento form-control @error('dataNascimento') is-invalid @enderror">
         @error('dataNascimento')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -57,8 +65,9 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2 required" for="nome_contato">Nome Contato*</label>
         <div class="col-sm-10">
-            <input value="{{ old('nome_contato', @$tecnico->nome_contato) }}" type="text" id="nome_contato" name="nome_contato"
-                required="required" maxlength="255" class="form-control @error('nome_contato') is-invalid @enderror">
+            <input value="{{ old('nome_contato', @$tecnico->nome_contato) }}" type="text" id="nome_contato"
+                name="nome_contato" required="required" maxlength="255"
+                class="form-control @error('nome_contato') is-invalid @enderror">
             @error('nome_contato')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -67,8 +76,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="telefone">Telefone</label>
         <div class="col-sm-10">
-            <input value="{{ old('telefone', @$tecnico->telefone) }}" type="text" id="telefone" name="telefone" maxlength="15"
-                class="phone form-control @error('telefone') is-invalid @enderror">
+            <input value="{{ old('telefone', @$tecnico->telefone) }}" type="text" id="telefone" name="telefone"
+                maxlength="15" class="phone form-control @error('telefone') is-invalid @enderror">
             @error('telefone')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -77,8 +86,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2 required" for="celular">Celular*</label>
         <div class="col-sm-10">
-            <input value="{{ old('celular', @$tecnico->celular) }}" type="text" id="celular" name="celular" required="required"
-                maxlength="15" class="celular form-control @error('celular') is-invalid @enderror">
+            <input value="{{ old('celular', @$tecnico->celular) }}" type="text" id="celular" name="celular"
+                required="required" maxlength="15" class="celular form-control @error('celular') is-invalid @enderror">
             @error('celular')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -119,8 +128,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="numero">Numero*</label>
         <div class="col-sm-10">
-            <input value="{{ old('numero', @$tecnico->numero) }}" type="text" id="numero" name="numero" maxlength="150"
-                class="form-control @error('numero') is-invalid @enderror">
+            <input value="{{ old('numero', @$tecnico->numero) }}" type="text" id="numero" name="numero"
+                maxlength="150" class="form-control @error('numero') is-invalid @enderror">
             @error('numero')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -129,8 +138,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="bairro">Bairro*</label>
         <div class="col-sm-10">
-            <input value="{{ old('bairro', @$tecnico->bairro) }}" type="text" id="bairro" name="bairro" maxlength="100"
-                class="form-control @error('bairro') is-invalid @enderror">
+            <input value="{{ old('bairro', @$tecnico->bairro) }}" type="text" id="bairro" name="bairro"
+                maxlength="100" class="form-control @error('bairro') is-invalid @enderror">
             @error('bairro')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -139,8 +148,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="cidade">Cidade*</label>
         <div class="col-sm-10">
-            <input value="{{ old('cidade', @$tecnico->cidade) }}" type="text" id="cidade" name="cidade" maxlength="100"
-                class="form-control @error('cidade') is-invalid @enderror">
+            <input value="{{ old('cidade', @$tecnico->cidade) }}" type="text" id="cidade" name="cidade"
+                maxlength="100" class="form-control @error('cidade') is-invalid @enderror">
             @error('cidade')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -159,17 +168,20 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
         <div class="col-sm-10">
-            <input value="{{ old('observacao', @$empresa->observacao) }}" type="text" id="observacao"
+            <input value="{{ old('observacao', @$tecnico->observacao) }}" type="text" id="observacao"
                 name="observacao" maxlength="500" class="form-control @error('observacao') is-invalid @enderror">
             @error('observacao')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
     </div>
+
     <div class="form-group row">
-        <label class="col-form-label col-sm-2" for="situacao">Situação</label>
+        <label class="col-form-label col-sm-2" for="situacao">Situação atual</label>
         <div class="col-sm-3">
+            <input value="{{ old('situacao', @$tecnico->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
             <select class="form-control" name="situacao" id="situacao">
+                <option value="{{ $tecnico->situacao }}">Alterar situação</option>
                 <option>Ativo</option>
                 <option>Em espera</option>
                 <option>Suspenso</option>
@@ -178,5 +190,9 @@
         </div>
     </div>
 
-
     <button class="btn btn-primary" name="submit" value="" type="submit">Salvar</button>
+
+
+
+
+

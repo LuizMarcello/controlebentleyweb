@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Detalhes do {{ $empresa->tipo }} {{ $empresa->nome }} - ID {{ $empresa->id }}</h1>
+    <h4>Detalhes do {{ $empresa->tipo }} {{ $empresa->nome }} - ID {{ $empresa->id }}</h4>
 @endsection
 
 @section('breadcrumb')
@@ -196,12 +196,12 @@
                                     {{ $empresa->rua }}, {{ $empresa->numero }} <br>
                                     {{ $empresa->bairro }}, {{ $empresa->cidade }} - {{ $empresa->estado }}<br>
                                     {{ $empresa->cep }} <br>
-                                    <strong>Nome Contato:</strong> {{ $empresa->nome_contato }} <br>
-                                    <strong>Celular:</strong> {{ $empresa->celular }} <br>
-                                    <strong>Telefone:</strong> {{ $empresa->telefone }} <br>
-                                    <strong>Email:</strong> {{ $empresa->email }}
-                                    <strong>Situação</strong>: {{ $empresa->situacao }} <br>
                                 </address>
+                                <strong>Nome Contato:</strong> {{ $empresa->nome_contato }} <br>
+                                <strong>Celular:</strong> {{ $empresa->celular }} <br>
+                                <strong>Telefone:</strong> {{ $empresa->telefone }} <br>
+                                <strong>Email:</strong> {{ $empresa->email }} <br>
+                                <strong>Situação</strong>: {{ $empresa->situacao }} <br>
                             </div>
                         </div>
                     </div>
@@ -227,3 +227,4 @@
         </div>
     </div>
 @endsection
+
