@@ -1,4 +1,7 @@
 <?php
+/**
+ * Função que formata(mascara) os valores a serem "exibidos"
+ */
 
 if (! function_exists('mascara')) {
     function mascara($val, $mask)

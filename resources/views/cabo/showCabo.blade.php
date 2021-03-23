@@ -185,13 +185,12 @@
                                 <strong>Nota Fiscal</strong>: {{ $cabo->notafiscal }} <br>
                                 <strong>Data da nota</strong>: {{ $cabo->datanota }} <br>
                                 <strong>Marca</strong>: {{ $cabo->marca }} <br>
-                                <strong>Situação</strong>: {{ $cabo->situacao }} <br>
                             </div>
                             <div class="col-sm-6">
                                 <strong>Tipo de cabo</strong>: {{ $cabo->tipodecabo }} <br>
                                 <strong>Quantidade</strong>: {{ $cabo->metros }} Metros <br>
                                 <strong>Observações</strong>: {{ $cabo->observacao }} <br>
-
+                                <strong>Situação</strong>: {{ $cabo->situacao }} <br>
                             </div>
                         </div>
                     </div>
@@ -217,3 +216,4 @@
 
     </div>
 @endsection
+

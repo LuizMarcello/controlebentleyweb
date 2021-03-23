@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\GrooveRequest;
-
 use App\Models\Groove;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use App\Http\Requests\GrooveRequest;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class GrooveController extends Controller
 {
@@ -16,7 +18,7 @@ class GrooveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Groove::paginate(1);
         return view('Groove.indexGroove', \compact('registros'));
@@ -27,7 +29,7 @@ class GrooveController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
         return view('groove.createGroove');
     }
@@ -38,7 +40,7 @@ class GrooveController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GrooveRequest $request)
+    public function store(GrooveRequest $request): Response
     {
         $registro = Groove::create($request->all());
 
@@ -52,7 +54,7 @@ class GrooveController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Groove $groove)
+    public function show(Groove $groove): View
     {
         return view('groove.showGroove', \compact('groove'));
     }
@@ -69,7 +71,7 @@ class GrooveController extends Controller
      * Isto já vai tornar meu Model "Groove" filtrado
      * e dísponivel dentro da view retornada.
      */
-    public function edit(Groove $groove)
+    public function edit(Groove $groove): View
     {
         return view('groove.editGroove', \compact('groove'));
     }
@@ -84,7 +86,7 @@ class GrooveController extends Controller
      * Usando a classe "GrooveRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(GrooveRequest $request, Groove $groove)
+    public function update(GrooveRequest $request, Groove $groove): Response
     {
         $groove->update($request->all());
 
@@ -99,7 +101,7 @@ class GrooveController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Groove $groove)
+    public function destroy(Groove $groove): Response
     {
         $groove->delete();
 

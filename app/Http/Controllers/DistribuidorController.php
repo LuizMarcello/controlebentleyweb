@@ -2,32 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\DistribuidorRequest;
-
+use Illuminate\View\View;
 use App\Models\Distribuidor;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\DistribuidorRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class DistribuidorController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
         $registros = Distribuidor::paginate(4);
         return view('distribuidor.indexDistribuidor', \compact('registros'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     *  Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create(): View
     {
         return view('distribuidor.createDistribuidor');
     }
@@ -35,10 +37,10 @@ class DistribuidorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param DistribuidorRequest $request
+     * @return Response
      */
-    public function store(DistribuidorRequest $request)
+    public function store(DistribuidorRequest $request): Response
     {
         $registro = Distribuidor::create($request->all());
 
@@ -49,10 +51,11 @@ class DistribuidorController extends Controller
      * Display the specified resource.
      *
      * @param Distribuidor $distribuidor
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Distribuidor $distribuidor)
+    public function show(Distribuidor $distribuidor): View
     {
         return view('distribuidor.showDistribuidor', \compact('distribuidor'));
     }
@@ -60,32 +63,31 @@ class DistribuidorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Distribuidor $distribuidor
+     * @return View
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
-     * Isto já vai tornar meu Model "Distribuidor" filtrado
+     * Isto já vai tornar o Model "Distribuidor" filtrado
      * e dísponivel dentro da view retornada.
      */
-    public function edit(Distribuidor $distribuidor)
+    public function edit(Distribuidor $distribuidor): View
     {
-        /*  dd($empresa); */
-       return view('distribuidor.editDistribuidor', \compact('distribuidor'));
+      return view('distribuidor.editDistribuidor', \compact('distribuidor'));
     }
 
      /**
-     * Update the specified resource in storage.
-     *
-     * @param DistribuidorRequest $request
-     * @param Distribuidor $distribuidor
-     * @return void
-     *
-     * Usando a classe "DistribuidorRequest" para validar.
-     * Também usando "Route Model Binding", como no "edit" acima.
-     */
-    public function update(DistribuidorRequest $request, Distribuidor $distribuidor)
+      * Update the specified resource in storage.
+      *
+      * @param DistribuidorRequest $request
+      * @param Distribuidor $distribuidor
+      * @return Response
+      *
+      * Usando a classe "DistribuidorRequest" para validar.
+      * Também usando "Route Model Binding", como no "edit" acima.
+      */
+    public function update(DistribuidorRequest $request, Distribuidor $distribuidor): Response
     {
         $distribuidor->update($request->all());
 
@@ -93,14 +95,14 @@ class DistribuidorController extends Controller
     }
 
      /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     *
-     * Também usando "Route Model Binding", como no "edit" acima.
-     */
-    public function destroy(Distribuidor $distribuidor)
+      * Remove the specified resource from storage.
+      *
+      * @param Distribuidor $distribuidor
+      * @return Response
+
+      * Também usando "Route Model Binding", como no "edit" acima.
+      */
+    public function destroy(Distribuidor $distribuidor): Response
     {
         $distribuidor->delete();
 

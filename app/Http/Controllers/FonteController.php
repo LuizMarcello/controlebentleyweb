@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Fonte;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\FonteRequest;
 
-use App\Models\Fonte;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class FonteController extends Controller
 {
@@ -16,7 +18,7 @@ class FonteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Fonte::paginate(1);
         return view('fonte.indexFonte', \compact('registros'));
@@ -27,7 +29,7 @@ class FonteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
         return view('fonte.createFonte');
     }
@@ -38,7 +40,7 @@ class FonteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FonteRequest $request)
+    public function store(FonteRequest $request): Response
     {
         $registro = Fonte::create($request->all());
 
@@ -53,7 +55,7 @@ class FonteController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Fonte $fonte)
+    public function show(Fonte $fonte): View
     {
         return view('fonte.showFonte', \compact('fonte'));
     }
@@ -70,7 +72,7 @@ class FonteController extends Controller
      * e dísponivel dentro da view retornada.
      *
      */
-    public function edit(Fonte $fonte)
+    public function edit(Fonte $fonte): View
     {
         return view('fonte.editFonte', \compact('fonte'));
     }
@@ -85,7 +87,7 @@ class FonteController extends Controller
      * Usando a classe "FonteRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(FonteRequest $request, Fonte $fonte)
+    public function update(FonteRequest $request, Fonte $fonte): Response
     {
         $fonte->update($request->all());
 
@@ -100,7 +102,7 @@ class FonteController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Fonte $fonte)
+    public function destroy(Fonte $fonte): Response
     {
         $fonte->delete();
 

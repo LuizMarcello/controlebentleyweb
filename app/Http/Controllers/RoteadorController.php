@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\RoteadorRequest;
-
 use App\Models\Roteador;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use App\Http\Requests\RoteadorRequest;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class RoteadorController extends Controller
 {
@@ -16,10 +18,10 @@ class RoteadorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
-
         $registros = Roteador::paginate(2);
+
         return view('roteador.indexRoteador', \compact('registros'));
     }
 
@@ -28,7 +30,7 @@ class RoteadorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
         return view('roteador.createRoteador');
     }
@@ -39,7 +41,7 @@ class RoteadorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RoteadorRequest $request)
+    public function store(RoteadorRequest $request): Response
     {
         $registro = Roteador::create($request->all());
 
@@ -53,7 +55,7 @@ class RoteadorController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Roteador $roteador)
+    public function show(Roteador $roteador): View
     {
         return view('roteador.showroteador', \compact('roteador'));
     }
@@ -71,7 +73,7 @@ class RoteadorController extends Controller
      * e dísponivel dentro da view retornada.
      *
      */
-    public function edit(Roteador $roteador)
+    public function edit(Roteador $roteador): View
     {
         return view('roteador.editRoteador', \compact('roteador'));
     }
@@ -86,7 +88,7 @@ class RoteadorController extends Controller
      * Usando a classe "RoteadorRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(RoteadorRequest $request, Roteador $roteador)
+    public function update(RoteadorRequest $request, Roteador $roteador): Response
     {
         $roteador->update($request->all());
 
@@ -101,7 +103,7 @@ class RoteadorController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Roteador $roteador)
+    public function destroy(Roteador $roteador): Response
     {
         $roteador->delete();
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Tria;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\TriaRequest;
 
-use App\Models\Tria;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class TriaController extends Controller
 {
@@ -16,7 +18,7 @@ class TriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Tria::paginate(2);
         return view('tria.indexTria', \compact('registros'));
@@ -27,7 +29,7 @@ class TriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('tria.createTria');
     }
@@ -38,7 +40,7 @@ class TriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TriaRequest $request)
+    public function store(TriaRequest $request): Response
     {
         $registro = Tria::create($request->all());
 
@@ -52,7 +54,7 @@ class TriaController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Tria $tria)
+    public function show(Tria $tria): View
     {
         return view('tria.showTria', \compact('tria'));
     }
@@ -69,7 +71,7 @@ class TriaController extends Controller
      * Isto já vai tornar meu Model "Distribuidor" filtrado
      * e dísponivel dentro da view retornada.
      */
-    public function edit(Tria $tria)
+    public function edit(Tria $tria): View
     {
         return view('tria.editTria', \compact('tria'));
     }
@@ -84,7 +86,7 @@ class TriaController extends Controller
      * Usando a classe "TriaRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(TriaRequest $request, Tria $tria)
+    public function update(TriaRequest $request, Tria $tria): Response
     {
         $tria->update($request->all());
 
@@ -99,7 +101,7 @@ class TriaController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Tria $tria)
+    public function destroy(Tria $tria): Response
     {
         $tria->delete();
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Ilnb;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\IlnbRequest;
 
-use App\Models\Ilnb;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class IlnbController extends Controller
 {
@@ -16,7 +18,7 @@ class IlnbController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Ilnb::paginate(2);
         return view('ilnb.indexIlnb', \compact('registros'));
@@ -27,7 +29,7 @@ class IlnbController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('ilnb.createIlnb');
     }
@@ -38,7 +40,7 @@ class IlnbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IlnbRequest $request)
+    public function store(IlnbRequest $request): Response
     {
         $registro = Ilnb::create($request->all());
 
@@ -52,7 +54,7 @@ class IlnbController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Ilnb $ilnb)
+    public function show(Ilnb $ilnb): View
     {
         return view('ilnb.showilnb', \compact('ilnb'));
     }
@@ -70,7 +72,7 @@ class IlnbController extends Controller
      *
      */
 
-    public function edit(Ilnb $ilnb)
+    public function edit(Ilnb $ilnb): View
     {
         return view('ilnb.editIlnb', \compact('ilnb'));
     }
@@ -85,7 +87,7 @@ class IlnbController extends Controller
      * Usando a classe "IilnbRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(IlnbRequest $request, Ilnb $ilnb)
+    public function update(IlnbRequest $request, Ilnb $ilnb): Response
     {
         $ilnb->update($request->all());
 
@@ -100,7 +102,7 @@ class IlnbController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Ilnb $ilnb)
+    public function destroy(Ilnb $ilnb): Response
     {
         $ilnb->delete();
 

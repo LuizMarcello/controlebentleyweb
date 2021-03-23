@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Cabo;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\CaboRequest;
 
-use App\Models\Cabo;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class CaboController extends Controller
 {
@@ -16,7 +18,7 @@ class CaboController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
 
         $registros = Cabo::paginate(1);
@@ -28,7 +30,7 @@ class CaboController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
         return view('cabo.createCabo');
     }
@@ -39,7 +41,7 @@ class CaboController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CaboRequest $request)
+    public function store(CaboRequest $request): Response
     {
         $registro = Cabo::create($request->all());
 
@@ -53,7 +55,7 @@ class CaboController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Cabo $cabo)
+    public function show(Cabo $cabo): View
     {
         return view('cabo.showCabo', \compact('cabo'));
     }
@@ -70,7 +72,7 @@ class CaboController extends Controller
      * Isto já vai tornar meu Model "Cabo" filtrado
      * e dísponivel dentro da view retornada.
      */
-    public function edit(Cabo $cabo)
+    public function edit(Cabo $cabo): View
     {
         return view('cabo.editCabo', \compact('cabo'));
     }
@@ -86,7 +88,7 @@ class CaboController extends Controller
      * Usando a classe "CaboRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(CaboRequest $request, Cabo $cabo)
+    public function update(CaboRequest $request, Cabo $cabo): Response
     {
         $cabo->update($request->all());
 
@@ -101,7 +103,7 @@ class CaboController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Cabo $cabo)
+    public function destroy(Cabo $cabo): Response
     {
         $cabo->delete();
 

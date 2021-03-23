@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Lnb;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\LnbRequest;
 
-use App\Models\Lnb;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class LnbController extends Controller
 {
@@ -16,7 +18,7 @@ class LnbController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Lnb::paginate(2);
         return view('lnb.indexLnb', \compact('registros'));
@@ -27,7 +29,7 @@ class LnbController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-        public function create()
+        public function create(): View
     {
         return view('lnb.createlnb');
     }
@@ -38,7 +40,7 @@ class LnbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LnbRequest $request)
+    public function store(LnbRequest $request): Response
     {
         $registro = Lnb::create($request->all());
 
@@ -52,7 +54,7 @@ class LnbController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Lnb $lnb)
+    public function show(Lnb $lnb): View
     {
         return view('lnb.showlnb', \compact('lnb'));
     }
@@ -69,9 +71,9 @@ class LnbController extends Controller
      * e dísponivel dentro da view retornada.
      *
      */
-      public function edit(Lnb $lnb)
+      public function edit(Lnb $lnb): View
     {
-return view('lnb.editLnb', \compact('lnb'));
+        return view('lnb.editLnb', \compact('lnb'));
     }
 
     /**
@@ -84,7 +86,7 @@ return view('lnb.editLnb', \compact('lnb'));
      * Usando a classe "LnbRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(LnbRequest $request, Lnb $lnb)
+    public function update(LnbRequest $request, Lnb $lnb): Response
     {
         $lnb->update($request->all());
 
@@ -99,7 +101,7 @@ return view('lnb.editLnb', \compact('lnb'));
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Lnb $lnb)
+    public function destroy(Lnb $lnb): Response
     {
         $lnb->delete();
 

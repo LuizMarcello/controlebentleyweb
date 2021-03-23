@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\Controller;
+use App\Models\Modem;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\ModemRequest;
 
-use App\Models\Modem;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class ModemController extends Controller
 {
@@ -16,7 +18,7 @@ class ModemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $registros = Modem::paginate(3);
         return view('modem.indexModem', \compact('registros'));
@@ -27,7 +29,7 @@ class ModemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('modem.createModem');
     }
@@ -38,7 +40,7 @@ class ModemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ModemRequest $request)
+    public function store(ModemRequest $request): Response
     {
         $registro = Modem::create($request->all());
 
@@ -52,7 +54,7 @@ class ModemController extends Controller
      * @return \Illuminate\Http\Response
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
-    public function show(Modem $modem)
+    public function show(Modem $modem): View
     {
         return view('modem.showModem', \compact('modem'));
     }
@@ -69,7 +71,7 @@ class ModemController extends Controller
      * e dísponivel dentro da view retornada.
      *
      */
-    public function edit(Modem $modem)
+    public function edit(Modem $modem): View
     {
 
         return view('modem.editModem', \compact('modem'));
@@ -86,7 +88,7 @@ class ModemController extends Controller
      * Usando a classe "ModemRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(ModemRequest $request, Modem $modem)
+    public function update(ModemRequest $request, Modem $modem): Response
     {
         $modem->update($request->all());
 
@@ -101,10 +103,11 @@ class ModemController extends Controller
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy(Modem $modem)
+    public function destroy(Modem $modem): Response
     {
         $modem->delete();
 
         return \redirect()->route('modens.index');
     }
 }
+
