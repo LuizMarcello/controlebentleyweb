@@ -180,6 +180,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px"></th>
+                                    <th>Id</th>
                                     <th>Nome da empresa</th>
                                     <th>Nome do contato</th>
                                     <th>Celular</th>
@@ -190,6 +191,7 @@
                             <tbody>
                                 @foreach ($empresas as $empresa)
                                     <tr>
+                                        <td></td>
                                         <td>{{ $empresa->id }}</td>
                                         <td>{{ $empresa->nome }}</td>
                                         <td>{{ $empresa->nome_contato }}</td>
