@@ -183,23 +183,30 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <strong>Razão Social</strong>: {{ $empresa->razao_social }} <br>
-                                <strong>CNPJ/CPF</strong>: {{ $empresa->documento }} <br>
-                                <strong>IE/RG</strong>: {{ $empresa->ie_rg }} <br>
+                                <strong>CNPJ/CPF</strong>:
+                                @if (strlen($empresa->documento) === 11)
+                                    {{ mascara($empresa->documento, '###.###.###-##') }}
+                                @else
+                                    {{ mascara($empresa->documento, '##.###.###/####-##') }}
+                                @endif
+                                <br>
+                                <strong>IE/RG</strong>: {{ mascara($empresa->ie_rg, '#.###.###-#') }} <br>
                                 <strong>Data do cadastro</strong>: {{ $empresa->created_at }} <br>
                                 <strong>Data da última alteração</strong>: {{ $empresa->updated_at }} <br>
                                 <strong>UF/IE</strong>: {{ $empresa->uf_ie }} <br>
                                 <strong>Equipamento</strong>: {{ $empresa->equipamento }} <br>
                                 <strong>Observações</strong>: {{ $empresa->observacao }} <br>
+
                             </div>
                             <div class="col-sm-6">
                                 <address>
                                     {{ $empresa->rua }}, {{ $empresa->numero }} <br>
                                     {{ $empresa->bairro }}, {{ $empresa->cidade }} - {{ $empresa->estado }}<br>
-                                    {{ $empresa->cep }} <br>
+                                    {{ mascara($empresa->cep, '#####-###') }} <br>
                                 </address>
                                 <strong>Nome Contato:</strong> {{ $empresa->nome_contato }} <br>
-                                <strong>Celular:</strong> {{ $empresa->celular }} <br>
-                                <strong>Telefone:</strong> {{ $empresa->telefone }} <br>
+                                <strong>Celular:</strong> {{ mascara($empresa->celular, '(##) #####-####') }} <br>
+                                <strong>Telefone:</strong> {{ mascara($empresa->telefone, '(##) ####-####') }} <br>
                                 <strong>Email:</strong> {{ $empresa->email }} <br>
                                 <strong>Situação</strong>: {{ $empresa->situacao }} <br>
                             </div>
@@ -227,4 +234,3 @@
         </div>
     </div>
 @endsection
-

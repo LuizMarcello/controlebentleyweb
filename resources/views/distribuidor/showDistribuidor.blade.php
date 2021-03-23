@@ -183,7 +183,7 @@
                                 <strong>Nome</strong>: {{ $distribuidor->nome }} <br>
                                 <strong>Razão Social</strong>: {{ $distribuidor->razao_social }} <br>
                                 <strong>CNPJ/CPF</strong>: {{ $distribuidor->documento }} <br>
-                                <strong>IE/RG</strong>: {{ $distribuidor->ie_rg }} <br>
+                                <strong>IE/RG</strong>: {{ mascara($distribuidor->ie_rg, '#.###.###-2') }} <br>
                                 <strong>Data do cadastro</strong>: {{ $distribuidor->created_at }} <br>
                                 <strong>Data da última alteração</strong>: {{ $distribuidor->updated_at }} <br>
 

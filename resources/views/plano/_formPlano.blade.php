@@ -134,7 +134,7 @@
     <div class="col-sm-3">
         <input value="{{ old('situacao', @$plano->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
         <select class="form-control" name="situacao" id="situacao">
-            <option value="{{ $plano->situacao }}">Alterar situação</option>
+            <option value="{{ @$plano->situacao }}">Alterar situação</option>
             <option>Ativo</option>
             <option>Em espera</option>
             <option>Suspenso</option>

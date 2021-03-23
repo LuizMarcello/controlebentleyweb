@@ -73,29 +73,38 @@ class ModemController extends Controller
     {
 
         return view('modem.editModem', \compact('modem'));
-        dd($modem);
+
     }
 
-    /**
+   /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Modem $request
+     *
+     * @return void
+     *
+     * Usando a classe "ModemRequest" para validar.
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function update(Request $request, $id)
+    public function update(ModemRequest $request, Modem $modem)
     {
-        //
+        $modem->update($request->all());
+
+        return \redirect()->route('modens.show', $modem);
     }
 
-    /**
+     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Também usando "Route Model Binding", como no "edit" acima.
      */
-    public function destroy($id)
+    public function destroy(Modem $modem)
     {
-        //
+        $modem->delete();
+
+        return \redirect()->route('modens.index');
     }
 }

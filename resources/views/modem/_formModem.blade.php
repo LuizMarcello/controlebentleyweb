@@ -10,139 +10,73 @@
      edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
      não injeta esta variável. --}}
 <div class="form-group row">
-    <label for="nome" class="col-form-label col-sm-2 required">Nome</label>
+    <label for="notafiscal" class="col-form-label col-sm-2 required">Nota fiscal</label>
     <div class="col-sm-10">
-        <input value="{{ old('nome', @$distribuidor->nome) }}" type="text" name="nome" maxlength="255" class="form-control @error('nome') is-invalid @enderror">
-        @error('nome')
+        <input value="{{ old('notafiscal', @$modem->notafiscal) }}" type="text" name="notafiscal" maxlength="255" class="form-control @error('notafiscal') is-invalid @enderror">
+        @error('notafiscal')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="razao_social">Razão Social</label>
+    <label class="col-form-label col-sm-2" for="datanota">Data da nota</label>
     <div class="col-sm-10">
-        <input value="{{ old('razao_social', @$distribuidor->razao_social) }}" type="text" id="razao_social" name="razao_social" maxlength="255" class="form-control @error('razao_social') is-invalid @enderror">
-        @error('razao_social')
+        <input value="{{ old('datanota', @$modem->datanota) }}" type="text" id="datanota" name="datanota" maxlength="255" class="form-control @error('datanota') is-invalid @enderror">
+        @error('datanota')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="documento">Documento</label>
+    <label class="col-form-label col-sm-2 required" for="banda">Banda</label>
     <div class="col-sm-10">
-        <input value="{{ old('documento', @$distribuidor->documento) }}" type="text" id="documento" name="documento" required="required" maxlength="18"
-         class="documento form-control @error('documento') is-invalid @enderror">
-        @error('documento')
+        <input value="{{ old('banda', @$modem->banda) }}" type="text" id="banda" name="banda" required="required" maxlength="18"
+         class="banda form-control @error('banda') is-invalid @enderror">
+        @error('banda')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="ie_rg">IE/RG</label>
+    <label class="col-form-label col-sm-2" for="marca">Marca</label>
     <div class="col-sm-10">
-        <input value="{{ old('ie_rg', @$distribuidor->ie_rg) }}" type="text" id="ie_rg" name="ie_rg" maxlength="12" class="ie_rg form-control @error('ie_rg') is-invalid @enderror">
-        @error('ie_rg')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div id="cliente"><div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="nome_contato">Nome Contato</label>
-    <div class="col-sm-10">
-        <input value="{{ old('nome_contato', @$distribuidor->nome_contato) }}" type="text" id="nome_contato" name="nome_contato" required="required" maxlength="255" class="form-control @error('nome_contato') is-invalid @enderror">
-        @error('nome_contato')
+        <input value="{{ old('marca', @$modem->marca) }}" type="text" id="marca" name="marca" maxlength="12" class="marca form-control @error('marca') is-invalid @enderror">
+        @error('marca')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="celular">Celular</label>
+    <label class="col-form-label col-sm-2 required" for="modelo">Modelo</label>
     <div class="col-sm-10">
-        <input value="{{ old('celular', @$distribuidor->celular) }}" type="text" id="celular" name="celular" required="required" maxlength="15" class="celular form-control @error('celular') is-invalid @enderror">
-        @error('celular')
+        <input value="{{ old('modelo', @$modem->modelo) }}" type="text" id="modelo" name="modelo" required="required" maxlength="255" class="form-control @error('modelo') is-invalid @enderror">
+        @error('modelo')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="email">Email</label>
+    <label class="col-form-label col-sm-2 required" for="serial">Serial</label>
     <div class="col-sm-10">
-        <input value="{{ old('email', @$distribuidor->email) }}" type="text" id="email" name="email" maxlength="100" class="form-control @error('email') is-invalid @enderror">
-        @error('email')
+        <input value="{{ old('serial', @$modem->serial) }}" type="text" id="serial" name="serial" required="required" maxlength="15" class="serial form-control @error('serial') is-invalid @enderror">
+        @error('serial')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="telefone">Telefone</label>
+    <label class="col-form-label col-sm-2" for="macaddress">Endereço Mac</label>
     <div class="col-sm-10">
-        <input value="{{ old('telefone', @$distribuidor->telefone) }}" type="text" id="telefone" name="telefone" maxlength="15" class="phone form-control @error('telefone') is-invalid @enderror">
-        @error('telefone')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="cep">Cep</label>
-    <div class="col-sm-10">
-        <input value="{{ old('cep', @$distribuidor->cep) }}" type="text" id="cep" name="cep" maxlength="9" class="cep form-control @error('cep') is-invalid @enderror">
-        @error('cep')
+        <input value="{{ old('macaddress', @$modem->macaddress) }}" type="text" id="macaddress" name="macaddress" maxlength="100" class="form-control @error('macaddress') is-invalid @enderror">
+        @error('macaddress')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
 </div>
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="logradouro">Logradouro</label>
+    <label class="col-form-label col-sm-2" for="observacao">Observações</label>
     <div class="col-sm-10">
-        <input value="{{ old('logradouro', @$distribuidor->logradouro) }}" type="text" id="logradouro" name="logradouro" maxlength="150" class="form-control @error('logradouro') is-invalid @enderror">
-        @error('logradouro')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="numero">Numero</label>
-    <div class="col-sm-10">
-        <input value="{{ old('numero', @$distribuidor->numero) }}" type="text" id="numero" name="numero" maxlength="150" class="numero form-control @error('numero') is-invalid @enderror">
-        @error('numero')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="bairro">Bairro</label>
-    <div class="col-sm-10">
-        <input value="{{ old('bairro', @$distribuidor->bairro) }}" type="text" id="bairro" name="bairro" maxlength="100" class="form-control @error('bairro') is-invalid @enderror">
-        @error('bairro')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="cidade">Cidade</label>
-    <div class="col-sm-10">
-        <input value="{{ old('cidade', @$distribuidor->cidade) }}" type="text" id="cidade" name="cidade" maxlength="100" class="form-control @error('cidade') is-invalid @enderror">
-        @error('cidade')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="estado">Estado</label>
-    <div class="col-sm-10">
-        <input value="{{ old('estado', @$distribuidor->estado) }}" type="text" id="estado" name="estado" maxlength="2" class="form-control @error('estado') is-invalid @enderror">
-        @error('estado')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
-    <div class="col-sm-10">
-        <input value="{{ old('observacao', @$distribuidor->observacao) }}" type="text" id="observacao" name="observacao" maxlength="500"
-            class="form-control @error('observacao') is-invalid @enderror">
+        <input value="{{ old('observacao', @$modem->observacao) }}" type="text" id="observacao" name="observacao" maxlength="15" class="phone form-control @error('observacao') is-invalid @enderror">
         @error('observacao')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -150,13 +84,15 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-form-label col-sm-2" for="situacao">Situação</label>
+    <label class="col-form-label col-sm-2" for="situacao">Situação atual</label>
     <div class="col-sm-3">
+        <input value="{{ old('situacao', @$modem->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
         <select class="form-control" name="situacao" id="situacao">
-            <option>Estoque</option>
-            <option>Cliente</option>
-            <option>Defeito</option>
-            <option>Devolvido</option>
+            <option value="{{ @$modem->situacao }}">Alterar situação</option>
+            <option>Ativo</option>
+            <option>Em espera</option>
+            <option>Suspenso</option>
+            <option>Inativo</option>
         </select>
     </div>
 </div>

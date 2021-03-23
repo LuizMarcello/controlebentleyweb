@@ -79,7 +79,7 @@
     <div class="col-sm-3">
         <input value="{{ old('situacao', @$cabo->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
         <select class="form-control" name="situacao" id="situacao">
-            <option value="{{ $cabo->situacao }}">Alterar situação</option>
+            <option value="{{ @$cabo->situacao }}">Alterar situação</option>
             <option>Ativo</option>
             <option>Em espera</option>
             <option>Suspenso</option>

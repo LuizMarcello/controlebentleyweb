@@ -181,8 +181,14 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <strong>Nome</strong>: {{ $tecnico->nome }} <br>
-                                <strong>CNPJ/CPF</strong>: {{ $tecnico->documento }} <br>
-                                <strong>IE/RG</strong>: {{ $tecnico->ie_rg }} <br>
+                                <strong>CNPJ/CPF</strong>:
+                                @if (strlen($tecnico->documento) === 11)
+                                    {{ mascara($tecnico->documento, '###.###.###-##') }}
+                                @else
+                                    {{ mascara($tecnico->documento, '##.###.###/####-##') }}
+                                @endif
+                                <br>
+                                <strong>IE/RG</strong>: {{ mascara($tecnico->ie_rg, '#.###.###-#') }} <br>
                                 <strong>Data do cadastro</strong>: {{ $tecnico->created_at }} <br>
                                 <strong>Data da última alteração</strong>: {{ $tecnico->updated_at }} <br>
                                 <strong>Observações</strong>: {{ $tecnico->observacao }} <br>
@@ -193,12 +199,12 @@
                                 <address>
                                     {{ $tecnico->rua }}, {{ $tecnico->numero }} <br>
                                     {{ $tecnico->bairro }}, {{ $tecnico->cidade }} - {{ $tecnico->estado }}<br>
-                                    {{ $tecnico->cep }} <br>
+                                    {{ mascara($tecnico->cep, '#####-###') }} <br>
                                 </address>
                                 <strong>Data de nascimento</strong>: {{ $tecnico->dataNascimento }} <br>
-                                <strong>Celular:</strong> {{ $tecnico->celular }} <br>
-                                <strong>Telefone:</strong> {{ $tecnico->telefone }} <br>
-                                <strong>Email:</strong> {{ $tecnico->email }}
+                                <strong>Celular:</strong>: {{ mascara($tecnico->celular, '(##) #####-####') }} <br>
+                                <strong>Telefone:</strong>: {{ mascara($tecnico->telefone, '(##) ####-####') }} <br>
+                                <strong>Email:</strong>: {{ $tecnico->email }}
                             </div>
                         </div>
                     </div>
@@ -215,7 +221,8 @@
                     @csrf
                     {{-- ou assim --}}
                     {{-- {{ csrf_field() }} --}}
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Tem certeza que deseja excluir?')">
                         Excluir este técnico
                     </button>
                 </form>
@@ -224,4 +231,3 @@
 
     </div>
 @endsection
-
