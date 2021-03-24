@@ -16,7 +16,7 @@ class IlnbController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -25,9 +25,9 @@ class IlnbController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *  Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create(): View
     {
@@ -37,8 +37,8 @@ class IlnbController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param IlnbRequest $request
+     * @return Response
      */
     public function store(IlnbRequest $request): Response
     {
@@ -51,8 +51,9 @@ class IlnbController extends Controller
      * Display the specified resource.
      *
      * @param Ilnb $ilnb
-     * @return \Illuminate\Http\Response
-     * Também usando "Route Model Binding", como no "edit" e "upgrade".
+     * @return View
+     *
+     *  Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Ilnb $ilnb): View
     {
@@ -62,14 +63,14 @@ class IlnbController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Lnb $modem
+     * @return View
+     *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
-     * Isto já vai tornar meu Model "Distribuidor" filtrado
+     * Isto já vai tornar meu Model "Modem" filtrado
      * e dísponivel dentro da view retornada.
-     *
      */
 
     public function edit(Ilnb $ilnb): View
@@ -80,9 +81,9 @@ class IlnbController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param IilnbRequest $request
-     * @param Iilnb $iilnb
-     * @return void
+     * @param IlnbRequest $request
+     * @param Ilnb $ilnb
+     * @return Response
      *
      * Usando a classe "IilnbRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -97,8 +98,8 @@ class IlnbController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Ilnb $ilnb
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */

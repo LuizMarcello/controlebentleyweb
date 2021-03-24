@@ -96,7 +96,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="email">Email*</label>
         <div class="col-sm-10">
-            <input value="{{ old('email', @$tecnico->email) }}" type="text" id="email" name="email" maxlength="100"
+            <input value="{{ old('email', @$tecnico->email) }}" type="email" id="email" name="email" maxlength="100"
                 class="form-control @error('email') is-invalid @enderror">
             @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -155,16 +155,23 @@
             @enderror
         </div>
     </div>
+
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="estado">Estado*</label>
-        <div class="col-sm-10">
-            <input value="{{ old('estado', @$tecnico->estado) }}" type="text" id="estado" name="estado" maxlength="2"
-                class="form-control @error('estado') is-invalid @enderror">
+        <div class="col-sm-3">
+            <select name="estado" class="form-control @error('estado') is-invalid @enderror" required="required">
+                <option value="">Selecione</option>
+                @foreach (estados() as $sigla => $nome)
+                    <option {{ @$tecnico->estado == $sigla ? 'selected' : '' }} value="{{ $sigla }}">
+                        {{ $nome }}</option>
+                @endforeach
+            </select>
             @error('estado')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
     </div>
+
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="observacao">Observacao</label>
         <div class="col-sm-10">
@@ -179,7 +186,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="situacao">Situação atual</label>
         <div class="col-sm-3">
-            <input value="{{ old('situacao', @$tecnico->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
+            <input value="{{ old('situacao', @$tecnico->situacao) }}" type="text" id="situacao" name="situacao"
+                class="form-control">
             <select class="form-control" name="situacao" id="situacao">
                 <option value="{{ @$tecnico->situacao }}">Alterar situação</option>
                 <option>Ativo</option>
@@ -191,8 +199,3 @@
     </div>
 
     <button class="btn btn-primary" name="submit" value="" type="submit">Salvar</button>
-
-
-
-
-

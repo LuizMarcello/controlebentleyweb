@@ -10,7 +10,7 @@
      edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
      não injeta esta variável. --}}
 
-     <div class="form-group row">
+<div class="form-group row">
     <label for="nome" class="col-form-label col-sm-2 required">Nome*</label>
     <div class="col-sm-10">
         <input value="{{ old('nome', @$empresa->nome) }}" type="text" name="nome" maxlength="255"
@@ -76,7 +76,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="email">Email*</label>
         <div class="col-sm-10">
-            <input value="{{ old('email', @$empresa->email) }}" type="text" id="email" name="email" maxlength="100"
+            <input value="{{ old('email', @$empresa->email) }}" type="email" id="email" name="email" maxlength="100"
                 class="form-control @error('email') is-invalid @enderror">
             @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -146,9 +146,14 @@
     </div>
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="estado">Estado*</label>
-        <div class="col-sm-10">
-            <input value="{{ old('estado', @$empresa->estado) }}" type="text" id="estado" name="estado" maxlength="2"
-                class="form-control @error('estado') is-invalid @enderror">
+        <div class="col-sm-3">
+            <select name="estado" class="form-control @error('estado') is-invalid @enderror" required="required">
+                <option value="">Selecione</option>
+                @foreach (estados() as $sigla => $nome)
+                    <option {{ @$empresa->estado == $sigla ? 'selected' : '' }} value="{{ $sigla }}">
+                        {{ $nome }}</option>
+                @endforeach
+            </select>
             @error('estado')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -169,7 +174,8 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="situacao">Situação atual</label>
         <div class="col-sm-3">
-            <input value="{{ old('situacao', @$empresa->situacao) }}" type="text" id="situacao" name="situacao" class="form-control">
+            <input value="{{ old('situacao', @$empresa->situacao) }}" type="text" id="situacao" name="situacao"
+                class="form-control">
             <select class="form-control" name="situacao" id="situacao">
                 <option value="{{ @$empresa->situacao }}">Alterar situação</option>
                 <option>Ativo</option>

@@ -187,7 +187,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($registros as $registro)
+                                @forelse ($registros as $registro)
                                     <tr>
                                         <td>{{ $registro->id }}</td>
                                         <td>{{ $registro->banda }}</td>
@@ -199,9 +199,16 @@
                                                 class="btn btn-danger btn-sm">Atualizar</a>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Nenhum item cadastrado</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                @endforelse
                             </tbody>
-
                         </table>
                     </div>
                     <div class="card-footer clearfix">

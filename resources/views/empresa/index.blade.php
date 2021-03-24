@@ -166,8 +166,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Listagem de {{ $tipo }}</h3>
                         <div class="card-tools">
-                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}"
-                                class="btn btn-success">Novo
+                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-success">Novo
                                 {{ $tipo }}</a>
                         </div>
                     </div>
@@ -189,7 +188,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach ($empresas as $empresa)
+                                @forelse ($empresas as $empresa)
                                     <tr>
                                         <td></td>
                                         <td>{{ $empresa->id }}</td>
@@ -202,9 +201,16 @@
                                                 class="btn btn-danger btn-sm">Atualizar</a>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Nenhum item cadastrado</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                @endforelse
                             </tbody>
-
                         </table>
                     </div>
                     <div class="card-footer clearfix">

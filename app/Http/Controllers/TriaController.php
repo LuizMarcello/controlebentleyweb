@@ -16,7 +16,7 @@ class TriaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -27,7 +27,7 @@ class TriaController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create(): View
     {
@@ -35,10 +35,10 @@ class TriaController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     *  Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param TriaRequest $request
+     * @return Response
      */
     public function store(TriaRequest $request): Response
     {
@@ -47,11 +47,12 @@ class TriaController extends Controller
         return \redirect()->route('trias.show', $registro->id);
     }
 
-   /**
+    /**
      * Display the specified resource.
      *
      * @param Tria $tria
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Tria $tria): View
@@ -62,8 +63,8 @@ class TriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Tria $tria
+     * @return View
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
@@ -81,7 +82,7 @@ class TriaController extends Controller
      *
      * @param TriaRequest $request
      * @param Tria $tria
-     * @return void
+     * @return Response
      *
      * Usando a classe "TriaRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -96,8 +97,8 @@ class TriaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Tria $tria
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
