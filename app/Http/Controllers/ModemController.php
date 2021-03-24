@@ -16,7 +16,7 @@ class ModemController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -27,7 +27,7 @@ class ModemController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create(): View
     {
@@ -37,8 +37,8 @@ class ModemController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param ModemRequest $request
+     * @return Response
      */
     public function store(ModemRequest $request): Response
     {
@@ -51,7 +51,8 @@ class ModemController extends Controller
      * Display the specified resource.
      *
      * @param Modem $modem
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Modem $modem): View
@@ -62,29 +63,26 @@ class ModemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Modem $modem
+     * @return View
+     *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
      * Isto já vai tornar meu Model "Modem" filtrado
      * e dísponivel dentro da view retornada.
-     *
      */
     public function edit(Modem $modem): View
     {
-
         return view('modem.editModem', \compact('modem'));
-
     }
 
-   /**
+    /**
      * Update the specified resource in storage.
      *
-     * @param Modem $request
-     *
-     * @return void
-     *
+     * @param ModemRequest $request
+     * @param Modem $modem
+     * @return Response
      * Usando a classe "ModemRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
      */
@@ -95,11 +93,11 @@ class ModemController extends Controller
         return \redirect()->route('modens.show', $modem);
     }
 
-     /**
-     * Remove the specified resource from storage.
+    /**
+     *  Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Modem $modem
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
@@ -110,4 +108,3 @@ class ModemController extends Controller
         return \redirect()->route('modens.index');
     }
 }
-

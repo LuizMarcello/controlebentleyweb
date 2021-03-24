@@ -16,7 +16,7 @@ class CaboController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -28,7 +28,8 @@ class CaboController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
     public function create(Request $request): View
     {
@@ -38,8 +39,8 @@ class CaboController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param CaboRequest $request
+     * @return Response
      */
     public function store(CaboRequest $request): Response
     {
@@ -48,12 +49,13 @@ class CaboController extends Controller
         return \redirect()->route('cabos.show', $registro->id);
     }
 
-   /**
+    /**
      * Display the specified resource.
      *
      * @param Cabo $cabo
-     * @return \Illuminate\Http\Response
-     * Também usando "Route Model Binding", como no "edit" e "upgrade".
+     * @return View
+     *
+     * Também usando "Route Model Binding", como no "edit" e "upgrade"
      */
     public function show(Cabo $cabo): View
     {
@@ -63,8 +65,8 @@ class CaboController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Cabo $cabo
+     * @return View
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
@@ -77,13 +79,12 @@ class CaboController extends Controller
         return view('cabo.editCabo', \compact('cabo'));
     }
 
-
-   /**
+    /**
      * Update the specified resource in storage.
      *
      * @param CaboRequest $request
      * @param Cabo $cabo
-     * @return void
+     * @return Response
      *
      * Usando a classe "CaboRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -98,8 +99,8 @@ class CaboController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Cabo $cabo
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */

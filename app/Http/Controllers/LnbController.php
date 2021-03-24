@@ -16,7 +16,7 @@ class LnbController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -25,11 +25,11 @@ class LnbController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *  Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-        public function create(): View
+    public function create(): View
     {
         return view('lnb.createlnb');
     }
@@ -37,8 +37,8 @@ class LnbController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param LnbRequest $request
+     * @return Response
      */
     public function store(LnbRequest $request): Response
     {
@@ -51,7 +51,8 @@ class LnbController extends Controller
      * Display the specified resource.
      *
      * @param Lnb $lnb
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Lnb $lnb): View
@@ -62,26 +63,26 @@ class LnbController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Lnb $lnb
+     * @return View
+     *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
      * Isto já vai tornar meu Model "Lnb" filtrado
      * e dísponivel dentro da view retornada.
-     *
      */
-      public function edit(Lnb $lnb): View
+    public function edit(Lnb $lnb): View
     {
         return view('lnb.editLnb', \compact('lnb'));
     }
 
     /**
-     * Update the specified resource in storage.
+     *  Update the specified resource in storage.
      *
      * @param LnbRequest $request
      * @param Lnb $lnb
-     * @return void
+     * @return Response
      *
      * Usando a classe "LnbRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -96,8 +97,8 @@ class LnbController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Lnb $lnb
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */

@@ -16,7 +16,7 @@ class GrooveController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -27,7 +27,8 @@ class GrooveController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
     public function create(Request $request): View
     {
@@ -37,8 +38,8 @@ class GrooveController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param GrooveRequest $request
+     * @return Response
      */
     public function store(GrooveRequest $request): Response
     {
@@ -48,10 +49,11 @@ class GrooveController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *  Display the specified resource.
      *
      * @param Groove $groove
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Groove $groove): View
@@ -62,8 +64,8 @@ class GrooveController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Groove $groove
+     * @return View
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
@@ -79,9 +81,9 @@ class GrooveController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Groove $request
+     * @param GrooveRequest $request
      * @param Groove $groove
-     * @return void
+     * @return Response
      *
      * Usando a classe "GrooveRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -93,11 +95,11 @@ class GrooveController extends Controller
         return \redirect()->route('grooves.show', $groove);
     }
 
-     /**
+    /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Groove $groove
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */

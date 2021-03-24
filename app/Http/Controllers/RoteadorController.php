@@ -16,7 +16,7 @@ class RoteadorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index(): View
     {
@@ -26,9 +26,10 @@ class RoteadorController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     *  Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
     public function create(Request $request): View
     {
@@ -38,8 +39,8 @@ class RoteadorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param RoteadorRequest $request
+     * @return Response
      */
     public function store(RoteadorRequest $request): Response
     {
@@ -48,11 +49,12 @@ class RoteadorController extends Controller
         return \redirect()->route('roteadors.show', $registro->id);
     }
 
-     /**
+    /**
      * Display the specified resource.
      *
      * @param Roteador $roteador
-     * @return \Illuminate\Http\Response
+     * @return View
+     *
      * Também usando "Route Model Binding", como no "edit" e "upgrade".
      */
     public function show(Roteador $roteador): View
@@ -63,27 +65,26 @@ class RoteadorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Roteador $roteador
+     * @return View
      *
      * Aplicando o "Route Model Binding" do laravel,
      * que está injetando uma instância do Model como
      * parâmetro.
      * Isto já vai tornar meu Model "Roteador" filtrado
      * e dísponivel dentro da view retornada.
-     *
      */
     public function edit(Roteador $roteador): View
     {
         return view('roteador.editRoteador', \compact('roteador'));
     }
 
-     /**
+    /**
      * Update the specified resource in storage.
      *
-     * @param Roteador Request $request
-     * @param Roteador $Roteador
-     * @return void
+     * @param RoteadorRequest $request
+     * @param Roteador $roteador
+     * @return Response
      *
      * Usando a classe "RoteadorRequest" para validar.
      * Também usando "Route Model Binding", como no "edit" acima.
@@ -98,8 +99,8 @@ class RoteadorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Roteador $roteador
+     * @return Response
      *
      * Também usando "Route Model Binding", como no "edit" acima.
      */
