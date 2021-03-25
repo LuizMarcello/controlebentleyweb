@@ -38,4 +38,4 @@ Route::resource('ilnbs', 'IlnbController');
 Route::resource('trias', 'TriaController');
 Route::resource('designacao', 'DesignacaoController');
 Route::resource('migracao', 'MigracaoController');
-
+Route::resource('users', 'UsersController');
