@@ -46,15 +46,8 @@
   </div> --}}
 
     <!-- Sidebar Menu -->
-    <li class="nav-item">
-        <a href="{{ route('empresas.index') }}?tipo=fornecedor" class="nav-link">
-            <i class="fas fa-list-alt nav-icon"></i>
-            <p>Lista de Fornecedores</p>
-        </a>
-    </li>
 
     <nav class="mt-2">
-
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
             <!-- Add icons to the links using the .nav-icon class
@@ -66,7 +59,6 @@
                     <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Dashboard
-
                     </p>
                 </a>
             </li>
@@ -77,7 +69,27 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-circle-down"></i>
                     <p>
-                        Entrada
+                        Usuários
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('users.index') }}?tipo=fornecedor" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <p>Lista de usuários</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <p>
+                        Fornecedor
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -98,22 +110,12 @@
                 </ul>
             </li>
 
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-satellite-dish"></i>
-                    <p>
-                        Clientes
-                        {{-- <i class="right fas fa-angle-left"></i> --}}
-                    </p>
-                </a>
-            </li>
-
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
-                        Saida
+                        Cliente
                         <i class="right fas fa-angle-left"></i>
 
                     </p>
