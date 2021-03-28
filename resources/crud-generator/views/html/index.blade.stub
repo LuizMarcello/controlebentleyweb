@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('title');
+    <h1>Listagem %%modelName%%</h1>
+@endsection
+
+@section()
+    <li class="breadcrumb-item">
+        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}">Listagem %%modelName%%</a>
+    </li>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

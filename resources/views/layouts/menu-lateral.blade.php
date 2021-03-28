@@ -549,29 +549,24 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
+
+
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-satellite-dish"></i>
+                    <i class="nav-icon fas fa-arrow-circle-down"></i>
                     <p>
                         Ferramentas
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-
-                {{-- <i class="fas fa-satellite-dish"></i> --}}
-
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="../../index.html" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Nova Ferramenta</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../../index2.html" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Listagem de Ferramentas</p>
+                        <a href="{{ route('ferramentas.index') }}?tipo=fornecedor" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <p>Lista de Ferramentas</p>
                         </a>
                     </li>
                 </ul>

@@ -1,0 +1,89 @@
+{
+    "fields": [
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "classificacao",
+            "type": "select",
+            "options": {
+                "unidade": "Ferramenta",
+                "jogo": "Instrumento"
+            }
+        },
+        {
+            "name": "controle",
+            "type": "select",
+            "options": {
+                "unidade": "Unidade",
+                "jogo": "Jogo"
+            }
+        },
+        {
+            "name": "categoria",
+            "type": "select",
+            "options": {
+                "chavedefenda": "Chave de fenda",
+                "chavephilips": "Chave Phillips",
+                "alicatedebico": "Alicate de bico",
+                "alicatedecorte": "Alicate de corte",
+                "alicateuniversal": "Alicate universal",
+                "chaveinglesa": "Chave Inglesa",
+                "multimetro": "Multimetro"
+            }
+        },
+        {
+            "name": "medida",
+            "type": "select",
+            "options": {
+                "polegadas": "Polegadas",
+                "milimetros": "Milímetros",
+                "centimetros": "Centimetros"
+            }
+        },
+        {
+            "name": "Descricao",
+            "type": "text"
+        },
+        {
+            "name": "Qtde",
+            "type": "string"
+        },
+        {
+            "name": "situacao",
+            "type": "select",
+            "options": {
+                "estoque": "Estoque",
+                "utilizando": "Utilizando",
+                "defeito": "Defeito"
+            }
+        },
+        {
+            "name": "responsavel",
+            "type": "text"
+        },
+        {
+            "name": "desde",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "classificacao",
+            "rules": "required"
+        },
+        {
+            "field": "controle",
+            "rules": "required"
+        },
+        {
+            "field": "categoria",
+            "rules": "required"
+        },
+        {
+            "field": "situacao",
+            "rules": "required"
+        }
+    ]
+}
