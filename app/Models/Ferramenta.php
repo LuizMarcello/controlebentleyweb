@@ -14,10 +14,10 @@ class Ferramenta extends Model
     protected $table = 'ferramentas';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -25,7 +25,5 @@ class Ferramenta extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'classificacao', 'controle', 'categoria', 'medida', 'Descricao', 'Qtde', 'situacao', 'responsavel', 'desde'];
-
-    
+    protected $fillable = ['user_id', 'tipoferramenta', 'tipoinstrumento', 'controle', 'categoria', 'unidademedida', 'medida', 'descricao', 'situacao', 'desde', 'observacao'];
 }

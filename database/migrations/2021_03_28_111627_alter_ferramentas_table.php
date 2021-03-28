@@ -14,7 +14,7 @@ class AlterFerramentasTable extends Migration
     public function up()
     {
         Schema::table('ferramentas', function (Blueprint $table) {
-            $table->string('tipoinstrumento', 40);
+            $table->string('observacao', 200);
         });
     }
 
@@ -26,7 +26,7 @@ class AlterFerramentasTable extends Migration
     public function down()
     {
         Schema::table('ferramentas', function (Blueprint $table) {
-            $table->dropColumn('tipoinstrumento');
+            $table->dropColumn('observacao');
         });
     }
 }

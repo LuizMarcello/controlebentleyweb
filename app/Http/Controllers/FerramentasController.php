@@ -22,15 +22,16 @@ class FerramentasController extends Controller
 
         if (!empty($keyword)) {
             $ferramentas = Ferramenta::where('user_id', 'LIKE', "%$keyword%")
-                ->orWhere('classificacao', 'LIKE', "%$keyword%")
                 ->orWhere('controle', 'LIKE', "%$keyword%")
                 ->orWhere('categoria', 'LIKE', "%$keyword%")
                 ->orWhere('medida', 'LIKE', "%$keyword%")
-                ->orWhere('Descricao', 'LIKE', "%$keyword%")
-                ->orWhere('Qtde', 'LIKE', "%$keyword%")
+                ->orWhere('descricao', 'LIKE', "%$keyword%")
                 ->orWhere('situacao', 'LIKE', "%$keyword%")
-                ->orWhere('responsavel', 'LIKE', "%$keyword%")
                 ->orWhere('desde', 'LIKE', "%$keyword%")
+                ->orWhere('tipoferramenta', 'LIKE', "%$keyword%")
+                ->orWhere('tipoinstrumento', 'LIKE', "%$keyword%")
+                ->orWhere('unidademedida', 'LIKE', "%$keyword%")
+                ->orWhere('observacao', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $ferramentas = Ferramenta::latest()->paginate($perPage);
@@ -59,13 +60,13 @@ class FerramentasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'classificacao' => 'required',
-			'controle' => 'required',
-			'categoria' => 'required',
-			'situacao' => 'required'
+			'descricao' => 'required'
+			/* 'controle' => 'required', */
+			/* 'categoria' => 'required', */
+			/* 'situacao' => 'required' */
 		]);
         $requestData = $request->all();
-        
+
         Ferramenta::create($requestData);
 
         return redirect('ferramentas')->with('flash_message', 'Ferramenta added!');
@@ -110,13 +111,13 @@ class FerramentasController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'classificacao' => 'required',
-			'controle' => 'required',
-			'categoria' => 'required',
-			'situacao' => 'required'
+			'descricao' => 'required'
+			/* 'controle' => 'required', */
+			/* 'categoria' => 'required', */
+			/* 'situacao' => 'required' */
 		]);
         $requestData = $request->all();
-        
+
         $ferramenta = Ferramenta::findOrFail($id);
         $ferramenta->update($requestData);
 
