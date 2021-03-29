@@ -1,0 +1,123 @@
+{
+    "fields": [
+        {
+            "name": "tipodeequipamento",
+            "type": "select",
+            "options": {
+                "antena": "Antena",
+                "cabo": "Cabo",
+                "fonte": "Fonte",
+                "groove": "Groove",
+                "lnb": "Lnb",
+                "ilnb": "Ilnb",
+                "modem": "Modem",
+                "roteador": "Roteador",
+                "tria": "Tria"
+            }
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "notafiscal",
+            "type": "string"
+        },
+        {
+            "name": "datanota",
+            "type": "string"
+        },
+        {
+            "name": "banda",
+            "type": "string"
+        },
+        {
+            "name": "qtde",
+            "type": "string"
+        },
+        {
+            "name": "tipo",
+            "type": "string"
+        },
+        {
+            "name": "diametro",
+            "type": "string"
+        },
+        {
+            "name": "marca",
+            "type": "string"
+        },
+        {
+            "name": "modelo",
+            "type": "string"
+        },
+        {
+            "name": "voltagem",
+            "type": "string"
+        },
+        {
+            "name": "serial",
+            "type": "string"
+        },
+        {
+            "name": "macaddress",
+            "type": "string"
+        },
+        {
+            "name": "situacao",
+            "type": "select",
+            "options": {
+                "estoque": "No estoque",
+                "cliente": "Com cliente",
+                "defeito": "Com defeito",
+                "manutencao": "Em manutenção",
+                "devolvido": "Devolvido"
+            }
+        },
+        {
+            "name": "observacao",
+            "type": "text"
+        }
+    ],
+    "validations": [
+        {
+            "field": "banda",
+            "rules": "required"
+        },
+        {
+            "field": "datanota",
+            "rules": "required"
+        },
+        {
+            "field": "notafiscal",
+            "rules": "required"
+        },
+        {
+            "field": "diametro",
+            "rules": "required"
+        },
+        {
+            "field": "marca",
+            "rules": "required"
+        },
+        {
+            "field": "modelo",
+            "rules": "required"
+        },
+        {
+            "field": "tipo",
+            "rules": "required"
+        },
+        {
+            "field": "serial",
+            "rules": "required"
+        }, {
+            "field": "voltagem",
+            "rules": "required"
+        },
+        {
+            "field": "macaddress",
+            "rules": "required"
+        }
+    ]
+}

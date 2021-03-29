@@ -51,3 +51,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler(no singular): */
 
 Route::resource('ferramentas', 'FerramentasController');
+Route::resource('equipamentos', 'EquipamentosController');
