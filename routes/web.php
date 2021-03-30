@@ -52,3 +52,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('ferramentas', 'FerramentasController');
 Route::resource('equipamentos', 'EquipamentosController');
+
+Route::resource('testetestes', 'TestetestesController');
+Route::resource('testetestes', 'TestetestesController');

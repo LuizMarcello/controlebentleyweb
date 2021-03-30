@@ -4,38 +4,33 @@
             "name": "user_id",
             "type": "integer#unsigned"
         },
-
         {
-            "name": "instalador",
+            "name": "nome_razaosocial",
             "type": "text"
         },
 
-
-
-
-
         {
-            "name": "banda",
-            "type": "select",
-            "options": {
-                "ka": "Ka",
-                "ku": "ku"
-            }
+            "name": "documento",
+            "type": "string"
+        },
+        {
+            "name": "nome_contato",
+            "type": "text"
+        },
+        {
+            "name": "celular1",
+            "type": "string"
+        },
+        {
+            "name": "celular2",
+            "type": "string"
         },
 
         {
-            "name": "formapagamento",
-            "type": "select",
-            "options": {
-                "boleto": "Boleto",
-                "cartao": "Cartão",
-                "depccorrente": "Depósito em conta",
-                "pix": "Pix"
-            }
+            "name": "instalador",
+            "type": "string"
         }
     ],
-
-
 
     "foreign_keys": [
         {
@@ -44,19 +39,5 @@
             "on": "tecnicos",
             "onDelete": "cascade"
         }
-    ],
-
-
-
-    "relationships": [
-        {
-            "name": "user",
-            "type": "belongsTo",
-            "class": "App\\Models\\User"
-        }
-    ],
-
-
-
-
+    ]
 }
