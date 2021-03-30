@@ -1,0 +1,214 @@
+{
+    "fields": [
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "nome_razaosocial",
+            "type": "text"
+        },
+        {
+            "name": "ie_rg",
+            "type": "string"
+        },
+        {
+            "name": "documento",
+            "type": "string"
+        },
+        {
+            "name": "nome_contato",
+            "type": "text"
+        },
+        {
+            "name": "celular1",
+            "type": "string"
+        },
+        {
+            "name": "celular2",
+            "type": "string"
+        },
+        {
+            "name": "telefone1",
+            "type": "string"
+        },
+        {
+            "name": "telefone2",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "chave",
+            "type": "string"
+        },
+        {
+            "name": "equipamento",
+            "type": "string"
+        },
+        {
+            "name": "dataadesao",
+            "type": "string"
+        },
+        {
+            "name": "datacadastro",
+            "type": "string"
+        },
+        {
+            "name": "observacao",
+            "type": "text"
+        },
+        {
+            "name": "instalador",
+            "type": "text"
+        },
+
+
+
+
+        {
+            "name": "cep1",
+            "type": "string"
+        },
+        {
+            "name": "rua1",
+            "type": "text"
+        },
+        {
+            "name": "numero1",
+            "type": "string"
+        },
+        {
+            "name": "bairro1",
+            "type": "string"
+        },
+        {
+            "name": "cidade1",
+            "type": "string"
+        },
+        {
+            "name": "estado1",
+            "type": "string"
+        },
+
+        {
+            "name": "cep2",
+            "type": "string"
+        },
+        {
+            "name": "rua2",
+            "type": "text"
+        },
+        {
+            "name": "numero2",
+            "type": "string"
+        },
+        {
+            "name": "bairro2",
+            "type": "string"
+        },
+        {
+            "name": "cidade2",
+            "type": "string"
+        },
+        {
+            "name": "estado2",
+            "type": "string"
+        },
+
+        {
+            "name": "cep3",
+            "type": "string"
+        },
+        {
+            "name": "rua3",
+            "type": "text"
+        },
+        {
+            "name": "numero3",
+            "type": "string"
+        },
+        {
+            "name": "bairro3",
+            "type": "string"
+        },
+        {
+            "name": "cidade3",
+            "type": "string"
+        },
+        {
+            "name": "estado3",
+            "type": "string"
+        },
+
+
+        {
+            "name": "situacao",
+            "type": "select",
+            "options": {
+                "ativo": "Ativo",
+                "cadastrando": "Cadastrando",
+                "reprovado_restrição": "Reprovado/Restrição",
+                "esperando": "Esperando"
+            }
+        },
+
+        {
+            "name": "banda",
+            "type": "select",
+            "options": {
+                "ka": "Ka",
+                "ku": "ku"
+            }
+        }
+
+        {
+            "name": "formapagamento",
+            "type": "select",
+            "options": {
+                "boleto": "Boleto",
+                "cartao": "Cartão",
+                "depccorrente": "Depósito em conta",
+                "pix": "Pix"
+            }
+        }
+    ],
+
+
+
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+
+
+
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\Models\\User"
+        }
+    ],
+
+
+
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required|max:10"
+        }
+    ]
+}

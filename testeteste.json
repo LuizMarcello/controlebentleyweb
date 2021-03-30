@@ -1,0 +1,62 @@
+{
+    "fields": [
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+
+        {
+            "name": "instalador",
+            "type": "text"
+        },
+
+
+
+
+
+        {
+            "name": "banda",
+            "type": "select",
+            "options": {
+                "ka": "Ka",
+                "ku": "ku"
+            }
+        },
+
+        {
+            "name": "formapagamento",
+            "type": "select",
+            "options": {
+                "boleto": "Boleto",
+                "cartao": "Cartão",
+                "depccorrente": "Depósito em conta",
+                "pix": "Pix"
+            }
+        }
+    ],
+
+
+
+    "foreign_keys": [
+        {
+            "column": "instalador",
+            "references": "nome",
+            "on": "tecnicos",
+            "onDelete": "cascade"
+        }
+    ],
+
+
+
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\Models\\User"
+        }
+    ],
+
+
+
+
+}
