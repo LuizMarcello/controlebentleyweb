@@ -6,7 +6,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Ferramentas</div>
+                    <div class="card-header"><h4>Ferramentas</h4></div>
                     <div class="card-body">
                         <a href="{{ url('/ferramentas/create') }}" class="btn btn-success btn-sm"
                             title="Add New Ferramenta">

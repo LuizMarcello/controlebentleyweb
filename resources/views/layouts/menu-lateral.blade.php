@@ -94,12 +94,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('empresas.create') }}?tipo=fornecedor" class="nav-link">
-                            <i class="fas fa-file nav-icon"></i>
-                            <p>Novo Fornecedor</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('empresas.index') }}?tipo=fornecedor" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
@@ -121,12 +116,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('empresas.create') }}?tipo=cliente" class="nav-link">
-                            <i class="fas fa-file nav-icon"></i>
-                            <p>Novo Cliente</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('empresas.index') }}?tipo=cliente" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
@@ -148,12 +138,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('designacao.create') }}" class="nav-link">
-                            <i class="fas fa-file nav-icon"></i>
-                            <p>Nova Designação</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('designacao.index') }}?" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
@@ -175,12 +160,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('migracao.create') }}" class="nav-link">
-                            <i class="fas fa-file nav-icon"></i>
-                            <p>Nova Migração</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('migracao.index') }}?" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
@@ -201,12 +181,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('tecnicos.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Técnico</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('tecnicos.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
@@ -262,12 +237,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('planos.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Plano</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('planos.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
@@ -276,7 +246,6 @@
                     </li>
                 </ul>
             </li>
-
 
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
@@ -288,12 +257,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('distribuidors.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Distribuidor</p>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('distribuidors.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
@@ -312,245 +276,6 @@
                     </p>
                 </a>
             </li>
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-satellite-dish"></i>
-                    <p>
-                        Equipamentos
-                        {{-- <i class="right fas fa-angle-left"></i> --}}
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Modem
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('modens.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Modem</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('modens.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Modens</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Antena
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('antenas.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Nova Antena</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('antenas.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Antenas</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Cabo
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('cabos.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Cabo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('cabos.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Cabos</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Fonte
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('fontes.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Nova Fonte</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('fontes.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Fontes</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Groove
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('grooves.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Nova Groove</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('grooves.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Grooves</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Roteador
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('roteadors.create') }}" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Roteador</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{ route('roteadors.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Roteadores</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Lnb
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('lnbs.create') }}?tipo=groove" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Lnb</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('lnbs.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Lnbs</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Ilnb
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('ilnbs.create') }}?tipo=groove" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Novo Ilnb</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('ilnbs.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Ilnbs</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Trias
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('trias.create') }}?tipo=groove" class="nav-link">
-                            <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Nova Tria</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('trias.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Trias</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
 
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
@@ -564,9 +289,29 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('ferramentas.index') }}?tipo=fornecedor" class="nav-link">
+                        <a href="{{ route('ferramentas.index') }}" class="nav-link">
                             <i class="fas fa-users nav-icon"></i>
                             <p>Lista de Ferramentas</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <p>
+                        Equipamentos
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('equipamentos.index') }}" class="nav-link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <p>Lista de equipamentos</p>
                         </a>
                     </li>
                 </ul>

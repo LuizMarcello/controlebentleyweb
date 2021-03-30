@@ -26,7 +26,7 @@ class EquipamentosController extends Controller
                 ->orWhere('notafiscal', 'LIKE', "%$keyword%")
                 ->orWhere('datanota', 'LIKE', "%$keyword%")
                 ->orWhere('banda', 'LIKE', "%$keyword%")
-                ->orWhere('qtde', 'LIKE', "%$keyword%")
+                ->orWhere('quantidade', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
                 ->orWhere('diametro', 'LIKE', "%$keyword%")
                 ->orWhere('marca', 'LIKE', "%$keyword%")
@@ -76,7 +76,7 @@ class EquipamentosController extends Controller
 			'macaddress' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         Equipamento::create($requestData);
 
         return redirect('equipamentos')->with('flash_message', 'Equipamento added!');
@@ -133,7 +133,7 @@ class EquipamentosController extends Controller
 			'macaddress' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         $equipamento = Equipamento::findOrFail($id);
         $equipamento->update($requestData);
 

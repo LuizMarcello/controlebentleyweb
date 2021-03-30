@@ -5,7 +5,7 @@
         <div class="row">
               <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Equipamentos</div>
+                    <div class="card-header"> <h4>Equipamentos</h4> </div>
                     <div class="card-body">
                         <a href="{{ url('/equipamentos/create') }}" class="btn btn-success btn-sm" title="Add New Equipamento">
                             <i class="fa fa-plus" aria-hidden="true"></i> Adicionar novo
@@ -37,13 +37,13 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->tipodeequipamento }}</td><td>{{ $item->marca }}</td>{{-- <td>{{ $item->notafiscal }}</td> --}}
                                         <td>
-                                            <a href="{{ url('/equipamentos/' . $item->id) }}" title="View Equipamento"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/equipamentos/' . $item->id . '/edit') }}" title="Edit Equipamento"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/equipamentos/' . $item->id) }}" title="View Equipamento"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Detalhes</button></a>
+                                            <a href="{{ url('/equipamentos/' . $item->id . '/edit') }}" title="Edit Equipamento"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                                             <form method="POST" action="{{ url('/equipamentos' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Equipamento" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Equipamento" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
                                             </form>
                                         </td>
                                     </tr>

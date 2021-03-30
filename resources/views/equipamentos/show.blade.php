@@ -37,12 +37,56 @@
                                         <td> {{ $equipamento->tipodeequipamento }} </td>
                                     </tr>
                                     <tr>
-                                        <th> User Id </th>
-                                        <td> {{ $equipamento->user_id }} </td>
+                                        <th> Nota Fiscal</th>
+                                        <td> {{ $equipamento->notafiscal }} </td>
                                     </tr>
                                     <tr>
-                                        <th> Notafiscal </th>
-                                        <td> {{ $equipamento->notafiscal }} </td>
+                                        <th> Data da nota </th>
+                                        <td> {{ $equipamento->datanota }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Banda </th>
+                                        <td> {{ $equipamento->banda }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Quantidade </th>
+                                        <td> {{ $equipamento->quantidade }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Tipo </th>
+                                        <td> {{ $equipamento->tipo }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Diâmetro </th>
+                                        <td> {{ $equipamento->diametro }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Marca </th>
+                                        <td> {{ $equipamento->marca }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Modelo </th>
+                                        <td> {{ $equipamento->modelo }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Voltagem </th>
+                                        <td> {{ $equipamento->voltagem }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Serial </th>
+                                        <td> {{ $equipamento->serial }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Endereço Mac </th>
+                                        <td> {{ $equipamento->macaddress }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Situação </th>
+                                        <td> {{ $equipamento->situacao }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Observação </th>
+                                        <td> {{ $equipamento->observacao }} </td>
                                     </tr>
                                 </tbody>
                             </table>

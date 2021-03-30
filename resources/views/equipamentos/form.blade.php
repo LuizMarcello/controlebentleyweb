@@ -19,18 +19,18 @@
 </div>
 <div class="form-group {{ $errors->has('datanota') ? 'has-error' : ''}}">
     <label for="datanota" class="control-label">{{ 'Data da nota' }}</label>
-    <input class="form-control" name="datanota" type="text" id="datanota" value="{{ isset($equipamento->datanota) ? $equipamento->datanota : ''}}" required>
+    <input class="datanota form-control" name="datanota" type="text" id="datanota" value="{{ isset($equipamento->datanota) ? $equipamento->datanota : ''}}" required>
     {!! $errors->first('datanota', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('banda') ? 'has-error' : ''}}">
     <label for="banda" class="control-label">{{ 'Banda' }}</label>
-    <input class="form-control" name="banda" type="text" id="banda" value="{{ isset($equipamento->banda) ? $equipamento->banda : ''}}" required>
+    <input class="banda form-control" name="banda" type="text" id="banda" value="{{ isset($equipamento->banda) ? $equipamento->banda : ''}}" required>
     {!! $errors->first('banda', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('qtde') ? 'has-error' : ''}}">
-    <label for="qtde" class="control-label">{{ 'Quantidade' }}</label>
-    <input class="form-control" name="qtde" type="text" id="qtde" value="{{ isset($equipamento->qtde) ? $equipamento->qtde : ''}}" >
-    {!! $errors->first('qtde', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('quantidade') ? 'has-error' : ''}}">
+    <label for="quantidade" class="control-label">{{ 'Quantidade' }}</label>
+    <input class="form-control" name="quantidade" type="text" id="quantidade" value="{{ isset($equipamento->quantidade) ? $equipamento->quantidade : ''}}" >
+    {!! $errors->first('quantidade', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('tipo') ? 'has-error' : ''}}">
     <label for="tipo" class="control-label">{{ 'Tipo' }}</label>
@@ -54,7 +54,7 @@
 </div>
 <div class="form-group {{ $errors->has('voltagem') ? 'has-error' : ''}}">
     <label for="voltagem" class="control-label">{{ 'Voltagem' }}</label>
-    <input class="form-control" name="voltagem" type="text" id="voltagem" value="{{ isset($equipamento->voltagem) ? $equipamento->voltagem : ''}}" required>
+    <input class="voltagem form-control" name="voltagem" type="text" id="voltagem" value="{{ isset($equipamento->voltagem) ? $equipamento->voltagem : ''}}" required>
     {!! $errors->first('voltagem', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('serial') ? 'has-error' : ''}}">
@@ -64,7 +64,7 @@
 </div>
 <div class="form-group {{ $errors->has('macaddress') ? 'has-error' : ''}}">
     <label for="macaddress" class="control-label">{{ 'Endereço mac' }}</label>
-    <input class="form-control" name="macaddress" type="text" id="macaddress" value="{{ isset($equipamento->macaddress) ? $equipamento->macaddress : ''}}" required>
+    <input class="macaddress form-control" name="macaddress" type="text" id="macaddress" value="{{ isset($equipamento->macaddress) ? $equipamento->macaddress : ''}}" required>
     {!! $errors->first('macaddress', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('situacao') ? 'has-error' : ''}}">
