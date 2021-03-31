@@ -34,7 +34,8 @@ class FerramentasController extends Controller
                 ->orWhere('observacao', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $ferramentas = Ferramenta::latest()->paginate($perPage);
+            /* $ferramentas = Ferramenta::latest()->paginate($perPage); */
+               $ferramentas = Ferramenta::latest()->paginate(3);
         }
 
         return view('ferramentas.index', compact('ferramentas'));

@@ -17,6 +17,14 @@
             "type": "string"
         },
         {
+            "name": "inscricaomunicipal",
+            "type": "string"
+        },
+        {
+            "name": "datanascimento",
+            "type": "string"
+        },
+        {
             "name": "nome_contato",
             "type": "text"
         },
@@ -61,14 +69,6 @@
             "type": "text"
         },
         {
-            "name": "instalador",
-            "type": "text"
-        },
-
-
-
-
-        {
             "name": "cep1",
             "type": "string"
         },
@@ -92,8 +92,14 @@
             "name": "estado1",
             "type": "string"
         },
-
-
+        {
+            "name": "celular11",
+            "type": "string"
+        },
+        {
+            "name": "telefone11",
+            "type": "string"
+        },
         {
             "name": "cep2",
             "type": "string"
@@ -118,8 +124,14 @@
             "name": "estado2",
             "type": "string"
         },
-
-        
+        {
+            "name": "celular21",
+            "type": "string"
+        },
+        {
+            "name": "telefone21",
+            "type": "string"
+        },
         {
             "name": "cep3",
             "type": "string"
@@ -144,19 +156,45 @@
             "name": "estado3",
             "type": "string"
         },
-
-
         {
-            "name": "situacao",
+            "name": "celular31",
+            "type": "string"
+        },
+        {
+            "name": "telefone31",
+            "type": "string"
+        },
+        {
+            "name": "status",
             "type": "select",
             "options": {
-                "ativo": "Ativo",
-                "cadastrando": "Cadastrando",
-                "reprovado_restrição": "Reprovado/Restrição",
-                "esperando": "Esperando"
+                "adesaoreconhecida": "Adesao reconhecida",
+                "aguardandoconfirmacaodedados": "Aguardando confirmacao de dados",
+                "aguardandopagamentodaadesao": "Aguardando pagamento da adesão",
+                "cadastroaprovado": "Cadastro Aprovado",
+                "cancelado": "Cancelado",
+                "desinstalado": "Desinstalado",
+                "desistencia": "Desistência",
+                "desligadoporfaltadepagamento": "Desligado por falta de pagamento",
+                "emcadastramento": "Em cadastramento",
+                "emmanutencao": "Em manutencão",
+                "emrevisao": "Em revisão",
+                "emcancelamento": "Em cancelamento",
+                "equipamentosdesignados": "Equipamentos designados",
+                "instalacaoagendada": "Instalação agendada",
+                "instalacaocertificada": "Instalação certificada",
+                "instalacaorealizada": "Instalacao realizada",
+                "naoaprovadoserasa": "Não aprovado serasa",
+                "pontoemoperacao": "Ponto em operação",
+                "revisaodeinformacoestecnicas": "Revisão de informações técnicas",
+                "selecionadoparadesinstalacao": "Selecionado para desinstalação",
+                "selecionadoparadesligamento": "Selecionado para desligamento",
+                "selecionadoparareligamento": "Selecionado para religamento",
+                "suspensaoadministrativa": "Suspensão administrativa",
+                "suspensaoporusoindevido": "Suspensão por uso indevido",
+                "suspensaotemporaria": "Suspensão temporária"
             }
         },
-
         {
             "name": "banda",
             "type": "select",
@@ -164,8 +202,7 @@
                 "ka": "Ka",
                 "ku": "ku"
             }
-        }
-
+        },
         {
             "name": "formapagamento",
             "type": "select",
@@ -175,42 +212,75 @@
                 "depccorrente": "Depósito em conta",
                 "pix": "Pix"
             }
-        }
-    ],
-
-
-
-    "foreign_keys": [
-        {
-            "column": "user_id",
-            "references": "id",
-            "on": "users",
-            "onDelete": "cascade"
         },
         {
-            "column": "user_id",
-            "references": "id",
-            "on": "users",
-            "onDelete": "cascade"
-        }
-    ],
+            "name": "instalador",
+            "type": "select",
+            "options": {
+                "instalador1": "instalador 1",
+                "instalador2": "instalador 2",
+                "instalador3": "instalador 3"
 
-
-
-    "relationships": [
+            }
+        },
         {
-            "name": "user",
-            "type": "belongsTo",
-            "class": "App\\Models\\User"
+            "name": "distribuidor",
+            "type": "select",
+            "options": {
+                "distribuidor1": "distribuidor 1",
+                "distribuidor2": "distribuidor 2",
+                "distribuidor3": "distribuidor 3"
+
+            }
+        },
+        {
+            "name": "plano",
+            "type": "select",
+            "options": {
+                "plano1": "plano 1",
+                "plano2": "plano 2",
+                "plano3": "plano 3"
+
+            }
+        },
+        {
+            "name": "representante",
+            "type": "select",
+            "options": {
+                "representante1": "representante 1",
+                "representante2": "representante 2",
+                "representante3": "representante 3"
+            }
         }
     ],
-
-
-
     "validations": [
         {
-            "field": "title",
-            "rules": "required|max:10"
+            "field": "nome_razaosocial",
+            "rules": "required"
+        },
+        {
+            "field": "documento",
+            "rules": "required"
+        },
+        {
+            "field": "celular1",
+            "rules": "required"
+        },
+        {
+            "field": "telefone1",
+            "rules": "required"
+        },
+        {
+            "field": "email",
+            "rules": "required"
+        },
+        {
+            "field": "dataadesao",
+            "rules": "required"
+        },
+        {
+            "field": "datacadastro",
+            "rules": "required"
         }
     ]
 }

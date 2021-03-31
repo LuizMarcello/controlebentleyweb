@@ -55,3 +55,6 @@ Route::resource('equipamentos', 'EquipamentosController');
 
 Route::resource('testetestes', 'TestetestesController');
 Route::resource('testetestes', 'TestetestesController');
+Route::resource('clientes', 'ClientesController');
+Route::resource('clientes', 'ClientesController');
+Route::resource('clientes', 'ClientesController');

@@ -38,7 +38,8 @@ class EquipamentosController extends Controller
                 ->orWhere('observacao', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $equipamentos = Equipamento::latest()->paginate($perPage);
+            /* $equipamentos = Equipamento::latest()->paginate($perPage); */
+            $equipamentos = Equipamento::latest()->paginate(3);
         }
 
         return view('equipamentos.index', compact('equipamentos'));

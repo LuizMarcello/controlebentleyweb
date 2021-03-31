@@ -27,7 +27,8 @@ class UsersController extends Controller
                 ->orWhere('password', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $users = User::latest()->paginate($perPage);
+           /*  $users = User::latest()->paginate($perPage); */
+            $users = User::latest()->paginate(3);
         }
 
         return view('users.index', \compact('users'));
