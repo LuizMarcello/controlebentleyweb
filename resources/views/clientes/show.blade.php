@@ -59,6 +59,14 @@
                                         <td> {{ $cliente->plano }} </td>
                                     </tr>
                                     <tr>
+                                        <th> Data de cadastro </th>
+                                        <td> {{ $cliente->created_at }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Data da ultima alteração </th>
+                                        <td> {{ $cliente->updated_at }} </td>
+                                    </tr>
+                                    <tr>
                                         <th> Data de adesão </th>
                                         <td> {{ $cliente->dataadesao }} </td>
                                     </tr>
@@ -102,10 +110,7 @@
                                         <th> Equipamento </th>
                                         <td> {{ $cliente->equipamento }} </td>
                                     </tr>
-                                    <tr>
-                                        <th> Data de cadastro </th>
-                                        <td> {{ $cliente->created_at }} </td>
-                                    </tr>
+
                                     <tr>
                                         <th> Status </th>
                                         <td> {{ $cliente->status }} </td>

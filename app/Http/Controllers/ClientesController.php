@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 /* namespace App\Http\Requests; */
-use Illuminate\Validation\Rule;
-use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use Illuminate\Foundation\Http\FormRequest;
-
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ClienteRequest;
+use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClientesController extends Controller
 {
@@ -98,18 +101,8 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request): Response
     {
-        $this->validate($request, [
-			'nome_razaosocial' => 'required',
-			/* 'documento' => 'required', */
-			'documento' => $this->tipoValidacaoDocumento(),
-			'celular1' => 'required',
-			'telefone1' => 'required',
-			'email' => 'required',
-			'dataadesao' => 'required',
-			'datacadastro' => 'required'
-		]);
         $requestData = $request->all();
 
         Cliente::create($requestData);
@@ -127,7 +120,6 @@ class ClientesController extends Controller
     public function show($id)
     {
         $cliente = Cliente::findOrFail($id);
-
         return view('clientes.show', compact('cliente'));
     }
 
@@ -141,7 +133,6 @@ class ClientesController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
-
         return view('clientes.edit', compact('cliente'));
     }
 
@@ -153,20 +144,9 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(ClienteRequest $request, $id)
     {
-        $this->validate($request, [
-			'nome_razaosocial' => 'required',
-			/* 'documento' => 'required', */
-            'documento' => $this->tipoValidacaoDocumento(),
-			'celular1' => 'required',
-			'telefone1' => 'required',
-			'email' => 'required',
-			'dataadesao' => 'required',
-			'datacadastro' => 'required'
-		]);
         $requestData = $request->all();
-
         $cliente = Cliente::findOrFail($id);
         $cliente->update($requestData);
 
@@ -183,42 +163,6 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         Cliente::destroy($id);
-
         return redirect('clientes')->with('flash_message', 'Cliente deleted!');
     }
-
-     /**
-    * Limpar os valores
-    *
-    * @return void
-    */
-   public function validationData()
-   {
-       $campos = $this->all();
-
-       $campos['documento'] = \str_replace(['.', '-', '/'], '', $campos['documento']);
-       $campos['celular'] = \str_replace([' ', '(', ')', '-'], '', $campos['celular']);
-       $campos['telefone'] = \str_replace([' ', '(', ')', '-'], '', $campos['telefone']);
-       $campos['cep'] = \str_replace(['.', '-'], '', $campos['cep']);
-       $campos['ie_rg'] = \str_replace(['.', '-'], '', $campos['ie_rg']);
-
-       $this->replace($campos);
-
-       return $campos;
-   }
-
-    /**
-    * Retorna o "tipo de validação" (cpf-cnpj) baseado
-    * no tamanho do campo do doc
-    * Se é o cpf ou o cnpj que terá que ser validado
-    * Por estar dentro do método, não precisa do "else"
-    * @return void
-    */
-   private function tipoValidacaoDocumento()
-   {
-       if (\strlen($this->documento) === 11) {
-           return ['required', 'cpf'];
-       }
-       return ['required', 'cnpj'];
-   }
 }

@@ -10,7 +10,7 @@
 </div>
 <div class="form-group {{ $errors->has('ie_rg') ? 'has-error' : ''}}">
     <label for="ie_rg" class="control-label">{{ 'Ie Rg' }}</label>
-    <input class="form-control" name="ie_rg" type="text" id="ie_rg" value="{{ isset($cliente->ie_rg) ? $cliente->ie_rg : ''}}" >
+    <input class="ie_rg form-control" name="ie_rg" type="text" id="ie_rg" value="{{ isset($cliente->ie_rg) ? $cliente->ie_rg : ''}}" >
     {!! $errors->first('ie_rg', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('documento') ? 'has-error' : ''}}">
@@ -36,9 +36,14 @@
 </select>
     {!! $errors->first('plano', '<p class="help-block">:message</p>') !!}
 </div>
+{{-- <div class="form-group {{ $errors->has('datacadastro') ? 'has-error' : ''}}">
+    <label for="datacadastro" class="control-label">{{ 'Data de cadastro*' }}</label>
+    <input class="datanota form-control" name="datacadastro" type="text" id="datacadastro" value="{{ isset($cliente->created_at) ? $cliente->created_at : ''}}" required>
+    {!! $errors->first('datacadastro', '<p class="help-block">:message</p>') !!}
+</div> --}}
 <div class="form-group {{ $errors->has('dataadesao') ? 'has-error' : ''}}">
     <label for="dataadesao" class="control-label">{{ 'Data de adesão*' }}</label>
-    <input class="form-control" name="dataadesao" type="text" id="dataadesao" value="{{ isset($cliente->dataadesao) ? $cliente->dataadesao : ''}}" required>
+    <input class="datanota form-control" name="dataadesao" type="text" id="dataadesao" value="{{ isset($cliente->dataadesao) ? $cliente->dataadesao : ''}}" required>
     {!! $errors->first('dataadesao', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('inscricaomunicipal') ? 'has-error' : ''}}">
@@ -48,7 +53,7 @@
 </div>
 <div class="form-group {{ $errors->has('datanascimento') ? 'has-error' : ''}}">
     <label for="datanascimento" class="control-label">{{ 'Data de nascimento' }}</label>
-    <input class="form-control" name="datanascimento" type="text" id="datanascimento" value="{{ isset($cliente->datanascimento) ? $cliente->datanascimento : ''}}" >
+    <input class="datanota form-control" name="datanascimento" type="text" id="datanascimento" value="{{ isset($cliente->datanascimento) ? $cliente->datanascimento : ''}}" >
     {!! $errors->first('datanascimento', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('nome_contato') ? 'has-error' : ''}}">
@@ -58,22 +63,22 @@
 </div>
 <div class="form-group {{ $errors->has('celular1') ? 'has-error' : ''}}">
     <label for="celular1" class="control-label">{{ 'Celular 1*' }}</label>
-    <input class="form-control" name="celular1" type="text" id="celular1" value="{{ isset($cliente->celular1) ? $cliente->celular1 : ''}}" required>
+    <input class="celular form-control" name="celular1" type="text" id="celular1" value="{{ isset($cliente->celular1) ? $cliente->celular1 : ''}}" required>
     {!! $errors->first('celular1', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('celular2') ? 'has-error' : ''}}">
     <label for="celular2" class="control-label">{{ 'Celular 2' }}</label>
-    <input class="form-control" name="celular2" type="text" id="celular2" value="{{ isset($cliente->celular2) ? $cliente->celular2 : ''}}" >
+    <input class="celular form-control" name="celular2" type="text" id="celular2" value="{{ isset($cliente->celular2) ? $cliente->celular2 : ''}}" >
     {!! $errors->first('celular2', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone1') ? 'has-error' : ''}}">
     <label for="telefone1" class="control-label">{{ 'Telefone 1*' }}</label>
-    <input class="form-control" name="telefone1" type="text" id="telefone1" value="{{ isset($cliente->telefone1) ? $cliente->telefone1 : ''}}" required>
+    <input class="phone form-control" name="telefone1" type="text" id="telefone1" value="{{ isset($cliente->telefone1) ? $cliente->telefone1 : ''}}" required>
     {!! $errors->first('telefone1', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone2') ? 'has-error' : ''}}">
     <label for="telefone2" class="control-label">{{ 'Telefone 2' }}</label>
-    <input class="form-control" name="telefone2" type="text" id="telefone2" value="{{ isset($cliente->telefone2) ? $cliente->telefone2 : ''}}" >
+    <input class="phone form-control" name="telefone2" type="text" id="telefone2" value="{{ isset($cliente->telefone2) ? $cliente->telefone2 : ''}}" >
     {!! $errors->first('telefone2', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
@@ -90,12 +95,6 @@
     <label for="equipamento" class="control-label">{{ 'Equipamento' }}</label>
     <input class="form-control" name="equipamento" type="text" id="equipamento" value="{{ isset($cliente->equipamento) ? $cliente->equipamento : ''}}" >
     {!! $errors->first('equipamento', '<p class="help-block">:message</p>') !!}
-</div>
-
-<div class="form-group {{ $errors->has('datacadastro') ? 'has-error' : ''}}">
-    <label for="datacadastro" class="control-label">{{ 'Data de cadastro*' }}</label>
-    <input class="form-control" name="datacadastro" type="text" id="datacadastro" value="{{ isset($cliente->datacadastro) ? $cliente->datacadastro : ''}}" required>
-    {!! $errors->first('datacadastro', '<p class="help-block">:message</p>') !!}
 </div>
 
 <div class="form-group {{ $errors->has('status') ? 'has-error' : ''}}">
@@ -151,10 +150,11 @@
     {!! $errors->first('observacao', '<p class="help-block">:message</p>') !!}
 </div>
 <br>
+
 <div><h3>Endereço do contratante</h3></div>
 <div class="form-group {{ $errors->has('cep1') ? 'has-error' : ''}}">
     <label for="cep1" class="control-label">{{ 'Cep*' }}</label>
-    <input class="form-control" name="cep1" type="text" id="cep1" requered value="{{ isset($cliente->cep1) ? $cliente->cep1 : ''}}" >
+    <input class="cep form-control" name="cep1" type="text" id="cep1" requered value="{{ isset($cliente->cep1) ? $cliente->cep1 : ''}}" >
     {!! $errors->first('cep1', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('rua1') ? 'has-error' : ''}}">
@@ -184,12 +184,12 @@
 </div>
 <div class="form-group {{ $errors->has('celular11') ? 'has-error' : ''}}">
     <label for="celular11" class="control-label">{{ 'Celular' }}</label>
-    <input class="form-control" name="celular11" type="text" id="celular11" value="{{ isset($cliente->celular11) ? $cliente->celular11 : ''}}" >
+    <input class="celular form-control" name="celular11" type="text" id="celular11" value="{{ isset($cliente->celular11) ? $cliente->celular11 : ''}}" >
     {!! $errors->first('celular11', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone11') ? 'has-error' : ''}}">
     <label for="telefone11" class="control-label">{{ 'Telefone' }}</label>
-    <input class="form-control" name="telefone11" type="text" id="telefone11" value="{{ isset($cliente->telefone11) ? $cliente->telefone11 : ''}}" >
+    <input class="phone form-control" name="telefone11" type="text" id="telefone11" value="{{ isset($cliente->telefone11) ? $cliente->telefone11 : ''}}" >
     {!! $errors->first('telefone11', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -198,7 +198,7 @@
 <div><h6>Copiar endereço do contratante</h6></div>
 <div class="form-group {{ $errors->has('cep2') ? 'has-error' : ''}}">
     <label for="cep2" class="control-label">{{ 'Cep' }}</label>
-    <input class="form-control" name="cep2" type="text" id="cep2" value="{{ isset($cliente->cep2) ? $cliente->cep2 : ''}}" >
+    <input class="cep form-control" name="cep2" type="text" id="cep2" value="{{ isset($cliente->cep2) ? $cliente->cep2 : ''}}" >
     {!! $errors->first('cep2', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('rua2') ? 'has-error' : ''}}">
@@ -228,12 +228,12 @@
 </div>
 <div class="form-group {{ $errors->has('celular21') ? 'has-error' : ''}}">
     <label for="celular21" class="control-label">{{ 'Celular' }}</label>
-    <input class="form-control" name="celular21" type="text" id="celular21" value="{{ isset($cliente->celular21) ? $cliente->celular21 : ''}}" >
+    <input class="celular form-control" name="celular21" type="text" id="celular21" value="{{ isset($cliente->celular21) ? $cliente->celular21 : ''}}" >
     {!! $errors->first('celular21', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone21') ? 'has-error' : ''}}">
     <label for="telefone21" class="control-label">{{ 'Telefone' }}</label>
-    <input class="form-control" name="telefone21" type="text" id="telefone21" value="{{ isset($cliente->telefone21) ? $cliente->telefone21 : ''}}" >
+    <input class="phone form-control" name="telefone21" type="text" id="telefone21" value="{{ isset($cliente->telefone21) ? $cliente->telefone21 : ''}}" >
     {!! $errors->first('telefone21', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -242,7 +242,7 @@
 <div><h6>Copiar endereço do contratante</h6></div>
 <div class="form-group {{ $errors->has('cep3') ? 'has-error' : ''}}">
     <label for="cep3" class="control-label">{{ 'Cep' }}</label>
-    <input class="form-control" name="cep3" type="text" id="cep3" value="{{ isset($cliente->cep3) ? $cliente->cep3 : ''}}" >
+    <input class="cep form-control" name="cep3" type="text" id="cep3" value="{{ isset($cliente->cep3) ? $cliente->cep3 : ''}}" >
     {!! $errors->first('cep3', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('rua3') ? 'has-error' : ''}}">
@@ -272,16 +272,14 @@
 </div>
 <div class="form-group {{ $errors->has('celular31') ? 'has-error' : ''}}">
     <label for="celular31" class="control-label">{{ 'Celular' }}</label>
-    <input class="form-control" name="celular31" type="text" id="celular31" value="{{ isset($cliente->celular31) ? $cliente->celular31 : ''}}" >
+    <input class="celular form-control" name="celular31" type="text" id="celular31" value="{{ isset($cliente->celular31) ? $cliente->celular31 : ''}}" >
     {!! $errors->first('celular31', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone31') ? 'has-error' : ''}}">
     <label for="telefone31" class="control-label">{{ 'Telefone' }}</label>
-    <input class="form-control" name="telefone31" type="text" id="telefone31" value="{{ isset($cliente->telefone31) ? $cliente->telefone31 : ''}}" >
+    <input class="phone form-control" name="telefone31" type="text" id="telefone31" value="{{ isset($cliente->telefone31) ? $cliente->telefone31 : ''}}" >
     {!! $errors->first('telefone31', '<p class="help-block">:message</p>') !!}
 </div>
-
-
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Atualizar' : 'Criar' }}">
