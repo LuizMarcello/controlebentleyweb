@@ -144,6 +144,7 @@
             @enderror
         </div>
     </div>
+    
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="estado">Estado*</label>
         <div class="col-sm-3">

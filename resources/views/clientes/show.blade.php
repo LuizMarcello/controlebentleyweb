@@ -44,11 +44,15 @@
                                     </tr>
                                     <tr>
                                         <th> Ie Rg </th>
-                                        <td> {{ $cliente->ie_rg }} </td>
+                                        <td> {{ mascara($cliente->ie_rg, '#.###.###-#') }} </td>
                                     </tr>
                                     <tr>
                                         <th> CPF/CNPJ </th>
-                                        <td> {{ $cliente->documento }} </td>
+                                        @if (strlen($cliente->documento) === 11)
+                                        <td> {{ mascara($cliente->documento, '###.###.###-##') }} </td>
+                                        @else
+                                        <td> {{ mascara($cliente->documento, '##.###.###/####-##') }} </td>
+                                        @endif
                                     </tr>
                                     <tr>
                                         <th> Banda </th>
@@ -68,7 +72,7 @@
                                     </tr>
                                     <tr>
                                         <th> Data de adesão </th>
-                                        <td> {{ $cliente->dataadesao }} </td>
+                                        <td> {{ mascara($cliente->dataadesao, '### ### #####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Inscrição municipal </th>
@@ -76,7 +80,7 @@
                                     </tr>
                                     <tr>
                                         <th> Data de nascimento </th>
-                                        <td> {{ $cliente->datanascimento }} </td>
+                                        <td> {{ mascara($cliente->datanascimento, '### ### #####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Nome do contato </th>
@@ -84,19 +88,19 @@
                                     </tr>
                                     <tr>
                                         <th> Telefone 1 </th>
-                                        <td> {{ $cliente->telefone1 }} </td>
+                                        <td> {{ mascara($cliente->telefone1, '(##) ####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Telefone 2 </th>
-                                        <td> {{ $cliente->telefone2 }} </td>
+                                        <td> {{ mascara($cliente->telefone2, '(##) ####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Celular 1 </th>
-                                        <td> {{ $cliente->celular1 }} </td>
+                                        <td> {{ mascara($cliente->celular1, '(##) #####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Celular 2 </th>
-                                        <td> {{ $cliente->telefone2 }} </td>
+                                        <<td> {{ mascara($cliente->celular2, '(##) #####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Email </th>
@@ -145,7 +149,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ $cliente->cep1 }} </td>
+                                        <td> {{ mascara($cliente->cep1, '##.###-##') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
@@ -169,11 +173,11 @@
                                     </tr>
                                     <tr>
                                         <th> Celular </th>
-                                        <td> {{ $cliente->celular11 }} </td>
+                                        <td> {{ mascara($cliente->celular11, '(##) #####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Telefone </th>
-                                        <td> {{ $cliente->telefone11 }} </td>
+                                        <td> {{ mascara($cliente->telefone11, '(##) ####-####') }} </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -185,7 +189,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ $cliente->cep2 }} </td>
+                                        <td> {{ mascara($cliente->cep2, '##.###-##') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
@@ -209,11 +213,11 @@
                                     </tr>
                                     <tr>
                                         <th> Celular </th>
-                                        <td> {{ $cliente->celular21 }} </td>
+                                        <td> {{ mascara($cliente->celular21, '(##) #####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Telefone </th>
-                                        <td> {{ $cliente->telefone21 }} </td>
+                                        <td> {{ mascara($cliente->telefone21, '(##) ####-####') }} </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -225,7 +229,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ $cliente->cep3 }} </td>
+                                        <td> {{ mascara($cliente->cep3, '##.###-##') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
@@ -249,11 +253,11 @@
                                     </tr>
                                     <tr>
                                         <th> Celular </th>
-                                        <td> {{ $cliente->celular31 }} </td>
+                                        <td> {{ mascara($cliente->celular31, '(##) #####-####') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Telefone </th>
-                                        <td> {{ $cliente->telefone31 }} </td>
+                                        <td> {{ mascara($cliente->telefone31, '(##) ####-####') }} </td>
                                     </tr>
                                 </tbody>
                             </table>

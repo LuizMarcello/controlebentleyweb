@@ -45,11 +45,11 @@ class ClienteRequest extends FormRequest
             'cidade1' => ['required'],
             'estado1' => ['required'],
             'dataadesao' => ['required', 'max:10', 'date_format:d/m/Y'],
-            'datacadastro' => ['required', 'max:10', 'date_format:d/m/Y']
+            /* 'datacadastro' => ['required', 'max:10', 'date_format:d/m/Y'] */
        ];
    }
 
-  
+
 
     /**
     * Limpar os valores
