@@ -123,7 +123,6 @@
                             <p>Lista de Clientes</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -140,12 +139,11 @@
                 <ul class="nav nav-treeview">
 
                     <li class="nav-item">
-                        <a href="{{ route('designacao.index') }}?" class="nav-link">
+                        <a href="{{ route('designacoes.index') }}" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
                             <p>Lista de Designações</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -167,7 +165,6 @@
                             <p>Lista de Migrações</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -188,7 +185,6 @@
                             <p>Listagem de Técnicos</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -214,7 +210,6 @@
                             <p>Relatório Financeiro</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 

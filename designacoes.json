@@ -1,0 +1,66 @@
+{
+    "fields": [
+        {
+            "name": "banda",
+            "type": "select",
+            "options": {
+                "ka": "Ka",
+                "ku": "ku"
+            }
+        },
+        {
+            "name": "modem",
+            "type": "select",
+            "options": {
+                "buscarEmModens1": "buscarEmModens1",
+                "buscarEmModens2": "buscarEmModens2",
+                "buscarEmModens3": "buscarEmModens3"
+            }
+        },
+        {
+            "name": "antena",
+            "type": "select",
+            "options": {
+                "buscarEmAntenas1": "buscarEmAntenas1",
+                "buscarEmAntenas2": "buscarEmAntenas2",
+                "buscarEmAntenas3": "buscarEmAntenas3"
+            }
+        },
+        {
+            "name": "lnb",
+            "type": "select",
+            "options": {
+                "buscarEmLnbs1": "buscarEmLnbs1",
+                "buscarEmLnbs2": "buscarEmLnbs2",
+                "buscarEmLnbs3": "buscarEmLnbs3"
+            }
+        },
+        {
+            "name": "buc-transmitter",
+            "type": "select",
+            "options": {
+                "buscamEmBucTransmitters1": "buscamEmBucTransmitters1",
+                "buscamEmBucTransmitters2": "buscamEmBucTransmitters2",
+                "buscamEmBucTransmitters3": "buscamEmBucTransmitters3"
+            }
+        },
+        {
+            "name": "ilnb",
+            "type": "select",
+            "options": {
+                "buscarEmIlnbs1": "buscarEmIlnbs1",
+                "buscarEmIlnbs2": "buscarEmIlnbs2",
+                "buscarEmIlnbs3": "buscarEmIlnbs3"
+            }
+        },
+        {
+            "name": "tria",
+            "type": "select",
+            "options": {
+                "buscarEmTrias1": "buscarEmTrias1",
+                "buscarEmTrias2": "buscarEmTrias2",
+                "buscarEmTrias3": "buscarEmTrias3"
+            }
+        }
+    ]
+}

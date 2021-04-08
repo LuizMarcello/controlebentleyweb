@@ -25,7 +25,7 @@ Auth::routes([
  * middlaware que verifica se o usuário está logado, se não estiver, direciona para o login.
  * Agora, todas as rotas dentro da função anômima, estão protegidas.
  */
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function() {
     Route::resource('empresas', 'EmpresaController');
     Route::resource('modens', 'ModemController');
     Route::resource('antenas', 'AntenaController');
@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('lnbs', 'LnbController');
     Route::resource('ilnbs', 'IlnbController');
     Route::resource('trias', 'TriaController');
-    Route::resource('designacao', 'DesignacaoController');
+
     Route::resource('migracao', 'MigracaoController');
     Route::resource('users', 'UsersController');
 });
@@ -48,13 +48,19 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 /* Declarando um único método de rota que vai criar todas as rotas que precisamos: */
-/* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler(no singular): */
+/* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler: */
 
 Route::resource('ferramentas', 'FerramentasController');
 Route::resource('equipamentos', 'EquipamentosController');
 
-Route::resource('testetestes', 'TestetestesController');
-Route::resource('testetestes', 'TestetestesController');
+/* Route::resource('testetestes', 'TestetestesController'); */
+/* Route::resource('testetestes', 'TestetestesController'); */
+/* Route::resource('clientes', 'ClientesController'); */
+/* Route::resource('clientes', 'ClientesController') */;
+
 Route::resource('clientes', 'ClientesController');
-Route::resource('clientes', 'ClientesController');
-Route::resource('clientes', 'ClientesController');
+Route::resource('designacoes', 'DesignacoesController');
+
+Route::resource('designacoes', 'DesignacoesController');
+Route::resource('designacoesss', 'DesignacoesssController');
+Route::resource('designacoesss', 'DesignacoesssController');
