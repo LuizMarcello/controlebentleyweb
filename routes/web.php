@@ -51,16 +51,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler: */
 
 Route::resource('ferramentas', 'FerramentasController');
+
 Route::resource('equipamentos', 'EquipamentosController');
 
-/* Route::resource('testetestes', 'TestetestesController'); */
-/* Route::resource('testetestes', 'TestetestesController'); */
-/* Route::resource('clientes', 'ClientesController'); */
-/* Route::resource('clientes', 'ClientesController') */;
-
 Route::resource('clientes', 'ClientesController');
-Route::resource('designacoes', 'DesignacoesController');
 
 Route::resource('designacoes', 'DesignacoesController');
-Route::resource('designacoesss', 'DesignacoesssController');
-Route::resource('designacoesss', 'DesignacoesssController');

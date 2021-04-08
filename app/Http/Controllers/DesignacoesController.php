@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Models\Designacoesss;
+use App\Models\Designaco;
 use Illuminate\Http\Request;
 
-class DesignacoesssController extends Controller
+class DesignacoesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,15 +21,19 @@ class DesignacoesssController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $designacoesss = Designacoesss::where('name', 'LIKE', "%$keyword%")
-                ->orWhere('email', 'LIKE', "%$keyword%")
-                ->orWhere('password', 'LIKE', "%$keyword%")
+            $designacoes = Designaco::where('banda', 'LIKE', "%$keyword%")
+                ->orWhere('modem', 'LIKE', "%$keyword%")
+                ->orWhere('antena', 'LIKE', "%$keyword%")
+                ->orWhere('lnb', 'LIKE', "%$keyword%")
+                ->orWhere('buc-transmitter', 'LIKE', "%$keyword%")
+                ->orWhere('ilnb', 'LIKE', "%$keyword%")
+                ->orWhere('tria', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $designacoesss = Designacoesss::latest()->paginate($perPage);
+            $designacoes = Designaco::latest()->paginate($perPage);
         }
 
-        return view('designacoesss.index', compact('designacoesss'));
+        return view('designacoes.index', compact('designacoes'));
     }
 
     /**
@@ -39,7 +43,7 @@ class DesignacoesssController extends Controller
      */
     public function create()
     {
-        return view('designacoesss.create');
+        return view('designacoes.create');
     }
 
     /**
@@ -51,16 +55,12 @@ class DesignacoesssController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|string|max:255',
-			'email' => 'required|string|email|max:255|unique:users',
-			'password' => 'required|string|min:8|confirmed'
-		]);
+        
         $requestData = $request->all();
         
-        Designacoesss::create($requestData);
+        Designaco::create($requestData);
 
-        return redirect('designacoesss')->with('flash_message', 'Designacoesss added!');
+        return redirect('designacoes')->with('flash_message', 'Designaco added!');
     }
 
     /**
@@ -72,9 +72,9 @@ class DesignacoesssController extends Controller
      */
     public function show($id)
     {
-        $designacoesss = Designacoesss::findOrFail($id);
+        $designaco = Designaco::findOrFail($id);
 
-        return view('designacoesss.show', compact('designacoesss'));
+        return view('designacoes.show', compact('designaco'));
     }
 
     /**
@@ -86,9 +86,9 @@ class DesignacoesssController extends Controller
      */
     public function edit($id)
     {
-        $designacoesss = Designacoesss::findOrFail($id);
+        $designaco = Designaco::findOrFail($id);
 
-        return view('designacoesss.edit', compact('designacoesss'));
+        return view('designacoes.edit', compact('designaco'));
     }
 
     /**
@@ -101,17 +101,13 @@ class DesignacoesssController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-			'name' => 'required|string|max:255',
-			'email' => 'required|string|email|max:255|unique:users',
-			'password' => 'required|string|min:8|confirmed'
-		]);
+        
         $requestData = $request->all();
         
-        $designacoesss = Designacoesss::findOrFail($id);
-        $designacoesss->update($requestData);
+        $designaco = Designaco::findOrFail($id);
+        $designaco->update($requestData);
 
-        return redirect('designacoesss')->with('flash_message', 'Designacoesss updated!');
+        return redirect('designacoes')->with('flash_message', 'Designaco updated!');
     }
 
     /**
@@ -123,8 +119,8 @@ class DesignacoesssController extends Controller
      */
     public function destroy($id)
     {
-        Designacoesss::destroy($id);
+        Designaco::destroy($id);
 
-        return redirect('designacoesss')->with('flash_message', 'Designacoesss deleted!');
+        return redirect('designacoes')->with('flash_message', 'Designaco deleted!');
     }
 }

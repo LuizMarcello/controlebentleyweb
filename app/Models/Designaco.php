@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Designacoesss extends Model
+class Designaco extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'designacoessses';
+    protected $table = 'designacoes';
 
     /**
     * The database primary key value.
@@ -25,7 +25,7 @@ class Designacoesss extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['banda', 'modem', 'antena', 'lnb', 'buc-transmitter', 'ilnb', 'tria'];
 
     
 }
