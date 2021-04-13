@@ -11,10 +11,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     {{-- javascript --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- jquery --}}
-    <script src="{{ asset('jq/JQuery.js') }}"></script>
+    <script src="{{ asset('jq/JQuery.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
