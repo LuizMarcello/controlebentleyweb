@@ -24,6 +24,8 @@
         value="{{ old('documento', @$cliente->documento) }}" required>
     {!! $errors->first('documento', '<p class="help-block">:message</p>') !!}
 </div>
+
+
 <div class="form-group {{ $errors->has('banda') ? 'has-error' : '' }}">
     <label for="banda" class="control-label">{{ 'Banda' }}</label>
     <select name="banda" class="form-control" id="banda">
@@ -36,11 +38,12 @@
     </select>
     {!! $errors->first('banda', '<p class="help-block">:message</p>') !!}
 </div>
+
+
 <div class="form-group {{ $errors->has('plano') ? 'has-error' : '' }}">
     <label for="plano" class="control-label">{{ 'Plano' }}</label>
     <select name="plano" class="form-control" id="plano">
-        @foreach (json_decode('{" plano1":"plano 1","plano2":"plano 2","plano3":"plano
-            3"}', true) as $optionKey=> $optionValue)
+        @foreach (json_decode('{" plano1":"plano 1","plano2":"plano 2","plano3":"plano3"}', true) as $optionKey=> $optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->plano) && $cliente->plano == $optionKey ? 'selected' : '' }}>
                 {{ $optionValue }}</option>
@@ -133,22 +136,7 @@
 <div class="form-group {{ $errors->has('status') ? 'has-error' : '' }}">
     <label for="status" class="control-label">{{ 'Status' }}</label>
     <select name="status" class="form-control" id="status">
-        @foreach (json_decode(
-        '{" adesaoreconhecida":"Adesao reconhecida","aguardandoconfirmacaodedados":"Aguardando confirmacao de
-            dados","aguardandopagamentodaadesao":"Aguardando pagamento da ades\u00e3o","cadastroaprovado":"Cadastro
-            Aprovado","cancelado":"Cancelado","desinstalado":"Desinstalado","desistencia":"Desist\u00eancia","desligadoporfaltadepagamento":"Desligado
-            por falta de pagamento","emcadastramento":"Em cadastramento","emmanutencao":"Em
-            manutenc\u00e3o","emrevisao":"Em revis\u00e3o","emcancelamento":"Em
-            cancelamento","equipamentosdesignados":"Equipamentos designados","instalacaoagendada":"Instala\u00e7\u00e3o
-            agendada","instalacaocertificada":"Instala\u00e7\u00e3o certificada","instalacaorealizada":"Instalacao
-            realizada","naoaprovadoserasa":"N\u00e3o aprovado serasa","pontoemoperacao":"Ponto em
-            opera\u00e7\u00e3o","revisaodeinformacoestecnicas":"Revis\u00e3o de informa\u00e7\u00f5es
-            t\u00e9cnicas","selecionadoparadesinstalacao":"Selecionado para
-            desinstala\u00e7\u00e3o","selecionadoparadesligamento":"Selecionado para
-            desligamento","selecionadoparareligamento":"Selecionado para
-            religamento","suspensaoadministrativa":"Suspens\u00e3o
-            administrativa","suspensaoporusoindevido":"Suspens\u00e3o por uso
-            indevido","suspensaotemporaria":"Suspens\u00e3o tempor\u00e1ria"}', true, ) as $optionKey=>
+        @foreach (json_decode('{" adesaoreconhecida":"Adesao reconhecida","aguardandoconfirmacaodedados":"Aguardando confirmacao de dados","aguardandopagamentodaadesao":"Aguardando pagamento da ades\u00e3o","cadastroaprovado":"Cadastro Aprovado","cancelado":"Cancelado","desinstalado":"Desinstalado","desistencia":"Desist\u00eancia","desligadoporfaltadepagamento":"Desligado por falta de pagamento","emcadastramento":"Em cadastramento","emmanutencao":"Em manutenc\u00e3o","emrevisao":"Em revis\u00e3o","emcancelamento":"Emcancelamento","equipamentosdesignados":"Equipamentos designados","instalacaoagendada":"Instala\u00e7\u00e3oagendada","instalacaocertificada":"Instala\u00e7\u00e3o certificada","instalacaorealizada":"Instalacao realizada","naoaprovadoserasa":"N\u00e3o aprovado serasa","pontoemoperacao":"Ponto em opera\u00e7\u00e3o","revisaodeinformacoestecnicas":"Revis\u00e3o de informa\u00e7\u00f5est\u00e9cnicas","selecionadoparadesinstalacao":"Selecionado para desinstala\u00e7\u00e3o","selecionadoparadesligamento":"Selecionado para desligamento","selecionadoparareligamento":"Selecionado para religamento","suspensaoadministrativa":"Suspens\u00e3o administrativa","suspensaoporusoindevido":"Suspens\u00e3o por uso indevido","suspensaotemporaria":"Suspens\u00e3o tempor\u00e1ria"}', true, ) as $optionKey=>
             $optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->status) && $cliente->status == $optionKey ? 'selected' : '' }}>
@@ -162,9 +150,7 @@
 <div class="form-group {{ $errors->has('formapagamento') ? 'has-error' : '' }}">
     <label for="formapagamento" class="control-label">{{ 'Formapagamento' }}</label>
     <select name="formapagamento" class="form-control" id="formapagamento">
-        @foreach (json_decode('{"
-            boleto":"Boleto","cartao":"Cart\u00e3o","depccorrente":"Dep\u00f3sito em conta","pix":"Pix"}', true) as
-            $optionKey=> $optionValue)
+        @foreach (json_decode('{"boleto":"Boleto","cartao":"Cart\u00e3o","depccorrente":"Dep\u00f3sito em conta","pix":"Pix"}', true) as $optionKey=> $optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->formapagamento) && $cliente->formapagamento == $optionKey ? 'selected' : '' }}>
                 {{ $optionValue }}</option>
@@ -177,8 +163,7 @@
 <div class="form-group {{ $errors->has('instalador') ? 'has-error' : '' }}">
     <label for="instalador" class="control-label">{{ 'Instalador' }}</label>
     <select name="instalador" class="form-control" id="instalador">
-        @foreach (json_decode('{" instalador1":"instalador 1","instalador2":"instalador
-            2","instalador3":"instalador 3"}', true) as $optionKey=> $optionValue)
+        @foreach (json_decode('{" instalador1":"instalador 1","instalador2":"instalador2","instalador3":"instalador 3"}', true) as $optionKey=> $optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->instalador) && $cliente->instalador == $optionKey ? 'selected' : '' }}>
                 {{ $optionValue }}</option>
@@ -191,8 +176,7 @@
 <div class="form-group {{ $errors->has('distribuidor') ? 'has-error' : '' }}">
     <label for="distribuidor" class="control-label">{{ 'Distribuidor' }}</label>
     <select name="distribuidor" class="form-control" id="distribuidor">
-        @foreach (json_decode('{" distribuidor1":"distribuidor
-            1","distribuidor2":"distribuidor 2","distribuidor3":"distribuidor 3"}', true) as $optionKey=>
+        @foreach (json_decode('{" distribuidor1":"distribuidor1","distribuidor2":"distribuidor 2","distribuidor3":"distribuidor 3"}', true) as $optionKey=>
             $optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->distribuidor) && $cliente->distribuidor == $optionKey ? 'selected' : '' }}>
@@ -206,9 +190,7 @@
 <div class="form-group {{ $errors->has('representante') ? 'has-error' : '' }}">
     <label for="representante" class="control-label">{{ 'Representante' }}</label>
     <select name="representante" class="form-control" id="representante">
-        @foreach (json_decode('{" representante1":"representante
-            1","representante2":"representante 2","representante3":"representante 3"}', true) as $optionKey=>
-            $optionValue)
+        @foreach (json_decode('{" representante1":"representante 1","representante2":"representante 2","representante3":"representante 3"}', true) as $optionKey=>$optionValue)
             <option value="{{ $optionKey }}"
                 {{ isset($cliente->representante) && $cliente->representante == $optionKey ? 'selected' : '' }}>
                 {{ $optionValue }}</option>
@@ -216,10 +198,10 @@
     </select>
     {!! $errors->first('representante', '<p class="help-block">:message</p>') !!}
 </div>
+
 <div class="form-group {{ $errors->has('observacao') ? 'has-error' : '' }}">
     <label for="observacao" class="control-label">{{ 'Observação' }}</label>
-    <textarea class="form-control" rows="5" name="observacao" type="textarea"
-        id="observacao">{{ isset($cliente->observacao) ? $cliente->observacao : '' }}</textarea>
+    <textarea class="form-control" rows="5" name="observacao" type="textarea" id="observacao">{{ isset($cliente->observacao) ? $cliente->observacao : '' }}</textarea>
     {!! $errors->first('observacao', '<p class="help-block">:message</p>') !!}
 </div>
 <br>

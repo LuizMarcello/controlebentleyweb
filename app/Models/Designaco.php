@@ -25,7 +25,7 @@ class Designaco extends Model
      *
      * @var array
      */
-    protected $fillable = ['banda', 'modem', 'antena', 'lnb', 'buc-transmitter', 'ilnb', 'tria'];
+    protected $fillable = ['banda', 'modem', 'antena', 'lnb', 'buctransmitter', 'ilnb', 'tria'];
 
-    
+
 }

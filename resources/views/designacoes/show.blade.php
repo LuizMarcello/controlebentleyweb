@@ -4,7 +4,7 @@
     <h1>Detalhes Designaco</h1>
 @endsection
 
-section('breadcrumb')
+@section('breadcrumb')
     <li class="breadcrumb-item">
         <a href="{{ url('/designacoes') }}">Listagem Designaco</a>
     </li>

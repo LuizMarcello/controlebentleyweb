@@ -19,7 +19,7 @@
     <div class="col-sm-10">
         <select name="modem" class="form-control" id="modem">
             @foreach (json_decode(
-        '{" buscarEmModens1":"buscarEmModens1","buscarEmModens2":"buscarEmModens2","buscarEmModens3":"buscarEmModens3"}',
+        '{"buscarEmModens1":"buscarEmModens1","buscarEmModens2":"buscarEmModens2","buscarEmModens3":"buscarEmModens3"}',
                 true, ) as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($designaco->modem) && $designaco->modem == $optionKey ? 'selected' : '' }}>
@@ -36,7 +36,7 @@
     <div class="col-sm-10">
         <select name="antena" class="form-control" id="antena">
             @foreach (json_decode(
-        '{" buscarEmAntenas1":"buscarEmAntenas1","buscarEmAntenas2":"buscarEmAntenas2","buscarEmAntenas3":"buscarEmAntenas3"}',
+        '{"buscarEmAntenas1":"buscarEmAntenas1","buscarEmAntenas2":"buscarEmAntenas2","buscarEmAntenas3":"buscarEmAntenas3"}',
                 true, ) as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($designaco->antena) && $designaco->antena == $optionKey ? 'selected' : '' }}>
@@ -46,12 +46,13 @@
         {!! $errors->first('antena', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
 <div class="form-group row {{ $errors->has('lnb') ? 'has-error' : '' }}">
     <label for="lnb" class="col-form-label col-sm-2">{{ 'Lnb' }}</label>
     <div class="col-sm-10">
         <select name="lnb" class="form-control" id="lnb">
             @foreach (json_decode(
-        '{" buscarEmLnbs1":"buscarEmLnbs1","buscarEmLnbs2":"buscarEmLnbs2","buscarEmLnbs3":"buscarEmLnbs3"}', true, )
+        '{"buscarEmLnbs1":"buscarEmLnbs1","buscarEmLnbs2":"buscarEmLnbs2","buscarEmLnbs3":"buscarEmLnbs3"}', true, )
                 as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($designaco->lnb) && $designaco->lnb == $optionKey ? 'selected' : '' }}>
@@ -61,27 +62,30 @@
         {!! $errors->first('lnb', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
-<div class="form-group row {{ $errors->has('buc-transmitter') ? 'has-error' : '' }}">
-    <label for="buc-transmitter" class="col-form-label col-sm-2">{{ 'Buc-transmitter' }}</label>
+
+<div class="form-group row {{ $errors->has('buctransmitter') ? 'has-error' : '' }}">
+    <label for="buctransmitter" class="col-form-label col-sm-2">{{ 'Buc transmitter' }}</label>
     <div class="col-sm-10">
-        <select name="buc-transmitter" class="form-control" id="buc-transmitter">
+        <select name="buctransmitter" class="form-control" id="buctransmitter">
             @foreach (json_decode(
-        '{" buscamEmBucTransmitters1":"buscamEmBucTransmitters1","buscamEmBucTransmitters2":"buscamEmBucTransmitters2","buscamEmBucTransmitters3":"buscamEmBucTransmitters3"}',
-                true, ) as $optionKey=> $optionValue)
+        '{"buscamEmBucTransmitters1":"buscamEmBucTransmitters1","buscamEmBucTransmitters2":"buscamEmBucTransmitters2","buscamEmBucTransmitters3":"buscamEmBucTransmitters3"}',true, )
+         as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
-                    {{ isset($designaco->buc - transmitter) && $designaco->buc - transmitter == $optionKey ? 'selected' : '' }}>
+                    {{ isset($designaco->buctransmitter) && $designaco->buctransmitter == $optionKey ? 'selected' : '' }}>
                     {{ $optionValue }}</option>
             @endforeach
         </select>
-        {!! $errors->first('buc-transmitter', '<p class="help-block">:message</p>') !!}
+        {!! $errors->first('buctransmitter', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
+
 <div class="form-group row {{ $errors->has('ilnb') ? 'has-error' : '' }}">
     <label for="ilnb" class="col-form-label col-sm-2">{{ 'Ilnb' }}</label>
     <div class="col-sm-10">
         <select name="ilnb" class="form-control" id="ilnb">
             @foreach (json_decode(
-        '{" buscarEmIlnbs1":"buscarEmIlnbs1","buscarEmIlnbs2":"buscarEmIlnbs2","buscarEmIlnbs3":"buscarEmIlnbs3"}',
+        '{"buscarEmIlnbs1":"buscarEmIlnbs1","buscarEmIlnbs2":"buscarEmIlnbs2","buscarEmIlnbs3":"buscarEmIlnbs3"}',
                 true, ) as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($designaco->ilnb) && $designaco->ilnb == $optionKey ? 'selected' : '' }}>
@@ -91,12 +95,13 @@
         {!! $errors->first('ilnb', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
 <div class="form-group row {{ $errors->has('tria') ? 'has-error' : '' }}">
     <label for="tria" class="col-form-label col-sm-2">{{ 'Tria' }}</label>
     <div class="col-sm-10">
         <select name="tria" class="form-control" id="tria">
             @foreach (json_decode(
-        '{" buscarEmTrias1":"buscarEmTrias1","buscarEmTrias2":"buscarEmTrias2","buscarEmTrias3":"buscarEmTrias3"}',
+        '{"buscarEmTrias1":"buscarEmTrias1","buscarEmTrias2":"buscarEmTrias2","buscarEmTrias3":"buscarEmTrias3"}',
                 true, ) as $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($designaco->tria) && $designaco->tria == $optionKey ? 'selected' : '' }}>
@@ -106,7 +111,6 @@
         {!! $errors->first('tria', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
-
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Atualizar' : 'Criar' }}">
