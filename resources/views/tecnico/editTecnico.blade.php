@@ -2,6 +2,8 @@
 
 @section('title')
     <h3>Editando o técnico: {{ $tecnico->nome }}</h3>
+    <a href="{{ url('/tecnicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"
+                aria-hidden="true"></i> Voltar</button></a>
 @endsection
 
 @section('breadcrumb')
@@ -21,9 +23,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Altere os dados necessários</h3>
-                        <div class="card-tools">
-                            <a href="{{ route('tecnicos.index', $tecnico) }}" class="btn btn-success">Voltar</a>
-                        </div>
                     </div>
 
                     {{-- O corpo --}}

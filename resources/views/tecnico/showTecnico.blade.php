@@ -2,7 +2,12 @@
 
 @section('title')
     <h4>Detalhes do técnico {{ $tecnico->nome }} - ID {{ $tecnico->id }}</h4>
+
+    <a href="{{ url('/tecnicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i
+        class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
 @endsection
+
+
 
 @section('breadcrumb')
     <li class="breadcrumb-item">

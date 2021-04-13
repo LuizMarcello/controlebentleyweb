@@ -11,7 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    {{-- javascript --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- jquery --}}
+    <script src="{{ asset('jq/JQuery.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
