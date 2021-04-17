@@ -6,7 +6,10 @@
                <div class="col-md-9">
                 <div class="card">
                     {{-- <div class="card-header">Editar Equipamento id: {{ $equipamento->id }}</div> --}}
-                    <div class="card-header">id: {{ $equipamento->id }} - Editando o equipamento tipo: {{ $equipamento->tipodeequipamento }} - marca: {{ $equipamento->marca}} - modelo {{ $equipamento->modelo}}</div>
+                    <div class="card-header">id: {{ $equipamento->id }}
+                        - Editando o equipamento tipo: <b><i> {{ $equipamento->tipodeequipamento }} </i></b>
+                        - marca: <b><i> {{ $equipamento->marca}} </b></i>
+                        - modelo: <b><i> {{ $equipamento->modelo}} <b><i> </div>
                     <div class="card-body">
                         <a href="{{ url('/equipamentos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />
