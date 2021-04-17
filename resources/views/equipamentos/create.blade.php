@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Novo Equipamento</div>
+                    <div class="card-header">Incluindo novo Equipamento</div>
                     <div class="card-body">
                         <a href="{{ url('/equipamentos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />

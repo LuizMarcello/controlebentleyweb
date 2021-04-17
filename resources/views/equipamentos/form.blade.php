@@ -24,7 +24,7 @@
 
 <script>
     //Funções após a leitura do documento
-    $(document).ready(function() {
+   $(document).ready(function() {
         //Select para mostrar e esconder divs
         $('#tipodeequipamento').on('change',function(){
             var SelectValue='.'+$(this).val();
@@ -36,9 +36,10 @@
 
 <div class="form-group {{ $errors->has('tipodeequipamento') ? 'has-error' : ''}}">
     <label for="tipodeequipamento" class="control-label">{{ 'Tipo de equipamento' }}</label>
-    <div class="col-sm-6">
+    <input class="form-control" type="text" value="{{ isset($equipamento->tipodeequipamento) ? $equipamento->tipodeequipamento : ''}}" disabled>
+    {{-- <div class="col-sm-6"> --}}
     <select name="tipodeequipamento" class="form-control" id="tipodeequipamento" >
-            <option value="">Selecione o equipamento</option>
+            <option value="">Selecione ou altere tipo do equipamento</option>
             <option value="antena">Antena</option>
             <option value="cabo">Cabo</option>
             <option value="fonte">Fonte</option>
@@ -50,9 +51,8 @@
             <option value="tria">Tria</option>
     </select>
     {!! $errors->first('tipodeequipamento', '<p class="help-block">:message</p>') !!}
+    {{-- </div> --}}
 </div>
-</div>
-
 
 <div class="form-group {{ $errors->has('notafiscal') ? 'has-error' : ''}}">
     <label for="notafiscal" class="control-label">{{ 'Nota fiscal' }}</label>
@@ -106,15 +106,13 @@
         {!! $errors->first('diametro', '<p class="help-block">:message</p>') !!}
     </div>
 
-
-
     <div class="form-group fonte{{ $errors->has('voltagem') ? 'has-error' : ''}}">
         <label for="voltagem" class="control-label">{{ 'Voltagem' }}</label>
         <input class="voltagem form-control" name="voltagem" type="text" id="voltagem" value="{{ isset($equipamento->voltagem) ? $equipamento->voltagem : ''}}" required>
         {!! $errors->first('voltagem', '<p class="help-block">:message</p>') !!}
     </div>
 
-    <div class="form-group groove lnb ilnb tria fonte{{ $errors->has('serial') ? 'has-error' : ''}}">
+    <div class="form-group groove lnb ilnb tria{{ $errors->has('serial') ? 'has-error' : ''}}">
         <label for="serial" class="control-label">{{ 'Serial' }}</label>
         <input class="form-control" name="serial" type="text" id="serial" value="{{ isset($equipamento->serial) ? $equipamento->serial : ''}}" required>
         {!! $errors->first('serial', '<p class="help-block">:message</p>') !!}

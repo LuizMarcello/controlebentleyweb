@@ -65,16 +65,16 @@ class EquipamentosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'banda' => 'required',
+			/* 	'banda' => 'required', */
 			'datanota' => 'required',
 			'notafiscal' => 'required',
-			'diametro' => 'required',
+		/* 	'diametro' => 'required', */
 			'marca' => 'required',
 			'modelo' => 'required',
-			'tipo' => 'required',
-			'serial' => 'required',
-			'voltagem' => 'required',
-			'macaddress' => 'required'
+			/* 'tipo' => 'required', */
+		/* 	'serial' => 'required', */
+		/* 	'voltagem' => 'required', */
+			/* 'macaddress' => 'required' */
 		]);
         $requestData = $request->all();
 
@@ -122,16 +122,16 @@ class EquipamentosController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'banda' => 'required',
+		/* 	'banda' => 'required', */
 			'datanota' => 'required',
 			'notafiscal' => 'required',
-			'diametro' => 'required',
+		/* 	'diametro' => 'required', */
 			'marca' => 'required',
 			'modelo' => 'required',
-			'tipo' => 'required',
-			'serial' => 'required',
-			'voltagem' => 'required',
-			'macaddress' => 'required'
+			/* 'tipo' => 'required', */
+		/* 	'serial' => 'required', */
+		/* 	'voltagem' => 'required', */
+			/* 'macaddress' => 'required' */
 		]);
         $requestData = $request->all();
 

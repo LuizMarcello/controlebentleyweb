@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Equipamento id: {{ $equipamento->id }}</div>
+                    <div class="card-header">id: {{ $equipamento->id }} - Detalhes do equipamento tipo: {{ $equipamento->tipodeequipamento }} - marca: {{ $equipamento->marca}} - modelo: {{ $equipamento->modelo}}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/equipamentos') }}" title="Back"><button class="btn btn-warning btn-sm"><i
@@ -48,14 +48,14 @@
                                         <th> Banda </th>
                                         <td> {{ $equipamento->banda }} </td>
                                     </tr>
-                                    <tr>
+                                   {{--  <tr>
                                         <th> Quantidade </th>
                                         <td> {{ $equipamento->quantidade }} </td>
                                     </tr>
                                     <tr>
                                         <th> Tipo </th>
                                         <td> {{ $equipamento->tipo }} </td>
-                                    </tr>
+                                    </tr> --}}
                                     <tr>
                                         <th> Diâmetro </th>
                                         <td> {{ $equipamento->diametro }} </td>
