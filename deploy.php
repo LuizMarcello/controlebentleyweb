@@ -10,21 +10,21 @@ set('application', 'my_project');
 set('repository', 'https://github.com/LuizMarcello/controlebentleyweb.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true); 
+set('git_tty', true);
 
-// Shared files/dirs between deploys 
+// Shared files/dirs between deploys
 add('shared_files', []);
 add('shared_dirs', []);
 
-// Writable dirs by web server 
+// Writable dirs by web server
 add('writable_dirs', []);
 
 
 // Hosts
 
 host('project.com')
-    ->set('deploy_path', '~/{{application}}');    
-    
+    ->set('deploy_path', '~/{{application}}');
+
 // Tasks
 
 task('build', function () {
