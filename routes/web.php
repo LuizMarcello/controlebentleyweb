@@ -27,18 +27,18 @@ Auth::routes([
  */
 Route::middleware('auth')->group(function() {
     Route::resource('empresas', 'EmpresaController');
-    Route::resource('modens', 'ModemController');
+   /*  Route::resource('modens', 'ModemController');
     Route::resource('antenas', 'AntenaController');
     Route::resource('cabos', 'CaboController');
     Route::resource('fontes', 'FonteController');
-    Route::resource('grooves', 'GrooveController');
+    Route::resource('grooves', 'GrooveController'); */
     Route::resource('tecnicos', 'TecnicoController');
-    Route::resource('roteadors', 'RoteadorController');
+   /*  Route::resource('roteadors', 'RoteadorController'); */
     Route::resource('planos', 'PlanoController');
     Route::resource('distribuidors', 'DistribuidorController');
-    Route::resource('lnbs', 'LnbController');
+   /*  Route::resource('lnbs', 'LnbController');
     Route::resource('ilnbs', 'IlnbController');
-    Route::resource('trias', 'TriaController');
+    Route::resource('trias', 'TriaController'); */
 
     Route::resource('migracao', 'MigracaoController');
     Route::resource('users', 'UsersController');
