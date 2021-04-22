@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now update something great!
 |
 */
 
@@ -58,4 +58,8 @@ Route::resource('clientes', 'ClientesController');
 
 Route::resource('designacoes', 'DesignacoesController');
 
-Route::get('github/buscar', 'GitHubController@buscar');
+Route::get('/github/buscar', 'GitHubController@buscar');
+
+Route::get('/apiresttreinaweb/create', 'ApiRestTreinaWebController@create');
+
+Route::get('/apiresttreinaweb/update', 'ApiRestTreinaWebController@update');
