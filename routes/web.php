@@ -1,7 +1,9 @@
 <?php
 
+use App\Services\CepService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +65,14 @@ Route::get('/github/buscar', 'GitHubController@buscar');
 Route::get('/apiresttreinaweb/create', 'ApiRestTreinaWebController@create');
 
 Route::get('/apiresttreinaweb/update', 'ApiRestTreinaWebController@update');
+
+Route::get('/apiresttreinaweb/delete', 'ApiRestTreinaWebController@delete');
+
+Route::get('/apiresttreinaweb/list', 'ApiRestTreinaWebController@list');
+
+Route::get('/apiresttreinaweb/show', 'ApiRestTreinaWebController@show');
+
+//"Injetando" aqui a classe php/serviço "CepService":
+Route::get('/cepservice', function (CepService $cepService) {
+    $cepService->consultar('86037700');
+});

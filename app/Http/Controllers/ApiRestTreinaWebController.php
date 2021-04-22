@@ -8,11 +8,20 @@ use App\Repositories\ApiRestTreinaWebRepository;
 
 class ApiRestTreinaWebController extends Controller
 {
-    //Criando uma ação(action):
-    //"Injetando" aqui a classe do repositório ApiRestTreinaWebRepository:
-    public function create(ApiRestTreinaWebRepository $apiRestTreinaweb)
+    //"Injetando" aqui,através deste contrutor, a classe do
+    // repositório ApiRestTreinaWebRepository:
+    //Criando uma propriedade:
+    public ApiRestTreinaWebRepository $apiRestTreinawebRepository;
+
+    public function __construct(ApiRestTreinaWebRepository $apiRestTreinaWebRepository)
     {
-        $resposta = $apiRestTreinaweb->create([
+        $this->apiRestTreinawebRepository = $apiRestTreinaWebRepository;
+    }
+
+    //Criando uma ação(action):
+    public function create()
+    {
+        $resposta = $this->apiRestTreinawebRepositoryTreinaweb->create([
             'nome' => 'PHP Avançado',
             'linguagem' => 'PHP'
         ]);
@@ -24,11 +33,10 @@ class ApiRestTreinaWebController extends Controller
         return 'Êrro ao criar.';
     }
 
-     //Criando uma ação(action):
-    //"Injetando" aqui a classe do repositório ApiRestTreinaWebRepository:
-    public function update(ApiRestTreinaWebRepository $apiRestTreinaweb)
+    //Criando uma ação(action):
+    public function update()
     {
-        $resposta = $apiRestTreinaweb->update('A26OnXzfDXVt2Lgo', [
+        $resposta = $this->apiRestTreinawebRepository->update('A26OnXzfDXVt2Lgo', [
             'nome' => 'PHP Principais fundamentos',
             'linguagem' => 'PHP'
         ]);
@@ -38,5 +46,33 @@ class ApiRestTreinaWebController extends Controller
         }
 
         return 'Êrro ao atualizar.';
+    }
+
+    //Criando uma ação(action):
+    public function delete()
+    {
+        $resposta =$this->apiRestTreinawebRepository->delete('A26OnXzfDXVt2Lgo');
+
+        if($resposta){
+            return 'Removido com sucesso.';
+        }
+
+        return 'Êrro ao remover.';
+    }
+
+    //Criando uma ação(action):
+    public function list()
+    {
+        $cursos = $this->apiRestTreinawebRepositoryb->list();
+
+        dd($cursos);
+    }
+
+    //Criando uma ação(action):
+    public function show()
+    {
+        $curso = $this->apiRestTreinawebRepository->show('oWEnlkjW58GOcG8a');
+
+        dd($curso);
     }
 }

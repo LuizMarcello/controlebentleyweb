@@ -24,6 +24,28 @@ use Illuminate\Support\Facades\Http;
 class ApiRestTreinaWebRepository
 {
     /* Um método que receberá como parâmetro, um array com os dados que serão criados na api */
+    public function list()
+    {
+       $response = Http::get('http://192.168.100.26:3002/api/treinaweb/curso');
+
+       if($response->successful()){
+            return $response->json();
+       }
+       return [];
+    }
+
+    /* Um método que receberá como parâmetro, um id de um curso da api */
+    public function show(string $id)
+    {
+       $response = Http::get("http://192.168.100.26:3002/api/treinaweb/curso?id={$id}");
+
+       if($response->successful()){
+            return $response->json();
+       }
+       return [];
+    }
+
+    /* Um método que receberá como parâmetro, um array com os dados que serão criados na api */
     public function create(array $dados)
     {
        $response = Http::post('http://192.168.100.26:3002/api/treinaweb/curso', $dados);
@@ -35,6 +57,13 @@ class ApiRestTreinaWebRepository
     public function update(string $id, array $dados)
     {
        $response = Http::put("http://192.168.100.26:3002/api/treinaweb/curso?id={$id}", $dados);
+
+       return $response->successful();
+    }
+
+    public function delete(string $id)
+    {
+       $response = Http::delete("http://192.168.100.26:3002/api/treinaweb/curso?id={$id}");
 
        return $response->successful();
     }
