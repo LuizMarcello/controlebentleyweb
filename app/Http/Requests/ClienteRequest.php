@@ -3,15 +3,30 @@
 namespace App\Http\Requests;
 
 /**
-              * Importando para usar nas regras de validação.
-              */
+* Importando para usar nas regras de validação.
+*/
 
+use App\Services\CepService;
+use App\Rules\CepRule;
 use Illuminate\Validation\Rule;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 class ClienteRequest extends FormRequest
 {
+    public $cepService;
+
+    /**
+     * Create a new rule instance.
+     *
+     * @return void
+     * Injetando uma instancia da classe/serviço CepService
+     */
+    public function __construct(CepService $cepService)
+    {
+        $this->cepService = $cepService;
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -40,7 +55,7 @@ class ClienteRequest extends FormRequest
             'banda' => ['required'],
             'email' => ['required'],
             'telefone1' => ['required'],
-            'cep1' => ['required'],
+            'cep1' => ['required', new CepRule($this->cepService)],
             'rua1' => ['required'],
             'cidade1' => ['required'],
             'estado1' => ['required'],

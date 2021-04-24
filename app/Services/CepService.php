@@ -27,7 +27,23 @@ class CepService
 
     /*  O verbo Http::get acima retorna um json. Este método "json()" decodifica o "json" para
         um array "php", para conseguir trabalhar dentro do php de forma fácil */
-       dd($response->json());
+       return $response->json();
+    }
+
+
+    public function validar(string $cep)
+    {
+        $response = Http::get("https://webmaniabr.com/api/1/cep/{$cep}/?app_key=XXXyCDSLbfFqk0DXCzV5J4CPT8Oi445Y&app_secret=gPLAm0O6EHOC6thdBhqACiUiRXlmprVaG8sqUdnOzhDxlY3y");
+
+        /*  O verbo Http::get acima retorna um json. Este método "json()" decodifica o "json" para
+        um array "php", para conseguir trabalhar dentro do php de forma fácil */
+
+        $endereco = $response->json();
+
+        //Se existir o êrro(cep inválido), ele retorna false.
+        //Se não exisitr o êrro(cep válido), ele retorna true.
+        //Deveria ser o contrário, mas o operador de negação(!) inverte.
+        return !isset($endereco['error']);
     }
 
 }

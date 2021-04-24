@@ -73,6 +73,6 @@ Route::get('/apiresttreinaweb/list', 'ApiRestTreinaWebController@list');
 Route::get('/apiresttreinaweb/show', 'ApiRestTreinaWebController@show');
 
 //"Injetando" aqui a classe php/serviço "CepService":
-Route::get('/cepservice', function (CepService $cepService) {
+/* Route::get('/cepservice', function (CepService $cepService) {
     $cepService->consultar('86037700');
-});
+}); */

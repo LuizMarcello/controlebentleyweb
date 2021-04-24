@@ -209,6 +209,8 @@
 <div>
     <h3>Endereço do contratante</h3>
 </div>
+
+
 <div class="form-group {{ $errors->has('cep1') ? 'has-error' : '' }}">
     <label for="cep1" class="control-label">{{ 'Cep*' }}</label>
     {{-- <input class="cep form-control" name="cep1" type="text" id="cep1" requered value="{{ isset($cliente->cep1) ? $cliente->cep1 : ''}}" > --}}
@@ -216,6 +218,8 @@
         value="{{ old('cep1', @$cliente->cep1) }}">
     {!! $errors->first('cep1', '<p class="help-block">:message</p>') !!}
 </div>
+
+
 <div class="form-group {{ $errors->has('rua1') ? 'has-error' : '' }}">
     <label for="rua1" class="control-label">{{ 'Rua*' }}</label>
     {{-- <input class="form-control" rows="5" name="rua1" type="text" id="rua1" requered value="{{ isset($cliente->rua1) ? $cliente->rua1 : ''}}"> --}}
