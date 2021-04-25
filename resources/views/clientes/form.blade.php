@@ -88,28 +88,28 @@
     <label for="celular1" class="control-label">{{ 'Celular 1*' }}</label>
     {{-- <input class="celular form-control" name="celular1" type="text" id="celular1" value="{{ isset($cliente->celular1) ? $cliente->celular1 : ''}}" required> --}}
     <input class="celular form-control" name="celular1" type="text" id="celular1"
-        value="{{ old('celular1', @$cliente->celular1) }}" required>
+        value="{{ old('celular1', @$cliente->celular1) }}" required placeholder="(00) 00000-0000">
     {!! $errors->first('celular1', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('celular2') ? 'has-error' : '' }}">
     <label for="celular2" class="control-label">{{ 'Celular 2' }}</label>
     {{-- <input class="celular form-control" name="celular2" type="text" id="celular2" value="{{ isset($cliente->celular2) ? $cliente->celular2 : ''}}" > --}}
     <input class="celular form-control" name="celular2" type="text" id="celular2"
-        value="{{ old('celular2', @$cliente->celular2) }}">
+        value="{{ old('celular2', @$cliente->celular2) }}" placeholder="(00) 00000-0000">
     {!! $errors->first('celular2', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone1') ? 'has-error' : '' }}">
     <label for="telefone1" class="control-label">{{ 'Telefone 1*' }}</label>
     {{-- <input class="phone form-control" name="telefone1" type="text" id="telefone1" value="{{ isset($cliente->telefone1) ? $cliente->telefone1 : ''}}" required> --}}
     <input class="phone form-control" name="telefone1" type="text" id="telefone1"
-        value="{{ old('telefone1', @$cliente->telefone1) }}" required>
+        value="{{ old('telefone1', @$cliente->telefone1) }}" required placeholder="(00) 0000-0000">
     {!! $errors->first('telefone1', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone2') ? 'has-error' : '' }}">
     <label for="telefone2" class="control-label">{{ 'Telefone 2' }}</label>
     {{-- <input class="phone form-control" name="telefone2" type="text" id="telefone2" value="{{ isset($cliente->telefone2) ? $cliente->telefone2 : ''}}" > --}}
     <input class="phone form-control" name="telefone2" type="text" id="telefone2"
-        value="{{ old('telefone2', @$cliente->telefone2) }}">
+        value="{{ old('telefone2', @$cliente->telefone2) }}" placeholder="(00) 0000-0000">
     {!! $errors->first('telefone2', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
@@ -214,8 +214,8 @@
 <div class="form-group {{ $errors->has('cep1') ? 'has-error' : '' }}">
     <label for="cep1" class="control-label">{{ 'Cep*' }}</label>
     {{-- <input class="cep form-control" name="cep1" type="text" id="cep1" requered value="{{ isset($cliente->cep1) ? $cliente->cep1 : ''}}" > --}}
-    <input class="cep form-control" name="cep1" type="text" id="cep1" requered
-        value="{{ old('cep1', @$cliente->cep1) }}">
+    <input class="cep1 form-control" name="cep1" type="text" id="cep1" requered
+        value="{{ old('cep1', @$cliente->cep1) }}" placeholder="00000-000">
     {!! $errors->first('cep1', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -268,14 +268,14 @@
     <label for="celular11" class="control-label">{{ 'Celular' }}</label>
     {{-- <input class="celular form-control" name="celular11" type="text" id="celular11" value="{{ isset($cliente->celular11) ? $cliente->celular11 : ''}}" > --}}
     <input class="celular form-control" name="celular11" type="text" id="celular11"
-        value="{{ old('celular11', @$cliente->celular11) }}">
+        value="{{ old('celular11', @$cliente->celular11) }}" placeholder="(00) 00000-0000">
     {!! $errors->first('celular11', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone11') ? 'has-error' : '' }}">
     <label for="telefone11" class="control-label">{{ 'Telefone' }}</label>
     {{-- <input class="phone form-control" name="telefone11" type="text" id="telefone11" value="{{ isset($cliente->telefone11) ? $cliente->telefone11 : ''}}" > --}}
     <input class="phone form-control" name="telefone11" type="text" id="telefone11"
-        value="{{ old('telefone11', @$cliente->telefone11) }}">
+        value="{{ old('telefone11', @$cliente->telefone11) }}" placeholder="(00) 0000-0000">
     {!! $errors->first('telefone11', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -331,14 +331,14 @@
     <label for="celular21" class="control-label">{{ 'Celular' }}</label>
     {{-- <input class="celular form-control" name="celular21" type="text" id="celular21" value="{{ isset($cliente->celular21) ? $cliente->celular21 : ''}}" > --}}
     <input class="celular form-control" name="celular21" type="text" id="celular21"
-        value="{{ old('celular21', @$cliente->celular21) }}">
+        value="{{ old('celular21', @$cliente->celular21) }}" placeholder="(00) 00000-0000">
     {!! $errors->first('celular21', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone21') ? 'has-error' : '' }}">
     <label for="telefone21" class="control-label">{{ 'Telefone' }}</label>
     {{-- <input class="phone form-control" name="telefone21" type="text" id="telefone21" value="{{ isset($cliente->telefone21) ? $cliente->telefone21 : ''}}" > --}}
     <input class="phone form-control" name="telefone21" type="text" id="telefone21"
-        value="{{ old('telefone21', @$cliente->telefone21) }}">
+        value="{{ old('telefone21', @$cliente->telefone21) }}" placeholder="(00) 0000-0000">
     {!! $errors->first('telefone21', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -394,14 +394,14 @@
     <label for="celular31" class="control-label">{{ 'Celular' }}</label>
     {{-- <input class="celular form-control" name="celular31" type="text" id="celular31" value="{{ isset($cliente->celular31) ? $cliente->celular31 : ''}}" > --}}
     <input class="celular form-control" name="celular31" type="text" id="celular31"
-        value="{{ old('celular31', @$cliente->celular31) }}">
+        value="{{ old('celular31', @$cliente->celular31) }}" placeholder="(00) 00000-0000">
     {!! $errors->first('celular31', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('telefone31') ? 'has-error' : '' }}">
     <label for="telefone31" class="control-label">{{ 'Telefone' }}</label>
     {{-- <input class="phone form-control" name="telefone31" type="text" id="telefone31" value="{{ isset($cliente->telefone31) ? $cliente->telefone31 : ''}}" > --}}
     <input class="phone form-control" name="telefone31" type="text" id="telefone31"
-        value="{{ old('telefone31', @$cliente->telefone31) }}">
+        value="{{ old('telefone31', @$cliente->telefone31) }}" placeholder="(00) 0000-0000">
     {!! $errors->first('telefone31', '<p class="help-block">:message</p>') !!}
 </div>
 
