@@ -3,6 +3,9 @@
     <input class="form-control" name="user_id" type="number" id="user_id" value="{{ isset($cliente->user_id) ? $cliente->user_id : ''}}" >
     {!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}
 </div> --}}
+
+
+
 <div class="form-group {{ $errors->has('nome_razaosocial') ? 'has-error' : '' }}">
     <label for="nome_razaosocial" class="control-label">{{ 'Nome/Razão social*' }}</label>
     {{-- <input class="form-control" rows="5" name="nome_razaosocial" type="text" id="nome_razaosocial" required value="{{ old(isset($cliente->nome_razaosocial) ? $cliente->nome_razaosocial : '')}}"> --}}

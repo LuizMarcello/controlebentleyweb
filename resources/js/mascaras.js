@@ -72,8 +72,8 @@ $(field).keydown(function(){
 
 var cep = document.getElementById('cep1');
 
-cep.addEventListener("keyup", function(e){
-    if(cep.value.length == 9){
+cep.addEventListener("keyup", function(e) {
+    if(cep.value.length == 9) {
         autoComplete(cep.value);
     }
 });
@@ -85,7 +85,7 @@ function autoComplete(cep) {
        tempo vai demorar para ficar pronto(depende da API), então usa-se o método then(), para quando ficar pronto, executar uma função.
        Esta função terá um parâmetro "response" que será a resposta que a API(do correio) irá dar pra gente. */
     fetch(url).then(function(response) {
-         /* Verificando se a resposta foi ok, se foi código http 200 */
+            /* Verificando se a resposta foi ok, se foi código http 200 */
             if(response.ok) {
             response.json().then(function(endereco) {
                 console.log(endereco);
