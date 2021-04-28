@@ -29,6 +29,11 @@ function autoComplete(cep) {
             if(response.ok) {
             response.json().then(function(endereco) {
                 console.log(endereco);
+                document.getElementById('rua1').value = endereco.endereco;
+                document.getElementById('bairro1').value = endereco.bairro;
+                document.getElementById('cidade1').value = endereco.cidade;
+                document.getElementById('estado1').value = endereco.uf;
+
             });
         }
     });

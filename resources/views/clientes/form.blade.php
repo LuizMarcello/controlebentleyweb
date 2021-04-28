@@ -259,7 +259,7 @@
 
 <div class="form-group {{ $errors->has('estado1') ? 'has-error' : '' }}">
     <label for="estado1" class="control-label">{{ 'Estado*' }}</label>
-    <select name="estado1" class="form-control @error('estado1') is-invalid @enderror" required="required">
+    <select name="estado1" id="estado1" class="form-control @error('estado1') is-invalid @enderror" required="required">
         <option value="">Selecione</option>
         @foreach (estados() as $sigla => $nome)
             <option {{ @$cliente->estado1 == $sigla ? 'selected' : '' }} value="{{ $sigla }}">
