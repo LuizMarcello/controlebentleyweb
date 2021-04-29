@@ -37,12 +37,11 @@ class CepService
 
         /*  O verbo Http::get acima retorna um json. Este método "json()" decodifica o "json" para
         um array "php", para conseguir trabalhar dentro do php de forma fácil */
-
         $endereco = $response->json();
 
         //Se existir o êrro(cep inválido), ele retorna false.
         //Se não exisitr o êrro(cep válido), ele retorna true.
-        //Deveria ser o contrário, mas o operador de negação(!) inverte.
+        //Seria o contrário, mas o operador de negação(!) inverte.
         return !isset($endereco['error']);
     }
 

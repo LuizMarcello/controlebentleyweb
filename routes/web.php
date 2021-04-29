@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CepController;
 use App\Services\CepService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -76,3 +77,7 @@ Route::get('/apiresttreinaweb/show', 'ApiRestTreinaWebController@show');
 /* Route::get('/cepservice', function (CepService $cepService) {
     $cepService->consultar('86037700');
 }); */
+
+Route::get('/cep/{cep}', 'CepController');
+
+

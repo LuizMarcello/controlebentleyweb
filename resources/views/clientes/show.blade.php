@@ -149,7 +149,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ mascara($cliente->cep1, '##.###-##') }} </td>
+                                        <td> {{ mascara($cliente->cep1, '#####-###') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
@@ -189,7 +189,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ mascara($cliente->cep2, '##.###-##') }} </td>
+                                        <td> {{ mascara($cliente->cep2, '#####-###') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
@@ -229,7 +229,7 @@
                                 <tbody>
                                     <tr>
                                         <th> Cep </th>
-                                        <td> {{ mascara($cliente->cep3, '##.###-##') }} </td>
+                                        <td> {{ mascara($cliente->cep3, '#####-###') }} </td>
                                     </tr>
                                     <tr>
                                         <th> Rua </th>
