@@ -97,7 +97,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="cep">Cep*</label>
         <div class="col-sm-10">
-            <input value="{{ old('cep', @$empresa->cep) }}" type="text" id="cep" name="cep" maxlength="9"
+            <input value="{{ old('cep', @$empresa->cep) }}" type="text" id="cepempr" name="cep" maxlength="9"
                 class="cep form-control @error('cep') is-invalid @enderror">
             @error('cep')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -107,7 +107,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="rua">Rua</label>
         <div class="col-sm-10">
-            <input value="{{ old('rua', @$empresa->rua) }}" type="text" id="rua" name="rua" maxlength="150"
+            <input value="{{ old('rua', @$empresa->rua) }}" type="text" id="ruaempr" name="rua" maxlength="150"
                 class="form-control @error('rua') is-invalid @enderror">
             @error('rua')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -127,7 +127,7 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="bairro">Bairro*</label>
         <div class="col-sm-10">
-            <input value="{{ old('bairro', @$empresa->bairro) }}" type="text" id="bairro" name="bairro"
+            <input value="{{ old('bairro', @$empresa->bairro) }}" type="text" id="bairroempr" name="bairro"
                 maxlength="100" class="form-control @error('bairro') is-invalid @enderror">
             @error('bairro')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -137,18 +137,18 @@
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="cidade">Cidade*</label>
         <div class="col-sm-10">
-            <input value="{{ old('cidade', @$empresa->cidade) }}" type="text" id="cidade" name="cidade"
+            <input value="{{ old('cidade', @$empresa->cidade) }}" type="text" id="cidadeempr" name="cidade"
                 maxlength="100" class="form-control @error('cidade') is-invalid @enderror">
             @error('cidade')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
     </div>
-    
+
     <div class="form-group row">
         <label class="col-form-label col-sm-2" for="estado">Estado*</label>
         <div class="col-sm-3">
-            <select name="estado" class="form-control @error('estado') is-invalid @enderror" required="required">
+            <select name="estado" id="estadoempr" class="form-control @error('estado') is-invalid @enderror" required="required">
                 <option value="">Selecione</option>
                 @foreach (estados() as $sigla => $nome)
                     <option {{ @$empresa->estado == $sigla ? 'selected' : '' }} value="{{ $sigla }}">

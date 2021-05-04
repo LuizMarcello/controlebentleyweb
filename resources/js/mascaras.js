@@ -6,6 +6,7 @@ $('.celular').mask('(99) 99999-9999');
 $('.phone').mask('(99) 9999-9999');
 //.cep
 $('.cep1').mask('99999-999');
+$('.cep').mask('99999-999');
 //.documento
 $('.documento').mask('999.999.999-99');
 //.cpf_cnpj

@@ -18,6 +18,7 @@
         value="{{ isset($cliente->ie_rg) ? $cliente->ie_rg : '' }}">
     {!! $errors->first('ie_rg', '<p class="help-block">:message</p>') !!}
 </div>
+
 <div class="form-group {{ $errors->has('documento') ? 'has-error' : '' }}">
     <label for="documento" class="control-label">{{ 'CPF/CNPJ*' }}</label>
     {{-- <input class="documento form-control" name="documento" type="text" id="documento" value="{{ isset($cliente->documento) ? $cliente->documento : ''}}" required> --}}
