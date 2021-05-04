@@ -22,7 +22,7 @@ class EquipamentosController extends Controller
 
         if (!empty($keyword)) {
             $equipamentos = Equipamento::where('tipodeequipamento', 'LIKE', "%$keyword%")
-                ->orWhere('user_id', 'LIKE', "%$keyword%")
+               /*  ->orWhere('user_id', 'LIKE', "%$keyword%") */
                 ->orWhere('notafiscal', 'LIKE', "%$keyword%")
                 ->orWhere('datanota', 'LIKE', "%$keyword%")
                 ->orWhere('banda', 'LIKE', "%$keyword%")
