@@ -219,7 +219,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('cep1') ? 'has-error' : '' }}">
-    <label for="cepe" class="control-label">{{ 'Cep*' }}</label>
+    <label for="cep1" class="control-label">{{ 'Cep*' }}</label>
     {{-- <input class="cep form-control" name="cep1" type="text" id="cep1" requered value="{{ isset($cliente->cep1) ? $cliente->cep1 : ''}}" > --}}
     <input class="cep1 form-control" name="cep1" type="text" id="cep1" requered
         value="{{ old('cep1', @$cliente->cep1) }}" placeholder="00000-000">
