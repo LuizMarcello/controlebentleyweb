@@ -51,14 +51,7 @@
                                         <th> Banda </th>
                                         <td> {{ $equipamento->banda }} </td>
                                     </tr>
-                                   {{--  <tr>
-                                        <th> Quantidade </th>
-                                        <td> {{ $equipamento->quantidade }} </td>
-                                    </tr>
-                                    <tr>
-                                        <th> Tipo </th>
-                                        <td> {{ $equipamento->tipo }} </td>
-                                    </tr> --}}
+
                                     <tr>
                                         <th> Diâmetro </th>
                                         <td> {{ $equipamento->diametro }} </td>
