@@ -189,9 +189,9 @@
                 </ul>
             </li>
 
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+           {{--  <li class="nav-item"> --}} {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
+               {{--  <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
                         Financeiro
@@ -212,7 +212,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
             <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">

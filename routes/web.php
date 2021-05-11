@@ -80,4 +80,7 @@ Route::get('/apiresttreinaweb/show', 'ApiRestTreinaWebController@show');
 
 Route::get('/cep/{cep}', 'CepController');
 
+Route::get('/empresa/relatorios/clientes', 'Relatorios\RelatoriosClientes')
+        ->name('empresa.relatorios.clientes');
+
 
