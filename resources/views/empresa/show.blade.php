@@ -1,21 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    <h4>Detalhes do {{ $empresa->tipo }} {{ $empresa->nome }} - ID {{ $empresa->id }}</h4>
-@endsection
-
-@section('breadcrumb')
-    <li class="breadcrumb-item">
-        {{-- No método "index" do controller, é injetado também o "tipo", então fica assim: --}}
-        <a href="{{ route('empresas.index') }}?tipo={{ $empresa->tipo }}">Listagem de {{ $empresa->tipo }}</a>
-    </li>
-
-    {{-- No método "show" do controller não é injetado o "tipo", então usa o "Route Model Binding" injetado: --}}
-    <li class="breadcrumb-item">
-        <a href="{{ route('empresas.show', $empresa) }}">Detalhes do {{ $empresa->tipo }}</a>
-    </li>
-@endsection
-
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -162,6 +146,22 @@
         </ul>
     </nav>
     <!-- /.navbar -->
+@endsection
+
+@section('title')
+    <h4>Detalhes do {{ $empresa->tipo }} {{ $empresa->nome }} - ID {{ $empresa->id }}</h4>
+@endsection
+
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        {{-- No método "index" do controller, é injetado também o "tipo", então fica assim: --}}
+        <a href="{{ route('empresas.index') }}?tipo={{ $empresa->tipo }}">Listagem de {{ $empresa->tipo }}</a>
+    </li>
+
+    {{-- No método "show" do controller não é injetado o "tipo", então usa o "Route Model Binding" injetado: --}}
+    <li class="breadcrumb-item">
+        <a href="{{ route('empresas.show', $empresa) }}">Detalhes do {{ $empresa->tipo }}</a>
+    </li>
 @endsection
 
 @section('content')

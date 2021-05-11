@@ -2,6 +2,9 @@
 
 @section('title')
     <h4>Detalhes do plano {{ $plano->nome }} {{ $plano->banda}} - ID {{ $plano->id }}</h4>
+    <div class="card-tools">
+        <a href="{{ route('planos.index', $plano) }}" class="btn btn-success">Voltar</a>
+    </div>
 @endsection
 
 @section('breadcrumb')
@@ -177,6 +180,7 @@
                                 </h4>
                             </div>
                         </div>
+
 
                         <div class="row">
                             <div class="col-sm-6">

@@ -1,15 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1>Listagem de {{ $tipo }}</h1>
-@endsection
-
-@section('breadcrumb')
-    <li class="breadcrumb-item">
-        <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
-    </li>
-@endsection
-
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -156,6 +146,16 @@
         </ul>
     </nav>
     <!-- /.navbar -->
+@endsection
+
+@section('title')
+    <h1>Listagem de {{ $tipo }}</h1>
+@endsection
+
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
+    </li>
 @endsection
 
 @section('content')

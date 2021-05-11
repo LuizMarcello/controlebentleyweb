@@ -2,6 +2,9 @@
 
 @section('title')
     <h1>Listagem de Técnicos</h1>
+    <div class="card-tools">
+        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo Técnico</a>
+    </div>
 @endsection
 
 @section('breadcrumb')
@@ -165,10 +168,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Listagem de Técnicos</h3>
-                        <div class="card-tools">
-                            <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo
-                                Técnico</a>
-                        </div>
                     </div>
 
 

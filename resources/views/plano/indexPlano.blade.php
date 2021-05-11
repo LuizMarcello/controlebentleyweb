@@ -2,6 +2,9 @@
 
 @section('title')
     <h1>Listagem de Planos</h1>
+    <div class="card-tools">
+        <a href="{{ route('planos.create') }}" class="btn btn-success">Novo Plano</a>
+    </div>
 @endsection
 
 @section('breadcrumb')
@@ -165,12 +168,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Listagem de Planos</h3>
-                        <div class="card-tools">
-                            <a href="{{ route('planos.create') }}" class="btn btn-success">Novo
-                                Plano</a>
-                        </div>
                     </div>
-
 
                     {{-- O corpo --}}
                     <div class="card-body">
