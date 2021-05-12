@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApresentacaoController;
 use App\Http\Controllers\CepController;
 use App\Services\CepService;
 use Illuminate\Support\Facades\Auth;
@@ -82,5 +83,9 @@ Route::get('/cep/{cep}', 'CepController');
 
 Route::get('/empresa/relatorios/clientes', 'Relatorios\RelatoriosClientes')
         ->name('empresa.relatorios.clientes');
+
+Route::get('olamundo', [ApresentacaoController::class, 'olaMundo']);
+
+Route::get('cursos', [ApresentacaoController::class, 'cursos']);
 
 
