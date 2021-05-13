@@ -11,5 +11,13 @@
 {{-- É mais perigoso --}}
 {!! $name !!}
 {!! $description !!}
+<br>
+{{ var_dump($posts) }}
+<br>
+@json($posts)
 
+<script>
+    var posts = @json($posts);
+    console.log(posts);
+</script>
 

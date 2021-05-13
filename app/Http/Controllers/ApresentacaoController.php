@@ -61,7 +61,8 @@ class ApresentacaoController
           ->setPaper('a3', 'landscape')
           ->save(public_path() . '/posso-colocar-um-nome.pdf')
           ->stream();
-       /* return $domPdf->save(public_path() . '/posso-colocar-um-nome.pdf')->download('posso-colocar-um-nome.pdf'); */
+       /* return $domPdf->save(public_path() . '/posso-colocar-um-nome.pdf')
+          ->download('posso-colocar-um-nome.pdf'); */
        /* return $domPdf->download('posso-colocar-um-nome.pdf'); */
     }
 }

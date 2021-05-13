@@ -9,8 +9,8 @@
      edit, mas este mesmo formulário é usado tbém pelo create, só que o controller, neste caso,
      não injeta esta variável. --}}
 <div class="form-group row">
-    <label class="col-form-label col-sm-2 required" for="nome">Nome</label>
-    <div class="col-sm-10">
+    <label class="col-form-label col-sm-2 required" for="nome">Nome do plano</label>
+    <div class="col-sm-5">
         <input value="{{ old('nome', @$plano->nome) }}" type="text" id="nome" name="nome" required="required" maxlength="18"
             class="nome form-control @error('nome') is-invalid @enderror">
         @error('nome')
@@ -21,6 +21,20 @@
 
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="cir">Cir</label>
+    <div class="col-sm-5">
+        <select name="cir" class="form-control" id="cir">
+            @foreach (json_decode('{" 16:1":"16:1","10:1":"10:1"}', true) as
+                $optionKey=> $optionValue)
+                <option value="{{ $optionKey }}"
+                    {{ isset($plano->cir) && $plano->cir == $optionKey ? 'selected' : '' }}>
+                    {{ $optionValue }}</option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
+{{-- <div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="cir">Cir</label>
     <div class="col-sm-10">
         <input value="{{ old('cir', @$plano->cir) }}" type="text" id="cir" name="cir" required="required" maxlength="18"
             class="cir form-control @error('cir') is-invalid @enderror">
@@ -28,20 +42,49 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="banda">Banda</label>
+    <div class="col-sm-5">
+        <select name="banda" class="form-control" id="banda">
+            @foreach (json_decode('{" ka":"ka","ku":"ku"}', true) as
+                $optionKey=> $optionValue)
+                <option value="{{ $optionKey }}"
+                    {{ isset($plano->banda) && $plano->banda == $optionKey ? 'selected' : '' }}>
+                    {{ $optionValue }}</option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
+
+{{-- <div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="banda">Banda</label>
     <div class="col-sm-10">
-        <input value="{{ old('banda', @$plano->banda) }}" type="text" id="banda" name="banda" {{-- required="required" --}} maxlength="18"
+        <input value="{{ old('banda', @$plano->banda) }}" type="text" id="banda" name="banda" --}} {{-- required="required" --}} {{-- maxlength="18"
             class="banda form-control @error('banda') is-invalid @enderror">
         @error('banda')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <div class="form-group row">
+    <label class="col-form-label col-sm-2 required" for="velocmaxdown">Veloc Máxima Down</label>
+    <div class="col-sm-5">
+        <select name="velocmaxdown" class="form-control" id="velocmaxdown">
+            @foreach (json_decode('{" 1mbps":"1 Mbps","2mbps":"2 Mbps","4mbps":"4 Mbps","6mbps":"6 Mbps","10mbps":"10 Mbps"}', true) as
+                $optionKey=> $optionValue)
+                <option value="{{ $optionKey }}"
+                    {{ isset($plano->velocmaxdown) && $plano->velocmaxdown == $optionKey ? 'selected' : '' }}>
+                    {{ $optionValue }}</option>
+            @endforeach
+        </select>
+    </div>
+</div>
+
+{{-- <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="velocmaxdown">Veloc Máxima Down</label>
     <div class="col-sm-10">
         <input value="{{ old('velocmaxdown', @$plano->velocmaxdown) }}" type="text" id="velocmaxdown" name="velocmaxdown" required="required" maxlength="18"
@@ -50,7 +93,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-</div>
+</div> --}}
 
 <div class="form-group row">
     <label class="col-form-label col-sm-2 required" for="velocmaxup">Veloc Máxina Up</label>
