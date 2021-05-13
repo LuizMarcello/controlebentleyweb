@@ -25,6 +25,10 @@ Auth::routes([
     'register' => false
 ]);
 
+Route::get('/blog', function () {
+    return view('news.index');
+});
+
 /* Definindo um grupo de rotas, através do método group(), para o middleware "auth", que é o
  * middlaware que verifica se o usuário está logado, se não estiver, direciona para o login.
  * Agora, todas as rotas dentro da função anômima, estão protegidas.
@@ -87,5 +91,7 @@ Route::get('/empresa/relatorios/clientes', 'Relatorios\RelatoriosClientes')
 Route::get('olamundo', [ApresentacaoController::class, 'olaMundo']);
 
 Route::get('cursos', [ApresentacaoController::class, 'cursos']);
+
+Route::get('wiki', [ApresentacaoController::class, 'wiki']);
 
 

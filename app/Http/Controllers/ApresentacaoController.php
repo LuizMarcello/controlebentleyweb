@@ -10,6 +10,11 @@ use PDF;
 
 class ApresentacaoController
 {
+    /**
+     * Convertendo código HTML direto em pdf.(String)
+     *
+     * @return void
+     */
     public function olaMundo()
     {
         $domPdf = PDF::loadHTML('<h1 style="color: red">Ola Treinaweb</h1>');
@@ -17,6 +22,11 @@ class ApresentacaoController
         return $domPdf->stream();
     }
 
+    /**
+     * Carregando views para conversão.(view)
+     *
+     * @return void
+     */
     public function cursos()
     {
         $cursos = [
@@ -34,5 +44,24 @@ class ApresentacaoController
         $domPdf = PDF::loadView('cursosPdf', compact('cursos'));
 
         return $domPdf->stream();
+    }
+
+/**
+ * Convertendo diretamente arquivo HTML em pdf.(arquivo)
+ *
+ * @return void
+ */
+    public function wiki()
+    {
+        $domPdf = PDF::loadFile(public_path() . '/treinaweb-wiki.html');
+
+       /* return $domPdf->stream(); */
+          return $domPdf
+       /* ->setPaper('a4', 'landscape') */
+          ->setPaper('a3', 'landscape')
+          ->save(public_path() . '/posso-colocar-um-nome.pdf')
+          ->stream();
+       /* return $domPdf->save(public_path() . '/posso-colocar-um-nome.pdf')->download('posso-colocar-um-nome.pdf'); */
+       /* return $domPdf->download('posso-colocar-um-nome.pdf'); */
     }
 }
