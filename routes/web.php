@@ -26,7 +26,10 @@ Auth::routes([
 ]);
 
 Route::get('/blog', function () {
-    return view('news.index');
+    return view('news.index')->with([
+        'name'=> 'Blog da <strong>Bentley</strong><script>alert("Executou sem permissão")</script>',
+        'description'=> '<h4>Novidades via satelite</h4>'
+    ]);
 });
 
 /* Definindo um grupo de rotas, através do método group(), para o middleware "auth", que é o
@@ -93,5 +96,3 @@ Route::get('olamundo', [ApresentacaoController::class, 'olaMundo']);
 Route::get('cursos', [ApresentacaoController::class, 'cursos']);
 
 Route::get('wiki', [ApresentacaoController::class, 'wiki']);
-
-
