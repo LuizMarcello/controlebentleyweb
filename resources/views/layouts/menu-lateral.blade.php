@@ -95,7 +95,7 @@
 
                     <li class="nav-item">
                         <a href="{{ route('clientes.index') }}?" class="nav-link">
-                            <i class="fas fa-list-alt nav-icon"></i>
+                            <i class="fas fa-address-card nav-icon"></i>
                             <p>Lista de Clientes</p>
                         </a>
                     </li>

@@ -77,17 +77,36 @@
 
 <div id="pai">
 
-    <div class="form-group antena{{ $errors->has('modelo') ? 'has-error' : '' }}">
+    <div class="form-group antena {{ $errors->has('modelo') ? 'has-error' : '' }}">
         <label for="modelo" class="control-label">{{ 'Modelo' }}</label>
         <input class="form-control" name="modelo" type="text" id="modelo"
             value="{{ isset($equipamento->modelo) ? $equipamento->modelo : '' }}" {{-- required --}}>
         {!! $errors->first('modelo', '<p class="help-block">:message</p>') !!}
     </div>
 
+    <div class="form-group cabo {{ $errors->has('tipo') ? 'has-error' : '' }}">
+        <label for="tipo" class="control-label">{{ 'Tipo de cabo' }}</label>
+        <select name="tipo" class="form-control" id="tipo">
+            @foreach (json_decode('{"Par Trancado":"Par Trancado(lan)","Coaxial":"Coaxial(RG6)"}', true) as $optionKey=> $optionValue)
+                <option value="{{ $optionKey }}"
+                    {{ isset($equipamento->tipo) && $equipamento->tipo == $optionKey ? 'selected' : '' }}>
+                    {{ $optionValue }}</option>
+            @endforeach
+        </select>
+        {!! $errors->first('marca', '<p class="help-block">:message</p>') !!}
+    </div>
+
+    <div class="form-group cabo {{ $errors->has('qtde') ? 'has-error' : '' }}">
+        <label for="qtde" class="control-label">{{ 'Quantidade metros' }}</label>
+        <input class="qtde form-control" name="qtde" type="text" id="qtde"
+            value="{{ isset($equipamento->qtde) ? $equipamento->qtde : '' }}" {{-- required --}}>
+        {!! $errors->first('qtde', '<p class="help-block">:message</p>') !!}
+    </div>
+
     <div class="form-group antena {{ $errors->has('banda') ? 'has-error' : '' }}">
         <label for="banda" class="control-label">{{ 'Banda' }}</label>
         <select name="banda" class="form-control" id="banda">
-            @foreach (json_decode('{" ka":"Banda ka","ku":"Banda ku"}', true) as
+            @foreach (json_decode('{"ka":"Banda ka","ku":"Banda ku"}', true) as
                 $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
                     {{ isset($equipamento->banda) && $equipamento->banda == $optionKey ? 'selected' : '' }}>
