@@ -25,7 +25,7 @@ class PlanoRequest extends FormRequest
     {
         return [
             'cir' => ['required', 'max:4', 'min:4'],
-            'equipamento' => ['required', 'max:12', 'min:10'],
+            'equipamento' => ['required', 'max:12', 'min:8'],
             'nome' => ['required'],
             'banda' => ['required', 'max:8', 'min:2'],
             'valordecusto' => ['required'],

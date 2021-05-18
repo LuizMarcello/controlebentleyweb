@@ -179,6 +179,7 @@
                                     <th style="width: 10px"></th>
                                     <th>Id</th>
                                     <th>Nome</th>
+                                    <th>Veloc Máx Down</th>
                                     <th>Banda</th>
                                     <th>Equipamento</th>
                                     <th>Ações</th>
@@ -191,6 +192,7 @@
                                         <td></td>
                                         <td>{{ $registro->id }}</td>
                                         <td>{{ $registro->nome }}</td>
+                                        <td>{{ $registro->velocmaxdown }}</td>
                                         <td>{{ $registro->banda }}</td>
                                         <td>{{ $registro->equipamento }}</td>
                                         <td><a href="{{ route('planos.show', $registro) }}"

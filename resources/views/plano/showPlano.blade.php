@@ -195,8 +195,8 @@
                                 <strong>Valor de custo</strong>: {{ $plano->valordecusto }} <br>
                                 <strong>Valor mensal</strong>: {{ $plano->valormensal }} <br>
                                 <strong>Veloc máxima de down</strong>: {{ $plano->velocmaxdown }} <br>
-                                <strong>Veloc mínima de down</strong>: {{ $plano->velocmindown }} <br>
                                 <strong>Veloc máxima de up</strong>: {{ $plano->velocmaxup }} <br>
+                                <strong>Veloc mínima de down</strong>: {{ $plano->velocmindown }} <br>
                                 <strong>Veloc mínima de up</strong>: {{ $plano->velocminup }} <br>
 
                             </div>
