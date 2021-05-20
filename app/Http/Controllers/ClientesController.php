@@ -23,6 +23,9 @@ class ClientesController extends Controller
      */
     public function index(Request $request)
     {
+      /*   $request->session()->put('cursos', ['Laravel', 'Slim']); */
+      /*   $request->session()->push('cursos', 'Silex'); */
+
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -89,10 +92,13 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
+       /*  dd(session('cursos')); */
+
         return view('clientes.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
