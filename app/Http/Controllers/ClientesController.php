@@ -23,9 +23,6 @@ class ClientesController extends Controller
      */
     public function index(Request $request)
     {
-      /*   $request->session()->put('cursos', ['Laravel', 'Slim']); */
-      /*   $request->session()->push('cursos', 'Silex'); */
-
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -94,8 +91,6 @@ class ClientesController extends Controller
      */
     public function create(Request $request)
     {
-       /*  dd(session('cursos')); */
-
         return view('clientes.create');
     }
 
@@ -109,12 +104,19 @@ class ClientesController extends Controller
      */
     public function store(ClienteRequest $request): Response
     {
+        /* $cliente = new Cliente; */
+
         $requestData = $request->all();
 
-        Cliente::create($requestData);
+        if (Cliente::create($requestData)) {
+            $request->session()->flash('success', 'Cliente cadastrado com sucesso!!');
+        } else {
+            $request->session()->flash('error','Êrro ao cadastrar cliente!!');
+        }
 
         return redirect('clientes')->with('flash_message', 'Cliente added!');
     }
+
 
     /**
      * Display the specified resource.
@@ -154,7 +156,13 @@ class ClientesController extends Controller
     {
         $requestData = $request->all();
         $cliente = Cliente::findOrFail($id);
-        $cliente->update($requestData);
+        /* $cliente->update($requestData); */
+
+        if ($cliente->update($requestData)) {
+            $request->session()->flash('success', 'Cliente atualizado com sucesso!!');
+        } else {
+            $request->session()->flash('error','Êrro ao atualizar cliente!!');
+        }
 
         return redirect('clientes')->with('flash_message', 'Cliente updated!');
     }
@@ -166,9 +174,16 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        Cliente::destroy($id);
+       /*  Cliente::destroy($id); */
+
+        if (Cliente::destroy($id)) {
+            $request->session()->flash('success', 'Cliente deletado com sucesso!!');
+        } else {
+            $request->session()->flash('error','Êrro ao deletar cliente!!');
+        }
+
         return redirect('clientes')->with('flash_message', 'Cliente deleted!');
     }
 }
