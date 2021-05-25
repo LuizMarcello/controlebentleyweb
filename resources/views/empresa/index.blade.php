@@ -156,21 +156,23 @@
     <li class="breadcrumb-item">
         <a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a>
     </li>
+
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Listagem de {{ $tipo }}</h3>
-                        <div class="card-tools">
+                <div class="col card">
+                    <div class="col card-title">
+                        <div class="row card-header">
+                            <h3 class="row card-title">Listagem de {{ $tipo }}</h3>
+                        </div>
+                        <div class="row card-tools">
                             <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-success">Novo
                                 {{ $tipo }}</a>
                         </div>
                     </div>
-
 
                     {{-- O corpo --}}
                     <div class="card-body">
