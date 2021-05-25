@@ -157,6 +157,7 @@ class ClientesController extends Controller
         $requestData = $request->all();
         $cliente = Cliente::findOrFail($id);
         /* $cliente->update($requestData); */
+        /* $cliente->update($requestData); */
 
         if ($cliente->update($requestData)) {
             $request->session()->flash('success', 'Cliente atualizado com sucesso!!');
