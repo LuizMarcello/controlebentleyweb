@@ -154,6 +154,7 @@
                <div class="col-md-9">
                 <div class="card">
                     {{-- <div class="card-header">Editar Equipamento id: {{ $equipamento->id }}</div> --}}
+                    {{-- <div class="card-header">Editar Equipamento id: {{ $equipamento->id }}</div> --}}
                     <div class="card-header">id: {{ $equipamento->id }}
                         - Editando o equipamento tipo: <b><i> {{ $equipamento->tipodeequipamento }} </i></b>
                         - marca: <b><i> {{ $equipamento->marca}} </b></i>
