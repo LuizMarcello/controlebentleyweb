@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CheckTasks;
 use App\Http\Controllers\ApresentacaoController;
 use App\Http\Controllers\CepController;
 use App\Services\CepService;
@@ -56,7 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('distribuidors', 'DistribuidorController');
 
     Route::resource('migracao', 'MigracaoController');
-    
+
     Route::resource('users', 'UsersController');
 });
 
@@ -101,3 +102,11 @@ Route::get('olamundo', [ApresentacaoController::class, 'olaMundo']);
 Route::get('cursos', [ApresentacaoController::class, 'cursos']);
 
 Route::get('wiki', [ApresentacaoController::class, 'wiki']);
+
+Route::get('tarefas/adicionar/{id}','ToDoTasksController@store');
+
+/* Registrando o middleware diretamente como "middleware de rotas" */
+/* Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy')->middleware('CheckTasks'); */
+
+/* ou 2ª opção, sem registrar o middleware diretamente como "middleware de rotas" */
+Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy')->middleware(CheckTasks::class);
