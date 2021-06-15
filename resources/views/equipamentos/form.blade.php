@@ -55,6 +55,26 @@
     {!! $errors->first('datanota', '<p class="help-block">:message</p>') !!}
 </div>
 
+{{-- KU --}}
+<div class="form-group {{ $errors->has('marca') ? 'has-error' : '' }}">
+    <label for="marca" class="control-label">{{ 'Marca' }}</label>
+    <select name="marca" class="form-control" id="marca">
+        @foreach (json_decode('{"idirect":"Idirect","gilat":"Gilat","newtec":"Newtec"}', true) as $optionKey=> $optionValue)
+            <option value="{{ $optionKey }}"
+                {{ isset($equipamento->marca) && $equipamento->marca == $optionKey ? 'selected' : '' }}>
+                {{ $optionValue }}</option>
+        @endforeach
+    </select>
+    {!! $errors->first('marca', '<p class="help-block">:message</p>') !!}
+</div>
+
+<div class="form-group {{ $errors->has('modelo') ? 'has-error' : '' }}">
+    <label for="modelo" class="control-label">{{ 'Modelo' }}</label>
+    <input class="form-control" name="modelo" type="text" id="modelo"
+        value="{{ isset($equipamento->modelo) ? $equipamento->modelo : '' }}" {{-- required --}}>
+    {!! $errors->first('modelo', '<p class="help-block">:message</p>') !!}
+</div>
+
 <div class="form-group {{ $errors->has('situacao') ? 'has-error' : '' }}">
     <label for="situacao" class="control-label">{{ 'Situação' }}</label>
     <select name="situacao" class="form-control" id="situacao">
@@ -76,13 +96,6 @@
 </div>
 
 <div id="pai">
-
-    <div class="form-group antena {{ $errors->has('modelo') ? 'has-error' : '' }}">
-        <label for="modelo" class="control-label">{{ 'Modelo' }}</label>
-        <input class="form-control" name="modelo" type="text" id="modelo"
-            value="{{ isset($equipamento->modelo) ? $equipamento->modelo : '' }}" {{-- required --}}>
-        {!! $errors->first('modelo', '<p class="help-block">:message</p>') !!}
-    </div>
 
     <div class="form-group cabo {{ $errors->has('tipo') ? 'has-error' : '' }}">
         <label for="tipo" class="control-label">{{ 'Tipo de cabo' }}</label>
@@ -114,19 +127,6 @@
             @endforeach
         </select>
         {!! $errors->first('banda', '<p class="help-block">:message</p>') !!}
-    </div>
-
-    {{-- KU --}}
-    <div class="form-group modemku {{ $errors->has('marca') ? 'has-error' : '' }}">
-        <label for="marca" class="control-label">{{ 'Marca' }}</label>
-        <select name="marca" class="form-control" id="marca">
-            @foreach (json_decode('{"idirect":"Idirect","gilat":"Gilat","newtec":"Newtec"}', true) as $optionKey=> $optionValue)
-                <option value="{{ $optionKey }}"
-                    {{ isset($equipamento->marca) && $equipamento->marca == $optionKey ? 'selected' : '' }}>
-                    {{ $optionValue }}</option>
-            @endforeach
-        </select>
-        {!! $errors->first('marca', '<p class="help-block">:message</p>') !!}
     </div>
 
     {{-- KA --}}
