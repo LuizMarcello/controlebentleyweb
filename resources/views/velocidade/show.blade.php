@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1>Dashboard</h1>
-@endsection
-
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -154,31 +150,30 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+
+                        <a href="{{ route('home') }}" title="Back"><button class="btn btn-warning btn-sm"><i
+                                    class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-14">
+                                    <div class="row">
+                                       {{--  <iframe src="https://beta.simet.nic.br/widget.html" height="780" width="430" style="border:none"></iframe> --}}
+                                        <iframe src="https://beta.simet.nic.br/widget.html" height="320" width="780" style="border:none"></iframe>
+                                    </div>
+                                   {{--  <img src="{!! asset('img/icone-76.png') !!}"> --}}
+                                </div>
                             </div>
-                        @endif
-                        {{ __('You are logged in!') }}
+                        </div>
+
                     </div>
                 </div>
-                <br>
-
-                <div class="nav-item">
-                    <a href="{{ route('medirvelocidades.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-satellite-dish"> </i>
-                        <p>Medir velocidade do seu link</p>
-                    </a>
-                </div>
-
             </div>
         </div>
     </div>
-
 @endsection

@@ -61,7 +61,6 @@
 
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-circle-down"></i>
                     <p>
@@ -77,7 +76,6 @@
                             <p>Lista de Fornecedores</p>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -162,7 +160,7 @@
                             <p>Listagem de Técnicos</p>
                         </a>
                     </li>
-                    
+
                 </ul>
             </li>
 

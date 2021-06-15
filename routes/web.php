@@ -75,6 +75,8 @@ Route::resource('clientes', 'ClientesController');
 
 Route::resource('designacoes', 'DesignacoesController');
 
+Route::resource('medirvelocidades', 'MedirVelocidadeController');
+
 Route::get('/github/buscar', 'GitHubController@buscar');
 
 Route::get('/apiresttreinaweb/create', 'ApiRestTreinaWebController@create');

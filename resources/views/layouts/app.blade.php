@@ -2,6 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
+    {{-- <iframe src="https://beta.simet.nic.br/widget.html" height="320" width="780" style="border:none" ></iframe> --}}
+
+    {{-- <iframe src="https://beta.simet.nic.br/widget.html" height="780" width="430" style="border:none" ></iframe> --}}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +16,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    {{--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
     {{-- javascript --}}
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     {{-- jquery --}}
@@ -24,6 +29,8 @@
     <!-- Styles -->
     <style></style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -32,8 +39,7 @@
         @include('layouts.menu-lateral');
 
         <div class="content-wrapper">
-
-            <div  class="col-sm-12">
+            <div class="col-sm-12">
                 @yield('navbar')
             </div>
 
