@@ -245,7 +245,6 @@
 
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-circle-down"></i>
                     <p>
@@ -262,6 +261,18 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item" >
+                <a href="#" class="nav-link" onclick="
+                window.open(
+                  'https://beta.simet.nic.br/widget.html',
+                  'Bentley Brasil - Teste de velocidade',
+                  'height=300,width=800,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>Testar Velocidade</p>
+                </a>
+            </li>
+
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
