@@ -1,6 +1,7 @@
 <!-- Main Sidebar Container -->
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll">
+{{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll"> --}}
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="">
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="brand-link">
         {{-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
