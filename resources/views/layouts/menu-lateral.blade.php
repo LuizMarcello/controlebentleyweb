@@ -2,6 +2,7 @@
 
 {{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll"> --}}
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="">
+
     <!-- Brand Logo -->
     <a href="https://sistema.bentleybrasil.com.br/home" class="brand-link" style="
     display: flex;
@@ -9,10 +10,12 @@
     align-items: center;
     justify-content: center;">
     <span class="brand-text font-weight-light">
-        <img height="70" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
+        <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
     </span>
     </a>
+
     <br>
+
     <!-- Sidebar -->
     <div class="info" style="
     display: flex;
