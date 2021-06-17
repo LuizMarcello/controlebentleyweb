@@ -204,6 +204,17 @@
                                         <th> Diâmetro </th>
                                         <td> {{ $equipamento->diametro }} </td>
                                     </tr>
+
+                                    <tr>
+                                        <th> Unidade </th>
+                                        <td> {{ $equipamento->unidade }} </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th> Quantidade </th>
+                                        <td> {{ $equipamento->qtde }} </td>
+                                    </tr>
+
                                     <tr>
                                         <th> Marca </th>
                                         <td> {{ $equipamento->marca }} </td>
