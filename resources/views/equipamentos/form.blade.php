@@ -111,7 +111,7 @@
         {!! $errors->first('marca', '<p class="help-block">:message</p>') !!}
     </div>
 
-    <div class="form-group antena fonte groove lnb ilnb modemka modemku roteador tria buctransmitter {{ $errors->has('banda') ? 'has-error' : '' }}">
+    <div class="form-group antena fonte groove lnb ilnb roteador tria buctransmitter {{ $errors->has('banda') ? 'has-error' : '' }}">
         <label for="banda" class="control-label">{{ 'Banda' }}</label>
         <select name="banda" class="form-control" id="banda">
             @foreach (json_decode('{"ka":"Banda ka","ku":"Banda ku"}', true) as
