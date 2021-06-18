@@ -212,7 +212,7 @@
 
                                     <tr>
                                         <th> Quantidade </th>
-                                        <td> {{ $equipamento->qtde }} </td>
+                                        <td> {{ $equipamento->quantidade }} </td>
                                     </tr>
 
                                     <tr>

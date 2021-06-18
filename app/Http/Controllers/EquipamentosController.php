@@ -27,6 +27,7 @@ class EquipamentosController extends Controller
                 ->orWhere('datanota', 'LIKE', "%$keyword%")
                 ->orWhere('banda', 'LIKE', "%$keyword%")
                 ->orWhere('quantidade', 'LIKE', "%$keyword%")
+                ->orWhere('unidade', 'LIKE', "%$keyword%")
                 ->orWhere('tipo', 'LIKE', "%$keyword%")
                 ->orWhere('diametro', 'LIKE', "%$keyword%")
                 ->orWhere('marca', 'LIKE', "%$keyword%")
