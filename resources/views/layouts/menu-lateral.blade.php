@@ -1,7 +1,8 @@
 <!-- Main Sidebar Container -->
 
-{{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll"> --}}
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="">
+{{-- Tirar ou colocar a barra de rolagem: --}}
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll">
+{{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style=""> --}}
 
     <!-- Brand Logo -->
     <a href="https://sistema.bentleybrasil.com.br/home" class="brand-link" style="
