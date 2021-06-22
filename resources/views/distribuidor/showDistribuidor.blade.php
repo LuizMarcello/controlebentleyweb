@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do distribuidor {{ $distribuidor->nome }} - ID {{ $distribuidor->id}}</h4>
+    <h4>Detalhes do representante {{ $distribuidor->nome }} - ID {{ $distribuidor->id}}</h4>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem dos distribuidores</a>
+        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem dos representantes</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.show', $distribuidor) }}">Detalhes do distribuidor</a>
+        <a href="{{ route('distribuidors.show', $distribuidor) }}">Detalhes do representante</a>
     </li>
 @endsection
 
@@ -218,7 +218,7 @@
                     {{-- ou assim --}}
                     {{-- {{ csrf_field() }} --}}
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">
-                        Excluir este distribuidor
+                        Excluir este representante
                     </button>
                 </form>
             </div>

@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    <h3>Editando o distribuidor: {{ $distribuidor->nome }}</h3>
+    <h3>Editando o representante: {{ $distribuidor->nome }}</h3>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem de Distribuidores</a>
+        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem de representantes</a>
     </li>
 
     <li class="breadcrumb-item">

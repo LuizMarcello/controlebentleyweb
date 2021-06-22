@@ -215,7 +215,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
-                        Distribuidores
+                        Representação
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -224,7 +224,7 @@
                     <li class="nav-item">
                         <a href="{{ route('distribuidors.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista Distribuidores</p>
+                            <p>Lista de Representantes</p>
                         </a>
                     </li>
                 </ul>

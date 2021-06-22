@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo Distribuidor</h1>
+    <h1>Novo representante</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.index') }}">Listagem de Distribuidores</a>
+        <a href="{{ route('distribuidors.index') }}">Listagem de representantes</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.create') }}">Novo Distribuidor</a>
+        <a href="{{ route('distribuidors.create') }}">Novo representante</a>
     </li>
 @endsection
 
