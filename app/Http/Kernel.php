@@ -39,6 +39,12 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        /* Grudo de middleware novo criado nas aulas */
+        'alerttasks' => [
+            \App\Http\Middleware\NotHasAlert::class,
+            \App\Http\Middleware\HasAlert::class,
+        ],
+
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -63,6 +69,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        /* 'CheckTasks' => \App\Http\Middleware\CkeckTasks::class */
+        'CheckTasks' => \App\Http\Middleware\CkeckTasks::class
+
     ];
 }

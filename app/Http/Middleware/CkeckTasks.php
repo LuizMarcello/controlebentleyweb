@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 
 class CkeckTasks
@@ -16,6 +17,9 @@ class CkeckTasks
      */
     public function handle(Request $request, Closure $next)
     {
+        /* Middleware tipo "before": Antes do controller.
+           Devolve o retorno(se houver) para o controller
+           continuar a proxima camada */
         $ids = $request->session()->get('todotasks');
 
         /* Função "in_array()": 1º parâmetro: o id do item que está
@@ -27,6 +31,7 @@ class CkeckTasks
             return redirect()->route('clientes.index');
         }
 
+       /*  Depois da lógica acima, chama a proxima camada: */
         return $next($request);
     }
 }

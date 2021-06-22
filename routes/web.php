@@ -71,7 +71,7 @@ Route::resource('ferramentas', 'FerramentasController');
 
 Route::resource('equipamentos', 'EquipamentosController');
 
-Route::resource('clientes', 'ClientesController');
+/* Route::resource('clientes', 'ClientesController'); */
 
 Route::resource('designacoes', 'DesignacoesController');
 
@@ -105,10 +105,19 @@ Route::get('cursos', [ApresentacaoController::class, 'cursos']);
 
 Route::get('wiki', [ApresentacaoController::class, 'wiki']);
 
-Route::get('tarefas/adicionar/{id}','ToDoTasksController@store');
+/* Middlewares: Criando um "grupo de rotas" para aplicar um middleware para várias rotas: */
+Route::group(['middleware' => ['alerttasks']], function() {
+    /* Aqui dentro desta função anônima, todas as rotas que farão parte */
+    Route::resource('clientes', 'ClientesController');
+    Route::get('tarefas/adicionar/{id}','ToDoTasksController@store');
+    Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy');
+});
 
-/* Registrando o middleware diretamente como "middleware de rotas" */
+/* Route::get('tarefas/adicionar/{id}','ToDoTasksController@store'); */
+
+/* Registrando o middleware diretamente como "middleware de rotas" em App\Http\Kernel.php */
 /* Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy')->middleware('CheckTasks'); */
 
-/* ou 2ª opção, sem registrar o middleware diretamente como "middleware de rotas" */
-Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy')->middleware(CheckTasks::class);
+/* ou 2ª opção, sem registrar o middleware diretamente como "middleware de rotas" em App\Http\Kernel.php */
+/* Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy')->middleware(CheckTasks::class); */
+

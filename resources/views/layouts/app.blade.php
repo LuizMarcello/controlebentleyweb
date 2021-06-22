@@ -85,6 +85,12 @@
                 </div>
             </section>
 
+            @if (session('alert'))
+                <div class="alert alert-info">
+                    {{ session('alert') }}
+                </div>
+            @endif
+
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

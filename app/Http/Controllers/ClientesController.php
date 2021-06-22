@@ -16,6 +16,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ClientesController extends Controller
 {
+    /* Sobre middlewares: */
+    /* Aplicando um middleware pelo controller: */
+    /* public function __construct() */
+  /*   { */
+        /* Método "only()" aplicando somente na ação "index" */
+        /* Método "except()" aplicando a todos e não aplicando somente na ação "create" */
+        /* $this->middleware('alerttasks')->only('index'); */
+       /*  $this->middleware('alerttasks')->except('create'); */
+  /*   } */
+
+
     /**
      * Display a listing of the resource.
      *
