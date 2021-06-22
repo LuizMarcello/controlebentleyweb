@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Listagem de Técnicos</h1>
+    <h1>Listagem de Instaladores</h1>
     <div class="card-tools">
-        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo Técnico</a>
+        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo instalador</a>
     </div>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index') }}">Listagem de Técnicos</a>
+        <a href="{{ route('tecnicos.index') }}">Listagem de Instaladores</a>
     </li>
 @endsection
 
@@ -167,7 +167,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listagem de Técnicos</h3>
+                        <h3 class="card-title">Listagem de Instaladores</h3>
                     </div>
 
 

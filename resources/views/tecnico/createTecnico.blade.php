@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo Técnico</h1>
+    <h1>Novo Instalador</h1>
     <div class="card-tools">
         <a href="{{ route('tecnicos.index') }}" class="btn btn-success">Voltar</a>
     </div>
@@ -9,11 +9,11 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index') }}">Listagem de Técnicos</a>
+        <a href="{{ route('tecnicos.index') }}">Listagem de Instaladores</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.create') }}">Novo Técnico</a>
+        <a href="{{ route('tecnicos.create') }}">Novo Instalador</a>
     </li>
 @endsection
 

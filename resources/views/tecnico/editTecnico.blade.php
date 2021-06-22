@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    <h3>Editando o técnico: {{ $tecnico->nome }}</h3>
+    <h3>Editando o instalador: {{ $tecnico->nome }}</h3>
     <a href="{{ url('/tecnicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"
                 aria-hidden="true"></i> Voltar</button></a>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem de Técnicos</a>
+        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem de Instaladores</a>
     </li>
 
     <li class="breadcrumb-item">

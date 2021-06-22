@@ -165,7 +165,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
-                        Assistência Técnica
+                        Instalação
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -174,7 +174,7 @@
                     <li class="nav-item">
                         <a href="{{ route('tecnicos.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Listagem de Técnicos</p>
+                            <p>Listagem de Instaladores</p>
                         </a>
                     </li>
 

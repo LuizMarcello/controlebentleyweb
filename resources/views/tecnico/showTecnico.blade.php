@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h4>Detalhes do técnico {{ $tecnico->nome }} - ID {{ $tecnico->id }}</h4>
+    <h4>Detalhes do instalador {{ $tecnico->nome }} - ID {{ $tecnico->id }}</h4>
 
     <a href="{{ url('/tecnicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i
         class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
@@ -11,11 +11,11 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem dos tecnicos</a>
+        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem dos instaladores</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.show', $tecnico) }}">Detalhes do tecnico</a>
+        <a href="{{ route('tecnicos.show', $tecnico) }}">Detalhes do instalador</a>
     </li>
 @endsection
 
@@ -228,7 +228,7 @@
                     {{-- {{ csrf_field() }} --}}
                     <button type="submit" class="btn btn-danger"
                         onclick="return confirm('Tem certeza que deseja excluir?')">
-                        Excluir este técnico
+                        Excluir este instalador
                     </button>
                 </form>
             </div>
