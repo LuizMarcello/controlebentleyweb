@@ -21,12 +21,18 @@ use Illuminate\Support\Facades\Http;
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+/* Esta rota é acrescentada durante a ativação da autenticação do láravel,
+   pois ela tem todos os métodos necessários para a autenticação. Quando
+   fazemos o login ou nos registramos, ele nos rediriciona para o /home. */
 /* Desabilitando a rota(resource) "register": */
 Auth::routes([
     'register' => false
 ]);
+/* Esta rota é acrescentada na ativação da autenticação do láravel,
+   para não termos êrros durante a autenticação */
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 /* Route::get('/blog', function () {
     return view('news.index')->with([
