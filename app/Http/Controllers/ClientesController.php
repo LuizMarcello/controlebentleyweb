@@ -154,6 +154,11 @@ class ClientesController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
+
+        /* Para permissão/autorização do "edit()" deste controller. */
+        /* Parâmetros: Nome do gate e instância do model */
+        $this->authorize('update-client', $cliente);
+
         return view('clientes.edit', compact('cliente'));
     }
 
@@ -169,6 +174,11 @@ class ClientesController extends Controller
     {
         $requestData = $request->all();
         $cliente = Cliente::findOrFail($id);
+
+        /* Para permissão/autorização do "update()" deste controller. */
+        /* Parâmetros: Nome do gate e instância do model */
+        $this->authorize('update-client', $cliente);
+
         /* $cliente->update($requestData); */
 
         if ($cliente->update($requestData)) {
@@ -190,6 +200,11 @@ class ClientesController extends Controller
     public function destroy($id, Request $request)
     {
        /*  Cliente::destroy($id); */
+
+       $cliente = Cliente::findOrfail($id);
+       /* Para permissão/autorização do "destroy()" deste controller. */
+       /* Parâmetros: Nome do gate e instância do model. */
+        $this->authorize('update-client', $cliente);
 
         if (Cliente::destroy($id)) {
             $request->session()->flash('success', 'Cliente deletado com sucesso!!');

@@ -191,33 +191,38 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($clientes as $item)
+                                    @foreach ($clientes as $cliente)
                                         <tr>
                                            {{--  <td>{{ $loop->iteration }}</td> --}}
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->nome_razaosocial }}</td>
-                                            <td>{{ $item->cidade1 }}</td>
-                                            <td>{{ $item->estado1 }}</td>
+                                            <td>{{ $cliente->id }}</td>
+                                            <td>{{ $cliente->nome_razaosocial }}</td>
+                                            <td>{{ $cliente->cidade1 }}</td>
+                                            <td>{{ $cliente->estado1 }}</td>
                                             <td>
-                                                <a href="{{ url('/clientes/' . $item->id) }}" title="View Cliente">
+                                                <a href="{{ url('/clientes/' . $cliente->id) }}" title="View Cliente">
                                                     <button class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye"
                                                             aria-hidden="true"></i> Detalhes
                                                     </button></a>
-                                                <a href="{{ url('/clientes/' . $item->id . '/edit') }}" title="Edit Cliente">
-                                                    <button class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
-                                                    </button></a>
 
-                                                <form method="POST" action="{{ url('/clientes' . '/' . $item->id) }}"
-                                                    accept-charset="UTF-8" style="display:inline">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Cliente"
-                                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
-                                                </form>
+                                                    {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
+                                                    {{-- Parâmetros: Nome do gate e instância do cliente, ao qual terá ou não permissão. --}}
+                                                    @can('update-client',  $cliente)
+                                                    <a href="{{ url('/clientes/' . $cliente->id . '/edit') }}" title="Edit Cliente">
+                                                        <button class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
+                                                        </button></a>
+
+                                                        <form method="POST" action="{{ url('/clientes' . '/' . $cliente->id) }}"
+                                                            accept-charset="UTF-8" style="display:inline">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                                title="Delete Cliente"
+                                                                onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                                                    class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
+                                                        </form>
+                                                    @endcan
                                             </td>
                                         </tr>
                                     @endforeach

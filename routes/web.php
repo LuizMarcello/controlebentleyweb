@@ -61,6 +61,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('planos', 'PlanoController');
 
+    Route::resource('clientes', 'ClientesController');
+
     Route::resource('distribuidors', 'DistribuidorController');
 
     Route::resource('migracao', 'MigracaoController');
@@ -79,6 +81,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('medirvelocidades', 'MedirVelocidadeController');
 });
+
 
 /* Declarando um único método de rota que vai criar todas as rotas que precisamos: */
 /* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler: */
@@ -122,12 +125,11 @@ Route::get('/empresa/relatorios/clientes', 'Relatorios\RelatoriosClientes')
 /* Route::get('wiki', [ApresentacaoController::class, 'wiki']); */
 
 /* Middlewares: Criando um "grupo de rotas" para aplicar um middleware para várias rotas: */
-/* Route::group(['middleware' => ['alerttasks']], function() { */
+Route::group(['middleware' => ['alerttasks', 'auth']], function() {
     /* Aqui dentro desta função anônima, todas as rotas que farão parte */
-    /* Route::resource('clientes', 'ClientesController'); */
     /* Route::get('tarefas/adicionar/{id}','ToDoTasksController@store'); */
     /* Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy'); */
-/* }); */
+});
 
 /* Route::get('tarefas/adicionar/{id}','ToDoTasksController@store'); */
 
