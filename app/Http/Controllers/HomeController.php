@@ -26,15 +26,17 @@ class HomeController extends Controller
     {
     // Retornando uma instância do model do usuário logado:
 
+    /* dd(Auth::user()); */
     /* dd(Auth::user()->name); */
     /* dd(Auth::id()); */
 
+    /* Usando o método "check()": */
     /* Verificação se tem usuário logado */
     /* if(Auth::check()) {
         echo 'tem logado';
-    } else {
-        echo 'Não tem logado';
-    } */
+     } else {
+       echo 'Não tem logado';
+     } */
 
         Auth::user();
 

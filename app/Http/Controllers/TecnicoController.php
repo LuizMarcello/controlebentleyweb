@@ -35,7 +35,7 @@ class TecnicoController extends Controller
         return view('tecnico.createTecnico');
     }
 
-   /**
+    /**
     * Store a newly created resource in storage.
     *
     * @param TecnicoRequest $request

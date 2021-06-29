@@ -29,8 +29,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        /* Declarando e registrando um "gate" para autorização/permissão: */
         /* update-client: Nome do gate/
-        /* $user: Variável que receberá do láravel uma instância do usuário */
+        /* $user: Variável que receberá do láravel uma instância do usuário logado */
         /* $client: Variável que receberá do láravel uma instância do model "cliente" */
         /* Se for igual, retorna true e o usuário tem permissão */
         Gate::define('update-client', function($user, $client) {

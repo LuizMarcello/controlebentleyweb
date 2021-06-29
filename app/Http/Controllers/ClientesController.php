@@ -156,7 +156,7 @@ class ClientesController extends Controller
         $cliente = Cliente::findOrFail($id);
 
         /* Para permissão/autorização do "edit()" deste controller. */
-        /* Parâmetros: Nome do gate e instância do model */
+        /* Parâmetros: Nome do gate e instância do cliente */
         $this->authorize('update-client', $cliente);
 
         return view('clientes.edit', compact('cliente'));
@@ -176,7 +176,7 @@ class ClientesController extends Controller
         $cliente = Cliente::findOrFail($id);
 
         /* Para permissão/autorização do "update()" deste controller. */
-        /* Parâmetros: Nome do gate e instância do model */
+        /* Parâmetros: Nome do gate e instância do cliente */
         $this->authorize('update-client', $cliente);
 
         /* $cliente->update($requestData); */
@@ -203,7 +203,7 @@ class ClientesController extends Controller
 
        $cliente = Cliente::findOrfail($id);
        /* Para permissão/autorização do "destroy()" deste controller. */
-       /* Parâmetros: Nome do gate e instância do model. */
+       /* Parâmetros: Nome do gate e instância do cliente. */
         $this->authorize('update-client', $cliente);
 
         if (Cliente::destroy($id)) {

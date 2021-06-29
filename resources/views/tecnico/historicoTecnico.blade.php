@@ -1,15 +1,21 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Listagem de Instaladores</h1>
-    <div class="card-tools">
-        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo instalador</a>
-    </div>
+    <h4>Detalhes do instalador {{ $tecnico->nome }} - ID {{ $tecnico->id }}</h4>
+
+    <a href="{{ url('/tecnicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i
+        class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
 @endsection
+
+
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index') }}">Listagem de Instaladores</a>
+        <a href="{{ route('tecnicos.index', $tecnico) }}">Listagem dos instaladores</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ route('tecnicos.show', $tecnico) }}">Detalhes do instalador</a>
     </li>
 @endsection
 
@@ -166,59 +172,67 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Listagem de Instaladores</h3>
-                    </div>
-
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <table class="table">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-globe"></i> {{ $tecnico->nome }}
+                                </h4>
+                            </div>
+                        </div>
 
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @forelse ($registros as $registro)
-                                    <tr>
-                                        <td>{{ $registro->id }}</td>
-                                        <td>{{ $registro->nome }}</td>
-                                        <td>{{ $registro->nome_contato }}</td>
-                                        <td>{{ mascara($registro->celular, '(##) #####-####') }}</td>
-                                        <td><a href="{{ route('tecnicos.show', $registro) }}"
-                                                class="btn btn-primary btn-sm">Detalhes</a>
-                                            <a href="{{ route('tecnicos.edit', $registro) }}"
-                                                class="btn btn-danger btn-sm">Atualizar</a>
-                                           {{--  <a href="{{ route('tecnicos.historico') }}"
-                                                class="btn btn-success btn-sm">Histórico</a> --}}
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Nenhum item cadastrado</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-
-                        </table>
-                    </div>
-                    <div class="card-footer clearfix">
-                        {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
-                        {{ $registros->links() }}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <strong>Nome</strong>: {{ $tecnico->nome }} <br>
+                                <strong>CNPJ/CPF</strong>:
+                                @if (strlen($tecnico->documento) === 11)
+                                    {{ mascara($tecnico->documento, '###.###.###-##') }}
+                                @else
+                                    {{ mascara($tecnico->documento, '##.###.###/####-##') }}
+                                @endif
+                                <br>
+                                <strong>IE/RG</strong>: {{ mascara($tecnico->ie_rg, '#.###.###-#') }} <br>
+                                <strong>Data do cadastro</strong>: {{ $tecnico->created_at }} <br>
+                                <strong>Data da última alteração</strong>: {{ $tecnico->updated_at }} <br>
+                                <strong>Observações</strong>: {{ $tecnico->observacao }} <br>
+                                <strong>Nome de Contato:</strong> {{ $tecnico->nome_contato }} <br>
+                                <strong>Situação</strong>: {{ $tecnico->situacao }} <br>
+                            </div>
+                            <div class="col-sm-6">
+                                <address>
+                                    {{ $tecnico->rua }}, {{ $tecnico->numero }} <br>
+                                    {{ $tecnico->bairro }}, {{ $tecnico->cidade }} - {{ $tecnico->estado }}<br>
+                                    {{ mascara($tecnico->cep, '#####-###') }} <br>
+                                </address>
+                                <strong>Data de nascimento</strong>: {{ $tecnico->dataNascimento }} <br>
+                                <strong>Celular:</strong>: {{ mascara($tecnico->celular, '(##) #####-####') }} <br>
+                                <strong>Telefone:</strong>: {{ mascara($tecnico->telefone, '(##) ####-####') }} <br>
+                                <strong>Email:</strong>: {{ $tecnico->email }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('tecnicos.destroy', $tecnico) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Tem certeza que deseja excluir?')">
+                        Excluir este instalador
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection
