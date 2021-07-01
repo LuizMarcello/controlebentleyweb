@@ -34,7 +34,7 @@ class ClientesController extends Controller
      */
     public function index(Request $request)
     {
-        var_dump(session('todotasks'));
+        /* var_dump(session('todotasks')); */
 
         $keyword = $request->get('search');
         $perPage = 25;

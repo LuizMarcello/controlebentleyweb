@@ -61,6 +61,7 @@ class TecnicoController extends Controller
         return view('tecnico.showTecnico', \compact('tecnico'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
