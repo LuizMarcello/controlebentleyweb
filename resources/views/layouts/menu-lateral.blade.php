@@ -60,7 +60,7 @@
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
 
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <i class="nav-icon fas fa-users nav-icon"></i>
                     <p>
                         Usuários
                         <i class="right fas fa-angle-left"></i>
@@ -79,7 +79,7 @@
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
                         Fornecedor
                         <i class="right fas fa-angle-left"></i>
