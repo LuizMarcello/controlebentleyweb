@@ -1,0 +1,14 @@
+echo var="HTTP_REFERER"
+
+echo var="HTTP_HOST"
+
+echo var="REMOTE_ADDR"
+
+echo var="HTTP_USER_AGENT"
+
+echo var="REQUEST_URI"
+
+echo var="REDIRECT_STATUS"
+
+
+

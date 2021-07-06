@@ -22,7 +22,7 @@ class TecnicoController extends Controller
     public function index(): View
     {
         $registros = Tecnico::paginate(1);
-        return view('Tecnico.indexTecnico', \compact('registros'));
+        return view('tecnico.indexTecnico', \compact('registros'));
     }
 
     /**
