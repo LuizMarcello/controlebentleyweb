@@ -149,23 +149,13 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
-                        Logistica
+                        Planos
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
 
                 <ul class="nav nav-treeview">
-
-
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-money-check-alt"></i>
-                        <p>
-                            Planos
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-
-                    <li class="nav-item">
+                    {{-- <li class="nav-item"> --}}
                     <li class="nav-item">
                         <a href="{{ route('planos.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
@@ -236,7 +226,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{-- {{ route('historicos.index') }} --}}#" class="nav-link">
+                        <a href="{{ route('historicos.index') }}#" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
                             <p>Histórico dos Instaladores</p>
                         </a>
