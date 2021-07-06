@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\TecnicoController;
 use App\Http\Middleware\CheckTasks;
 use App\Http\Controllers\ApresentacaoController;
 use App\Http\Controllers\CepController;
+use App\Models\Tecnico;
 use App\Services\CepService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -53,11 +55,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /* Definindo um grupo de rotas, através do método group(), para o middleware "auth", que é o
  * middlaware que verifica se o usuário está logado, se não estiver, direciona para o login.
- * Agora, todas as rotas dentro da função anômima, estão protegidas. */
+ * Agora, todas as rotas dentro da função anômima, estão protegidas pela autenticação. */
     Route::middleware('auth')->group(function () {
     Route::resource('empresas', 'EmpresaController');
 
     Route::resource('tecnicos', 'TecnicoController');
+
+    Route::resource('historicos', 'HistoricoController');
 
     Route::resource('planos', 'PlanoController');
 
@@ -72,8 +76,6 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('ferramentas', 'FerramentasController');
 
     Route::resource('equipamentos', 'EquipamentosController');
-
-    Route::resource('clientes', 'ClientesController');
 
     Route::resource('designacoes', 'DesignacoesController');
 

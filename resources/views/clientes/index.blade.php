@@ -206,7 +206,7 @@
                                                     </button></a>
 
                                                     {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                                    {{-- Parâmetros: Nome do gate e instância do cliente, ao qual terá ou não permissão. --}}
+                                                    {{-- Parâmetros: Nome do gate e instância do cliente, o qual terá ou não permissão. --}}
                                                     @can('update-client',  $cliente)
                                                     <a href="{{ url('/clientes/' . $cliente->id . '/edit') }}" title="Edit Cliente">
                                                         <button class="btn btn-primary btn-sm">

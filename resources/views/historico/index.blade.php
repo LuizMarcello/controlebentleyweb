@@ -1,18 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1>Listagem de Instaladores</h1>
-    <div class="card-tools">
-        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo instalador</a>
-    </div>
-@endsection
-
-@section('breadcrumb')
-    <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index') }}">Listagem de Instaladores</a>
-    </li>
-@endsection
-
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -33,6 +20,7 @@
             </li>
         </ul>
 
+        <!-- Right navbar links -->
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
@@ -162,62 +150,87 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <a href="{{-- {{ route('empresa.relatorios.historicos') }} --}}" class="btn btn-primary btn-sm">Históricos de serviços</a>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listagem de Instaladores</h3>
+                        <h4> Histórico </h4>
                     </div>
-
-
-                    {{-- O corpo --}}
                     <div class="card-body">
-                        <table class="table">
+                        <a href="{{ url('/historicos/create') }}" class="btn btn-success btn-sm" title="Adicionar novo historico">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Novo histórico
+                        </a>
 
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                        <form method="GET" action="{{ url('/historicos') }}" accept-charset="UTF-8"
+                            class="form-inline my-2 my-lg-0 float-right" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Pesquisar..."
+                                    value="{{ request('search') }}">
+                                <span class="input-group-append">
+                                    <button class="btn btn-secondary" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
 
-                            <tbody>
-                                @forelse ($registros as $registro)
+                        <br />
+                        <br />
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td>{{ $registro->id }}</td>
-                                        <td>{{ $registro->nome }}</td>
-                                        <td>{{ $registro->nome_contato }}</td>
-                                        <td>{{ mascara($registro->celular, '(##) #####-####') }}</td>
-                                        <td><a href="{{ route('tecnicos.show', $registro) }}"
-                                                class="btn btn-primary btn-sm">Detalhes</a>
-                                            <a href="{{ route('tecnicos.edit', $registro) }}"
-                                                class="btn btn-danger btn-sm">Atualizar</a>
-                                           {{--  <a href="{{ route('tecnicos.historico') }}"
-                                                class="btn btn-success btn-sm">Histórico</a> --}}
-                                        </td>
+                                        <th>Id</th>
+                                        <th>Cliente atendido</th>
+                                        <th>Data/Inicio</th>
+                                        <th>Actions</th>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Nenhum item cadastrado</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
+                                </thead>
+                                <tbody>
+                                    @foreach ($historicos as $historico)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $historico->cliente }}</td>
+                                            <td>{{ $historico->datainicio }}</td>
+                                            <td>
+                                                <a href="{{ url('/historicos/' . $historico->id) }}" title="View historico">
+                                                    <button class="btn btn-info btn-sm">
+                                                        <i class="fa fa-eye"
+                                                            aria-hidden="true"></i> Detalhes
+                                                    </button></a>
 
-                        </table>
+                                                    {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
+                                                    {{-- Parâmetros: Nome do gate e instância do historico, o qual terá ou não permissão. --}}
+                                                    {{--  @can('update-client',  $historico) --}}
+                                                    <a href="{{ url('/historicos/' . $historico->id . '/edit') }}" title="Edit historico">
+                                                        <button class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
+                                                        </button></a>
+
+                                                        <form method="POST" action="{{ url('/historicos' . '/' . $historico->id) }}"
+                                                            accept-charset="UTF-8" style="display:inline">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                                title="Delete historico"
+                                                                onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                                                    class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
+                                                        </form>
+                                                    {{-- @endcan --}}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="pagination-wrapper"> {!! $historicos->appends(['search' => Request::get('search')])->render() !!} </div>
+                        </div>
+
                     </div>
-                    <div class="card-footer clearfix">
-                        {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
-                        {{ $registros->links() }}
-                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>

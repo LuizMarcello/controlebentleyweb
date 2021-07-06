@@ -2,7 +2,7 @@
 
 {{-- Tirar ou colocar a barra de rolagem: --}}
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-y: scroll">
-{{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style=""> --}}
+    {{-- <aside class="main-sidebar sidebar-dark-primary elevation-4" style=""> --}}
 
     <!-- Brand Logo -->
     <a href="https://sistema.bentleybrasil.com.br/home" class="brand-link" style="
@@ -10,9 +10,9 @@
     flex-flow: row;
     align-items: center;
     justify-content: center;">
-    <span class="brand-text font-weight-light">
-        <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
-    </span>
+        <span class="brand-text font-weight-light">
+            <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
+        </span>
     </a>
 
     <br>
@@ -24,15 +24,15 @@
     align-items: center;
     justify-content: center;">
         <div class="col">
-        <a class="d-block">{{ Auth::user()->name }}</a>
+            <a class="d-block">{{ Auth::user()->name }}</a>
         </div>
 
         <div class="col">
-        <a class="btn btn-danger btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <a class="btn btn-danger btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-            Sair
-        </a>
-    </div>
+                Sair
+            </a>
+        </div>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
@@ -120,6 +120,64 @@
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-circle-down"></i>
+                    <p>
+                        Contratos
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                    <li class="nav-item">
+                        <a href="{{-- {{ route('empresas.index') }} --}}#" class="nav-link">
+                            <i class="fas fa-list-alt nav-icon"></i>
+                            <p>Contratos</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{-- {{ route('empresas.index') }} --}}#" class="nav-link">
+                            <i class="fas fa-list-alt nav-icon"></i>
+                            <p>Layout de contratos</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-satellite-dish"></i>
+                    <p>
+                        Logistica
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+
+
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-money-check-alt"></i>
+                        <p>
+                            Planos
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a href="{{ route('planos.index') }}" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            <p>Lista de Planos</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
                         Designação
@@ -134,7 +192,6 @@
                             <i class="fas fa-list-alt nav-icon"></i>
                             <p>Lista de Designações</p>
                         </a>
-                    </li>
                     </li>
                 </ul>
             </li>
@@ -179,7 +236,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('tecnicos.index') }}" class="nav-link">
+                        <a href="{{ route('historicos.index') }}" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
                             <p>Histórico dos Instaladores</p>
                         </a>
@@ -188,112 +245,77 @@
                 </ul>
             </li>
 
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-satellite-dish"></i>
-                    <p>
-                        Logistica
-                        {{-- <i class="right fas fa-angle-left"></i> --}}
-                    </p>
-                </a>
-            </li>
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Planos
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                        <a href="{{ route('planos.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Planos</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-money-check-alt"></i>
-                    <p>
-                        Representação
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                        <a href="{{ route('distribuidors.index') }}" class="nav-link">
-                            <i class="fas fa-chart-pie nav-icon"></i>
-                            <p>Lista de Representantes</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item menu-open">{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-satellite-dish"></i>
                     <p>
                         Estoque
-                        {{-- <i class="right fas fa-angle-left"></i> --}}
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-arrow-circle-down"></i>
-                    <p>
-                        Ferramentas
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
+
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('ferramentas.index') }}" class="nav-link">
-                            <i class="fas fa-users nav-icon"></i>
-                            <p>Lista de Ferramentas</p>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-arrow-circle-down"></i>
+                            <p>
+                                Ferramentas
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
                         </a>
+
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('ferramentas.index') }}" class="nav-link">
+                                    <i class="fas fa-users nav-icon"></i>
+                                    <p>Lista de Ferramentas</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-arrow-circle-down"></i>
+                            <p>
+                                Equipamentos
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('equipamentos.index') }}" class="nav-link">
+                                    <i class="fas fa-users nav-icon"></i>
+                                    <p>Lista de equipamentos</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
+            {{-- </li> --}}
 
-            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
-                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-arrow-circle-down"></i>
-                    <p>
-                        Equipamentos
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{ route('equipamentos.index') }}" class="nav-link">
-                            <i class="fas fa-users nav-icon"></i>
-                            <p>Lista de equipamentos</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
 
-            <li class="nav-item" >
-                <a href="#" class="nav-link" onclick="
+
+
+
+
+
+
+
+
+            <li class="nav-item">
+                <a href="#" class="nav-link"
+                    onclick="
                 window.open(
                   'https://beta.simet.nic.br/widget.html',
                   'Bentley Brasil - Teste de velocidade',
                   'height=300,width=800,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Testar Velocidade</p>
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>Testar Velocidade</p>
                 </a>
             </li>
 

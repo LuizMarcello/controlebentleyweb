@@ -1,18 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1>Listagem de Instaladores</h1>
-    <div class="card-tools">
-        <a href="{{ route('tecnicos.create') }}" class="btn btn-success">Novo instalador</a>
-    </div>
-@endsection
-
-@section('breadcrumb')
-    <li class="breadcrumb-item">
-        <a href="{{ route('tecnicos.index') }}">Listagem de Instaladores</a>
-    </li>
-@endsection
-
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -162,63 +149,47 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Listagem de Instaladores</h3>
-                    </div>
-
-
-                    {{-- O corpo --}}
+                    <div class="card-header"><h4> Editando historico id: {{ $historico->id }}</h4></div>
                     <div class="card-body">
-                        <table class="table">
+                        <a href="{{ url('/historicos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+                        <br />
+                        <br />
 
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px"></th>
-                                    <th>Nome da empresa</th>
-                                    <th>Nome do contato</th>
-                                    <th>Celular</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                            <tbody>
-                                @forelse ($registros as $registro)
-                                    <tr>
-                                        <td>{{ $registro->id }}</td>
-                                        <td>{{ $registro->nome }}</td>
-                                        <td>{{ $registro->nome_contato }}</td>
-                                        <td>{{ mascara($registro->celular, '(##) #####-####') }}</td>
-                                        <td><a href="{{ route('tecnicos.show', $registro) }}"
-                                                class="btn btn-primary btn-sm">Detalhes</a>
-                                            <a href="{{ route('tecnicos.edit', $registro) }}"
-                                                class="btn btn-danger btn-sm">Atualizar</a>
-                                           {{--  <a href="{{ route('tecnicos.historico') }}"
-                                                class="btn btn-success btn-sm">Histórico</a> --}}
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Nenhum item cadastrado</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
+                        <form method="POST" action="{{ url('/historicos/' . $historico->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
 
-                        </table>
-                    </div>
-                    <div class="card-footer clearfix">
-                        {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
-                        {{ $registros->links() }}
+                            @include ('historico.form', ['formMode' => 'edit'])
+
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
