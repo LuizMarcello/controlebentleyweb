@@ -236,7 +236,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('historicos.index') }}" class="nav-link">
+                        <a href="{{-- {{ route('historicos.index') }} --}}#" class="nav-link">
                             <i class="fas fa-chart-pie nav-icon"></i>
                             <p>Histórico dos Instaladores</p>
                         </a>
