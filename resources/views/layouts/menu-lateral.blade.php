@@ -136,7 +136,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{-- {{ route('empresas.index') }} --}}#" class="nav-link">
+                        <a href="{{ route('modelocontratos.index') }}" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
                             <p>Layout de contratos</p>
                         </a>

@@ -82,6 +82,8 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('medirvelocidades', 'MedirVelocidadeController');
 
     Route::resource('medirvelocidades', 'MedirVelocidadeController');
+
+    Route::resource('modelocontratos', 'ModelocontratoController');
 });
 
 
