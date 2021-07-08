@@ -154,9 +154,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><h4>  Criando novo cliente</h4></div>
+                    <div class="card-header"><h4>  Criando novo contrato</h4></div>
                     <div class="card-body">
-                        <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+                        <a href="{{ url('/contratos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />
                         <br />
 
@@ -168,10 +168,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/clientes') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/contratos') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('clientes.form', ['formMode' => 'create'])
+                            @include ('contratos.form', ['formMode' => 'create'])
 
                         </form>
 

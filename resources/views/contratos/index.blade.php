@@ -160,7 +160,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form method="GET" action="{{ url('/contrato') }}" accept-charset="UTF-8"
+                        <form method="GET" action="{{ url('/contratos') }}" accept-charset="UTF-8"
                             class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
                             <div class="col-md-12">
                                 <div class="input-group">
@@ -177,19 +177,18 @@
                         </form>
                         <br>
                         <div class="col">
-                            <a href="{{ url('/contrato/create') }}" class="btn btn-success btn-md"
+                            <a href="{{ url('/contratos/create') }}" class="btn btn-success btn-md"
                                 title="Adicionar novo contrato">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Novo contrato
                             </a>
                         </div>
 
                         <br />
-                        
+
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-
                                         <th>ID</th>
                                         <th>Nome</th>
                                         <th>Forma de pagamento</th>
@@ -198,7 +197,6 @@
                                         <th>Criado em</th>
                                         <th>Data bloqueio</th>
                                         <th>Data pendência</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -215,7 +213,7 @@
                                             <td>{{ $contrato->dias_para_pendencia }}</td>
 
                                             <td>
-                                                <a href="{{ url('/contrato/' . $contrato->id) }}" title="View contrato">
+                                                <a href="{{ url('/contratos/' . $contrato->id) }}" title="View contrato">
                                                     <button class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
                                                     </button></a>
@@ -223,13 +221,13 @@
                                                 {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
                                                 {{-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. --}}
                                                 @can('update-client', $contrato)
-                                                    <a href="{{ url('/contrato/' . $contrato->id . '/edit') }}"
+                                                    <a href="{{ url('/contratos/' . $contrato->id . '/edit') }}"
                                                         title="Edit contrato">
                                                         <button class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
                                                         </button></a>
 
-                                                    <form method="POST" action="{{ url('/contrato' . '/' . $contrato->id) }}"
+                                                    <form method="POST" action="{{ url('/contratos' . '/' . $contrato->id) }}"
                                                         accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}

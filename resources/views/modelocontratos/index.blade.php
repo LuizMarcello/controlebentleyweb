@@ -160,14 +160,14 @@
                     </div>
                     <div class="card-body">
 
-                        <form method="GET" action="{{ url('/modelocontrato') }}" accept-charset="UTF-8"
+                        <form method="GET" action="{{ url('/modelocontratos') }}" accept-charset="UTF-8"
                             class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
 
                         </form>
 
                         <br />
 
-                        <a href="{{ url('/modelocontrato/create') }}" class="btn btn-success btn-md"
+                        <a href="{{ url('/modelocontratos/create') }}" class="btn btn-success btn-md"
                             title="Adicionar novo modelo de contrato">
                             <i class="fa fa-plus" aria-hidden="true"></i> Novo modelo de contrato
                         </a>
@@ -178,10 +178,8 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-
                                         <th>Id</th>
                                         <th>Descrição</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -191,7 +189,7 @@
                                             <td>{{ $modelocontrato->descricao }}</td>
 
                                             <td>
-                                                <a href="{{ url('/modelocontrato/' . $modelocontrato->id) }}"
+                                                <a href="{{ url('/modelocontratos/' . $modelocontrato->id) }}"
                                                     title="View modelocontrato">
                                                     <button class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
@@ -199,15 +197,15 @@
 
                                                 {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
                                                 {{-- Parâmetros: Nome do gate e instância do modelocontrato, o qual terá ou não permissão. --}}
-                                                @can('update-client', $modelocontrato)
-                                                    <a href="{{ url('/modelocontrato/' . $modelocontrato->id . '/edit') }}"
+                                                @can('update-client', $modelocontratos)
+                                                    <a href="{{ url('/modelocontratos/' . $modelocontrato->id . '/edit') }}"
                                                         title="Edit modelocontrato">
                                                         <button class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
                                                         </button></a>
 
                                                     <form method="POST"
-                                                        action="{{ url('/modelocontrato' . '/' . $modelocontrato->id) }}"
+                                                        action="{{ url('/modelocontratos' . '/' . $modelocontrato->id) }}"
                                                         accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
@@ -224,11 +222,8 @@
                             </table>
                             <div class="pagination-wrapper"> {!! $modelocontratos->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>

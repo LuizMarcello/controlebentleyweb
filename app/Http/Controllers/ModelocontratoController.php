@@ -74,7 +74,7 @@ class ModelocontratoController extends Controller
      */
     public function create()
     {
-        //
+        return view('modelocontratos.create');
     }
 
     /**
