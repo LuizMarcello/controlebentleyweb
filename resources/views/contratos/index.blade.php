@@ -153,66 +153,88 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                {{-- <a href="{{ route('empresa.relatorios.modelocontrato') }}" class="btn btn-primary btn-sm">Relatório de modelocontrato</a> --}}
+                {{-- <a href="{{ route('empresa.relatorios.contrato') }}" class="btn btn-primary btn-sm">Relatório de contrato</a> --}}
                 <div class="card">
                     <div class="card-header">
-                        <h4> Modelos de contratos</h4>
+                        <h4> Contratos</h4>
                     </div>
                     <div class="card-body">
 
-                        <form method="GET" action="{{ url('/modelocontrato') }}" accept-charset="UTF-8"
+                        <form method="GET" action="{{ url('/contrato') }}" accept-charset="UTF-8"
                             class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
-
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="search" style=""
+                                        placeholder="Pesquisar por nº do contrato, cliente nome, e-mail e CPF/CNPJ"
+                                        value="{{ request('search') }}">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-secondary" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
                         </form>
+                        <br>
+                        <div class="col">
+                            <a href="{{ url('/contrato/create') }}" class="btn btn-success btn-md"
+                                title="Adicionar novo contrato">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Novo contrato
+                            </a>
+                        </div>
 
                         <br />
-
-                        <a href="{{ url('/modelocontrato/create') }}" class="btn btn-success btn-md"
-                            title="Adicionar novo modelo de contrato">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Novo modelo de contrato
-                        </a>
-
-                        <br>
-
+                        
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
 
-                                        <th>Id</th>
-                                        <th>Descrição</th>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Forma de pagamento</th>
+                                        <th>Vencimento</th>
+                                        <th>Valor</th>
+                                        <th>Criado em</th>
+                                        <th>Data bloqueio</th>
+                                        <th>Data pendência</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($modelocontratos as $modelocontrato)
+                                    @foreach ($contratos as $contrato)
                                         <tr>
                                             {{-- <td>{{ $loop->iteration }}</td> --}}
-                                            <td>{{ $modelocontrato->descricao }}</td>
+                                            <td>{{ $contrato->id }}</td>
+                                            <td>{{ $contrato->cliente }}</td>
+                                            <td>{{ $contrato->forma_de_pagamento }}</td>
+                                            <td>{{ $contrato->vencimento }}</td>
+                                            <td>{{ $contrato->valor }}</td>
+                                            <td>{{ $contrato->criado_em }}</td>
+                                            <td>{{ $contrato->dias_para_bloqueio }}</td>
+                                            <td>{{ $contrato->dias_para_pendencia }}</td>
 
                                             <td>
-                                                <a href="{{ url('/modelocontrato/' . $modelocontrato->id) }}"
-                                                    title="View modelocontrato">
+                                                <a href="{{ url('/contrato/' . $contrato->id) }}" title="View contrato">
                                                     <button class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
                                                     </button></a>
 
                                                 {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                                {{-- Parâmetros: Nome do gate e instância do modelocontrato, o qual terá ou não permissão. --}}
-                                                @can('update-client', $modelocontrato)
-                                                    <a href="{{ url('/modelocontrato/' . $modelocontrato->id . '/edit') }}"
-                                                        title="Edit modelocontrato">
+                                                {{-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. --}}
+                                                @can('update-client', $contrato)
+                                                    <a href="{{ url('/contrato/' . $contrato->id . '/edit') }}"
+                                                        title="Edit contrato">
                                                         <button class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
                                                         </button></a>
 
-                                                    <form method="POST"
-                                                        action="{{ url('/modelocontrato' . '/' . $modelocontrato->id) }}"
+                                                    <form method="POST" action="{{ url('/contrato' . '/' . $contrato->id) }}"
                                                         accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger btn-sm"
-                                                            title="Delete modelocontrato"
+                                                            title="Delete contrato"
                                                             onclick="return confirm(&quot;Confirm delete?&quot;)"><i
                                                                 class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
                                                     </form>
@@ -222,7 +244,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $modelocontratos->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $contratos->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>
