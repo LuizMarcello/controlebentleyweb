@@ -168,9 +168,32 @@
                         <br />
 
                         <a href="{{ url('/modelocontratos/create') }}" class="btn btn-success btn-md"
-                            title="Adicionar novo modelo de contrato">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Novo modelo de contrato
+                            title="Adicionar novo modelo de contrato" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Adicionar modelo de contrato
                         </a>
+
+                         {{-- ===MODAL=== --}}
+                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel">Criar novo modelo de contrato</h5>
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                     </button>
+                                 </div>
+                                 <div class="modal-body">
+
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                     <button type="button" class="btn btn-primary">Incluir novo modelo</button>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     {{-- ===MODAL=== --}}
 
                         <br>
 

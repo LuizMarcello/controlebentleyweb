@@ -178,10 +178,33 @@
                         <br>
                         <div class="col">
                             <a href="{{ url('/contratos/create') }}" class="btn btn-success btn-md"
-                                title="Adicionar novo contrato">
+                                title="Adicionar novo contrato" data-toggle="modal" data-target="#exampleModal">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Novo contrato
                             </a>
                         </div>
+
+                        {{-- ===MODAL=== --}}
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar contrato</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- ===MODAL=== --}}
 
                         <br />
 
@@ -227,7 +250,8 @@
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
                                                         </button></a>
 
-                                                    <form method="POST" action="{{ url('/contratos' . '/' . $contrato->id) }}"
+                                                    <form method="POST"
+                                                        action="{{ url('/contratos' . '/' . $contrato->id) }}"
                                                         accept-charset="UTF-8" style="display:inline">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
