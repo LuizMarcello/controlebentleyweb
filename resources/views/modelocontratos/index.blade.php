@@ -156,7 +156,7 @@
                 {{-- <a href="{{ route('empresa.relatorios.modelocontrato') }}" class="btn btn-primary btn-sm">Relatório de modelocontrato</a> --}}
                 <div class="card">
                     <div class="card-header">
-                        <h4> Modelos de contratos</h4>
+                        <h4> Cadastrar modelos de contrato</h4>
                     </div>
                     <div class="card-body">
 
@@ -167,9 +167,11 @@
 
                         <br />
 
+
+
                         <a href="{{ url('/modelocontratos/create') }}" class="btn btn-success btn-md"
                             title="Adicionar novo modelo de contrato" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Adicionar modelo de contrato
+                            <i class="fa fa-plus" aria-hidden="true"></i> Novo modelo de contrato
                         </a>
 
                          {{-- ===MODAL=== --}}
@@ -178,17 +180,19 @@
                          <div class="modal-dialog">
                              <div class="modal-content">
                                  <div class="modal-header">
-                                     <h5 class="modal-title" id="exampleModalLabel">Criar novo modelo de contrato</h5>
+                                     <h5 class="modal-title" id="exampleModalLabel">Cadastrar modelo de contrato</h5>
                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                          <span aria-hidden="true">&times;</span>
                                      </button>
                                  </div>
                                  <div class="modal-body">
-
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="{{ route('modelocontratos.create') }}" height="1000" width="1000" allowfullscreen></iframe>
+                                    </div>
                                  </div>
-                                 <div class="modal-footer">
+                                 <div class="modal-footer">                             {{--  "../../dist/img/user1-128x128.jpg" --}}
                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                     <button type="button" class="btn btn-primary">Incluir novo modelo</button>
+                                     <button type="button" class="btn btn-primary">Cadastrar</button>
                                  </div>
                              </div>
                          </div>
@@ -203,6 +207,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Descrição</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
