@@ -156,7 +156,7 @@
                 {{-- <a href="{{ route('empresa.relatorios.modelocontrato') }}" class="btn btn-primary btn-sm">Relatório de modelocontrato</a> --}}
                 <div class="card">
                     <div class="card-header">
-                        <h4> Cadastrar modelos de contrato</h4>
+                        <h4> Modelos de contrato</h4>
                     </div>
                     <div class="card-body">
 
