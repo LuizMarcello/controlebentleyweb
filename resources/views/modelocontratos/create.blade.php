@@ -1,17 +1,14 @@
 @extends('layouts.app')
 
-
-
-
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><h4> Criando novo modelo de contrato </h4></div>
+                    {{-- <div class="card-header"><h4> Criando novo modelo de contrato </h4></div> --}}
                     <div class="card-body">
-                        <a href="{{ url('/modelocontratos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
-                        <br />
+                       {{--  <a href="{{ url('/modelocontratos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a> --}}
+                      {{--   <br /> --}}
                         <br />
 
                         @if ($errors->any())
@@ -26,6 +23,7 @@
                             {{ csrf_field() }}
 
                             @include ('modelocontratos.form', ['formMode' => 'create'])
+                            {{-- @include ('clientes.form', ['formMode' => 'create']) --}}
 
                         </form>
 

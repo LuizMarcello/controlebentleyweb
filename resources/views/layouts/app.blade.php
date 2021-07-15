@@ -45,7 +45,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     {{-- scripts --}}
@@ -74,7 +74,7 @@
                             @yield('title')
                         </div>
 
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">
                                     <a href="{{ route('home') }}">Dashboard</a>
@@ -82,7 +82,7 @@
 
                                 @yield('breadcrumb')
                             </ol>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
