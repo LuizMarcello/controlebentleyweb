@@ -118,7 +118,7 @@
         <label for="desconto" class="control-label ">{{ 'Desconto R$' }}</label>
         <div class="col">
             <div class="row">
-                <input type="number" name="numero" class="form-control col-form-label col-sm-7" id="desconto"
+                <input type="number" name="numero" class="form-control col-form-label col-sm-8" id="desconto"
                     oninput="Num()">&nbsp;
             </div>
         </div>
@@ -128,7 +128,7 @@
 
     <div class="div_msg_pend_automatica form-group {{ $errors->has('msg_pend_automatica') ? 'has-error' : '' }}">
         <label for="msg_pend_automatica" class="control-label">{{ 'Msg. pendência - automatica?' }}</label>
-        <select name="msg_pend_automatica" class="form-control col-form-label col-sm-6" id="msg_pend_automatica">
+        <select name="msg_pend_automatica" class="form-control col-form-label col-sm-8" id="msg_pend_automatica">
             @foreach (json_decode('{" padrão":"Padrâo","sim":"Sim","nao":"Não"}', true) as
                 $optionKey=> $optionValue)
                 <option value="{{ $optionKey }}"
@@ -150,7 +150,7 @@
                 <label for="dias_para_pendencia" class="control-label">{{ 'Dias para pendência' }}</label>
             </div>
             <div class="row">
-                <input class="form-control col-form-label col-sm-7" type="number" name="numero" id="dias_para_pendencia"
+                <input class="form-control col-form-label col-sm-8" type="number" name="numero" id="dias_para_pendencia"
                     oninput="Num()"> &nbsp;
             </div>
         </div>
@@ -175,7 +175,7 @@
     <div
         class="div_msg_bloqueio_automatica form-group {{ $errors->has('msg_bloqueio_automatica') ? 'has-error' : '' }}">
         <label for="msg_bloqueio_automatica" class="control-label">{{ 'Msg. bloqueio - automatica?' }}</label>
-        <select name="msg_bloqueio_automatica" class="form-control col-form-label col-sm-6"
+        <select name="msg_bloqueio_automatica" class="form-control col-form-label col-sm-8"
             id="msg_bloqueio_automatica">
             @foreach (json_decode('{" padrão":"Padrâo","sim":"Sim","nao":"Não"}', true) as
                 $optionKey=> $optionValue)
@@ -196,7 +196,7 @@
                 <label for="dias_para_bloqueio" class="control-label">{{ 'Dias para bloqueio' }}</label>
             </div>
             <div class="row">
-                <input class="form-control col-form-label col-sm-7" type="number" name="numero" id="dias_para_bloqueio"
+                <input class="form-control col-form-label col-sm-8" type="number" name="numero" id="dias_para_bloqueio"
                     oninput="Num()"> &nbsp;
             </div>
         </div>
@@ -211,7 +211,7 @@
                 <label for="dia_de_pagamento" class="control-label">{{ 'Dia de Pagamento' }}</label>
             </div>
             <div class="row">
-                <input class="form-control col-form-label col-sm-7" type="number" name="numero" id="dia_de_pagamento"
+                <input class="form-control col-form-label col-sm-8" type="number" name="numero" id="dia_de_pagamento"
                     oninput="Num()"> &nbsp;
             </div>
         </div>
@@ -220,7 +220,7 @@
     <div
         class="div_forma_de_pagamento form-group {{ $errors->has('forma_de_pagamento') ? 'has-error' : '' }}">
         <label for="forma_de_pagamento" class="control-label">{{ 'Forma de Pagamento' }}</label>
-        <select name="forma_de_pagamento" class="form-control col-form-label col-sm-6"
+        <select name="forma_de_pagamento" class="form-control col-form-label col-sm-12"
             id="forma_de_pagamento">
             @foreach (json_decode('{" cobrancainformal":"Cobrança Informal","gerencianet":"Gerencia NET"}', true) as
                 $optionKey=> $optionValue)
@@ -230,10 +230,27 @@
             @endforeach
         </select>
         {!! $errors->first('forma_de_pagamento', '<p class="help-block">:message</p>') !!}
-        
+    </div>
+
+<br>
+
+    <div
+        class="div_modelo_de_contrato form-group {{ $errors->has('modelo_de_contrato ') ? 'has-error' : '' }}">
+        <label for="modelo_de_contrato" class="control-label">{{ 'Selecione um modelo de contrato existente' }}</label>
+
+        <select name="modelo_de_contrato" class="form-control col-form-label col-sm-12"
+            id="modelo_de_contrato" aria-placeholder="Selecione um modelo de contrato existente" >
+            @foreach (json_decode('{"":"","":""}', true) as
+                $optionKey=> $optionValue)
+                <option value="{{ $optionKey }}"
+                    {{ isset($contrato->modelo_de_contrato) && $contrato->modelo_de_contrato == $optionKey ? 'selected' : '' }}>
+                    {{ $optionValue }}</option>
+            @endforeach
+        </select>
+        {!! $errors->first('modelo_de_contrato', '<p class="help-block">:message</p>') !!}
+
     </div>
 </div>
-
 
 <br>
 
