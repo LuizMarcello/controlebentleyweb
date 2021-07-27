@@ -57,7 +57,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  * middlaware que verifica se o usuário está logado, se não estiver, direciona para o login.
  * Agora, todas as rotas dentro da função anômima, estão protegidas pela autenticação. */
     Route::middleware('auth')->group(function () {
-        
+
     Route::resource('empresas', 'EmpresaController');
 
     Route::resource('tecnicos', 'TecnicoController');
@@ -87,6 +87,8 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('modelocontratos', 'ModelocontratoController');
 
     Route::resource('contratos', 'ContratoController');
+
+    Route::resource('chamados', 'ChamadoController');
 });
 
 

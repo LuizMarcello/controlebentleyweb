@@ -120,6 +120,27 @@
             <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
                 {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
                 <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
+                    <p>
+                        Chamados
+                        <i class="right fas fa-angle-left"></i>
+
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                    <li class="nav-item">
+                        <a href="{{ route('chamados.index') }}?" class="nav-link">
+                            <i class="fas fa-address-card nav-icon"></i>
+                            <p>Chamados</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"> {{-- Para recolher o menu da barra lateral --}}
+                {{-- <li class="nav-item menu-open"> --}}{{-- Para deixar o menu sempre aberto --}}
+                <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-circle-down"></i>
                     <p>
                         Contratos

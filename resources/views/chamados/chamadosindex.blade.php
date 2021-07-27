@@ -10,12 +10,14 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
+            {{-- <li class="nav-item d-none d-sm--"> --}}
                 <div class="nav-link">
                     <a href="{{ route('home') }}">Home</a>
                 </div>
 
             </li>
             <li class="nav-item d-none d-sm-inline-block">
+            {{-- <li class="nav-item d-none d-sm--"> --}}
                 <a href="#" class="nav-link">Contato</a>
             </li>
         </ul>
@@ -28,8 +30,8 @@
                 <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                     <i class="fas fa-search"></i>
                 </a>
-                <div class="navbar-search-block">
-                    <form class="form-inline">
+                <div class="navbar-search-">
+                    <form class="form-">
                         <div class="input-group input-group-sm">
                             <input class="form-control form-control-navbar" type="search" placeholder="Search"
                                 aria-label="Search">
@@ -153,19 +155,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                {{-- <a href="{{ route('empresa.relatorios.contrato') }}" class="btn btn-primary btn-sm">Relatório de contrato</a> --}}
+                {{-- <a href="{{ route('empresa.relatorios.chamado') }}" class="btn btn-primary btn-sm">Relatório de chamado</a> --}}
                 <div class="card">
                     <div class="card-header">
-                        <h4> Contratos</h4>
+                        <h4> Chamados</h4>
                     </div>
                     <div class="card-body">
+                        <div>
+                            <span class="block p-2 bg-white text-black">TODOS - 00</span>
+                            <span class="block p-2 bg-info text-white">NOVOS - 00</span>
+                            <span class="block p-2 bg-success text-white">AGUARDANDO CLIENTE - 00</span>
+                            <span class="block p-2 bg-danger text-white">AGUARDANDO EMPRESA - 00</span>
+                            <span class="block p-2 bg-dark text-white">FINALIZADO - 00</span>
+                        </div>
+                        <br>
 
-                        <form method="GET" action="{{ url('/contratos') }}" accept-charset="UTF-8"
-                            class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
+                        <form method="GET" action="{{ url('/chamados') }}" accept-charset="UTF-8"
+                            class="form- my-2 my-lg-2 {{-- float-right --}}" role="search">
                             <div class="col-md-12">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="search" style=""
-                                        placeholder="Pesquisar por nº do contrato, cliente nome, e-mail e CPF/CNPJ"
+                                        placeholder="Pesquisar por id, assunto, cliente, nome, e-mail e CPF/CNPJ"
                                         value="{{ request('search') }}">
                                     <span class="input-group-append">
                                         <button class="btn btn-secondary" type="submit">
@@ -177,18 +187,18 @@
                         </form>
                         <br>
                         <div class="col">
-                            <a href="{{ url('/contratos/create') }}" class="btn btn-success btn-md"
-                                title="Adicionar novo contrato" data-toggle="modal" data-target="#modelcontrato">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Novo contrato
+                            <a href="{{ url('/chamados/create') }}" class="btn btn-success btn-md" title="Novo chamado"
+                                data-toggle="modal" data-target="#modelchamado">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Novo chamado
                             </a>
                         </div>
 
                         {{-- ===MODAL=== --}}
-                        <div class="modal fade" id="modelcontrato" tabindex="-1" aria-labelledby="modelcontratoLabel">
+                        <div class="modal fade" id="modelchamado" tabindex="-1" aria-labelledby="modelchamadoLabel">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title" id="modelcontratoLabel">Cadastrar contrato</h4>
+                                        <h4 class="modal-title" id="modelchamadoLabel">Cadastrar chamado</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -196,7 +206,7 @@
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <iframe class="embed-responsive-item"
-                                                src="{{ route('contratos.create') }}"></iframe>
+                                                src="{{ route('chamados.create') }}"></iframe>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -209,57 +219,55 @@
                         </div>
                         {{-- ===MODAL=== --}}
 
-                        <br />
+                        <br>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nome</th>
-                                        <th>Forma de pagamento</th>
-                                        <th>Vencimento</th>
-                                        <th>Valor</th>
+                                        <th>Assunto</th>
+                                        <th>Cliente</th>
+                                        <th>Categoria</th>
+                                        <th>Prioridade</th>
                                         <th>Criado em</th>
-                                        <th>Data bloqueio</th>
-                                        <th>Data pendência</th>
+                                        <th>Agendado para</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($contratos as $contrato)
+                                    @foreach ($chamados as $chamado)
                                         <tr>
                                             {{-- <td>{{ $loop->iteration }}</td> --}}
-                                            <td>{{ $contrato->id }}</td>
-                                            <td>{{ $contrato->cliente }}</td>
-                                            <td>{{ $contrato->forma_de_pagamento }}</td>
-                                            <td>{{ $contrato->vencimento }}</td>
-                                            <td>{{ $contrato->valor }}</td>
-                                            <td>{{ $contrato->criado_em }}</td>
-                                            <td>{{ $contrato->dias_para_bloqueio }}</td>
-                                            <td>{{ $contrato->dias_para_pendencia }}</td>
+                                            <td>{{ $chamado->id }}</td>
+                                            <td>{{ $chamado->cliente }}</td>
+                                            <td>{{ $chamado->forma_de_pagamento }}</td>
+                                            <td>{{ $chamado->vencimento }}</td>
+                                            <td>{{ $chamado->valor }}</td>
+                                            <td>{{ $chamado->criado_em }}</td>
+                                            <td>{{ $chamado->dias_para_bloqueio }}</td>
+                                            <td>{{ $chamado->dias_para_pendencia }}</td>
 
                                             <td>
-                                                <a href="{{ url('/contratos/' . $contrato->id) }}" title="View contrato">
+                                                <a href="{{ url('/chamados/' . $chamado->id) }}" title="View chamado">
                                                     <button class="btn btn-info btn-sm">
                                                         <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
                                                     </button></a>
 
                                                 {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                                {{-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. --}}
-                                                @can('update-client', $contrato)
-                                                    <a href="{{ url('/contratos/' . $contrato->id . '/edit') }}"
-                                                        title="Edit contrato">
+                                                {{-- Parâmetros: Nome do gate e instância do chamado, o qual terá ou não permissão. --}}
+                                                @can('update-client', $chamado)
+                                                    <a href="{{ url('/chamados/' . $chamado->id . '/edit') }}"
+                                                        title="Edit chamado">
                                                         <button class="btn btn-primary btn-sm">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
                                                         </button></a>
 
-                                                    <form method="POST"
-                                                        action="{{ url('/contratos' . '/' . $contrato->id) }}"
-                                                        accept-charset="UTF-8" style="display:inline">
+                                                    <form method="POST" action="{{ url('/chamados' . '/' . $chamado->id) }}"
+                                                        accept-charset="UTF-8" style="display-">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger btn-sm"
-                                                            title="Delete contrato"
+                                                            title="Delete chamado"
                                                             onclick="return confirm(&quot;Confirm delete?&quot;)"><i
                                                                 class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
                                                     </form>
@@ -268,8 +276,8 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
-                            <div class="pagination-wrapper"> {!! $contratos->appends(['search' => Request::get('search')])->render() !!} </div>
+
+                                <div class="pagination-wrapper"> {!! $chamados->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>

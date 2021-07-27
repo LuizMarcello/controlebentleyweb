@@ -21,7 +21,6 @@
         </ul>
 
         <!-- Right navbar links -->
-        <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
             <li class="nav-item">
@@ -152,130 +151,32 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
-                {{-- <a href="{{ route('empresa.relatorios.contrato') }}" class="btn btn-primary btn-sm">Relatório de contrato</a> --}}
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4> Contratos</h4>
-                    </div>
+                    <div class="card-header"><h4> Editando Cliente id: {{ $cliente->id }}</h4></div>
                     <div class="card-body">
-
-                        <form method="GET" action="{{ url('/contratos') }}" accept-charset="UTF-8"
-                            class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="search" style=""
-                                        placeholder="Pesquisar por nº do contrato, cliente nome, e-mail e CPF/CNPJ"
-                                        value="{{ request('search') }}">
-                                    <span class="input-group-append">
-                                        <button class="btn btn-secondary" type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </form>
-                        <br>
-                        <div class="col">
-                            <a href="{{ url('/contratos/create') }}" class="btn btn-success btn-md"
-                                title="Adicionar novo contrato" data-toggle="modal" data-target="#modelcontrato">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Novo contrato
-                            </a>
-                        </div>
-
-                        {{-- ===MODAL=== --}}
-                        <div class="modal fade" id="modelcontrato" tabindex="-1" aria-labelledby="modelcontratoLabel">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="modelcontratoLabel">Cadastrar contrato</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item"
-                                                src="{{ route('contratos.create') }}"></iframe>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cancelar</button>
-                                        {{-- <button type="button" class="btn btn-primary">Cadastrar</button> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- ===MODAL=== --}}
-
+                        <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+                        <br />
                         <br />
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nome</th>
-                                        <th>Forma de pagamento</th>
-                                        <th>Vencimento</th>
-                                        <th>Valor</th>
-                                        <th>Criado em</th>
-                                        <th>Data bloqueio</th>
-                                        <th>Data pendência</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($contratos as $contrato)
-                                        <tr>
-                                            {{-- <td>{{ $loop->iteration }}</td> --}}
-                                            <td>{{ $contrato->id }}</td>
-                                            <td>{{ $contrato->cliente }}</td>
-                                            <td>{{ $contrato->forma_de_pagamento }}</td>
-                                            <td>{{ $contrato->vencimento }}</td>
-                                            <td>{{ $contrato->valor }}</td>
-                                            <td>{{ $contrato->criado_em }}</td>
-                                            <td>{{ $contrato->dias_para_bloqueio }}</td>
-                                            <td>{{ $contrato->dias_para_pendencia }}</td>
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                                            <td>
-                                                <a href="{{ url('/contratos/' . $contrato->id) }}" title="View contrato">
-                                                    <button class="btn btn-info btn-sm">
-                                                        <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
-                                                    </button></a>
+                        <form method="POST" action="{{ url('/clientes/' . $cliente->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                            {{ method_field('PATCH') }}
+                            {{ csrf_field() }}
 
-                                                {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                                {{-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. --}}
-                                                @can('update-client', $contrato)
-                                                    <a href="{{ url('/contratos/' . $contrato->id . '/edit') }}"
-                                                        title="Edit contrato">
-                                                        <button class="btn btn-primary btn-sm">
-                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
-                                                        </button></a>
+                            @include ('clientes.form', ['formMode' => 'edit'])
 
-                                                    <form method="POST"
-                                                        action="{{ url('/contratos' . '/' . $contrato->id) }}"
-                                                        accept-charset="UTF-8" style="display:inline">
-                                                        {{ method_field('DELETE') }}
-                                                        {{ csrf_field() }}
-                                                        <button type="submit" class="btn btn-danger btn-sm"
-                                                            title="Delete contrato"
-                                                            onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                                class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
-                                                    </form>
-                                                @endcan
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            <div class="pagination-wrapper"> {!! $contratos->appends(['search' => Request::get('search')])->render() !!} </div>
-                        </div>
+                        </form>
 
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
