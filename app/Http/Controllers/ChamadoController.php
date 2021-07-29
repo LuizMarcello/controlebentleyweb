@@ -42,7 +42,7 @@ class ChamadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('chamados.create');
     }
 
     /**

@@ -196,7 +196,7 @@
 
                         {{-- ===MODAL=== --}}
                         <div class="modal fade" id="modelchamado" tabindex="-1" aria-labelledby="modelchamadoLabel">
-                            <div class="modal-dialog modal-xl">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="modelchamadoLabel">Cadastrar chamado</h4>
