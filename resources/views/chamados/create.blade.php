@@ -19,10 +19,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/contratos') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/chamados') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('contratos.form', ['formMode' => 'create'])
+                            @include ('chamados.form', ['formMode' => 'create'])
 
                         </form>
 
