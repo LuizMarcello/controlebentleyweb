@@ -165,7 +165,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        {{ __('Você está logado(a). Bom trabalho ') }}
+                        {{ __('Você está logado(a). Bom trabalho, ') }}
                         {{ Auth::user()->name }}
                         {{ __(' !!') }}
                     </div>

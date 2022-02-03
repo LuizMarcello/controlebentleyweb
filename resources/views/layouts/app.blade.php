@@ -123,7 +123,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Satellite Broadband Networks</b> 1.0-rc
             </div>
-            <strong>Copyright &copy; 2021 <a href="https://adminlte.io"> Bentley Brasil - Sistema
+            <strong>Copyright &copy; 2022 <a href="https://adminlte.io"> Bentley Brasil - Sistema
                     Administrativo</a>.</strong> Todos
             os direitos reservados
         </footer>

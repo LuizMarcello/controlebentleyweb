@@ -197,9 +197,9 @@
                                     <tr>
                                         <th> CPF/CNPJ </th>
                                         @if (strlen($cliente->documento) === 11)
-                                        <td> {{ mascara($cliente->documento, '###.###.###-##') }} </td>
+                                            <td> {{ mascara($cliente->documento, '###.###.###-##') }} </td>
                                         @else
-                                        <td> {{ mascara($cliente->documento, '##.###.###/####-##') }} </td>
+                                            <td> {{ mascara($cliente->documento, '##.###.###/####-##') }} </td>
                                         @endif
                                     </tr>
                                     <tr>

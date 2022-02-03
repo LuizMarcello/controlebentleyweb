@@ -4,12 +4,14 @@
         required>
     {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
 </div>
+
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
     <label for="email" class="control-label">{{ 'Email' }}</label>
     <input class="form-control" name="email" type="text" id="email"
         value="{{ isset($user->email) ? $user->email : '' }}" required>
     {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
 </div>
+
 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
     <label for="password" class="control-label">{{ 'Senha' }}</label>
     <input class="form-control" name="password" type="password" id="password" value="" required>
@@ -18,7 +20,8 @@
 
 <div class="form-group">
     <label for="password-confirm" class="control-label">{{ __('Confirm Password') }}</label>
-    <input class="form-control" name="password_confirmation" type="password" id="password-confirm" value="" required autocomplete="new-password">
+    <input class="form-control" name="password_confirmation" type="password" id="password-confirm" value=""
+ required autocomplete="new-password">
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 </div>
 

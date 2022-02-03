@@ -11,7 +11,8 @@
     align-items: center;
     justify-content: center;">
         <span class="brand-text font-weight-light">
-            <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png">
+            {{-- <img height="80" src="https://sistema.bentleybrasil.com.br/img/logo-empresa-br.png"> --}}
+            <img height="80" src="../../../img/logo-empresa-br.png">
         </span>
     </a>
 
@@ -112,6 +113,15 @@
                         <a href="{{ route('clientes.index') }}?" class="nav-link">
                             <i class="fas fa-address-card nav-icon"></i>
                             <p>Lista de Clientes</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-address-card nav-icon"></i>
+                            <p>Instalações</p>
                         </a>
                     </li>
                 </ul>
