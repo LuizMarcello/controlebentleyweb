@@ -171,7 +171,6 @@
                     </div>
                 </div>
                 <br>
-
                 <div class="nav-item">
                     <a href="{{ route('medirvelocidades.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-satellite-dish"> </i>
@@ -182,5 +181,4 @@
             </div>
         </div>
     </div>
-
 @endsection
