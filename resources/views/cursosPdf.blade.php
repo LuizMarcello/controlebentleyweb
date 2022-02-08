@@ -13,10 +13,10 @@
     </thead>
     <tbody>
         @foreach ($cursos as $curso)
-            <tr>
-                <td>{{ $curso['nome'] }}</td>
-                <td>{{ $curso['versao'] }}</td>
-            </tr>
+        <tr>
+            <td>{{ $curso['nome'] }}</td>
+            <td>{{ $curso['versao'] }}</td>
+        </tr>
         @endforeach
     </tbody>
 </table>

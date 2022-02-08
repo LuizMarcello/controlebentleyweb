@@ -320,8 +320,7 @@
             {{-- </li> --}}
 
             <li class="nav-item">
-                <a href="#" class="nav-link"
-                    onclick="
+                <a href="#" class="nav-link" onclick="
                 window.open(
                   'https://beta.simet.nic.br/widget.html',
                   'Bentley Brasil - Teste de velocidade',
