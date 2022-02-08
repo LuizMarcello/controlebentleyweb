@@ -93,7 +93,7 @@
                                 <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                             </h3>
                             <p class="text-sm">The subject goes here</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago </p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -154,14 +154,17 @@
                 </div>
                 <div class="card-body">
 
-                    <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
-                    <a href="{{ url('/clientes/' . $cliente->id . '/edit') }}" title="Edit Cliente"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true">
+                            </i> Voltar</button></a>
+                    <a href="{{ url('/clientes/' . $cliente->id . '/edit') }}" title="Edit Cliente"><button class="btn btn-primary btn-sm">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             Editar</button></a>
 
                     <form method="POST" action="{{ url('clientes' . '/' . $cliente->id) }}" accept-charset="UTF-8" style="display:inline">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Cliente" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
+                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Cliente" onclick="return confirm('Confirm delete?')">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
                     </form>
                     <br />
                     <br />

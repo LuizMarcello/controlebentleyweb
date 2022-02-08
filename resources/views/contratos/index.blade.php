@@ -2,7 +2,8 @@
 
 @section('navbar')
 <!-- Navbar -->
-{{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
+<!-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> -->
+<!-- Original -->
 <nav class="navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -159,7 +160,7 @@
                     <form method="GET" action="{{ url('/contratos') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-2 {{-- float-right --}}" role="search">
                         <div class="col-md-12">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="search" style="" placeholder="Pesquisar por nº do contrato, cliente nome, e-mail e CPF/CNPJ" value="{{ request('search') }}">
+                                <input type="text" class="form-control" name="search" placeholder="Pesquisar por nº do contrato, cliente nome, e-mail e CPF/CNPJ" value="{{ request('search') }}">
                                 <span class="input-group-append">
                                     <button class="btn btn-secondary" type="submit">
                                         <i class="fa fa-search"></i>
@@ -175,7 +176,7 @@
                         </a>
                     </div>
 
-                    {{-- ===MODAL=== --}}
+                    <!-- ===MODAL=== -->
                     <div class="modal fade" id="modelcontrato" tabindex="-1" aria-labelledby="modelcontratoLabel">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
@@ -197,7 +198,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- ===MODAL=== --}}
+                    <!-- ===MODAL=== -->
 
                     <br />
 
@@ -234,8 +235,8 @@
                                                 <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
                                             </button></a>
 
-                                        {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                        {{-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. --}}
+                                        <!-- can(): Diretiva do blade que verifica se tem permissão ou não -->
+                                        <!-- Parâmetros: Nome do gate e instância do contrato, o qual terá ou não permissão. -->
                                         @can('update-client', $contrato)
                                         <a href="{{ url('/contratos/' . $contrato->id . '/edit') }}" title="Edit contrato">
                                             <button class="btn btn-primary btn-sm">
@@ -245,7 +246,8 @@
                                         <form method="POST" action="{{ url('/contratos' . '/' . $contrato->id) }}" accept-charset="UTF-8" style="display:inline">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete contrato" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete contrato" onclick="return confirm('Confirm delete?')">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
                                         </form>
                                         @endcan
                                     </td>
