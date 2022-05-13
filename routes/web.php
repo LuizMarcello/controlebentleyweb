@@ -5,6 +5,7 @@ use App\Http\Middleware\CheckTasks;
 use App\Http\Controllers\ApresentacaoController;
 use App\Http\Controllers\CepController;
 use App\Models\Tecnico;
+use App\Http\Controllers\RegisterController;
 use App\Services\CepService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,6 @@ use Illuminate\Support\Facades\Http;
    fazemos o login ou nos registramos, ele nos rediriciona para o /home. */
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
-
 /* Desabilitando a rota(resource) "register": */
 Auth::routes([
     'register' => false
@@ -41,7 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Agora, todas as rotas dentro da função anômima, estão protegidas pela autenticação. */
 /* Declarando um único método de rota que vai criar todas as rotas que precisamos: */
 /* 1º parâmetro: O nome do recurso(no plural) e 2º parâmetro, o controler: */
-    Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::resource('empresas', 'EmpresaController');
 
@@ -82,10 +82,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cep/{cep}', 'CepController');
 
 Route::get('/empresa/relatorios/clientes', 'Relatorios\RelatoriosClientes')
-        ->name('empresa.relatorios.clientes');
+    ->name('empresa.relatorios.clientes');
 
 /* Middlewares: Criando um "grupo de rotas" para aplicar um middleware para várias rotas: */
-Route::group(['middleware' => ['alerttasks', 'auth']], function() {
+Route::group(['middleware' => ['alerttasks', 'auth']], function () {
     /* Aqui dentro desta função anônima, todas as rotas que farão parte */
     /* Route::get('tarefas/adicionar/{id}','ToDoTasksController@store'); */
     /* Route::get('tarefas/deletar/{id}','ToDoTasksController@destroy'); */
