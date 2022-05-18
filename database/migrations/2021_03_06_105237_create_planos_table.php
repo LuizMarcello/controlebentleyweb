@@ -26,6 +26,7 @@ class CreatePlanosTable extends Migration
             $table->string('velocmaxup');
             $table->string('velocmindown');
             $table->string('velocminup');
+            $table->string('observacao');
             $table->timestamps();
         });
     }
