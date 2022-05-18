@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\AbstractPaginator;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Distribuidor extends Model
+class Representante extends Model
 {
     /* Por questão de segurança, o "fillable" é para dizer quais são
        os únicos campos que serão aceitos pelo model. O usuário poderia

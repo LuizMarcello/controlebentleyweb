@@ -1,5 +1,19 @@
 @extends('layouts.app')
 
+@section('title')
+    <h3>Editando o representante: {{ $representante->nome }}</h3>
+@endsection
+
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        <a href="{{ route('representantes.index', $representante) }}">Listagem de representantes</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ route('representantes.edit', $representante) }}">Editar</a>
+    </li>
+@endsection
+
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -153,37 +167,29 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4> Editando Cliente id: {{ $cliente->id }}</h4>
+                        <h3 class="card-title">Altere os dados necessários</h3>
+                        <div class="card-tools">
+                            <a href="{{ route('representantes.index', $representante) }}"
+                                class="btn btn-success">Voltar</a>
+                        </div>
                     </div>
+
+                    {{-- O corpo --}}
                     <div class="card-body">
-                        <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i
-                                    class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
-                        <br />
-                        <br />
-
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-
-                        <form method="POST" action="{{ url('/clientes/' . $cliente->id) }}" accept-charset="UTF-8"
-                            class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
-
-                            @include('clientes.form', ['formMode' => 'edit'])
-
+                        <form action="{{ route('representantes.update', $representante) }}" method="POST">
+                            {{-- {{ csrf_field() }} --}}
+                            @method('PUT')
+                            {{-- ou assim --}}
+                            {{-- <input type="hidden" name="_method" value="put"> --}}
+                            @include('representante._formRepresentante')
                         </form>
-
                     </div>
+
                 </div>
             </div>
         </div>

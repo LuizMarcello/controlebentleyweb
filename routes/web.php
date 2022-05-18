@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('clientes', 'ClientesController');
 
-    Route::resource('distribuidors', 'DistribuidorController');
+    Route::resource('representantes', 'RepresentanteController');
 
     Route::resource('migracao', 'MigracaoController');
 

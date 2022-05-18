@@ -1,5 +1,22 @@
 @extends('layouts.app')
 
+@section('title')
+    <h4>Detalhes do representante {{ $representante->nome }} - ID {{ $representante->id }}</h4>
+    <div class="card-tools">
+        <a href="{{ route('representantes.index', $representante) }}" class="btn btn-success">Voltar</a>
+    </div>
+@endsection
+
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        <a href="{{ route('representantes.index', $representante) }}">Listagem dos representantes</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ route('representantes.show', $representante) }}">Detalhes do representante</a>
+    </li>
+@endsection
+
 @section('navbar')
     <!-- Navbar -->
     {{-- <nav class="main-header navbar navbar-expand navbar-white navbar-light"> --}}{{-- Original --}}
@@ -153,39 +170,68 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4> Editando Cliente id: {{ $cliente->id }}</h4>
-                    </div>
+
+                    {{-- O corpo --}}
                     <div class="card-body">
-                        <a href="{{ url('/clientes') }}" title="Back"><button class="btn btn-warning btn-sm"><i
-                                    class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
-                        <br />
-                        <br />
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-globe"></i> {{ $representante->nome }}
+                                </h4>
+                            </div>
+                        </div>
 
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <strong>Nome</strong>: {{ $representante->nome }} <br>
+                                <strong>Razão Social</strong>: {{ $representante->razao_social }} <br>
+                                <strong>CNPJ/CPF</strong>: {{ $representante->documento }} <br>
+                                <strong>IE/RG</strong>: {{ mascara($representante->ie_rg, '#.###.###-2') }} <br>
+                                <strong>Data do cadastro</strong>: {{ $representante->created_at }} <br>
+                                <strong>Data da última alteração</strong>: {{ $representante->updated_at }} <br>
 
-                        <form method="POST" action="{{ url('/clientes/' . $cliente->id) }}" accept-charset="UTF-8"
-                            class="form-horizontal" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            {{ csrf_field() }}
-
-                            @include('clientes.form', ['formMode' => 'edit'])
-
-                        </form>
-
+                                <strong>Nome de Contato:</strong> {{ $representante->nome_contato }} <br>
+                                <strong>Situação</strong>: {{ $representante->situacao }} <br>
+                            </div>
+                            <div class="col-sm-6">
+                                <address>
+                                    {{ $representante->rua }}, {{ $representante->numero }} <br>
+                                    {{ $representante->bairro }}, {{ $representante->cidade }} -
+                                    {{ $representante->estado }}<br>
+                                    {{ $representante->cep }} <br>
+                                </address>
+                                {{-- <strong>Data de nascimento</strong>: {{ $representante->dataNascimento }} <br> --}}
+                                <strong>Celular:</strong> {{ $representante->celular }} <br>
+                                <strong>Telefone:</strong> {{ $representante->telefone }} <br>
+                                <strong>Email:</strong> {{ $representante->email }} <br>
+                                <strong>Observações</strong>: {{ $representante->observacao }} <br>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{{ route('representantes.destroy', $representante) }}" method="POST">
+                    @method('DELETE')
+                    {{-- ou assim --}}
+                    {{-- <input type="hidden" name="_method" value="DELETE"> --}}
+                    @csrf
+                    {{-- ou assim --}}
+                    {{-- {{ csrf_field() }} --}}
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Tem certeza que deseja excluir?')">
+                        Excluir este representante
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 @endsection

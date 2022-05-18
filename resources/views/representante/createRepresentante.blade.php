@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('title')
-    <h3>Editando o representante: {{ $distribuidor->nome }}</h3>
+    <h1>Novo representante</h1>
 @endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.index', $distribuidor) }}">Listagem de representantes</a>
+        <a href="{{ route('representantes.index') }}">Listagem de representantes</a>
     </li>
 
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.edit', $distribuidor) }}">Editar</a>
+        <a href="{{ route('representantes.create') }}">Novo representante</a>
     </li>
 @endsection
 
@@ -23,15 +23,19 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <div class="nav-link">
-                    <a href="{{ route('home') }}">Home</a>
-                </div>
-
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contato</a>
-            </li>
+            {{-- Mostrando o breadcrumb (barra de navegação)
+             somente se o usuário estiver logado --}}
+            @auth
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block"><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        {{-- Retornando o nome da rota ativa no momento --}}
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block active" aria-current="page">
+                            {{ Route::currentRouteName() }}</li>
+                    </ol>
+                </nav>
+            @endauth
         </ul>
 
         <!-- Right navbar links -->
@@ -168,20 +172,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Altere os dados necessários</h3>
+                        <h3 class="card-title">Entre com os dados</h3>
                         <div class="card-tools">
-                            <a href="{{ route('distribuidors.index', $distribuidor) }}" class="btn btn-success">Voltar</a>
+                            <a href="{{ route('representantes.index') }}" class="btn btn-success">Voltar</a>
                         </div>
                     </div>
 
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('distribuidors.update', $distribuidor) }}" method="POST">
-                             {{-- {{ csrf_field() }} --}}
-                             @method('PUT')
-                             {{-- ou assim --}}
-                             {{-- <input type="hidden" name="_method" value="put"> --}}
-                            @include('distribuidor._formDistribuidor')
+                        <form action="{{ route('representantes.store') }}" method="POST">
+                            @include('representante._formRepresentante')
                         </form>
                     </div>
 

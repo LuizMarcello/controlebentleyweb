@@ -82,7 +82,7 @@ class EmpresaController extends Controller
 
         $tipo = $empresa->tipo;
 
-        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+        if ($tipo !== 'cliente' && $tipo !== 'representante') {
             return \abort(404);
         }
        return view('empresa.edit', \compact('empresa', 'tipo'));
@@ -126,14 +126,14 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Verifica o tipo, se é cliente ou fornecedor
+     * Verifica o tipo, se é cliente ou representante
      *
      * @param string $tipo
      * @return void
      */
     private function validaTipo(string $tipo): void
     {
-        if ($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+        if ($tipo !== 'cliente' && $tipo !== 'representante') {
             \abort(404);
         }
     }

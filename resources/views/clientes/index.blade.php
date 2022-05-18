@@ -9,15 +9,19 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <div class="nav-link">
-                    <a href="{{ route('home') }}">Home</a>
-                </div>
-
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contato</a>
-            </li>
+           {{-- Mostrando o breadcrumb (barra de navegação)
+             somente se o usuário estiver logado --}}
+            @auth
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block"><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        {{-- Retornando o nome da rota ativa no momento --}}
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block active" aria-current="page">
+                            {{ Route::currentRouteName() }}</li>
+                    </ol>
+                </nav>
+            @endauth
         </ul>
 
         <!-- Right navbar links -->

@@ -1,18 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo representante</h1>
+    <h1>Listagem de representantes</h1>
 @endsection
 
-@section('breadcrumb')
+{{-- @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.index') }}">Listagem de representantes</a>
+        <a href="{{ route('representantes.index') }}">Listagem de representantes</a>
     </li>
-
-    <li class="breadcrumb-item">
-        <a href="{{ route('distribuidors.create') }}">Novo representante</a>
-    </li>
-@endsection
+@endsection --}}
 
 @section('navbar')
     <!-- Navbar -->
@@ -23,15 +19,19 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <div class="nav-link">
-                    <a href="{{ route('home') }}">Home</a>
-                </div>
-
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contato</a>
-            </li>
+            {{-- Mostrando o breadcrumb (barra de navegação)
+             somente se o usuário estiver logado --}}
+            @auth
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block"><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        {{-- Retornando o nome da rota ativa no momento --}}
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block active" aria-current="page">
+                            {{ Route::currentRouteName() }}</li>
+                    </ol>
+                </nav>
+            @endauth
         </ul>
 
         <!-- Right navbar links -->
@@ -168,19 +168,59 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Entre com os dados</h3>
+                        <h3 class="card-title">Listagem de representantes</h3>
                         <div class="card-tools">
-                            <a href="{{ route('distribuidors.index') }}" class="btn btn-success">Voltar</a>
+                            <a href="{{ route('representantes.create') }}" class="btn btn-success">Novo
+                                representante</a>
                         </div>
                     </div>
 
+
                     {{-- O corpo --}}
                     <div class="card-body">
-                        <form action="{{ route('distribuidors.store') }}" method="POST">
-                            @include('distribuidor._formDistribuidor')
-                        </form>
-                    </div>
+                        <table class="table">
 
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px"></th>
+                                    <th>Id</th>
+                                    <th>Nome da empresa</th>
+                                    <th>Nome do contato</th>
+                                    <th>Celular</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @forelse ($registros as $registro)
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ $registro->id }}</td>
+                                        <td>{{ $registro->nome }}</td>
+                                        <td>{{ $registro->nome_contato }}</td>
+                                        <td>{{ $registro->celular }}</td>
+                                        <td><a href="{{ route('representantes.show', $registro) }}"
+                                                class="btn btn-primary btn-sm">Detalhes</a>
+                                            <a href="{{ route('representantes.edit', $registro) }}"
+                                                class="btn btn-danger btn-sm">Atualizar</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Nenhum item cadastrado</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer clearfix">
+                        {{-- O laravel/blade já mostra a paginação no padrâo do bootstrap --}}
+                        {{ $registros->links() }}
+                    </div>
                 </div>
             </div>
         </div>

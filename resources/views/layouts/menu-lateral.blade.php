@@ -82,16 +82,16 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
-                        Fornecedor
+                        Representantes
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
 
                     <li class="nav-item">
-                        <a href="{{ route('empresas.index') }}?tipo=fornecedor" class="nav-link">
+                        <a href="{{ route('representantes.index') }}?" class="nav-link">
                             <i class="fas fa-list-alt nav-icon"></i>
-                            <p>Lista de Fornecedores</p>
+                            <p>Lista de Representantes</p>
                         </a>
                     </li>
                 </ul>
