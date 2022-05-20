@@ -9,17 +9,19 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-            {{-- <li class="nav-item d-none d-sm--"> --}}
-                <div class="nav-link">
-                    <a href="{{ route('home') }}">Home</a>
-                </div>
-
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-            {{-- <li class="nav-item d-none d-sm--"> --}}
-                <a href="#" class="nav-link">Contato</a>
-            </li>
+            {{-- Mostrando o breadcrumb (barra de navegação)
+             somente se o usuário estiver logado --}}
+            @auth
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block"><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        {{-- Retornando o nome da rota ativa no momento --}}
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block active" aria-current="page">
+                            {{ Route::currentRouteName() }}</li>
+                    </ol>
+                </nav>
+            @endauth
         </ul>
 
         <!-- Right navbar links -->
@@ -200,7 +202,8 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="modelchamadoLabel">Cadastrar chamado</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
@@ -237,50 +240,49 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($chamados as $chamado)
-                                    <tr>
-                                        {{-- <td>{{ $loop->iteration }}</td> --}}
-                                        <td>{{ $chamado->id }}</td>
-                                        <td>{{ $chamado->cliente }}</td>
-                                        <td>{{ $chamado->forma_de_pagamento }}</td>
-                                        <td>{{ $chamado->vencimento }}</td>
-                                        <td>{{ $chamado->valor }}</td>
-                                        <td>{{ $chamado->criado_em }}</td>
-                                        <td>{{ $chamado->dias_para_bloqueio }}</td>
-                                        <td>{{ $chamado->dias_para_pendencia }}</td>
+                                        <tr>
+                                            {{-- <td>{{ $loop->iteration }}</td> --}}
+                                            <td>{{ $chamado->id }}</td>
+                                            <td>{{ $chamado->cliente }}</td>
+                                            <td>{{ $chamado->forma_de_pagamento }}</td>
+                                            <td>{{ $chamado->vencimento }}</td>
+                                            <td>{{ $chamado->valor }}</td>
+                                            <td>{{ $chamado->criado_em }}</td>
+                                            <td>{{ $chamado->dias_para_bloqueio }}</td>
+                                            <td>{{ $chamado->dias_para_pendencia }}</td>
 
-                                        <td>
-                                            <a href="{{ url('/chamados/' . $chamado->id) }}" title="View chamado">
-                                                <button class="btn btn-info btn-sm">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
-                                                </button></a>
-
-                                            {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
-                                            {{-- Parâmetros: Nome do gate e instância do chamado, o qual terá ou não permissão. --}}
-                                            @can('update-client', $chamado)
-                                                <a href="{{ url('/chamados/' . $chamado->id . '/edit') }}"
-                                                    title="Edit chamado">
-                                                    <button class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
+                                            <td>
+                                                <a href="{{ url('/chamados/' . $chamado->id) }}" title="View chamado">
+                                                    <button class="btn btn-info btn-sm">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i> Detalhes
                                                     </button></a>
 
-                                                <form method="POST" action="{{ url('/chamados' . '/' . $chamado->id) }}"
-                                                    accept-charset="UTF-8" style="display-">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete chamado"
-                                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
-                                                </form>
-                                            @endcan
-                                        </td>
-                                    </tr>
+                                                {{-- can(): Diretiva do blade que verifica se tem permissão ou não --}}
+                                                {{-- Parâmetros: Nome do gate e instância do chamado, o qual terá ou não permissão. --}}
+                                                @can('update-client', $chamado)
+                                                    <a href="{{ url('/chamados/' . $chamado->id . '/edit') }}"
+                                                        title="Edit chamado">
+                                                        <button class="btn btn-primary btn-sm">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Editar
+                                                        </button></a>
 
+                                                    <form method="POST" action="{{ url('/chamados' . '/' . $chamado->id) }}"
+                                                        accept-charset="UTF-8" style="display-">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                            title="Delete chamado"
+                                                            onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                                                class="fa fa-trash-o" aria-hidden="true"></i> Deletar</button>
+                                                    </form>
+                                                @endcan
+                                            </td>
+                                        </tr>
                                     @endforeach
 
                                 </tbody>
                             </table>
-                                <div class="pagination-wrapper"> {!! $chamados->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $chamados->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>

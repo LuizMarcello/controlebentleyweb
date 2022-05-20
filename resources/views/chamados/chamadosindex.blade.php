@@ -9,17 +9,19 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-            {{-- <li class="nav-item d-none d-sm--"> --}}
-                <div class="nav-link">
-                    <a href="{{ route('home') }}">Home</a>
-                </div>
-
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-            {{-- <li class="nav-item d-none d-sm--"> --}}
-                <a href="#" class="nav-link">Contato</a>
-            </li>
+            {{-- Mostrando o breadcrumb (barra de navegação)
+             somente se o usuário estiver logado --}}
+            @auth
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block"><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        {{-- Retornando o nome da rota ativa no momento --}}
+                        <li class="nav-item breadcrumb-item d-none d-sm-inline-block active" aria-current="page">
+                            {{ Route::currentRouteName() }}</li>
+                    </ol>
+                </nav>
+            @endauth
         </ul>
 
         <!-- Right navbar links -->
@@ -199,7 +201,8 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="modelchamadoLabel">Cadastrar chamado</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
