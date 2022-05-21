@@ -14,7 +14,7 @@ class ContratoController extends Controller
      */
     public function index(Request $request)
     {
-        $keyword = $request->get('search');
+          $keyword = $request->get('search');
         $perPage = 25;
 
         if (!empty($keyword)) {
@@ -30,9 +30,9 @@ class ContratoController extends Controller
                 ->orWhere('forma_de_pagamento', 'LIKE', "%$keyword%")
                 ->orWhere('modelo_de_contrato', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
-        } else {
+              } else {
             /* $contrato = Contrato::latest()->paginate($perPage); */
-               $contratos = Contrato::latest()->paginate(3);
+            $contratos = Contrato::latest()->paginate(3);
         }
 
         return view('contratos.index', compact('contratos'));
@@ -48,7 +48,7 @@ class ContratoController extends Controller
         return view('contratos.create');
     }
 
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
