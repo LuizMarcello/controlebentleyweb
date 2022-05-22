@@ -201,7 +201,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
-                        Designação
+                        Designações
                         <i class="right fas fa-angle-left"></i>
 
                     </p>
@@ -222,7 +222,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                     <p>
-                        Migração
+                        Migrações
                         <i class="right fas fa-angle-left"></i>
 
                     </p>
@@ -243,7 +243,7 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-money-check-alt"></i>
                     <p>
-                        Instalação
+                        Instaladores
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>

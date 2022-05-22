@@ -15,6 +15,7 @@
         "gerencianet/gerencianet-sdk-php": "^4.0",
         "guzzlehttp/guzzle": "^7.3",
         "kennedytedesco/validation": "8.0",
+        "laravel/breeze": "*",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.2.1"
@@ -25,6 +26,7 @@
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
+        "lucascudo/laravel-pt-br-localization": "^1.2",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"
