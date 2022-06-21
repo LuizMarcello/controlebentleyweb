@@ -22,6 +22,7 @@ class CreateGroovesTable extends Migration
             $table->string('notafiscal');
             $table->string('serial');
             $table->string('situacao');
+            $table->string('observacao');
             $table->timestamps();
         });
     }

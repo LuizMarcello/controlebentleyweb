@@ -26,6 +26,7 @@ class CreateContratosTable extends Migration
             $table->string('dia_de_pagamento')->nullable();
             $table->string('forma_de_pagamento')->nullable();
             $table->string('modelo_de_contrato')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
